@@ -11,10 +11,10 @@ verified.
 
 ## Project status
 
-The first mobile-friendly static website foundation is under development. It
-uses clearly labelled fictional data while the verified metropolitan-area
-source registry is being prepared. No example event on the development page is
-a real training session.
+The first mobile-friendly static website foundation and the initial verified
+metropolitan-area source registry are under development. The development page
+still uses clearly labelled fictional data: no example event shown there is a
+real training session.
 
 ## Planned approach
 
@@ -46,7 +46,9 @@ The initial release covers the full Helsinki metropolitan area:
 - Do not automatically remove verified events because one collection run fails.
 
 See [AGENTS.md](AGENTS.md) for the current project conventions and operating
-rules.
+rules. See [docs/source-registry.md](docs/source-registry.md) for the first
+official-source mapping and the distinction between an open-mat label and
+confirmed outside-club access.
 
 ## Development
 
@@ -75,6 +77,8 @@ build. Do not commit API keys, access tokens, or local environment files.
 ## Project structure
 
 ```text
+data/                  maintained source registry
+docs/                  decisions and collection documentation
 src/components/        reusable Astro interface components
 src/data/              version-controlled event data
 src/lib/               event formatting and validation utilities
