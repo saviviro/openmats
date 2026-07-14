@@ -1,0 +1,53 @@
+<section class="filters" aria-labelledby="filter-title">
+  <div class="filters__heading">
+    <div>
+      <p class="eyebrow">Rajaa listaa</p>
+      <h2 id="filter-title">Löydä sopiva matto</h2>
+    </div>
+    <p class="result-count" aria-live="polite">
+      <strong data-result-count>0</strong> tapahtumaa
+    </p>
+  </div>
+
+  <div class="filter-groups">
+    <fieldset data-filter-group="city">
+      <legend>Kaupunki</legend>
+      <div class="filter-buttons">
+        <button type="button" data-filter-value="all" aria-pressed="true"
+          >Kaikki</button
+        >
+        <button type="button" data-filter-value="Helsinki" aria-pressed="false"
+          >Helsinki</button
+        >
+        <button type="button" data-filter-value="Espoo" aria-pressed="false"
+          >Espoo</button
+        >
+        <button type="button" data-filter-value="Vantaa" aria-pressed="false"
+          >Vantaa</button
+        >
+        <button
+          type="button"
+          data-filter-value="Kauniainen"
+          aria-pressed="false">Kauniainen</button
+        >
+      </div>
+    </fieldset>
+
+    <fieldset data-filter-group="sport">
+      <legend>Laji</legend>
+      <div class="filter-buttons">
+        <button type="button" data-filter-value="all" aria-pressed="true"
+          >Kaikki</button
+        >
+        <button type="button" data-filter-value="bjj" aria-pressed="false"
+          >BJJ</button
+        >
+        <button
+          type="button"
+          data-filter-value="submission-wrestling"
+          aria-pressed="false">Lukkopaini</button
+        >
+      </div>
+    </fieldset>
+  </div>
+</section>

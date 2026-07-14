@@ -1,0 +1,114 @@
+[
+  {
+    "id": "example-helsinki-bjj-2026-08-01",
+    "title": "BJJ open mat — esimerkkitapahtuma",
+    "sport": "bjj",
+    "uniform": "gi",
+    "startAt": "2026-08-01T12:00:00+03:00",
+    "endAt": "2026-08-01T13:30:00+03:00",
+    "venue": {
+      "name": "Esimerkkisali Helsinki",
+      "streetAddress": "Mallikatu 1",
+      "postalCode": "00100",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Avoin täysi-ikäisille harrastajille",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://example.com/helsinki-open-mat",
+    "sourceLabel": "Esimerkkilähde",
+    "verifiedAt": "2026-07-14T12:00:00+03:00",
+    "isExample": true
+  },
+  {
+    "id": "example-espoo-nogi-2026-08-02",
+    "title": "No-gi open mat — esimerkkitapahtuma",
+    "sport": "submission-wrestling",
+    "uniform": "no-gi",
+    "startAt": "2026-08-02T15:00:00+03:00",
+    "endAt": "2026-08-02T16:30:00+03:00",
+    "venue": {
+      "name": "Esimerkkisali Espoo",
+      "streetAddress": "Harjoitustie 2",
+      "postalCode": "02100",
+      "city": "Espoo"
+    },
+    "price": {
+      "amount": 10,
+      "currency": "EUR",
+      "note": "Kertamaksu 10 €"
+    },
+    "access": {
+      "description": "Kaikki seurat ja taitotasot",
+      "registrationRequired": true
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://example.com/espoo-open-mat",
+    "sourceLabel": "Esimerkkilähde",
+    "verifiedAt": "2026-07-14T12:00:00+03:00",
+    "isExample": true
+  },
+  {
+    "id": "example-vantaa-bjj-2026-08-08",
+    "title": "Gi & no-gi open mat — esimerkkitapahtuma",
+    "sport": "bjj",
+    "uniform": "mixed",
+    "startAt": "2026-08-08T11:30:00+03:00",
+    "endAt": "2026-08-08T13:00:00+03:00",
+    "venue": {
+      "name": "Esimerkkisali Vantaa",
+      "streetAddress": "Painiportti 3",
+      "postalCode": "01300",
+      "city": "Vantaa"
+    },
+    "price": {
+      "amount": 5,
+      "currency": "EUR",
+      "note": "Vierailumaksu 5 €"
+    },
+    "access": {
+      "description": "Vähintään puoli vuotta harjoitelleille",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://example.com/vantaa-open-mat",
+    "sourceLabel": "Esimerkkilähde",
+    "verifiedAt": "2026-07-14T12:00:00+03:00",
+    "isExample": true
+  },
+  {
+    "id": "example-kauniainen-nogi-2026-08-09",
+    "title": "Lukkopaini open mat — esimerkkitapahtuma",
+    "sport": "submission-wrestling",
+    "uniform": "no-gi",
+    "startAt": "2026-08-09T17:00:00+03:00",
+    "endAt": "2026-08-09T18:15:00+03:00",
+    "venue": {
+      "name": "Esimerkkisali Kauniainen",
+      "streetAddress": "Mattokuja 4",
+      "postalCode": "02700",
+      "city": "Kauniainen"
+    },
+    "price": {
+      "amount": null,
+      "currency": "EUR",
+      "note": "Hinta ei tiedossa"
+    },
+    "access": {
+      "description": "Osallistumisehdot tarkistettava lähteestä",
+      "registrationRequired": true
+    },
+    "status": "uncertain",
+    "sourceUrl": "https://example.com/kauniainen-open-mat",
+    "sourceLabel": "Esimerkkilähde",
+    "verifiedAt": "2026-07-14T12:00:00+03:00",
+    "isExample": true
+  }
+]

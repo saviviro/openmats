@@ -11,10 +11,10 @@ verified.
 
 ## Project status
 
-The project is in its initial planning and setup phase. The first milestone is
-a small, mobile-friendly static website backed by version-controlled event
-data. A separate collection pipeline will be introduced after the event schema
-and user interface are stable.
+The first mobile-friendly static website foundation is under development. It
+uses clearly labelled fictional data while the verified metropolitan-area
+source registry is being prepared. No example event on the development page is
+a real training session.
 
 ## Planned approach
 
@@ -50,8 +50,38 @@ rules.
 
 ## Development
 
-Development commands will be documented here when the web application is
-scaffolded. Do not commit API keys, access tokens, or local environment files.
+Requirements:
+
+- Node.js 22.12 or newer (Node 24 is recommended)
+- pnpm 11.7
+
+Install dependencies and start the local development server:
+
+```sh
+pnpm install
+pnpm dev
+```
+
+Run all local quality checks:
+
+```sh
+pnpm validate
+```
+
+The validation command checks formatting, Astro and TypeScript diagnostics,
+unit tests, content schemas, duplicate event identities, and the production
+build. Do not commit API keys, access tokens, or local environment files.
+
+## Project structure
+
+```text
+src/components/        reusable Astro interface components
+src/data/              version-controlled event data
+src/lib/               event formatting and validation utilities
+src/pages/             website routes
+src/styles/            global visual styles
+.github/workflows/     continuous integration
+```
 
 ## License
 

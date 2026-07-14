@@ -1,0 +1,126 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import {
+  formatEventDate,
+  formatEventTime,
+  formatVerifiedDate,
+} from "../lib/events";
+
+interface Props {
+  event: CollectionEntry<"events">;
+}
+
+const { event } = Astro.props;
+const { data } = event;
+const address = `${data.venue.streetAddress}, ${data.venue.postalCode} ${data.venue.city}`;
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+const sportLabel = data.sport === "bjj" ? "BJJ" : "Lukkopaini";
+const uniformLabel = {
+  gi: "Gi",
+  "no-gi": "No-gi",
+  mixed: "Gi & no-gi",
+}[data.uniform];
+const statusLabel = {
+  scheduled: null,
+  cancelled: "Peruttu",
+  rescheduled: "Siirretty",
+  uncertain: "Tarkista tiedot",
+}[data.status];
+---
+
+<article
+  class="event-card"
+  data-event-card
+  data-city={data.venue.city}
+  data-sport={data.sport}
+  aria-labelledby={`event-${event.id}`}
+>
+  <div
+    class="event-card__date"
+    aria-label={`Päivä ${formatEventDate(data.startAt)}`}
+  >
+    <span>{formatEventDate(data.startAt).split(" ")[0]}</span>
+    <strong
+      >{
+        new Intl.DateTimeFormat("fi-FI", {
+          day: "numeric",
+          timeZone: "Europe/Helsinki",
+        }).format(new Date(data.startAt))
+      }</strong
+    >
+    <small
+      >{
+        new Intl.DateTimeFormat("fi-FI", {
+          month: "short",
+          timeZone: "Europe/Helsinki",
+        }).format(new Date(data.startAt))
+      }</small
+    >
+  </div>
+
+  <div class="event-card__content">
+    <div class="event-card__labels">
+      <span class="pill pill--sport">{sportLabel}</span>
+      <span class="pill">{uniformLabel}</span>
+      {
+        statusLabel && (
+          <span class:list={["pill", "pill--warning"]}>{statusLabel}</span>
+        )
+      }
+    </div>
+
+    <h2 id={`event-${event.id}`}>{data.title}</h2>
+
+    <dl class="event-facts">
+      <div>
+        <dt>Aika</dt>
+        <dd>
+          {formatEventDate(data.startAt)}, {formatEventTime(data.startAt)}–{
+            formatEventTime(data.endAt)
+          }
+        </dd>
+      </div>
+      <div>
+        <dt>Paikka</dt>
+        <dd>
+          <strong>{data.venue.name}</strong><br />
+          <a href={mapUrl} target="_blank" rel="noreferrer"
+            >{address}<span class="sr-only">
+              (avautuu uuteen välilehteen)</span
+            ></a
+          >
+        </dd>
+      </div>
+      <div>
+        <dt>Hinta</dt>
+        <dd>{data.price.note}</dd>
+      </div>
+      <div>
+        <dt>Kenelle</dt>
+        <dd>
+          {data.access.description}
+          {
+            data.access.registrationRequired && (
+              <span class="registration-note">Ilmoittautuminen vaaditaan</span>
+            )
+          }
+        </dd>
+      </div>
+    </dl>
+
+    <div class="event-card__footer">
+      <a
+        class="source-link"
+        href={data.sourceUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        Tarkista järjestäjän lähde
+        <span aria-hidden="true">↗</span>
+        <span class="sr-only"> (avautuu uuteen välilehteen)</span>
+      </a>
+      <span>Tarkistettu {formatVerifiedDate(data.verifiedAt)}</span>
+    </div>
+  </div>
+</article>

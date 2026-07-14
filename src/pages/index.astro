@@ -1,0 +1,172 @@
+---
+import { getCollection } from "astro:content";
+
+import EventCard from "../components/EventCard.astro";
+import FilterBar from "../components/FilterBar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { findDuplicateEventIds, sortEvents } from "../lib/events";
+
+const events = sortEvents(
+  await getCollection("events"),
+  (event) => event.data.startAt,
+);
+const duplicates = findDuplicateEventIds(
+  events.map((event) => ({
+    id: event.id,
+    title: event.data.title,
+    sport: event.data.sport,
+    startAt: event.data.startAt,
+    venue: event.data.venue,
+  })),
+);
+
+if (duplicates.length > 0) {
+  throw new Error(
+    `Duplicate event identities found: ${JSON.stringify(duplicates)}`,
+  );
+}
+---
+
+<BaseLayout
+  title="Open Mats — Helsinki Region"
+  description="Pääkaupunkiseudun BJJ- ja lukkopaini-open matit yhdessä paikassa."
+>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Open Mats, etusivu">
+      <span class="brand__mark" aria-hidden="true">OM</span>
+      <span>
+        <strong>Open Mats</strong>
+        <small>Helsinki Region</small>
+      </span>
+    </a>
+    <span class="development-badge">Kehitysversio</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Helsinki · Espoo · Vantaa · Kauniainen</p>
+        <h1>Löydä seuraava<br /><em>avoin matto.</em></h1>
+        <p class="hero__lead">
+          Pääkaupunkiseudun BJJ- ja lukkopaini-open matit koottuna selkeäksi
+          listaksi. Tarkista tiedot aina järjestäjän alkuperäisestä lähteestä.
+        </p>
+        <a class="hero__action" href="#events"
+          >Selaa tapahtumia <span aria-hidden="true">↓</span></a
+        >
+      </div>
+      <div class="hero__stats" aria-label="Palvelun kattavuus">
+        <div><strong>4</strong><span>kaupunkia</span></div>
+        <div><strong>{events.length}</strong><span>testitapahtumaa</span></div>
+        <div><strong>100 %</strong><span>lähteistetty tavoite</span></div>
+      </div>
+    </section>
+
+    <aside
+      class="example-notice"
+      role="note"
+      aria-label="Kehitysversion huomautus"
+    >
+      <span aria-hidden="true">i</span>
+      <div>
+        <strong>Tällä sivulla on vain kuvitteellista testidataa.</strong>
+        Oikeat salit ja tapahtumat lisätään vasta lähteiden tarkistamisen jälkeen.
+        Älä käytä näitä tietoja harjoituksiin saapumiseen.
+      </div>
+    </aside>
+
+    <section class="events-section" id="events" aria-labelledby="events-title">
+      <div class="section-intro">
+        <p class="eyebrow">Tulevat open matit</p>
+        <h2 id="events-title">Valitse aika ja paikka</h2>
+        <p>Suodata tapahtumia kaupungin tai lajin mukaan.</p>
+      </div>
+
+      <FilterBar />
+
+      <div class="event-list" data-event-list>
+        {events.map((event) => <EventCard event={event} />)}
+      </div>
+
+      <div class="empty-state" data-empty-state hidden>
+        <strong>Ei osumia näillä rajauksilla.</strong>
+        <p>Kokeile toista kaupunkia tai lajia.</p>
+      </div>
+    </section>
+
+    <section class="contribute">
+      <div>
+        <p class="eyebrow">Tiedätkö puuttuvan tapahtuman?</p>
+        <h2>Auta pitämään lista ajan tasalla.</h2>
+      </div>
+      <p>
+        Ilmoituslomake lisätään ennen julkaisua. Sillä voi ehdottaa tapahtumaa
+        tai kertoa virheellisestä tiedosta ilman käyttäjätiliä.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="brand brand--footer">
+      <span class="brand__mark" aria-hidden="true">OM</span>
+      <span><strong>Open Mats</strong><small>Helsinki Region</small></span>
+    </div>
+    <p>
+      Koontipalvelu ei järjestä tapahtumia. Varmista tiedot aina alkuperäisestä
+      lähteestä.
+    </p>
+  </footer>
+
+  <script>
+    const filterState = { city: "all", sport: "all" };
+    const cards = [...document.querySelectorAll("[data-event-card]")];
+    const resultCount = document.querySelector("[data-result-count]");
+    const emptyState = document.querySelector("[data-empty-state]");
+
+    function updateResults() {
+      let visibleCount = 0;
+
+      for (const card of cards) {
+        if (!(card instanceof HTMLElement)) continue;
+
+        const cityMatches =
+          filterState.city === "all" || card.dataset.city === filterState.city;
+        const sportMatches =
+          filterState.sport === "all" ||
+          card.dataset.sport === filterState.sport;
+        const isVisible = cityMatches && sportMatches;
+
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      }
+
+      if (resultCount) resultCount.textContent = String(visibleCount);
+      if (emptyState instanceof HTMLElement)
+        emptyState.hidden = visibleCount !== 0;
+    }
+
+    for (const group of document.querySelectorAll("[data-filter-group]")) {
+      if (!(group instanceof HTMLElement)) continue;
+      const filterName = group.dataset.filterGroup;
+      if (filterName !== "city" && filterName !== "sport") continue;
+
+      for (const button of group.querySelectorAll(
+        "button[data-filter-value]",
+      )) {
+        button.addEventListener("click", () => {
+          if (!(button instanceof HTMLButtonElement)) return;
+
+          filterState[filterName] = button.dataset.filterValue ?? "all";
+          for (const sibling of group.querySelectorAll(
+            "button[data-filter-value]",
+          )) {
+            sibling.setAttribute("aria-pressed", String(sibling === button));
+          }
+          updateResults();
+        });
+      }
+    }
+
+    updateResults();
+  </script>
+</BaseLayout>
