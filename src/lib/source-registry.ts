@@ -55,6 +55,34 @@ export const openMatCandidateSchema = z
     },
   );
 
+export const datedOpenMatSchema = z
+  .object({
+    date: isoDateSchema,
+    startTime: localTimeSchema,
+    endTime: localTimeSchema,
+    disciplines: z.array(z.enum(["bjj", "nogi", "submission_wrestling"])),
+    status: z.enum(["scheduled", "cancelled"]),
+    publishStatus: z.enum([
+      "ready_for_event_review",
+      "needs_access_confirmation",
+      "blocked_by_source_conflict",
+      "cancelled_do_not_publish",
+    ]),
+    notes: z.string().min(3),
+  })
+  .refine(({ startTime, endTime }) => endTime > startTime, {
+    message: "Dated open mat endTime must be later than startTime",
+    path: ["endTime"],
+  })
+  .refine(
+    ({ status, publishStatus }) =>
+      status !== "cancelled" || publishStatus === "cancelled_do_not_publish",
+    {
+      message: "A cancelled open mat must not be eligible for publication",
+      path: ["publishStatus"],
+    },
+  );
+
 export const venueSourceRecordSchema = z.object({
   id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   organization: z.string().min(2),
@@ -80,6 +108,7 @@ export const venueSourceRecordSchema = z.object({
   evidenceSummary: z.string().min(10),
   sources: z.array(registrySourceSchema).min(1),
   candidateOpenMats: z.array(openMatCandidateSchema).default([]),
+  datedOpenMats: z.array(datedOpenMatSchema).default([]),
   checkedAt: z.iso.datetime({ offset: true }),
   monitoringNotes: z.string().min(3).nullable(),
 });
@@ -88,6 +117,8 @@ export const sourceRegistrySchema = z.object({
   version: z.literal(1),
   timezone: z.literal("Europe/Helsinki"),
   checkedAt: z.iso.datetime({ offset: true }),
+  discoveryReviewedAt: z.iso.datetime({ offset: true }),
+  discoveryReviewNotes: z.string().min(10),
   scopeCities: z.tuple([
     z.literal("Helsinki"),
     z.literal("Espoo"),

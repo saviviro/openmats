@@ -8,8 +8,9 @@ questions that must not be treated as the same thing:
 2. Does an official source show an open mat or an equivalent sparring session?
 3. Does an official source confirm that people from other clubs may attend?
 
-The initial mapping was checked on 14 July 2026. It is a documented baseline,
-not a claim that an internet search can prove permanent completeness.
+The initial mapping and a broader discovery review were checked on 14 July 2026. It is a documented baseline, not a claim that an internet search can
+prove permanent completeness. The repeatable check order and high-yield source
+list are documented in [source-monitoring.md](source-monitoring.md).
 
 ## Geographic coverage
 
@@ -68,6 +69,15 @@ GB Gym, Combat Academy, HIPKO, FireBody, Savate Club and Salini. Their current
 official sources show open mats, free practice or sparring, but do not provide
 enough evidence to publish outside-club access automatically.
 
+GB Gym's official calendar currently contains exact monthly open mats on 30
+August, 27 September, 25 October and 27 December 2026. It explicitly cancels
+the 29 November entry, and contains no dated July open mat. These observations
+are stored under `datedOpenMats`, but the scheduled dates remain unpublished
+until official outside-club access is confirmed. The registry also records new
+time-bounded candidates for Combat Academy's preliminary autumn schedule and
+HIPKO Metsälä's summer PDF, plus a corrected summer end date for Loop Martial
+Arts.
+
 ## Updating the registry
 
 For every review:
@@ -78,13 +88,15 @@ For every review:
    timestamp.
 3. Update seasonal `validFrom` and `validThrough` boundaries. Never extend a
    seasonal candidate beyond its stated end date.
-4. Keep uncertain or conflicting information out of published event data and
+4. Store exact calendar entries and explicit cancellations in `datedOpenMats`.
+   A cancellation must use `cancelled_do_not_publish`.
+5. Keep uncertain or conflicting information out of published event data and
    describe the unresolved point in `monitoringNotes`.
-5. Preserve an existing verified event if one source check fails. Source
+6. Preserve an existing verified event if one source check fails. Source
    failure and event expiration are separate states.
-6. Before automating a source, review its terms, `robots.txt`, request rate and
+7. Before automating a source, review its terms, `robots.txt`, request rate and
    available structured feeds. Do not bypass login, CAPTCHA or access controls.
-7. Run `pnpm validate` before committing registry changes.
+8. Run `pnpm validate` before committing registry changes.
 
 Broad web discovery should periodically look for new venues, renamed gyms and
 changed official channels in all four cities. Routine checks should start from

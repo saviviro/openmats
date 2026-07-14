@@ -45,12 +45,33 @@ describe("source registry", () => {
 
   it("only marks public candidates ready for event review", () => {
     for (const venue of registry.venues) {
-      for (const candidate of venue.candidateOpenMats) {
+      for (const candidate of [
+        ...venue.candidateOpenMats,
+        ...venue.datedOpenMats,
+      ]) {
         if (candidate.publishStatus === "ready_for_event_review") {
           expect(
             ["public_confirmed", "public_with_conditions", "mixed"],
             venue.id,
           ).toContain(venue.openMatAccess);
+          expect(candidate.disciplines.length, venue.id).toBeGreaterThan(0);
+        }
+      }
+    }
+  });
+
+  it("keeps dated open mats unique and cancellations out of publication", () => {
+    for (const venue of registry.venues) {
+      const identities = venue.datedOpenMats.map(
+        ({ date, startTime }) => `${date}-${startTime}`,
+      );
+      expect(new Set(identities).size, venue.id).toBe(identities.length);
+
+      for (const openMat of venue.datedOpenMats) {
+        if (openMat.status === "cancelled") {
+          expect(openMat.publishStatus, venue.id).toBe(
+            "cancelled_do_not_publish",
+          );
         }
       }
     }

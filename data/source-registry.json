@@ -2,6 +2,8 @@
   "version": 1,
   "timezone": "Europe/Helsinki",
   "checkedAt": "2026-07-14T13:59:15+03:00",
+  "discoveryReviewedAt": "2026-07-14T15:00:54+03:00",
+  "discoveryReviewNotes": "A broad official-source review across Helsinki, Espoo, Vantaa and Kauniainen found no additional in-scope active venue beyond the maintained baseline. New dated and seasonal open-mat evidence was added to existing venue records; out-of-scope neighboring municipalities and non-BJJ wrestling sessions were excluded.",
   "scopeCities": ["Helsinki", "Espoo", "Vantaa", "Kauniainen"],
   "coverage": [
     {
@@ -59,11 +61,18 @@
           "url": "https://www.artofgroundgames.com/schedule",
           "format": "dynamic",
           "priority": 1
+        },
+        {
+          "type": "official_visitor_policy",
+          "label": "Art of Ground Games open mat information",
+          "url": "https://www.artofgroundgames.com/classes/open-mat",
+          "format": "html",
+          "priority": 1
         }
       ],
       "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "The schedule is shared by multiple locations; retain the selected location when collecting a session."
+      "checkedAt": "2026-07-14T15:00:54+03:00",
+      "monitoringNotes": "The schedule is shared by multiple locations; retain the selected location and any session-specific member, belt or equipment restriction when collecting an open mat."
     },
     {
       "id": "aogg-sornainen",
@@ -90,11 +99,18 @@
           "url": "https://www.artofgroundgames.com/schedule",
           "format": "dynamic",
           "priority": 1
+        },
+        {
+          "type": "official_visitor_policy",
+          "label": "Art of Ground Games open mat information",
+          "url": "https://www.artofgroundgames.com/classes/open-mat",
+          "format": "html",
+          "priority": 1
         }
       ],
       "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "The schedule is shared by multiple locations; retain the selected location when collecting a session."
+      "checkedAt": "2026-07-14T15:00:54+03:00",
+      "monitoringNotes": "The schedule is shared by multiple locations; retain the selected location and any session-specific member, belt or equipment restriction when collecting an open mat."
     },
     {
       "id": "hipko-metsala",
@@ -128,11 +144,39 @@
           "url": "https://www.hipko.fi/yleinen/hipko-naisten-open-matit-kevaalla-2026/",
           "format": "html",
           "priority": 2
+        },
+        {
+          "type": "official_schedule",
+          "label": "HIPKO Metsälä summer schedule 2026",
+          "url": "https://www.hipko.fi/wp-content/uploads/2026/05/Metsala_kesa_2026.pdf",
+          "format": "pdf",
+          "priority": 1
         }
       ],
-      "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "Do not infer public access from the words open mat; the PDF schedule can explicitly restrict a session to members."
+      "candidateOpenMats": [
+        {
+          "weekday": 6,
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "disciplines": ["bjj"],
+          "publishStatus": "needs_access_confirmation",
+          "validFrom": "2026-06-15",
+          "validThrough": "2026-08-09",
+          "notes": "The summer PDF labels this BJJ open mat as unsupervised but does not state outside-club access."
+        },
+        {
+          "weekday": 7,
+          "startTime": "15:00",
+          "endTime": "17:00",
+          "disciplines": ["bjj"],
+          "publishStatus": "needs_access_confirmation",
+          "validFrom": "2026-06-15",
+          "validThrough": "2026-08-09",
+          "notes": "The summer PDF labels this BJJ open mat as unsupervised but does not state outside-club access."
+        }
+      ],
+      "checkedAt": "2026-07-14T15:00:54+03:00",
+      "monitoringNotes": "Do not infer public access from the words open mat. The same PDF explicitly limits other general open-mat slots to HIPKO members, while these BJJ rows do not state eligibility."
     },
     {
       "id": "hipko-itakeskus",
@@ -206,7 +250,7 @@
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
       "openMatAccess": "unconfirmed",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official seasonal timetable includes BJJ, submission-wrestling and MMA open mats. The page does not state a general outside-club visitor policy.",
+      "evidenceSummary": "The preliminary 17 August–19 December 2026 timetable includes a Friday BJJ, submission-wrestling and free-wrestling open mat. The page does not state a general outside-club visitor policy.",
       "sources": [
         {
           "type": "official_schedule",
@@ -216,9 +260,20 @@
           "priority": 1
         }
       ],
-      "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "The timetable changes by season. Confirm visitor access before creating events."
+      "candidateOpenMats": [
+        {
+          "weekday": 5,
+          "startTime": "17:30",
+          "endTime": "19:00",
+          "disciplines": ["bjj", "submission_wrestling"],
+          "publishStatus": "needs_access_confirmation",
+          "validFrom": "2026-08-17",
+          "validThrough": "2026-12-19",
+          "notes": "The autumn timetable is marked preliminary and does not state outside-club access."
+        }
+      ],
+      "checkedAt": "2026-07-14T15:00:54+03:00",
+      "monitoringNotes": "Recheck the preliminary autumn timetable after 17 August and confirm visitor access before creating events."
     },
     {
       "id": "loop-pitajanmaki",
@@ -247,13 +302,13 @@
           "endTime": "12:00",
           "disciplines": ["bjj"],
           "publishStatus": "needs_access_confirmation",
-          "validFrom": null,
-          "validThrough": null,
+          "validFrom": "2026-06-01",
+          "validThrough": "2026-08-02",
           "notes": "Shown in the summer 2026 schedule; visitor eligibility is not stated."
         }
       ],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "Confirm the seasonal validity range and outside-club access before publication."
+      "checkedAt": "2026-07-14T15:00:54+03:00",
+      "monitoringNotes": "The summer slot expires after 2 August 2026. Confirm outside-club access before publication and replace it when the autumn schedule appears."
     },
     {
       "id": "dojo-helsinki-punavuori",
@@ -261,7 +316,7 @@
       "venueName": "Punavuori",
       "status": "active",
       "city": "Helsinki",
-      "address": "Pursimiehenkatu 14, 00150 Helsinki",
+      "address": "Pursimiehenkatu 14, 00140 Helsinki",
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "unconfirmed",
       "collectionReadiness": "manual_review",
@@ -287,7 +342,7 @@
           "notes": "The official timetable names the session open mat but does not state visitor access."
         }
       ],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
+      "checkedAt": "2026-07-14T15:00:54+03:00",
       "monitoringNotes": "Confirm access and any holiday exceptions before publication."
     },
     {
@@ -425,19 +480,19 @@
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
       "openMatAccess": "unconfirmed",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official summer 2026 schedule lists two open sparring sessions. The page does not confirm that the word open means admission from other clubs.",
+      "evidenceSummary": "The official calendar lists exact monthly open mats through December 2026 and explicitly marks the 29 November session cancelled. The summer schedule also lists two open sparring sessions. Neither source confirms admission from other clubs.",
       "sources": [
         {
-          "type": "official_schedule",
-          "label": "GB Gym summer schedule",
-          "url": "https://www.gbgym.com/kesaaikataulu/",
+          "type": "official_event",
+          "label": "GB Gym calendar",
+          "url": "https://www.gbgym.com/kalenteri/",
           "format": "html",
           "priority": 1
         },
         {
           "type": "official_schedule",
-          "label": "GB Gym calendar",
-          "url": "https://www.gbgym.com/kalenteri/",
+          "label": "GB Gym summer schedule",
+          "url": "https://www.gbgym.com/kesaaikataulu/",
           "format": "html",
           "priority": 2
         }
@@ -447,7 +502,7 @@
           "weekday": 1,
           "startTime": "19:00",
           "endTime": "21:30",
-          "disciplines": ["bjj", "nogi", "submission_wrestling"],
+          "disciplines": ["bjj", "nogi"],
           "publishStatus": "needs_access_confirmation",
           "validFrom": "2026-06-01",
           "validThrough": "2026-08-03",
@@ -457,15 +512,62 @@
           "weekday": 5,
           "startTime": "17:30",
           "endTime": "19:00",
-          "disciplines": ["bjj", "nogi", "submission_wrestling"],
+          "disciplines": ["bjj", "nogi"],
           "publishStatus": "needs_access_confirmation",
           "validFrom": "2026-06-01",
           "validThrough": "2026-08-03",
           "notes": "Official summer timetable says open sparring; outside-club access is not stated."
         }
       ],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "The candidate expires with the summer schedule and must not recur beyond 3 August 2026."
+      "datedOpenMats": [
+        {
+          "date": "2026-08-30",
+          "startTime": "12:00",
+          "endTime": "13:30",
+          "disciplines": [],
+          "status": "scheduled",
+          "publishStatus": "needs_access_confirmation",
+          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+        },
+        {
+          "date": "2026-09-27",
+          "startTime": "12:00",
+          "endTime": "13:30",
+          "disciplines": [],
+          "status": "scheduled",
+          "publishStatus": "needs_access_confirmation",
+          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+        },
+        {
+          "date": "2026-10-25",
+          "startTime": "12:00",
+          "endTime": "13:30",
+          "disciplines": [],
+          "status": "scheduled",
+          "publishStatus": "needs_access_confirmation",
+          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+        },
+        {
+          "date": "2026-11-29",
+          "startTime": "12:00",
+          "endTime": "13:30",
+          "disciplines": [],
+          "status": "cancelled",
+          "publishStatus": "cancelled_do_not_publish",
+          "notes": "The official calendar explicitly cancels this open mat because of a junior competition."
+        },
+        {
+          "date": "2026-12-27",
+          "startTime": "12:00",
+          "endTime": "13:30",
+          "disciplines": [],
+          "status": "scheduled",
+          "publishStatus": "needs_access_confirmation",
+          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+        }
+      ],
+      "checkedAt": "2026-07-14T15:00:54+03:00",
+      "monitoringNotes": "There is no dated July open mat in the official calendar. Summer recurring candidates expire after 3 August. Recheck exact monthly dates for changes and obtain an official outside-club visitor rule before publication."
     },
     {
       "id": "combat-society-malmi",
@@ -672,11 +774,18 @@
           "url": "https://www.artofgroundgames.com/schedule",
           "format": "dynamic",
           "priority": 1
+        },
+        {
+          "type": "official_visitor_policy",
+          "label": "Art of Ground Games open mat information",
+          "url": "https://www.artofgroundgames.com/classes/open-mat",
+          "format": "html",
+          "priority": 1
         }
       ],
       "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "The schedule is shared by multiple locations; retain the selected location when collecting a session."
+      "checkedAt": "2026-07-14T15:00:54+03:00",
+      "monitoringNotes": "The schedule is shared by multiple locations; retain the selected location and any session-specific member, belt or equipment restriction when collecting an open mat."
     },
     {
       "id": "hipko-leppavaara",

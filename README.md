@@ -49,6 +49,8 @@ See [AGENTS.md](AGENTS.md) for the current project conventions and operating
 rules. See [docs/source-registry.md](docs/source-registry.md) for the first
 official-source mapping and the distinction between an open-mat label and
 confirmed outside-club access. See
+[docs/source-monitoring.md](docs/source-monitoring.md) for the maintained
+check order, cadence and high-yield official sources. See
 [docs/event-publication.md](docs/event-publication.md) for the first dated-event
 window, exception handling and a documented blocked source conflict.
 

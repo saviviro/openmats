@@ -11,6 +11,7 @@ Projektin omistaja aloittaa verkkokehityksen ja julkaisemisen perusteista. Kerro
 - Keskustele käyttäjän kanssa ensisijaisesti suomeksi.
 - Käytä lähdekoodissa, tiedostonimissä, tietokentissä ja teknisessä dokumentaatiossa selkeää englantia.
 - Käyttöliittymän ensisijainen kieli on suomi. Rakenne ei saa estää myöhempää englanninkielistä versiota.
+- Käytä käyttöliittymässä ja käyttäjäviestinnässä termiä `open mat`. Älä suomenna sitä muotoon "avoin matto" tai käytä pelkkää matto-sanaa sen korvikkeena. Suomenkieliset taivutukset, kuten "open matit", ovat sallittuja.
 
 ## MVP:n rajaus
 
