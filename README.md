@@ -11,10 +11,10 @@ verified.
 
 ## Project status
 
-The first mobile-friendly static website foundation and the initial verified
-metropolitan-area source registry are under development. The development page
-still uses clearly labelled fictional data: no example event shown there is a
-real training session.
+The first mobile-friendly static website foundation, metropolitan-area source
+registry and a limited window of verified real events are under development.
+Recurring timetables are converted into dated events only through an explicitly
+reviewed publication limit.
 
 ## Planned approach
 
@@ -48,7 +48,9 @@ The initial release covers the full Helsinki metropolitan area:
 See [AGENTS.md](AGENTS.md) for the current project conventions and operating
 rules. See [docs/source-registry.md](docs/source-registry.md) for the first
 official-source mapping and the distinction between an open-mat label and
-confirmed outside-club access.
+confirmed outside-club access. See
+[docs/event-publication.md](docs/event-publication.md) for the first dated-event
+window, exception handling and a documented blocked source conflict.
 
 ## Development
 
@@ -77,7 +79,7 @@ build. Do not commit API keys, access tokens, or local environment files.
 ## Project structure
 
 ```text
-data/                  maintained source registry
+data/                  maintained source and recurring-event registries
 docs/                  decisions and collection documentation
 src/components/        reusable Astro interface components
 src/data/              version-controlled event data

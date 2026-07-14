@@ -36,6 +36,7 @@ export const openMatCandidateSchema = z
       "ready_for_event_review",
       "needs_access_confirmation",
       "members_only_do_not_publish",
+      "blocked_by_source_conflict",
     ]),
     validFrom: isoDateSchema.nullable(),
     validThrough: isoDateSchema.nullable(),

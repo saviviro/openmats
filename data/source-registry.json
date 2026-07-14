@@ -911,8 +911,8 @@
       "address": "Rajatorpantie 27, 01650 Vantaa",
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
       "openMatAccess": "public_with_conditions",
-      "collectionReadiness": "ready",
-      "evidenceSummary": "The official summer 2026 schedule lists a Sunday open mat, explicitly welcomes visitors from other clubs and instructs them to arrive before the door locks.",
+      "collectionReadiness": "manual_review",
+      "evidenceSummary": "The official source explicitly welcomes outside-club visitors, but its recently indexed summer schedule and current live content conflict on the end time. No event should be published until the current time is unambiguous.",
       "sources": [
         {
           "type": "official_schedule",
@@ -928,14 +928,14 @@
           "startTime": "12:00",
           "endTime": "13:30",
           "disciplines": ["bjj", "nogi", "submission_wrestling"],
-          "publishStatus": "ready_for_event_review",
+          "publishStatus": "blocked_by_source_conflict",
           "validFrom": "2026-06-01",
           "validThrough": "2026-08-09",
-          "notes": "Visitors are welcome but must be at the door before the session starts because access is code-controlled."
+          "notes": "The indexed summer schedule says 12:00–13:30 through 9 August, while the live official page now says 12:00–14:00 without an effective date."
         }
       ],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "The candidate expires after 9 August 2026; use the next seasonal timetable after that."
+      "checkedAt": "2026-07-14T14:19:46+03:00",
+      "monitoringNotes": "Visitor access is confirmed, including the before-start door instruction. Resolve the official end-time conflict before materializing any date."
     },
     {
       "id": "combat-academy-myyrmaki",

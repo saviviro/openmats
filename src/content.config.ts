@@ -28,6 +28,16 @@ const eventSchema = z
     sourceUrl: z.url(),
     sourceLabel: z.string().min(2),
     verifiedAt: z.iso.datetime({ offset: true }),
+    schedule: z.object({
+      seriesId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+      validFrom: z.iso.date().nullable(),
+      validThrough: z.iso.date().nullable(),
+      materializedThrough: z.iso.date(),
+      exceptionStatus: z.enum(["none_found", "confirmation_required"]),
+      exceptionCheckedAt: z.iso.datetime({ offset: true }),
+      exceptionNote: z.string().min(10),
+      supportingSourceUrls: z.array(z.url()),
+    }),
     isExample: z.boolean(),
   })
   .refine((event) => Date.parse(event.endAt) > Date.parse(event.startAt), {

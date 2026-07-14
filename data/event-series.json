@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "checkedAt": "2026-07-14T14:19:46+03:00",
+  "window": {
+    "from": "2026-07-15",
+    "through": "2026-08-09",
+    "timezone": "Europe/Helsinki",
+    "utcOffset": "+03:00"
+  },
+  "series": [
+    {
+      "id": "hjjk-saturday-open-mat",
+      "venueId": "helsingin-ju-jutsuklubi-kaapelitehdas",
+      "publicationStatus": "publish",
+      "weekday": 6,
+      "startTime": "13:00",
+      "endTime": "15:00",
+      "validFrom": null,
+      "validThrough": null,
+      "excludedDates": [],
+      "primarySourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
+      "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"],
+      "exceptionCheck": {
+        "result": "none_found",
+        "checkedAt": "2026-07-14T14:19:46+03:00",
+        "notes": "The official BJJ page says the open mat is held only when no other event uses the gym. The official event list shows no conflicting BJJ event during the materialization window; the next listed BJJ event is 22–23 August 2026."
+      }
+    },
+    {
+      "id": "tundra-saturday-open-mat",
+      "venueId": "tundra-suomenoja",
+      "publicationStatus": "publish_with_confirmation",
+      "weekday": 6,
+      "startTime": "11:15",
+      "endTime": "12:45",
+      "validFrom": null,
+      "validThrough": null,
+      "excludedDates": [],
+      "primarySourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
+      "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"],
+      "exceptionCheck": {
+        "result": "confirmation_required",
+        "checkedAt": "2026-07-14T14:19:46+03:00",
+        "notes": "The official schedule says training mostly continues normally in summer but exceptions may occur, and asks visitors to contact the gym before attending. No exact cancelled dates are published."
+      }
+    },
+    {
+      "id": "mma-vantaa-sunday-open-mat",
+      "venueId": "mma-vantaa-martinlaakso",
+      "publicationStatus": "blocked_conflicting_source",
+      "weekday": 7,
+      "startTime": "12:00",
+      "endTime": "13:30",
+      "validFrom": "2026-06-01",
+      "validThrough": "2026-08-09",
+      "excludedDates": [],
+      "primarySourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
+      "supportingSourceUrls": [
+        "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
+      ],
+      "exceptionCheck": {
+        "result": "conflict_found",
+        "checkedAt": "2026-07-14T14:19:46+03:00",
+        "notes": "A recent official-site search result identifies the summer schedule as 1 June–9 August 2026 and 12:00–13:30. The same live official URL now displays 12:00–14:00 without an effective date. No occurrence is published until the current time is unambiguous."
+      }
+    }
+  ]
+}

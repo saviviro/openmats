@@ -55,11 +55,13 @@ such as _vapaavuoro_, _omatoimi_ and _avoin sparrivuoro_.
 - `planned`: the venue has been announced but has not opened with complete
   location and schedule information.
 
-The initial collection-ready sources are Helsingin Ju-jutsuklubi at
-Kaapelitehdas, Tundra Jiu-Jitsu in Suomenoja and MMA Vantaa in Martinlaakso.
-Buli's weekly open mat has documented conditions and is retained for manual
-event review. Art of Ground Games has a clear visitor policy, but its dynamic,
-multi-location schedule still requires a location-aware collector.
+The first materialized sources are Helsingin Ju-jutsuklubi at Kaapelitehdas
+and Tundra Jiu-Jitsu in Suomenoja. MMA Vantaa explicitly allows visitors, but a
+conflict between its recently indexed summer timetable and the current live
+page blocks publication until the end time is unambiguous. Buli's weekly open
+mat has documented conditions and is retained for manual event review. Art of
+Ground Games has a clear visitor policy, but its dynamic, multi-location
+schedule still requires a location-aware collector.
 
 High-priority manual-review sources include Loop Martial Arts, Dojo Helsinki,
 GB Gym, Combat Academy, HIPKO, FireBody, Savate Club and Salini. Their current
