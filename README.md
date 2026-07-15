@@ -1,11 +1,11 @@
 # Open Mats Helsinki Region
 
-Open Mats Helsinki Region is a planned public website that collects Brazilian
-jiu-jitsu and submission-wrestling open mats across Helsinki, Espoo, Vantaa,
-and Kauniainen.
+Open Mats Helsinki Region is a planned public website that collects Gi (BJJ)
+and No-gi (submission-wrestling) open mats across Helsinki, Espoo, Vantaa, and
+Kauniainen.
 
-The service will help visitors compare upcoming sessions by date, sport,
-location, price, and participation requirements. Every published event must
+The service will help visitors compare upcoming sessions by date, Gi/No-gi
+format, location, price, and participation requirements. Every published event must
 retain a link to its original source and the time when the information was last
 verified.
 
@@ -36,11 +36,17 @@ The initial release covers the full Helsinki metropolitan area:
 - Vantaa
 - Kauniainen
 
+The visible city filters currently show Helsinki, Espoo and Vantaa. Kauniainen
+stays in source discovery coverage but is omitted from the filter while no
+active BJJ or No-gi venue or publishable open mat is known there.
+
 ## Data principles
 
 - Never invent missing event details.
 - Prefer the organizer's own current source over secondary listings.
 - Preserve source URLs and verification timestamps.
+- Represent event type directly as Gi, No-gi, both, or unknown; do not maintain
+  a separate sport and attire distinction in published event data.
 - Flag conflicting or uncertain information for review.
 - Treat recurring schedules, holiday exceptions, and cancellations explicitly.
 - Do not automatically remove verified events because one collection run fails.

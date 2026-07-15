@@ -49,13 +49,16 @@ describe("event series materialization", () => {
     expect(materializeOccurrenceDates(series!, registry.window)).toEqual([]);
   });
 
-  it("keeps the checked-in event file aligned with publishable series", () => {
+  it("keeps recurring checked-in events aligned with publishable series", () => {
     const expectedIds = registry.series.flatMap((series) =>
       materializeOccurrenceDates(series, registry.window).map((date) =>
         occurrenceId(series.id, date),
       ),
     );
-    const actualIds = eventsData.map(({ id }) => id);
+    const recurringSeriesIds = new Set(registry.series.map(({ id }) => id));
+    const actualIds = eventsData
+      .filter(({ schedule }) => recurringSeriesIds.has(schedule.seriesId))
+      .map(({ id }) => id);
 
     expect(actualIds.sort()).toEqual(expectedIds.sort());
   });

@@ -2,12 +2,13 @@ export const HELSINKI_TIME_ZONE = "Europe/Helsinki";
 
 export type EventStatus =
   "scheduled" | "cancelled" | "rescheduled" | "uncertain";
-export type EventSport = "bjj" | "submission-wrestling";
+export type EventFormat = "gi" | "no-gi";
+export type EventFormatState = "available" | "unavailable" | "unknown";
 
 export interface EventForDisplay {
   id: string;
   title: string;
-  sport: EventSport;
+  formats: EventFormat[] | null;
   startAt: string;
   venue: {
     name: string;
@@ -62,8 +63,22 @@ export function eventIdentity(event: EventForDisplay): string {
   return [
     normalizeIdentityPart(event.venue.name),
     event.startAt,
-    event.sport,
+    event.formats === null ? "unknown" : [...event.formats].sort().join("+"),
   ].join("|");
+}
+
+export function getEventFormatStates(
+  formats: EventFormat[] | null,
+): Array<{ format: EventFormat; state: EventFormatState }> {
+  return (["gi", "no-gi"] as const).map((format) => ({
+    format,
+    state:
+      formats === null
+        ? "unknown"
+        : formats.includes(format)
+          ? "available"
+          : "unavailable",
+  }));
 }
 
 export function findDuplicateEventIds(events: EventForDisplay[]): string[][] {

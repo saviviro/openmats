@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timezone": "Europe/Helsinki",
-  "checkedAt": "2026-07-14T13:59:15+03:00",
+  "checkedAt": "2026-07-15T23:05:30+03:00",
   "discoveryReviewedAt": "2026-07-14T15:00:54+03:00",
   "discoveryReviewNotes": "A broad official-source review across Helsinki, Espoo, Vantaa and Kauniainen found no additional in-scope active venue beyond the maintained baseline. New dated and seasonal open-mat evidence was added to existing venue records; out-of-scope neighboring municipalities and non-BJJ wrestling sessions were excluded.",
   "scopeCities": ["Helsinki", "Espoo", "Vantaa", "Kauniainen"],
@@ -478,9 +478,9 @@
       "city": "Helsinki",
       "address": "Mekaanikonkatu 21, 00880 Helsinki",
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
-      "openMatAccess": "unconfirmed",
-      "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official calendar lists exact monthly open mats through December 2026 and explicitly marks the 29 November session cancelled. The summer schedule also lists two open sparring sessions. Neither source confirms admission from other clubs.",
+      "openMatAccess": "public_confirmed",
+      "collectionReadiness": "ready",
+      "evidenceSummary": "The official calendar lists exact monthly open mats through December 2026 and explicitly marks the 29 November session cancelled. The project owner confirmed on 14 July 2026 that the calendar open mats are free, open to all practitioners and allow gi or no-gi.",
       "sources": [
         {
           "type": "official_event",
@@ -524,28 +524,28 @@
           "date": "2026-08-30",
           "startTime": "12:00",
           "endTime": "13:30",
-          "disciplines": [],
+          "disciplines": ["bjj", "nogi"],
           "status": "scheduled",
-          "publishStatus": "needs_access_confirmation",
-          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+          "publishStatus": "ready_for_event_review",
+          "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         },
         {
           "date": "2026-09-27",
           "startTime": "12:00",
           "endTime": "13:30",
-          "disciplines": [],
+          "disciplines": ["bjj", "nogi"],
           "status": "scheduled",
-          "publishStatus": "needs_access_confirmation",
-          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+          "publishStatus": "ready_for_event_review",
+          "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         },
         {
           "date": "2026-10-25",
           "startTime": "12:00",
           "endTime": "13:30",
-          "disciplines": [],
+          "disciplines": ["bjj", "nogi"],
           "status": "scheduled",
-          "publishStatus": "needs_access_confirmation",
-          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+          "publishStatus": "ready_for_event_review",
+          "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         },
         {
           "date": "2026-11-29",
@@ -560,14 +560,14 @@
           "date": "2026-12-27",
           "startTime": "12:00",
           "endTime": "13:30",
-          "disciplines": [],
+          "disciplines": ["bjj", "nogi"],
           "status": "scheduled",
-          "publishStatus": "needs_access_confirmation",
-          "notes": "Exact date and time are listed in the official calendar; outside-club access and price are not stated."
+          "publishStatus": "ready_for_event_review",
+          "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         }
       ],
-      "checkedAt": "2026-07-14T15:00:54+03:00",
-      "monitoringNotes": "There is no dated July open mat in the official calendar. Summer recurring candidates expire after 3 August. Recheck exact monthly dates for changes and obtain an official outside-club visitor rule before publication."
+      "checkedAt": "2026-07-14T16:18:00+03:00",
+      "monitoringNotes": "There is no dated July open mat in the official calendar. The exact open mats on 30 August, 27 September, 25 October and 27 December are published using the calendar dates and times plus the project owner's 14 July 2026 confirmation of free access for all practitioners and gi/no-gi. The 29 November event is explicitly cancelled and must remain unpublished. Summer recurring candidates expire after 3 August."
     },
     {
       "id": "combat-society-malmi",
@@ -1043,7 +1043,7 @@
           "notes": "The indexed summer schedule says 12:00–13:30 through 9 August, while the live official page now says 12:00–14:00 without an effective date."
         }
       ],
-      "checkedAt": "2026-07-14T14:19:46+03:00",
+      "checkedAt": "2026-07-15T23:05:30+03:00",
       "monitoringNotes": "Visitor access is confirmed, including the before-start door instruction. Resolve the official end-time conflict before materializing any date."
     },
     {
@@ -1067,7 +1067,7 @@
         }
       ],
       "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
+      "checkedAt": "2026-07-15T23:05:30+03:00",
       "monitoringNotes": "Continue to monitor because disciplines offered at this location can change seasonally."
     },
     {
@@ -1098,7 +1098,7 @@
         }
       ],
       "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
+      "checkedAt": "2026-07-15T23:05:30+03:00",
       "monitoringNotes": "Official one-off open-mat announcements may be publishable, but the regular sparring slot needs access confirmation."
     },
     {

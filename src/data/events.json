@@ -1,9 +1,8 @@
 [
   {
     "id": "tundra-saturday-open-mat-2026-07-18",
-    "title": "Gi & no-gi open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-07-18T11:15:00+03:00",
     "endAt": "2026-07-18T12:45:00+03:00",
     "venue": {
@@ -39,9 +38,8 @@
   },
   {
     "id": "hjjk-saturday-open-mat-2026-07-18",
-    "title": "BJJ open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-07-18T13:00:00+03:00",
     "endAt": "2026-07-18T15:00:00+03:00",
     "venue": {
@@ -77,9 +75,8 @@
   },
   {
     "id": "tundra-saturday-open-mat-2026-07-25",
-    "title": "Gi & no-gi open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-07-25T11:15:00+03:00",
     "endAt": "2026-07-25T12:45:00+03:00",
     "venue": {
@@ -115,9 +112,8 @@
   },
   {
     "id": "hjjk-saturday-open-mat-2026-07-25",
-    "title": "BJJ open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-07-25T13:00:00+03:00",
     "endAt": "2026-07-25T15:00:00+03:00",
     "venue": {
@@ -153,9 +149,8 @@
   },
   {
     "id": "tundra-saturday-open-mat-2026-08-01",
-    "title": "Gi & no-gi open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-08-01T11:15:00+03:00",
     "endAt": "2026-08-01T12:45:00+03:00",
     "venue": {
@@ -191,9 +186,8 @@
   },
   {
     "id": "hjjk-saturday-open-mat-2026-08-01",
-    "title": "BJJ open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-08-01T13:00:00+03:00",
     "endAt": "2026-08-01T15:00:00+03:00",
     "venue": {
@@ -229,9 +223,8 @@
   },
   {
     "id": "tundra-saturday-open-mat-2026-08-08",
-    "title": "Gi & no-gi open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-08-08T11:15:00+03:00",
     "endAt": "2026-08-08T12:45:00+03:00",
     "venue": {
@@ -267,9 +260,8 @@
   },
   {
     "id": "hjjk-saturday-open-mat-2026-08-08",
-    "title": "BJJ open mat",
-    "sport": "bjj",
-    "uniform": "mixed",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
     "startAt": "2026-08-08T13:00:00+03:00",
     "endAt": "2026-08-08T15:00:00+03:00",
     "venue": {
@@ -300,6 +292,154 @@
       "exceptionCheckedAt": "2026-07-14T14:19:46+03:00",
       "exceptionNote": "Vuoro järjestetään vain, jos salissa ei ole muuta tapahtumaa. Tarkistetulla tapahtumajaksolla ei löytynyt päällekkäistä BJJ-tapahtumaa.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
+    },
+    "isExample": false
+  },
+  {
+    "id": "gb-gym-monthly-open-mat-2026-08-30",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-08-30T12:00:00+03:00",
+    "endAt": "2026-08-30T13:30:00+03:00",
+    "venue": {
+      "name": "GB Gym",
+      "streetAddress": "Mekaanikonkatu 21",
+      "postalCode": "00880",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.gbgym.com/kalenteri/",
+    "sourceLabel": "GB Gymin kalenteri 2026",
+    "verifiedAt": "2026-07-14T16:18:00+03:00",
+    "schedule": {
+      "seriesId": "gb-gym-monthly-open-mat",
+      "validFrom": "2026-08-30",
+      "validThrough": "2026-12-27",
+      "materializedThrough": "2026-12-27",
+      "exceptionStatus": "confirmation_required",
+      "exceptionCheckedAt": "2026-07-14T16:18:00+03:00",
+      "exceptionNote": "Päivä ja aika ovat virallisessa kalenterissa. Maksuttomuus, avoin osallistuminen ja gi/no-gi-varustus on vahvistettu projektin omistajalta 14.7.2026.",
+      "supportingSourceUrls": []
+    },
+    "isExample": false
+  },
+  {
+    "id": "gb-gym-monthly-open-mat-2026-09-27",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-09-27T12:00:00+03:00",
+    "endAt": "2026-09-27T13:30:00+03:00",
+    "venue": {
+      "name": "GB Gym",
+      "streetAddress": "Mekaanikonkatu 21",
+      "postalCode": "00880",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.gbgym.com/kalenteri/",
+    "sourceLabel": "GB Gymin kalenteri 2026",
+    "verifiedAt": "2026-07-14T16:18:00+03:00",
+    "schedule": {
+      "seriesId": "gb-gym-monthly-open-mat",
+      "validFrom": "2026-08-30",
+      "validThrough": "2026-12-27",
+      "materializedThrough": "2026-12-27",
+      "exceptionStatus": "confirmation_required",
+      "exceptionCheckedAt": "2026-07-14T16:18:00+03:00",
+      "exceptionNote": "Päivä ja aika ovat virallisessa kalenterissa. Maksuttomuus, avoin osallistuminen ja gi/no-gi-varustus on vahvistettu projektin omistajalta 14.7.2026.",
+      "supportingSourceUrls": []
+    },
+    "isExample": false
+  },
+  {
+    "id": "gb-gym-monthly-open-mat-2026-10-25",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-10-25T12:00:00+02:00",
+    "endAt": "2026-10-25T13:30:00+02:00",
+    "venue": {
+      "name": "GB Gym",
+      "streetAddress": "Mekaanikonkatu 21",
+      "postalCode": "00880",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.gbgym.com/kalenteri/",
+    "sourceLabel": "GB Gymin kalenteri 2026",
+    "verifiedAt": "2026-07-14T16:18:00+03:00",
+    "schedule": {
+      "seriesId": "gb-gym-monthly-open-mat",
+      "validFrom": "2026-08-30",
+      "validThrough": "2026-12-27",
+      "materializedThrough": "2026-12-27",
+      "exceptionStatus": "confirmation_required",
+      "exceptionCheckedAt": "2026-07-14T16:18:00+03:00",
+      "exceptionNote": "Päivä ja aika ovat virallisessa kalenterissa. Maksuttomuus, avoin osallistuminen ja gi/no-gi-varustus on vahvistettu projektin omistajalta 14.7.2026.",
+      "supportingSourceUrls": []
+    },
+    "isExample": false
+  },
+  {
+    "id": "gb-gym-monthly-open-mat-2026-12-27",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-12-27T12:00:00+02:00",
+    "endAt": "2026-12-27T13:30:00+02:00",
+    "venue": {
+      "name": "GB Gym",
+      "streetAddress": "Mekaanikonkatu 21",
+      "postalCode": "00880",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.gbgym.com/kalenteri/",
+    "sourceLabel": "GB Gymin kalenteri 2026",
+    "verifiedAt": "2026-07-14T16:18:00+03:00",
+    "schedule": {
+      "seriesId": "gb-gym-monthly-open-mat",
+      "validFrom": "2026-08-30",
+      "validThrough": "2026-12-27",
+      "materializedThrough": "2026-12-27",
+      "exceptionStatus": "confirmation_required",
+      "exceptionCheckedAt": "2026-07-14T16:18:00+03:00",
+      "exceptionNote": "Päivä ja aika ovat virallisessa kalenterissa. Maksuttomuus, avoin osallistuminen ja gi/no-gi-varustus on vahvistettu projektin omistajalta 14.7.2026.",
+      "supportingSourceUrls": []
     },
     "isExample": false
   }

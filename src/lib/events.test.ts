@@ -5,6 +5,7 @@ import {
   findDuplicateEventIds,
   formatEventDate,
   formatEventTime,
+  getEventFormatStates,
   sortEvents,
   type EventForDisplay,
 } from "./events";
@@ -12,7 +13,7 @@ import {
 const event = (overrides: Partial<EventForDisplay> = {}): EventForDisplay => ({
   id: "event-1",
   title: "Example open mat",
-  sport: "bjj",
+  formats: ["gi"],
   startAt: "2026-08-01T12:00:00+03:00",
   venue: { name: "Example Gym", city: "Helsinki" },
   ...overrides,
@@ -41,18 +42,33 @@ describe("event utilities", () => {
       eventIdentity(
         event({ venue: { name: "  EXAMPLE   GYM ", city: "Helsinki" } }),
       ),
-    ).toBe("example gym|2026-08-01T12:00:00+03:00|bjj");
+    ).toBe("example gym|2026-08-01T12:00:00+03:00|gi");
   });
 
-  it("reports events with the same venue, time, and sport as duplicates", () => {
+  it("reports events with the same venue, time, and formats as duplicates", () => {
     const duplicate = event({ id: "event-2", title: "A different title" });
     const different = event({
       id: "event-3",
-      sport: "submission-wrestling",
+      formats: ["no-gi"],
     });
 
     expect(findDuplicateEventIds([event(), duplicate, different])).toEqual([
       ["event-1", "event-2"],
+    ]);
+  });
+
+  it("maps verified and unknown formats to display states", () => {
+    expect(getEventFormatStates(["gi", "no-gi"])).toEqual([
+      { format: "gi", state: "available" },
+      { format: "no-gi", state: "available" },
+    ]);
+    expect(getEventFormatStates(["gi"])).toEqual([
+      { format: "gi", state: "available" },
+      { format: "no-gi", state: "unavailable" },
+    ]);
+    expect(getEventFormatStates(null)).toEqual([
+      { format: "gi", state: "unknown" },
+      { format: "no-gi", state: "unknown" },
     ]);
   });
 });

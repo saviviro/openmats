@@ -72,11 +72,13 @@ enough evidence to publish outside-club access automatically.
 GB Gym's official calendar currently contains exact monthly open mats on 30
 August, 27 September, 25 October and 27 December 2026. It explicitly cancels
 the 29 November entry, and contains no dated July open mat. These observations
-are stored under `datedOpenMats`, but the scheduled dates remain unpublished
-until official outside-club access is confirmed. The registry also records new
-time-bounded candidates for Combat Academy's preliminary autumn schedule and
-HIPKO Metsälä's summer PDF, plus a corrected summer end date for Loop Martial
-Arts.
+are stored under `datedOpenMats`. The four scheduled dates are published with
+their official dates and times. The project owner confirmed on 14 July 2026 that
+they are free, open to all practitioners and allow gi or no-gi; this provenance
+is kept separate from the official calendar evidence. The registry also records
+new time-bounded candidates for Combat Academy's preliminary autumn schedule
+and HIPKO Metsälä's summer PDF, plus a corrected summer end date for Loop
+Martial Arts.
 
 ## Updating the registry
 

@@ -5,6 +5,7 @@ import {
   formatEventDate,
   formatEventTime,
   formatVerifiedDate,
+  getEventFormatStates,
 } from "../lib/events";
 
 interface Props {
@@ -15,12 +16,18 @@ const { event } = Astro.props;
 const { data } = event;
 const address = `${data.venue.streetAddress}, ${data.venue.postalCode} ${data.venue.city}`;
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
-const sportLabel = data.sport === "bjj" ? "BJJ" : "Lukkopaini";
-const uniformLabel = {
-  gi: "Gi",
-  "no-gi": "No-gi",
-  mixed: "Gi & no-gi",
-}[data.uniform];
+const formatLabels = { gi: "Gi", "no-gi": "No-gi" } as const;
+const formatStateLabels = {
+  available: "sallittu",
+  unavailable: "ei sallittu",
+  unknown: "ei tietoa",
+} as const;
+const formatStateIcons = {
+  available: "✓",
+  unavailable: "×",
+  unknown: "?",
+} as const;
+const formatStates = getEventFormatStates(data.formats);
 const statusLabel = {
   scheduled: null,
   cancelled: "Peruttu",
@@ -33,7 +40,7 @@ const statusLabel = {
   class="event-card"
   data-event-card
   data-city={data.venue.city}
-  data-sport={data.sport}
+  data-formats={data.formats?.join(" ") ?? ""}
   aria-labelledby={`event-${event.id}`}
 >
   <div
@@ -60,9 +67,25 @@ const statusLabel = {
   </div>
 
   <div class="event-card__content">
-    <div class="event-card__labels">
-      <span class="pill pill--sport">{sportLabel}</span>
-      <span class="pill">{uniformLabel}</span>
+    <div class="event-card__labels" aria-label="Open matin tyyli">
+      {
+        formatStates.map(({ format, state }) => (
+          <span
+            class:list={["format-pill", `format-pill--${state}`]}
+            aria-label={`${formatLabels[format]}: ${formatStateLabels[state]}`}
+          >
+            <span aria-hidden="true">{formatStateIcons[state]}</span>
+            {formatLabels[format]}
+          </span>
+        ))
+      }
+      {
+        data.formats === null && (
+          <span class="format-unknown-note">
+            Ei tietoa – tarkista järjestäjältä
+          </span>
+        )
+      }
       {
         statusLabel && (
           <span class:list={["pill", "pill--warning"]}>{statusLabel}</span>
@@ -107,23 +130,28 @@ const statusLabel = {
           }
         </dd>
       </div>
-      <div>
+      <div class="event-facts__source">
+        <dt>Järjestäjän sivu</dt>
+        <dd>
+          <a
+            class="source-link"
+            href={data.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Järjestäjän sivuille
+            <span aria-hidden="true">↗</span>
+            <span class="sr-only"> (avautuu uuteen välilehteen)</span>
+          </a>
+        </dd>
+      </div>
+      <div class="event-facts__exceptions">
         <dt>Poikkeukset</dt>
         <dd>{data.schedule.exceptionNote}</dd>
       </div>
     </dl>
 
     <div class="event-card__footer">
-      <a
-        class="source-link"
-        href={data.sourceUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        Tarkista järjestäjän lähde
-        <span aria-hidden="true">↗</span>
-        <span class="sr-only"> (avautuu uuteen välilehteen)</span>
-      </a>
       <span>Tarkistettu {formatVerifiedDate(data.verifiedAt)}</span>
     </div>
   </div>

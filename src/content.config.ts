@@ -5,8 +5,16 @@ import { z } from "astro/zod";
 const eventSchema = z
   .object({
     title: z.string().min(3),
-    sport: z.enum(["bjj", "submission-wrestling"]),
-    uniform: z.enum(["gi", "no-gi", "mixed"]),
+    formats: z
+      .array(z.enum(["gi", "no-gi"]))
+      .min(1)
+      .max(2)
+      .nullable()
+      .refine(
+        (formats) =>
+          formats === null || new Set(formats).size === formats.length,
+        "Event formats must be unique",
+      ),
     startAt: z.iso.datetime({ offset: true }),
     endAt: z.iso.datetime({ offset: true }),
     venue: z.object({

@@ -13,7 +13,7 @@ web search every week.
   autumn, Christmas or spring schedules are published. Expire old candidates;
   never extend them by assumption.
 - **Monthly broad discovery:** search official websites and current official
-  social channels for new or renamed BJJ, no-gi and submission-wrestling venues
+  social channels for new or renamed Gi/BJJ and No-gi/submission-wrestling venues
   in Helsinki, Espoo, Vantaa and Kauniainen.
 - **Before publishing a dated event:** check date-specific cancellations,
   holidays, competitions and access conditions again.
@@ -63,8 +63,10 @@ no additional active in-scope venue beyond the existing registry baseline.
 The review did add or refine evidence for existing venues:
 
 - GB Gym has exact calendar entries on 30 August, 27 September, 25 October and
-  27 December 2026. The 29 November entry is explicitly cancelled. No dated
-  July open mat is listed.
+  27 December 2026. The project owner confirmed on 14 July 2026 that they are
+  free, open to all practitioners and allow gi or no-gi. The 29 November entry
+  is explicitly cancelled and remains unpublished. No dated July open mat is
+  listed.
 - Combat Academy's preliminary 17 August–19 December timetable has a Friday
   17:30–19:00 open mat, with outside-club access still unconfirmed.
 - HIPKO Metsälä's 15 June–9 August PDF has Saturday and Sunday BJJ open mats at
@@ -77,6 +79,25 @@ Discovery results in Kirkkonummi, Vihti and other neighboring municipalities
 were excluded because they are outside the current four-city scope. General
 wrestling open mats were excluded when the official source did not identify BJJ,
 no-gi or submission wrestling.
+
+## Vantaa follow-up: 15 July 2026
+
+The focused Vantaa review did not produce a publishable event:
+
+- MMA Vantaa still explicitly welcomes outside-club visitors, but its official
+  live schedule says 12:00–14:00 while a recently indexed version of the same
+  official page says 12:00–13:30 for the 1 June–9 August summer period. The
+  series remains blocked instead of choosing either time by assumption.
+- Combat Academy's official schedule places its open mat in Sörnäinen,
+  Helsinki, not at the Myyrmäki venue.
+- Salini's official schedule includes Saturday BJJ sparring in Rekola but does
+  not call it a public open mat or confirm access for other clubs.
+- No current official public open mat was verified for Vantaan
+  Kamppailukeskus.
+
+Vantaa remains visible in the website filter and in active monitoring.
+Kauniainen remains in geographic discovery coverage, but is omitted from the
+visible website city list while no active venue or open mat is known there.
 
 ## Recording a review
 
