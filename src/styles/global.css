@@ -449,6 +449,12 @@ main > section,
   align-items: center;
 }
 
+.pagination__page {
+  display: inline-flex;
+  gap: 0.25em;
+  align-items: baseline;
+}
+
 .pagination button {
   min-height: 2.55rem;
   padding: 0.45rem 0.8rem;
@@ -573,6 +579,11 @@ main > section,
   line-height: 1.1;
 }
 
+.event-card h2:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
 .event-facts {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -679,11 +690,24 @@ main > section,
   padding-block: 2rem;
 }
 
-.site-footer > p {
+.site-footer__info {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: end;
+}
+
+.site-footer__info > p {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.8rem;
   text-align: right;
+}
+
+.feedback-link {
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 750;
+  text-underline-offset: 0.2em;
 }
 
 @media (max-width: 850px) {
@@ -804,7 +828,11 @@ main > section,
     justify-content: space-between;
   }
 
-  .site-footer > p {
+  .site-footer__info {
+    justify-items: start;
+  }
+
+  .site-footer__info > p {
     text-align: left;
   }
 }

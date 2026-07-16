@@ -29,6 +29,16 @@ export function sortEvents<T>(
   );
 }
 
+export function isUpcomingEvent(
+  endAt: string,
+  now: Date | number = Date.now(),
+): boolean {
+  const endTime = Date.parse(endAt);
+  const referenceTime = now instanceof Date ? now.getTime() : now;
+
+  return Number.isFinite(endTime) && endTime > referenceTime;
+}
+
 export function formatEventDate(
   isoDate: string,
   locale: Locale = "fi",

@@ -19,6 +19,10 @@ an explicitly reviewed publication limit. The Finnish home page and the English
 version at [/en/](https://openmats.pages.dev/en/) use the same event data and can
 be switched from the site header.
 
+Visitors can report incorrect information or a missing open mat through the
+public GitHub issue form linked in the site footer. Reports are reviewed against
+an official organizer source before event data changes.
+
 ## Planned approach
 
 - Astro and TypeScript for a statically generated website
@@ -29,6 +33,13 @@ be switched from the site header.
 - scheduled Codex tasks during the early phase
 - optional OpenAI API integration later if cloud-only automation is needed
 - automatic Cloudflare Pages deployment from the GitHub `main` branch
+
+The local scheduled tasks share the deterministic timestamps in
+`data/automation-state.json` and a short-lived run lock. This prevents the
+staggered weekly and monthly triggers from duplicating work. See
+[docs/source-monitoring.md](docs/source-monitoring.md) for the exact gate,
+failure and review behavior. Because the tasks use the local project, the
+computer must be awake and the Codex app running when a trigger starts.
 
 ## Geographic scope
 
@@ -99,7 +110,9 @@ src/data/              version-controlled event data
 src/lib/               event formatting and validation utilities
 src/pages/             website routes
 src/styles/            global visual styles
+.github/ISSUE_TEMPLATE/ public event correction form
 .github/workflows/     continuous integration
+scripts/               deterministic scheduled-task gate and tests
 ```
 
 ## License
