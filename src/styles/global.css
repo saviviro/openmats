@@ -563,6 +563,10 @@ main > section,
   text-transform: uppercase;
 }
 
+.event-facts__exceptions--attention dt {
+  color: #a12e21;
+}
+
 .event-facts dd {
   margin: 0;
   font-size: 0.87rem;

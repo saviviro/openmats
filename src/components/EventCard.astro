@@ -6,6 +6,7 @@ import {
   formatEventTime,
   formatVerifiedDate,
   getEventFormatStates,
+  keepEuroAmountTogether,
 } from "../lib/events";
 
 interface Props {
@@ -28,11 +29,12 @@ const formatStateIcons = {
   unknown: "?",
 } as const;
 const formatStates = getEventFormatStates(data.formats);
+const priceNote = keepEuroAmountTogether(data.price.note);
 const statusLabel = {
   scheduled: null,
   cancelled: "Peruttu",
   rescheduled: "Siirretty",
-  uncertain: "Tarkista tiedot",
+  uncertain: null,
 }[data.status];
 ---
 
@@ -117,7 +119,7 @@ const statusLabel = {
       </div>
       <div>
         <dt>Hinta</dt>
-        <dd>{data.price.note}</dd>
+        <dd>{priceNote}</dd>
       </div>
       <div>
         <dt>Kenelle</dt>
@@ -145,7 +147,13 @@ const statusLabel = {
           </a>
         </dd>
       </div>
-      <div class="event-facts__exceptions">
+      <div
+        class:list={[
+          "event-facts__exceptions",
+          data.schedule.exceptionStatus === "confirmation_required" &&
+            "event-facts__exceptions--attention",
+        ]}
+      >
         <dt>Poikkeukset</dt>
         <dd>{data.schedule.exceptionNote}</dd>
       </div>

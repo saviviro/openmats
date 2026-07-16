@@ -35,21 +35,21 @@ out of published event data.
 
 ## High-yield official sources
 
-| Organization            | What to monitor                                                       | Official source                                                                                                                                       |
-| ----------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Art of Ground Games     | Dynamic location schedule and session-specific restrictions           | [Schedule](https://www.artofgroundgames.com/schedule), [open mat information](https://www.artofgroundgames.com/classes/open-mat)                      |
-| GB Gym                  | Exact monthly dates, cancellations and seasonal recurring slots       | [Calendar](https://www.gbgym.com/kalenteri/), [summer schedule](https://www.gbgym.com/kesaaikataulu/)                                                 |
-| Combat Academy          | Seasonal validity and the preliminary autumn schedule                 | [Training schedule](https://www.combat.fi/harjoitusajat/)                                                                                             |
-| HIPKO                   | Location-specific PDFs, member-only labels and separate public events | [Schedules](https://www.hipko.fi/harjoitusajat/), [locations](https://www.hipko.fi/salit/)                                                            |
-| Helsingin Ju-jutsuklubi | Saturday slot and space-occupying exceptions                          | [BJJ training times](https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/)                                                                  |
-| Tundra Jiu-Jitsu        | Seasonal slot, price and summer confirmation requirement              | [Schedule](https://tundrajiujitsu.fi/treenit/), [prices](https://tundrajiujitsu.fi/hinnasto/)                                                         |
-| MMA Vantaa              | Current time conflict, visitor wording and exception calendar         | [Training schedule](https://www.mmavantaa.net/harjoitusajat-2/)                                                                                       |
-| Buli Jiu-Jitsu          | Weekly slot, annual open-mat membership and contact rule              | [Pricing](https://bulijj.fi/pricing), [visitor instructions](https://bulijj.fi/page/haluatko-tulla-kokeilemaan-bulin-treenej-tai-vierailemaan-meill-) |
-| Loop Martial Arts       | Seasonal end date and replacement timetable                           | [Calendar](https://www.loopmartialarts.fi/kalenteri)                                                                                                  |
-| Dojo Helsinki           | Weekly time, holidays and outside-club eligibility                    | [Training times](https://www.dojohelsinki.fi/treeniajat/)                                                                                             |
-| FireBody                | Weekly schedule and access wording                                    | [Schedule](https://firebody.fi/tuntiaikataulu/)                                                                                                       |
-| Savate Club             | Konala seasonal free-practice slots and visitor access                | [Training times](https://www.savate.com/harjoitusajat/)                                                                                               |
-| Salini Sports Center    | Weekly sparring and separately announced public events                | [Schedule](https://www.salini.fi/tuntiohjelma/)                                                                                                       |
+| Organization            | What to monitor                                                       | Official source                                                                                                                                                                                                                                                        |
+| ----------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Art of Ground Games     | Dynamic location schedule and session-specific restrictions           | [Erottaja booking](https://erottaja.artofgroundgames.com/book), [Sörnäinen booking](https://sornainen.artofgroundgames.com/book), [Kivenlahti booking](https://kivenlahti.gymdesk.com/book), [open mat information](https://www.artofgroundgames.com/classes/open-mat) |
+| GB Gym                  | Exact monthly dates, cancellations and seasonal recurring slots       | [Calendar](https://www.gbgym.com/kalenteri/), [summer schedule](https://www.gbgym.com/kesaaikataulu/)                                                                                                                                                                  |
+| Combat Academy          | Seasonal validity and the preliminary autumn schedule                 | [Training schedule](https://www.combat.fi/harjoitusajat/)                                                                                                                                                                                                              |
+| HIPKO                   | Location-specific PDFs, member-only labels and separate public events | [Schedules](https://www.hipko.fi/harjoitusajat/), [locations](https://www.hipko.fi/salit/)                                                                                                                                                                             |
+| Helsingin Ju-jutsuklubi | Saturday slot and space-occupying exceptions                          | [BJJ training times](https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/)                                                                                                                                                                                   |
+| Tundra Jiu-Jitsu        | Seasonal slot, price and summer confirmation requirement              | [Schedule](https://tundrajiujitsu.fi/harjoitusajat/), [prices](https://tundrajiujitsu.fi/hinnasto/)                                                                                                                                                                    |
+| MMA Vantaa              | Seasonal validity, visitor wording and door-access instruction        | [Training schedule](https://www.mmavantaa.net/harjoitusajat-2/)                                                                                                                                                                                                        |
+| Buli Jiu-Jitsu          | Urhea occurrence dates, annual membership and contact rule            | [Dated calendar](https://bulijj.fi/schedule), [membership](https://bulijj.fi/signup?membership=11121&type=2), [pricing](https://bulijj.fi/pricing)                                                                                                                     |
+| Loop Martial Arts       | Seasonal end date and replacement timetable                           | [Calendar](https://www.loopmartialarts.fi/kalenteri)                                                                                                                                                                                                                   |
+| Dojo Helsinki           | Weekly time, holidays and outside-club eligibility                    | [Training times](https://www.dojohelsinki.fi/treeniajat/)                                                                                                                                                                                                              |
+| FireBody                | Weekly schedule, seasonal heading and access wording                  | [Schedule](https://www.firebody.fi/viikkoaikataulu.html)                                                                                                                                                                                                               |
+| Savate Club             | Konala seasonal free-practice slots and visitor access                | [Konala summer schedule](https://www.savate.com/jatkokurssit/bjj/kesaharjoitusajat_konala.php)                                                                                                                                                                         |
+| Salini Sports Center    | Weekly sparring and separately announced public events                | [Schedule](https://www.salini.fi/tuntiohjelma/)                                                                                                                                                                                                                        |
 
 The full maintained list, including sources where no current open mat was found,
 remains in `data/source-registry.json`.
@@ -80,14 +80,14 @@ were excluded because they are outside the current four-city scope. General
 wrestling open mats were excluded when the official source did not identify BJJ,
 no-gi or submission wrestling.
 
-## Vantaa follow-up: 15 July 2026
+## Vantaa follow-up: 16 July 2026
 
-The focused Vantaa review did not produce a publishable event:
+The focused Vantaa review produced one publishable series:
 
-- MMA Vantaa still explicitly welcomes outside-club visitors, but its official
-  live schedule says 12:00–14:00 while a recently indexed version of the same
-  official page says 12:00–13:30 for the 1 June–9 August summer period. The
-  series remains blocked instead of choosing either time by assumption.
+- MMA Vantaa's live page now clearly combines the 1 June–9 August summer heading
+  with Sunday 12:00–13:30. It explicitly welcomes outside-club visitors and
+  instructs them to be at the door before the start. The previous inconsistent
+  rendering is gone, so four Sundays through 9 August are published.
 - Combat Academy's official schedule places its open mat in Sörnäinen,
   Helsinki, not at the Myyrmäki venue.
 - Salini's official schedule includes Saturday BJJ sparring in Rekola but does
@@ -98,6 +98,48 @@ The focused Vantaa review did not produce a publishable event:
 Vantaa remains visible in the website filter and in active monitoring.
 Kauniainen remains in geographic discovery coverage, but is omitted from the
 visible website city list while no active venue or open mat is known there.
+
+## Publication audit: 16 July 2026
+
+Every venue marked `ready` or `manual_review` was checked against its maintained
+official sources. The audit changed publication data only where the source was
+specific enough:
+
+- AOGG Erottaja's Gymdesk calendar has a public Sunday 12:00–14:00 No-gi open
+  mat. AOGG Sörnäinen has a Saturday 12:00–14:00 No-gi open mat for coloured
+  belts. The general visitor policy, 15-euro drop-in price and booking rule
+  apply. Kivenlahti's current open mats are explicitly for members and remain
+  unpublished.
+- MMA Vantaa's time conflict was resolved as described above and its current
+  summer Sundays were published.
+- Helsingin Ju-jutsuklubi, Tundra and GB Gym still match their published data.
+  GB Gym's November cancellation remains excluded.
+- Buli Urhea remains blocked because its recurring membership description has
+  no matching dated occurrence in the official calendar.
+- HIPKO, Combat Academy, Loop, Dojo Helsinki, FireBody, Savate Club and Salini
+  still lack a source-specific confirmation that the relevant recurring slot is
+  open to visitors, or otherwise have unresolved seasonal validity. Their
+  candidates remain unpublished.
+- Crest Center and Orion's Belt still have no verified public open mat in their
+  official schedules.
+
+The FireBody record was corrected during this audit: the official page currently
+lists Saturday BJJ self-practice at 12:00–13:00 under a spring 2026 heading. The
+previous 13:00–14:00 autumn candidate was not supported by the live source.
+
+## Buli follow-up: 16 July 2026
+
+The previous source-registry candidate was incorrectly attached to Buli
+Konepaja. The current official membership flow explicitly names `URHEA | Open
+Mat: GI & NOGI`, Sundays at 12:00, and the pricing page gives the end time as
+13:30 and the annual open-mat membership price as 25 euros. The visitor page
+requires advance contact for visitors and pre-membership trials.
+
+The dynamic official calendar was checked week by week from 19 July through 20
+September. It did not list a single Urhea open mat. Konepaja therefore has no
+open-mat candidate, while Urhea retains a blocked recurring candidate. During
+weekly checks, inspect the dated calendar first and publish only after an exact
+Urhea occurrence appears.
 
 ## Recording a review
 

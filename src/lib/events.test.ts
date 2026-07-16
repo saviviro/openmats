@@ -6,6 +6,7 @@ import {
   formatEventDate,
   formatEventTime,
   getEventFormatStates,
+  keepEuroAmountTogether,
   sortEvents,
   type EventForDisplay,
 } from "./events";
@@ -35,6 +36,16 @@ describe("event utilities", () => {
   it("formats date and time in the Helsinki time zone", () => {
     expect(formatEventDate("2026-08-01T09:00:00Z")).toBe("la 1. elokuuta");
     expect(formatEventTime("2026-08-01T09:00:00Z")).toBe("12:00");
+  });
+
+  it("keeps euro amounts together across line breaks", () => {
+    expect(keepEuroAmountTogether("Kertamaksu 14 €")).toBe(
+      "Kertamaksu 14\u00a0€",
+    );
+    expect(keepEuroAmountTogether("Hinta 14,50 € tänään")).toBe(
+      "Hinta 14,50\u00a0€ tänään",
+    );
+    expect(keepEuroAmountTogether("Maksuton")).toBe("Maksuton");
   });
 
   it("normalizes venue whitespace and casing in an event identity", () => {

@@ -59,6 +59,10 @@ export function formatVerifiedDate(isoDate: string): string {
   return verifiedFormatter.format(new Date(isoDate));
 }
 
+export function keepEuroAmountTogether(text: string): string {
+  return text.replace(/(\d)\s+(?=€(?:\s|$))/gu, "$1\u00a0");
+}
+
 export function eventIdentity(event: EventForDisplay): string {
   return [
     normalizeIdentityPart(event.venue.name),

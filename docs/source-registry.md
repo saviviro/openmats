@@ -56,18 +56,24 @@ such as _vapaavuoro_, _omatoimi_ and _avoin sparrivuoro_.
 - `planned`: the venue has been announced but has not opened with complete
   location and schedule information.
 
-The first materialized sources are Helsingin Ju-jutsuklubi at Kaapelitehdas
-and Tundra Jiu-Jitsu in Suomenoja. MMA Vantaa explicitly allows visitors, but a
-conflict between its recently indexed summer timetable and the current live
-page blocks publication until the end time is unambiguous. Buli's weekly open
-mat has documented conditions and is retained for manual event review. Art of
-Ground Games has a clear visitor policy, but its dynamic, multi-location
-schedule still requires a location-aware collector.
+The materialized recurring sources now include Helsingin Ju-jutsuklubi at
+Kaapelitehdas, Tundra Jiu-Jitsu in Suomenoja, AOGG Erottaja, AOGG Sörnäinen and
+MMA Vantaa. The AOGG location calendars must still be interpreted separately:
+Erottaja has a public Sunday No-gi session, Sörnäinen has a public Saturday
+No-gi session for coloured belts, and Kivenlahti currently lists only
+members-only open mats. MMA Vantaa's live summer timetable now unambiguously
+shows 12:00–13:30 and explicitly welcomes visitors, so its previous conflict is
+resolved.
+
+Buli's membership sources identify a Sunday 12:00–13:30 Gi and No-gi open mat
+at Urhea, but the dated calendar currently lists no occurrence, so the series
+is blocked rather than attached to Konepaja or materialized by assumption.
 
 High-priority manual-review sources include Loop Martial Arts, Dojo Helsinki,
-GB Gym, Combat Academy, HIPKO, FireBody, Savate Club and Salini. Their current
-official sources show open mats, free practice or sparring, but do not provide
-enough evidence to publish outside-club access automatically.
+Combat Academy, HIPKO, FireBody, Savate Club and Salini. Their current official
+sources show open mats, free practice or sparring, but do not provide enough
+evidence to publish outside-club access automatically. FireBody also needs a
+current seasonal timetable: its live page is still labelled spring 2026.
 
 GB Gym's official calendar currently contains exact monthly open mats on 30
 August, 27 September, 25 October and 27 December 2026. It explicitly cancels

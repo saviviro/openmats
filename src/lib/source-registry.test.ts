@@ -88,4 +88,75 @@ describe("source registry", () => {
       plannedVenueCount: 0,
     });
   });
+
+  it("keeps the Buli open mat attached to Urhea, not Konepaja", () => {
+    const konepaja = registry.venues.find(({ id }) => id === "buli-konepaja");
+    const urhea = registry.venues.find(({ id }) => id === "buli-urhea");
+
+    expect(konepaja?.candidateOpenMats).toHaveLength(0);
+    expect(urhea).toMatchObject({
+      venueName: "Urhea",
+      openMatAccess: "public_with_conditions",
+      collectionReadiness: "manual_review",
+    });
+    expect(urhea?.candidateOpenMats).toEqual([
+      expect.objectContaining({
+        weekday: 7,
+        startTime: "12:00",
+        endTime: "13:30",
+        publishStatus: "blocked_by_source_conflict",
+      }),
+    ]);
+  });
+
+  it("keeps the audited AOGG visitor sessions and MMA Vantaa publishable", () => {
+    const erottaja = registry.venues.find(({ id }) => id === "aogg-erottaja");
+    const sornainen = registry.venues.find(({ id }) => id === "aogg-sornainen");
+    const kivenlahti = registry.venues.find(
+      ({ id }) => id === "aogg-kivenlahti",
+    );
+    const mmaVantaa = registry.venues.find(
+      ({ id }) => id === "mma-vantaa-martinlaakso",
+    );
+
+    expect(erottaja?.candidateOpenMats[0]).toMatchObject({
+      weekday: 7,
+      startTime: "12:00",
+      endTime: "14:00",
+      disciplines: ["nogi"],
+      publishStatus: "ready_for_event_review",
+    });
+    expect(sornainen?.candidateOpenMats[0]).toMatchObject({
+      weekday: 6,
+      startTime: "12:00",
+      endTime: "14:00",
+      disciplines: ["nogi"],
+      publishStatus: "ready_for_event_review",
+    });
+    expect(kivenlahti?.candidateOpenMats).toHaveLength(0);
+    expect(mmaVantaa).toMatchObject({
+      collectionReadiness: "ready",
+      candidateOpenMats: [
+        expect.objectContaining({
+          startTime: "12:00",
+          endTime: "13:30",
+          publishStatus: "ready_for_event_review",
+        }),
+      ],
+    });
+  });
+
+  it("rejects event candidates on a venue marked without an open mat", () => {
+    const urhea = registryData.venues.find(({ id }) => id === "buli-urhea")!;
+
+    expect(() =>
+      parseSourceRegistry({
+        ...registryData,
+        venues: [
+          ...registryData.venues.filter(({ id }) => id !== "buli-urhea"),
+          { ...urhea, openMatAccess: "no_open_mat_found" },
+        ],
+      }),
+    ).toThrow(/must not retain event candidates/);
+  });
 });

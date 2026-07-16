@@ -83,35 +83,67 @@ export const datedOpenMatSchema = z
     },
   );
 
-export const venueSourceRecordSchema = z.object({
-  id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
-  organization: z.string().min(2),
-  venueName: z.string().min(2),
-  status: z.enum(["active", "planned"]),
-  city: z.enum(REGION_CITIES),
-  address: z.string().min(5).nullable(),
-  disciplines: z.array(z.enum(["bjj", "nogi", "submission_wrestling"])).min(1),
-  openMatAccess: z.enum([
-    "public_confirmed",
-    "public_with_conditions",
-    "members_only_confirmed",
-    "mixed",
-    "unconfirmed",
-    "no_open_mat_found",
-  ]),
-  collectionReadiness: z.enum([
-    "ready",
-    "manual_review",
-    "discovery_only",
-    "planned",
-  ]),
-  evidenceSummary: z.string().min(10),
-  sources: z.array(registrySourceSchema).min(1),
-  candidateOpenMats: z.array(openMatCandidateSchema).default([]),
-  datedOpenMats: z.array(datedOpenMatSchema).default([]),
-  checkedAt: z.iso.datetime({ offset: true }),
-  monitoringNotes: z.string().min(3).nullable(),
-});
+export const venueSourceRecordSchema = z
+  .object({
+    id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+    organization: z.string().min(2),
+    venueName: z.string().min(2),
+    status: z.enum(["active", "planned"]),
+    city: z.enum(REGION_CITIES),
+    address: z.string().min(5).nullable(),
+    disciplines: z
+      .array(z.enum(["bjj", "nogi", "submission_wrestling"]))
+      .min(1),
+    openMatAccess: z.enum([
+      "public_confirmed",
+      "public_with_conditions",
+      "members_only_confirmed",
+      "mixed",
+      "unconfirmed",
+      "no_open_mat_found",
+    ]),
+    collectionReadiness: z.enum([
+      "ready",
+      "manual_review",
+      "discovery_only",
+      "planned",
+    ]),
+    evidenceSummary: z.string().min(10),
+    sources: z.array(registrySourceSchema).min(1),
+    candidateOpenMats: z.array(openMatCandidateSchema).default([]),
+    datedOpenMats: z.array(datedOpenMatSchema).default([]),
+    checkedAt: z.iso.datetime({ offset: true }),
+    monitoringNotes: z.string().min(3).nullable(),
+  })
+  .refine(
+    ({ openMatAccess, candidateOpenMats, datedOpenMats }) =>
+      openMatAccess !== "no_open_mat_found" ||
+      (candidateOpenMats.length === 0 && datedOpenMats.length === 0),
+    {
+      message:
+        "A venue with no open mat found must not retain event candidates",
+      path: ["openMatAccess"],
+    },
+  )
+  .refine(
+    ({ collectionReadiness, candidateOpenMats, datedOpenMats }) =>
+      collectionReadiness !== "discovery_only" ||
+      (candidateOpenMats.length === 0 && datedOpenMats.length === 0),
+    {
+      message: "A discovery-only venue must not retain event candidates",
+      path: ["collectionReadiness"],
+    },
+  )
+  .refine(
+    ({ collectionReadiness, candidateOpenMats }) =>
+      !candidateOpenMats.some(
+        ({ publishStatus }) => publishStatus === "blocked_by_source_conflict",
+      ) || collectionReadiness === "manual_review",
+    {
+      message: "A source conflict requires manual review",
+      path: ["collectionReadiness"],
+    },
+  );
 
 export const sourceRegistrySchema = z.object({
   version: z.literal(1),

@@ -30,6 +30,22 @@ never interpreted as exclusion.
 
 ## Published series
 
+### Art of Ground Games
+
+The official AOGG open-mat policy welcomes visitors from other clubs, while
+the location-specific Gymdesk calendars provide the session restrictions and
+recurrence data. Two visitor sessions are published inside the current review
+window:
+
+- Erottaja: Sunday 12:00–14:00, No-gi;
+- Sörnäinen: Saturday 12:00–14:00, No-gi and coloured belts only.
+
+Both calendars accept advance bookings and show no cancelled dates. The
+official visitor page gives a 15-euro drop-in price and asks visitors to reserve
+a spot. AOGG's separately named members-only open mats remain unpublished.
+Kivenlahti currently shows only members-only open mats, so it has no public
+occurrence in the event list.
+
 ### Helsingin Ju-jutsuklubi
 
 The official BJJ page states that the Saturday 13:00–15:00 open mat welcomes
@@ -66,25 +82,33 @@ scheduled entries are published with both formats available. August and
 September use UTC offset `+03:00`; October and December use `+02:00` according to
 `Europe/Helsinki` daylight-saving rules.
 
-## Blocked series: MMA Vantaa
+### MMA Vantaa
 
-MMA Vantaa explicitly welcomes people from outside the club to its Sunday open
-mat. Its official-source evidence currently conflicts on the end time:
+MMA Vantaa's live official page now places the dates and time in the same clear
+summer schedule: Sunday 12:00–13:30 from 1 June through 9 August 2026. It
+explicitly welcomes people from outside the club. Visitors must be at the door
+before the session starts because entry to the rock shelter requires a member's
+door code.
 
-- a recent indexed copy of the official page labels the summer schedule as
-  1 June–9 August 2026 and gives 12:00–13:30;
-- the same live official URL now gives 12:00–14:00 without an effective date.
+The earlier inconsistent 12:00–14:00 rendering is no longer present on the
+live page, so the source conflict is resolved. Four Sunday occurrences are
+published through the current materialization limit. Price and Gi/No-gi
+eligibility remain unknown because the official source does not state them.
 
-The City of Vantaa exception calendar does not list a July or early-August
-closure for the Rajatorppa rock shelter, but that does not resolve the time
-conflict. The series is retained as `blocked_conflicting_source` and produces
-no public event. No time is selected by guesswork.
+## Blocked series: Buli Urhea
 
-The conflict was checked again on 15 July 2026 and remained unresolved. The
-official Combat Academy schedule showed its open mat at the Helsinki location,
-not Myyrmäki. Salini's official timetable showed Saturday BJJ sparring in
-Rekola, but did not confirm outside-club access. No additional publishable
-Vantaa event was therefore added.
+Buli's official pricing and membership flow identify a weekly Sunday
+12:00–13:30 open mat at Urhea for both Gi and No-gi. The open-mat membership
+costs 25 euros per calendar year. The visitor page asks people to contact the
+club before visiting or trying the open mat before buying the membership.
+
+The dated official calendar was reviewed week by week from 19 July through 20
+September 2026. It contains no Urhea open-mat occurrence in that range. The
+membership description and dated calendar therefore do not currently support
+publishing any exact date. The series is stored under `buli-urhea`, marked
+`blocked_conflicting_source`, and produces no public event until the dated
+calendar lists one. The previous registry attachment to Konepaja was incorrect
+and has been removed.
 
 ## Materialization rules
 
@@ -94,6 +118,10 @@ Vantaa event was therefore added.
   recurring window when its date and time are explicit.
 - Dates in `excludedDates` are omitted.
 - A series with conflicting official evidence produces no events.
+- A recurring membership description does not override a dated calendar that
+  contains no matching occurrence.
+- A location-wide visitor policy does not override a session explicitly marked
+  members-only or a belt restriction shown in its booking calendar.
 - Every event keeps its source URL, verification time, exception-check time,
   materialization limit and a user-facing exception note.
 - Helsinki summer dates in this window use UTC offset `+03:00`. A future window

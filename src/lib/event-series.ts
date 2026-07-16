@@ -12,49 +12,70 @@ export const eventSeriesRegistrySchema = z.object({
     timezone: z.literal("Europe/Helsinki"),
     utcOffset: z.string().regex(/^[+-]\d{2}:\d{2}$/),
   }),
-  series: z.array(
-    z
-      .object({
-        id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
-        venueId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
-        publicationStatus: z.enum([
-          "publish",
-          "publish_with_confirmation",
-          "blocked_conflicting_source",
-        ]),
-        weekday: z.number().int().min(1).max(7),
-        startTime: localTimeSchema,
-        endTime: localTimeSchema,
-        validFrom: isoDateSchema.nullable(),
-        validThrough: isoDateSchema.nullable(),
-        excludedDates: z.array(isoDateSchema),
-        primarySourceUrl: z.url(),
-        supportingSourceUrls: z.array(z.url()),
-        exceptionCheck: z.object({
-          result: z.enum([
-            "none_found",
-            "confirmation_required",
-            "conflict_found",
+  series: z
+    .array(
+      z
+        .object({
+          id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+          venueId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+          publicationStatus: z.enum([
+            "publish",
+            "publish_with_confirmation",
+            "blocked_conflicting_source",
           ]),
-          checkedAt: z.iso.datetime({ offset: true }),
-          notes: z.string().min(10),
-        }),
-      })
-      .refine(({ startTime, endTime }) => endTime > startTime, {
-        message: "Series endTime must be later than startTime",
-        path: ["endTime"],
-      })
-      .refine(
-        ({ validFrom, validThrough }) =>
-          validFrom === null ||
-          validThrough === null ||
-          validThrough >= validFrom,
-        {
-          message: "Series validThrough must not precede validFrom",
-          path: ["validThrough"],
-        },
-      ),
-  ),
+          weekday: z.number().int().min(1).max(7),
+          startTime: localTimeSchema,
+          endTime: localTimeSchema,
+          validFrom: isoDateSchema.nullable(),
+          validThrough: isoDateSchema.nullable(),
+          excludedDates: z.array(isoDateSchema),
+          primarySourceUrl: z.url(),
+          supportingSourceUrls: z.array(z.url()),
+          exceptionCheck: z.object({
+            result: z.enum([
+              "none_found",
+              "confirmation_required",
+              "conflict_found",
+            ]),
+            checkedAt: z.iso.datetime({ offset: true }),
+            notes: z.string().min(10),
+          }),
+        })
+        .refine(({ startTime, endTime }) => endTime > startTime, {
+          message: "Series endTime must be later than startTime",
+          path: ["endTime"],
+        })
+        .refine(
+          ({ validFrom, validThrough }) =>
+            validFrom === null ||
+            validThrough === null ||
+            validThrough >= validFrom,
+          {
+            message: "Series validThrough must not precede validFrom",
+            path: ["validThrough"],
+          },
+        )
+        .refine(
+          ({ publicationStatus, exceptionCheck }) =>
+            exceptionCheck.result ===
+            {
+              publish: "none_found",
+              publish_with_confirmation: "confirmation_required",
+              blocked_conflicting_source: "conflict_found",
+            }[publicationStatus],
+          {
+            message:
+              "Series publication status must match its exception-check result",
+            path: ["publicationStatus"],
+          },
+        ),
+    )
+    .refine(
+      (series) => new Set(series.map(({ id }) => id)).size === series.length,
+      {
+        message: "Series identifiers must be unique",
+      },
+    ),
 });
 
 export type EventSeriesRegistry = z.infer<typeof eventSeriesRegistrySchema>;
