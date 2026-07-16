@@ -18,6 +18,49 @@ web search every week.
 - **Before publishing a dated event:** check date-specific cancellations,
   holidays, competitions and access conditions again.
 
+## Scheduled Codex checks
+
+Five local Codex tasks provide several chances for a due check to start while
+the computer and Codex app are running. Three weekly triggers share one routine
+check interval of 168 hours. Two monthly triggers share one broad-discovery
+interval of 28 days. A trigger is only an opportunity to start: it does not
+repeat a check that is not yet due.
+
+`data/automation-state.json` is the sole source of truth for the last fully
+successful routine and discovery runs. The tasks must not infer success from an
+individual event's `verifiedAt` or a venue's `checkedAt`, because a partial
+source check can update those fields without completing the full run.
+
+Before any network access, a scheduled task must:
+
+1. verify that the local checkout is a clean `main` branch;
+2. acquire the shared ignored `.automation-run.lock` with
+   `node scripts/automation-gate.mjs acquire <routine|discovery>`;
+3. fast-forward the clean local `main` from `origin/main` and stop if the
+   branches have diverged;
+4. stop when any open PR title begins with `chore: scheduled source`;
+5. read the deterministic due status with
+   `node scripts/automation-gate.mjs status <routine|discovery>`.
+
+The lock is shared by routine and discovery tasks and must be released on every
+exit path with
+`node scripts/automation-gate.mjs release <routine|discovery>`. A due run works
+on a uniquely timestamped `codex/scheduled-source-...` branch and opens a PR;
+it never merges itself. Only a fully completed check may update the successful
+timestamp, using `node scripts/automation-gate.mjs record <task> <summary>`.
+Permission, source-access or validation failures must be reported without
+advancing that timestamp.
+
+A lock older than eight hours is reported as stale, but the script does not
+replace it automatically: automatic replacement could race with a slow run.
+Remove a stale `.automation-run.lock` manually only after confirming from the
+Scheduled view that no source-check task is still active.
+
+These are local scheduled tasks. The computer must be awake and the Codex app
+running for a trigger to execute. If the computer is asleep, a later one of the
+staggered triggers can run the still-due check. The first due run should be
+reviewed manually from the Scheduled view before relying on the cadence.
+
 ## Check order
 
 For each venue, use this order:

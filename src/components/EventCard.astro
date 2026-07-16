@@ -34,11 +34,16 @@ const formatStateIcons = {
 } as const;
 const formatStates = getEventFormatStates(data.formats);
 const priceCategory = getEventPriceCategory(data.price.amount);
-const eventText = getEventTranslation(locale, data.schedule.seriesId, {
-  priceNote: data.price.note,
-  accessDescription: data.access.description,
-  exceptionNote: data.schedule.exceptionNote,
-});
+const eventText = getEventTranslation(
+  locale,
+  event.id,
+  data.schedule.seriesId,
+  {
+    priceNote: data.price.note,
+    accessDescription: data.access.description,
+    exceptionNote: data.schedule.exceptionNote,
+  },
+);
 const priceNote = keepEuroAmountTogether(eventText.priceNote);
 const statusLabel = {
   scheduled: null,
@@ -54,6 +59,7 @@ const statusLabel = {
   data-city={data.venue.city}
   data-formats={data.formats?.join(" ") ?? ""}
   data-price-category={priceCategory}
+  data-end-at={data.endAt}
   aria-labelledby={`event-${event.id}`}
 >
   <div
@@ -104,7 +110,17 @@ const statusLabel = {
       }
     </div>
 
-    <h2 id={`event-${event.id}`}>{data.title}</h2>
+    <h2 id={`event-${event.id}`} tabindex="-1">
+      {data.title}
+      <span class="sr-only">
+        {
+          ` — ${data.venue.name}, ${formatEventDate(data.startAt, locale)}, ${formatEventTime(
+            data.startAt,
+            locale,
+          )}`
+        }
+      </span>
+    </h2>
 
     <dl class="event-facts">
       <div>

@@ -28,3 +28,4 @@ yarn-error.log*
 .tmp/
 tmp/
 .wrangler/
+.automation-run.lock

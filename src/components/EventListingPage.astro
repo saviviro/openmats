@@ -4,7 +4,11 @@ import { getCollection } from "astro:content";
 import EventCard from "./EventCard.astro";
 import FilterBar from "./FilterBar.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { findDuplicateEventIds, sortEvents } from "../lib/events";
+import {
+  findDuplicateEventIds,
+  isUpcomingEvent,
+  sortEvents,
+} from "../lib/events";
 import { intlLocale, ui, type Locale } from "../lib/i18n";
 
 interface Props {
@@ -14,8 +18,11 @@ interface Props {
 const { locale } = Astro.props;
 const copy = ui[locale];
 const homePath = locale === "fi" ? "/" : "/en/";
+const buildTime = new Date();
 const events = sortEvents(
-  await getCollection("events"),
+  (await getCollection("events")).filter((event) =>
+    isUpcomingEvent(event.data.endAt, buildTime),
+  ),
   (event) => event.data.startAt,
 );
 const duplicates = findDuplicateEventIds(
@@ -79,7 +86,7 @@ if (duplicates.length > 0) {
     <section class="hero">
       <div class="hero__content">
         <p class="eyebrow">Helsinki · Espoo · Vantaa</p>
-        <h1>{copy.heroTitle}<br /><em>{copy.heroOpenMat}</em></h1>
+        <h1>{copy.heroTitle}{" "}<br /><em>{copy.heroOpenMat}</em></h1>
         <p class="hero__lead">{copy.heroLead}</p>
         <a class="hero__action" href="#events"
           >{copy.heroAction} <span aria-hidden="true">↓</span></a
@@ -112,17 +119,28 @@ if (duplicates.length > 0) {
         {events.map((event) => <EventCard event={event} locale={locale} />)}
       </div>
 
+      <p
+        class="sr-only"
+        data-results-announcement
+        aria-live="polite"
+        aria-atomic="true"
+      >
+      </p>
+
       <div class="pagination" data-pagination hidden>
-        <p data-page-summary aria-live="polite"></p>
+        <p data-page-summary></p>
         <nav class="pagination__controls" aria-label={copy.paginationLabel}>
           <button type="button" data-page-action="previous"
             >← {copy.previous}</button
           >
-          <p>
-            {copy.page}
-            <strong data-current-page>1</strong> / <span data-total-pages
-              >1</span
-            >
+          <p class="pagination__page">
+            <span>{copy.page}</span>
+            {" "}
+            <strong data-current-page>1</strong>
+            {" "}
+            <span aria-hidden="true">/</span>
+            {" "}
+            <span data-total-pages>1</span>
           </p>
           <button type="button" data-page-action="next">{copy.next} →</button>
         </nav>
@@ -140,10 +158,22 @@ if (duplicates.length > 0) {
       <span class="brand__mark" aria-hidden="true">OM</span>
       <span><strong>Open Mats</strong><small>Helsinki Region</small></span>
     </div>
-    <p>{copy.footer}</p>
+    <div class="site-footer__info">
+      <p>{copy.footer}</p>
+      <a
+        class="feedback-link"
+        href="https://github.com/saviviro/openmats/issues/new?template=event-report.yml"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {copy.feedbackLink}<span aria-hidden="true"> ↗</span>
+        <span class="sr-only"> ({copy.opensNewTab})</span>
+      </a>
+    </div>
   </footer>
 
   <script>
+    import { isUpcomingEvent } from "../lib/events";
     import { EVENTS_PER_PAGE, getPaginationState } from "../lib/pagination";
 
     const filterState = { city: "all", format: "all" };
@@ -154,6 +184,9 @@ if (duplicates.length > 0) {
     const emptyState = document.querySelector("[data-empty-state]");
     const pagination = document.querySelector("[data-pagination]");
     const pageSummary = document.querySelector("[data-page-summary]");
+    const resultsAnnouncement = document.querySelector(
+      "[data-results-announcement]",
+    );
     const currentPageLabel = document.querySelector("[data-current-page]");
     const totalPagesLabel = document.querySelector("[data-total-pages]");
     const previousButton = document.querySelector(
@@ -173,7 +206,11 @@ if (duplicates.length > 0) {
         const priceMatches = selectedPriceCategories.has(
           card.dataset.priceCategory ?? "unknown",
         );
-        return cityMatches && formatMatches && priceMatches;
+        const timeMatches = isUpcomingEvent(
+          card.dataset.endAt ?? "",
+          Date.now(),
+        );
+        return cityMatches && formatMatches && priceMatches && timeMatches;
       });
       const pageState = getPaginationState(
         matchingCards.length,
@@ -193,12 +230,12 @@ if (duplicates.length > 0) {
         emptyState.hidden = matchingCards.length !== 0;
       if (pagination instanceof HTMLElement)
         pagination.hidden = pageState.totalPages <= 1;
-      if (pageSummary) {
-        pageSummary.textContent =
-          document.documentElement.lang === "en"
-            ? `Showing ${pageState.firstItem}–${pageState.lastItem} of ${matchingCards.length} events`
-            : `Näytetään ${pageState.firstItem}–${pageState.lastItem} / ${matchingCards.length} tapahtumaa`;
-      }
+      const summary =
+        document.documentElement.lang === "en"
+          ? `Showing ${pageState.firstItem}–${pageState.lastItem} of ${matchingCards.length} events`
+          : `Näytetään ${pageState.firstItem}–${pageState.lastItem} / ${matchingCards.length} tapahtumaa`;
+      if (pageSummary) pageSummary.textContent = summary;
+      if (resultsAnnouncement) resultsAnnouncement.textContent = summary;
       if (currentPageLabel)
         currentPageLabel.textContent = String(pageState.page);
       if (totalPagesLabel)
@@ -207,11 +244,19 @@ if (duplicates.length > 0) {
         previousButton.disabled = pageState.page <= 1;
       if (nextButton instanceof HTMLButtonElement)
         nextButton.disabled = pageState.page >= pageState.totalPages;
+
+      return [...pageCards].filter(
+        (card): card is HTMLElement => card instanceof HTMLElement,
+      );
     }
 
     function changePage(direction: number) {
       currentPage += direction;
-      updateResults();
+      const visibleCards = updateResults();
+      const firstHeading = visibleCards[0]?.querySelector("h2");
+      if (firstHeading instanceof HTMLElement) {
+        firstHeading.focus({ preventScroll: true });
+      }
       if (eventList instanceof HTMLElement) {
         eventList.scrollIntoView({
           behavior: window.matchMedia("(prefers-reduced-motion: reduce)")

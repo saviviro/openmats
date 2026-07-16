@@ -7,6 +7,7 @@ import {
   formatEventTime,
   getEventPriceCategory,
   getEventFormatStates,
+  isUpcomingEvent,
   keepEuroAmountTogether,
   sortEvents,
   type EventForDisplay,
@@ -32,6 +33,14 @@ describe("event utilities", () => {
       sortEvents(input, ({ startAt }) => startAt).map(({ id }) => id),
     ).toEqual(["earlier", "later"]);
     expect(input.map(({ id }) => id)).toEqual(["later", "earlier"]);
+  });
+
+  it("keeps only events whose end time is still in the future", () => {
+    const now = new Date("2026-08-01T12:00:00+03:00");
+
+    expect(isUpcomingEvent("2026-08-01T12:00:01+03:00", now)).toBe(true);
+    expect(isUpcomingEvent("2026-08-01T12:00:00+03:00", now)).toBe(false);
+    expect(isUpcomingEvent("2026-08-01T11:59:59+03:00", now)).toBe(false);
   });
 
   it("formats date and time in the Helsinki time zone", () => {

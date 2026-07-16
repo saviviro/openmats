@@ -15,6 +15,7 @@
     "lint": "astro check",
     "test": "vitest run",
     "test:watch": "vitest",
+    "automation:gate": "node scripts/automation-gate.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "validate": "pnpm format:check && pnpm check && pnpm test && pnpm build"

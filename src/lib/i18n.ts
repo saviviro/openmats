@@ -58,6 +58,7 @@ export const ui = {
     page: "Sivu",
     emptyTitle: "Ei osumia näillä rajauksilla.",
     emptyLead: "Kokeile toista kaupunkia, tyyliä tai hintaa.",
+    feedbackLink: "Ilmoita virheestä tai puuttuvasta open matista",
     footer:
       "Koontipalvelu ei järjestä tapahtumia. Varmista tiedot aina alkuperäisestä lähteestä.",
   },
@@ -112,6 +113,7 @@ export const ui = {
     page: "Page",
     emptyTitle: "No events match these filters.",
     emptyLead: "Try another city, style, or price.",
+    feedbackLink: "Report an error or a missing open mat",
     footer:
       "This listing service does not organize the events. Always confirm the details from the original source.",
   },
@@ -123,7 +125,7 @@ export interface EventTranslation {
   exceptionNote: string;
 }
 
-export const englishEventTranslations: Record<string, EventTranslation> = {
+export const englishSeriesTranslations: Record<string, EventTranslation> = {
   "aogg-erottaja-sunday-nogi-open-mat": {
     priceNote: "Visitor drop-in €15",
     accessDescription:
@@ -164,16 +166,25 @@ export const englishEventTranslations: Record<string, EventTranslation> = {
   },
 };
 
+export const englishEventTranslationOverrides: Record<
+  string,
+  Partial<EventTranslation>
+> = {};
+
 export function getEventTranslation(
   locale: Locale,
+  eventId: string,
   seriesId: string,
   finnish: EventTranslation,
 ): EventTranslation {
   if (locale === "fi") return finnish;
 
-  const translation = englishEventTranslations[seriesId];
+  const translation = englishSeriesTranslations[seriesId];
   if (!translation) {
     throw new Error(`Missing English event translation for ${seriesId}`);
   }
-  return translation;
+  return {
+    ...translation,
+    ...englishEventTranslationOverrides[eventId],
+  };
 }

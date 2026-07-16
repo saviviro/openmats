@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "routine": {
+    "lastSuccessfulAt": "2026-07-16T13:17:00+03:00",
+    "summary": "Publication audit completed against the maintained official sources; recurring events and the dated publication window were updated and validated."
+  },
+  "discovery": {
+    "lastSuccessfulAt": "2026-07-14T15:00:54+03:00",
+    "summary": "Broad official-source discovery across Helsinki, Espoo, Vantaa and Kauniainen completed without finding an additional active in-scope venue."
+  }
+}

@@ -12,6 +12,39 @@ import {
 
 const registry = parseEventSeriesRegistry(seriesData);
 
+const expectedSeriesDisplayData = {
+  "aogg-sornainen-colored-belts-nogi-open-mat": {
+    venueName: "Art of Ground Games Sörnäinen",
+    formats: ["no-gi"],
+    priceAmount: 15,
+    status: "scheduled",
+  },
+  "aogg-erottaja-sunday-nogi-open-mat": {
+    venueName: "Art of Ground Games Erottaja",
+    formats: ["no-gi"],
+    priceAmount: 15,
+    status: "scheduled",
+  },
+  "hjjk-saturday-open-mat": {
+    venueName: "Helsingin Ju-jutsuklubi",
+    formats: ["gi", "no-gi"],
+    priceAmount: null,
+    status: "scheduled",
+  },
+  "tundra-saturday-open-mat": {
+    venueName: "Tundra Jiu-Jitsu",
+    formats: ["gi", "no-gi"],
+    priceAmount: 14,
+    status: "uncertain",
+  },
+  "mma-vantaa-sunday-open-mat": {
+    venueName: "MMA Vantaa",
+    formats: null,
+    priceAmount: null,
+    status: "scheduled",
+  },
+} as const;
+
 describe("event series materialization", () => {
   it("materializes weekly dates only inside the publication window", () => {
     const series = registry.series.find(
@@ -127,5 +160,56 @@ describe("event series materialization", () => {
       .map(({ id }) => id);
 
     expect(actualIds.sort()).toEqual(expectedIds.sort());
+  });
+
+  it("keeps every recurring occurrence aligned with its reviewed series data", () => {
+    for (const series of registry.series) {
+      const expectedDisplay =
+        expectedSeriesDisplayData[
+          series.id as keyof typeof expectedSeriesDisplayData
+        ];
+      const occurrenceDates = materializeOccurrenceDates(
+        series,
+        registry.window,
+      );
+
+      if (series.publicationStatus === "blocked_conflicting_source") {
+        expect(expectedDisplay).toBeUndefined();
+        continue;
+      }
+
+      expect(
+        expectedDisplay,
+        `${series.id} needs reviewed display data`,
+      ).toBeDefined();
+
+      for (const date of occurrenceDates) {
+        const id = occurrenceId(series.id, date);
+        const event = eventsData.find((candidate) => candidate.id === id);
+
+        expect(event, `${id} must exist`).toBeDefined();
+        expect(event?.schedule.seriesId).toBe(series.id);
+        expect(event?.startAt).toMatch(
+          new RegExp(`^${date}T${series.startTime}:00[+-]\\d{2}:\\d{2}$`),
+        );
+        expect(event?.endAt).toMatch(
+          new RegExp(`^${date}T${series.endTime}:00[+-]\\d{2}:\\d{2}$`),
+        );
+        expect(event?.schedule.validFrom).toBe(series.validFrom);
+        expect(event?.schedule.validThrough).toBe(series.validThrough);
+        expect(event?.schedule.materializedThrough).toBe(
+          registry.window.through,
+        );
+        expect(event?.schedule.exceptionStatus).toBe(
+          series.publicationStatus === "publish_with_confirmation"
+            ? "confirmation_required"
+            : "none_found",
+        );
+        expect(event?.venue.name).toBe(expectedDisplay?.venueName);
+        expect(event?.formats).toEqual(expectedDisplay?.formats);
+        expect(event?.price.amount).toBe(expectedDisplay?.priceAmount);
+        expect(event?.status).toBe(expectedDisplay?.status);
+      }
+    }
   });
 });
