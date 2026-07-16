@@ -29,9 +29,7 @@ export const openMatCandidateSchema = z
     weekday: z.number().int().min(1).max(7),
     startTime: localTimeSchema,
     endTime: localTimeSchema,
-    disciplines: z
-      .array(z.enum(["bjj", "nogi", "submission_wrestling"]))
-      .min(1),
+    disciplines: z.array(z.enum(["bjj", "nogi", "submission_wrestling"])),
     publishStatus: z.enum([
       "ready_for_event_review",
       "needs_access_confirmation",

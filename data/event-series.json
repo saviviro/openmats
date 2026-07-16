@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-07-16T13:17:00+03:00",
+  "checkedAt": "2026-07-17T00:07:00+03:00",
   "window": {
     "from": "2026-07-15",
     "through": "2026-08-09",
@@ -102,6 +102,50 @@
         "result": "none_found",
         "checkedAt": "2026-07-16T22:13:05+03:00",
         "notes": "The current official summer calendar lists the Saturday slot through 2 August 2026 and no dated cancellation. The project owner confirmed free outside-club access and Gi/No-gi eligibility on 16 July 2026."
+      }
+    },
+    {
+      "id": "dojo-helsinki-saturday-nogi-open-mat",
+      "venueId": "dojo-helsinki-punavuori",
+      "publicationStatus": "publish",
+      "weekday": 6,
+      "startTime": "12:00",
+      "endTime": "13:00",
+      "validFrom": null,
+      "validThrough": null,
+      "excludedDates": [],
+      "primarySourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
+      "supportingSourceUrls": [
+        "https://www.dojohelsinki.fi/en/classes/",
+        "https://www.instagram.com/dojohelsinki/"
+      ],
+      "exceptionCheck": {
+        "result": "none_found",
+        "checkedAt": "2026-07-17T00:07:00+03:00",
+        "notes": "The official Finnish and English timetables list the weekly Saturday slot. No dated cancellation is published. The project owner confirmed outside-club access and No-gi attire on 16 July 2026; the official Instagram account is monitored for holiday changes and additional open mats."
+      }
+    },
+    {
+      "id": "kilo-jiu-jitsu-saturday-open-mat",
+      "venueId": "kilo-jiu-jitsu-kilo",
+      "publicationStatus": "publish_with_confirmation",
+      "weekday": 6,
+      "startTime": "11:00",
+      "endTime": "12:30",
+      "validFrom": null,
+      "validThrough": null,
+      "excludedDates": [],
+      "primarySourceUrl": "https://www.instagram.com/kilojiujitsu/",
+      "supportingSourceUrls": [
+        "https://www.kilojiujitsu.com/",
+        "https://www.kilojiujitsu.com/aikataulut/",
+        "https://www.kilojiujitsu.com/hinnat/",
+        "https://www.kilojiujitsu.com/sali/"
+      ],
+      "exceptionCheck": {
+        "result": "confirmation_required",
+        "checkedAt": "2026-07-17T00:07:00+03:00",
+        "notes": "The project owner confirmed the public Saturday slot on 16 July 2026, but the official website schedule remains labelled 2023 and does not currently verify attire or dated exceptions. The official site confirms the venue and current drop-in price. Visitors should confirm the session before leaving."
       }
     },
     {

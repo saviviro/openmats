@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timezone": "Europe/Helsinki",
-  "checkedAt": "2026-07-16T13:17:00+03:00",
+  "checkedAt": "2026-07-17T00:07:00+03:00",
   "discoveryReviewedAt": "2026-07-14T15:00:54+03:00",
   "discoveryReviewNotes": "A broad official-source review across Helsinki, Espoo, Vantaa and Kauniainen found no additional in-scope active venue beyond the maintained baseline. New dated and seasonal open-mat evidence was added to existing venue records; out-of-scope neighboring municipalities and non-BJJ wrestling sessions were excluded.",
   "scopeCities": ["Helsinki", "Espoo", "Vantaa", "Kauniainen"],
@@ -354,9 +354,9 @@
       "city": "Helsinki",
       "address": "Pursimiehenkatu 14, 00140 Helsinki",
       "disciplines": ["bjj", "nogi"],
-      "openMatAccess": "unconfirmed",
-      "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official timetable lists a Saturday open mat. The club welcomes interested trainees generally, but outside-club access to this specific session is not explicit.",
+      "openMatAccess": "public_confirmed",
+      "collectionReadiness": "ready",
+      "evidenceSummary": "The official Finnish and English timetables list a Saturday 12:00–13:00 open mat at the Punavuori address. The project owner confirmed outside-club access and No-gi attire on 16 July 2026.",
       "sources": [
         {
           "type": "official_schedule",
@@ -364,6 +364,20 @@
           "url": "https://www.dojohelsinki.fi/treeniajat/",
           "format": "html",
           "priority": 1
+        },
+        {
+          "type": "official_schedule",
+          "label": "Dojo Helsinki classes in English",
+          "url": "https://www.dojohelsinki.fi/en/classes/",
+          "format": "html",
+          "priority": 1
+        },
+        {
+          "type": "official_event",
+          "label": "Dojo Helsinki Instagram",
+          "url": "https://www.instagram.com/dojohelsinki/",
+          "format": "dynamic",
+          "priority": 2
         }
       ],
       "candidateOpenMats": [
@@ -371,15 +385,15 @@
           "weekday": 6,
           "startTime": "12:00",
           "endTime": "13:00",
-          "disciplines": ["bjj", "nogi"],
-          "publishStatus": "needs_access_confirmation",
+          "disciplines": ["nogi"],
+          "publishStatus": "ready_for_event_review",
           "validFrom": null,
           "validThrough": null,
-          "notes": "The official timetable names the session open mat but does not state visitor access."
+          "notes": "The official timetable provides the recurring time. The project owner confirmed outside-club access and No-gi attire on 16 July 2026."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
-      "monitoringNotes": "Confirm access and any holiday exceptions before publication."
+      "checkedAt": "2026-07-17T00:07:00+03:00",
+      "monitoringNotes": "Check both official timetables for the weekly slot and the official Instagram account for holiday changes and additional dated open mats. Add extra sessions as dated events rather than changing the weekly series."
     },
     {
       "id": "buli-konepaja",
@@ -966,9 +980,9 @@
       "city": "Espoo",
       "address": "Kutojantie 5, 02630 Espoo",
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
-      "openMatAccess": "no_open_mat_found",
-      "collectionReadiness": "discovery_only",
-      "evidenceSummary": "The official site confirms active BJJ and submission-wrestling training and the venue address. No current official public open mat was verified.",
+      "openMatAccess": "public_confirmed",
+      "collectionReadiness": "ready",
+      "evidenceSummary": "The project owner confirmed a public Saturday 11:00–12:30 open mat on 16 July 2026. The official site confirms the second-floor Kutojantie venue and the current 15 EUR drop-in price, but its public schedule page is still labelled 2023, so attire and exceptions remain unverified.",
       "sources": [
         {
           "type": "official_home",
@@ -976,11 +990,50 @@
           "url": "https://www.kilojiujitsu.com/",
           "format": "html",
           "priority": 1
+        },
+        {
+          "type": "official_schedule",
+          "label": "Kilo Jiu-Jitsu training schedule",
+          "url": "https://www.kilojiujitsu.com/aikataulut/",
+          "format": "html",
+          "priority": 1
+        },
+        {
+          "type": "official_visitor_policy",
+          "label": "Kilo Jiu-Jitsu prices",
+          "url": "https://www.kilojiujitsu.com/hinnat/",
+          "format": "html",
+          "priority": 1
+        },
+        {
+          "type": "official_location",
+          "label": "Kilo Jiu-Jitsu gym",
+          "url": "https://www.kilojiujitsu.com/sali/",
+          "format": "html",
+          "priority": 1
+        },
+        {
+          "type": "official_event",
+          "label": "Kilo Jiu-Jitsu Instagram",
+          "url": "https://www.instagram.com/kilojiujitsu/",
+          "format": "dynamic",
+          "priority": 2
         }
       ],
-      "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "Monitor the official schedule and announcements during discovery reviews."
+      "candidateOpenMats": [
+        {
+          "weekday": 6,
+          "startTime": "11:00",
+          "endTime": "12:30",
+          "disciplines": [],
+          "publishStatus": "ready_for_event_review",
+          "validFrom": null,
+          "validThrough": null,
+          "notes": "The project owner confirmed the recurring public slot on 16 July 2026. Attire is not stated in a current first-party source."
+        }
+      ],
+      "checkedAt": "2026-07-17T00:07:00+03:00",
+      "monitoringNotes": "Recheck the official schedule and Instagram for a current first-party timetable, attire and exceptions. Keep the events marked for confirmation while the official schedule page remains labelled 2023."
     },
     {
       "id": "takado-haukilahti",

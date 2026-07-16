@@ -65,18 +65,6 @@ export function formatEventTime(
     .replace(".", ":");
 }
 
-export function formatVerifiedDate(
-  isoDate: string,
-  locale: Locale = "fi",
-): string {
-  return new Intl.DateTimeFormat(intlLocale[locale], {
-    day: "numeric",
-    month: "numeric",
-    year: "numeric",
-    timeZone: HELSINKI_TIME_ZONE,
-  }).format(new Date(isoDate));
-}
-
 export function keepEuroAmountTogether(text: string): string {
   return text.replace(/(\d)\s+(?=€(?:\s|$))/gu, "$1\u00a0");
 }
