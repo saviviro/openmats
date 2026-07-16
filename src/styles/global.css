@@ -406,14 +406,6 @@ main > section,
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--paper-bright);
-  transition:
-    border-color 160ms ease,
-    transform 160ms ease;
-}
-
-.event-card:hover {
-  border-color: #90998f;
-  transform: translateY(-2px);
 }
 
 .event-card[hidden] {
@@ -503,7 +495,7 @@ main > section,
 
 .event-card__content {
   min-width: 0;
-  padding: 1rem 1.5rem 0.8rem;
+  padding: 0.65rem 1.5rem 0.55rem;
 }
 
 .event-card__labels {
@@ -796,7 +788,7 @@ main > section,
   }
 
   .event-card__content {
-    padding: 0.85rem 1rem 0.75rem;
+    padding: 0.6rem 1rem 0.55rem;
   }
 
   .event-facts {
