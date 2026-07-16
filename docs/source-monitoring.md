@@ -88,7 +88,7 @@ out of published event data.
 | Tundra Jiu-Jitsu        | Seasonal slot, price and summer confirmation requirement              | [Schedule](https://tundrajiujitsu.fi/harjoitusajat/), [prices](https://tundrajiujitsu.fi/hinnasto/)                                                                                                                                                                    |
 | MMA Vantaa              | Seasonal validity, visitor wording and door-access instruction        | [Training schedule](https://www.mmavantaa.net/harjoitusajat-2/)                                                                                                                                                                                                        |
 | Buli Jiu-Jitsu          | Urhea occurrence dates, annual membership and contact rule            | [Dated calendar](https://bulijj.fi/schedule), [membership](https://bulijj.fi/signup?membership=11121&type=2), [pricing](https://bulijj.fi/pricing)                                                                                                                     |
-| Loop Martial Arts       | Seasonal end date and replacement timetable                           | [Calendar](https://www.loopmartialarts.fi/kalenteri)                                                                                                                                                                                                                   |
+| Loop Martial Arts       | Saturday slot, seasonal end date and replacement timetable            | [Finnish calendar](https://www.loopmartialarts.fi/kalenteri), [English calendar](https://www.loopmartialarts.fi/en/kalenteri)                                                                                                                                          |
 | Dojo Helsinki           | Weekly time, holidays and outside-club eligibility                    | [Training times](https://www.dojohelsinki.fi/treeniajat/)                                                                                                                                                                                                              |
 | FireBody                | Weekly schedule, seasonal heading and access wording                  | [Schedule](https://www.firebody.fi/viikkoaikataulu.html)                                                                                                                                                                                                               |
 | Savate Club             | Konala seasonal free-practice slots and visitor access                | [Konala summer schedule](https://www.savate.com/jatkokurssit/bjj/kesaharjoitusajat_konala.php)                                                                                                                                                                         |
@@ -115,6 +115,8 @@ The review did add or refine evidence for existing venues:
 - HIPKO Metsälä's 15 June–9 August PDF has Saturday and Sunday BJJ open mats at
   15:00–17:00, with outside-club access still unconfirmed.
 - Loop Martial Arts' current summer candidate is bounded to 1 June–2 August.
+  The project owner later confirmed on 16 July that the Saturday open mat is
+  free, open to outside-club practitioners and allows Gi or No-gi.
 - Art of Ground Games explicitly welcomes visitors generally, but its dynamic
   schedule can impose session-specific member or belt restrictions.
 
@@ -155,11 +157,15 @@ specific enough:
   unpublished.
 - MMA Vantaa's time conflict was resolved as described above and its current
   summer Sundays were published.
+- Loop's official summer calendar still lists Saturday 10:30–12:00 through 2
+  August, and its English calendar identifies the slot as BJJ/No-Gi. The
+  project owner's access and price confirmation makes the three remaining
+  summer Saturdays publishable; the series is not extended into autumn.
 - Helsingin Ju-jutsuklubi, Tundra and GB Gym still match their published data.
   GB Gym's November cancellation remains excluded.
 - Buli Urhea remains blocked because its recurring membership description has
   no matching dated occurrence in the official calendar.
-- HIPKO, Combat Academy, Loop, Dojo Helsinki, FireBody, Savate Club and Salini
+- HIPKO, Combat Academy, Dojo Helsinki, FireBody, Savate Club and Salini
   still lack a source-specific confirmation that the relevant recurring slot is
   open to visitors, or otherwise have unresolved seasonal validity. Their
   candidates remain unpublished.

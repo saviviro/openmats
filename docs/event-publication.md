@@ -68,6 +68,18 @@ The schedule also says that summer training mostly runs normally but may have
 exceptions. It does not publish exact cancelled dates. Four occurrences are
 listed with `uncertain` status and a visible advance-confirmation instruction.
 
+### Loop Martial Arts
+
+Loop's official summer 2026 calendar lists a Saturday 10:30–12:00 BJJ open mat
+from 1 June through 2 August. Its official English calendar identifies the
+recurring slot as BJJ/No-Gi. The project owner confirmed on 16 July 2026 that
+the open mat is free, open to outside-club practitioners and allows either Gi
+or No-gi.
+
+The three remaining Saturdays on 18 July, 25 July and 1 August are published.
+The bounded summer series is not extended to 8 August or into autumn by
+assumption; a new official seasonal timetable must be reviewed first.
+
 ### GB Gym
 
 The official 2026 calendar gives exact open mat dates and times on 30 August,
