@@ -55,6 +55,7 @@ Ensimmäinen julkaistava versio:
 - Käytä riippuvuuksista lukittuja versioita ja vältä tarpeettomia paketteja.
 - Huomioi saavutettavuus, semanttinen HTML, näppäimistökäyttö, riittävä kontrasti ja selkeät virhetilat.
 - Kerää vain palvelun toiminnan kannalta tarpeellista dataa. Vältä analytiikka- ja seurantakoodeja MVP:ssä.
+- Tuotantosivusto julkaistaan Cloudflare Pagesissa osoitteeseen `https://openmats.pages.dev`. GitHubin `main`-haaran onnistuneet muutokset käynnistävät automaattisen tuotantobuildin.
 
 ## Työskentelytapa
 
