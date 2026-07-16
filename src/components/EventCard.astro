@@ -1,0 +1,166 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import {
+  formatEventDate,
+  formatEventTime,
+  formatVerifiedDate,
+  getEventFormatStates,
+  keepEuroAmountTogether,
+} from "../lib/events";
+
+interface Props {
+  event: CollectionEntry<"events">;
+}
+
+const { event } = Astro.props;
+const { data } = event;
+const address = `${data.venue.streetAddress}, ${data.venue.postalCode} ${data.venue.city}`;
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+const formatLabels = { gi: "Gi", "no-gi": "No-gi" } as const;
+const formatStateLabels = {
+  available: "sallittu",
+  unavailable: "ei sallittu",
+  unknown: "ei tietoa",
+} as const;
+const formatStateIcons = {
+  available: "✓",
+  unavailable: "×",
+  unknown: "?",
+} as const;
+const formatStates = getEventFormatStates(data.formats);
+const priceNote = keepEuroAmountTogether(data.price.note);
+const statusLabel = {
+  scheduled: null,
+  cancelled: "Peruttu",
+  rescheduled: "Siirretty",
+  uncertain: null,
+}[data.status];
+---
+
+<article
+  class="event-card"
+  data-event-card
+  data-city={data.venue.city}
+  data-formats={data.formats?.join(" ") ?? ""}
+  aria-labelledby={`event-${event.id}`}
+>
+  <div
+    class="event-card__date"
+    aria-label={`Päivä ${formatEventDate(data.startAt)}`}
+  >
+    <span>{formatEventDate(data.startAt).split(" ")[0]}</span>
+    <strong
+      >{
+        new Intl.DateTimeFormat("fi-FI", {
+          day: "numeric",
+          timeZone: "Europe/Helsinki",
+        }).format(new Date(data.startAt))
+      }</strong
+    >
+    <small
+      >{
+        new Intl.DateTimeFormat("fi-FI", {
+          month: "short",
+          timeZone: "Europe/Helsinki",
+        }).format(new Date(data.startAt))
+      }</small
+    >
+  </div>
+
+  <div class="event-card__content">
+    <div class="event-card__labels" aria-label="Open matin tyyli">
+      {
+        formatStates.map(({ format, state }) => (
+          <span
+            class:list={["format-pill", `format-pill--${state}`]}
+            aria-label={`${formatLabels[format]}: ${formatStateLabels[state]}`}
+          >
+            <span aria-hidden="true">{formatStateIcons[state]}</span>
+            {formatLabels[format]}
+          </span>
+        ))
+      }
+      {
+        data.formats === null && (
+          <span class="format-unknown-note">
+            Ei tietoa – tarkista järjestäjältä
+          </span>
+        )
+      }
+      {
+        statusLabel && (
+          <span class:list={["pill", "pill--warning"]}>{statusLabel}</span>
+        )
+      }
+    </div>
+
+    <h2 id={`event-${event.id}`}>{data.title}</h2>
+
+    <dl class="event-facts">
+      <div>
+        <dt>Aika</dt>
+        <dd>
+          {formatEventDate(data.startAt)}, {formatEventTime(data.startAt)}–{
+            formatEventTime(data.endAt)
+          }
+        </dd>
+      </div>
+      <div>
+        <dt>Paikka</dt>
+        <dd>
+          <strong>{data.venue.name}</strong><br />
+          <a href={mapUrl} target="_blank" rel="noreferrer"
+            >{address}<span class="sr-only">
+              (avautuu uuteen välilehteen)</span
+            ></a
+          >
+        </dd>
+      </div>
+      <div>
+        <dt>Hinta</dt>
+        <dd>{priceNote}</dd>
+      </div>
+      <div>
+        <dt>Kenelle</dt>
+        <dd>
+          {data.access.description}
+          {
+            data.access.registrationRequired && (
+              <span class="registration-note">Ilmoittautuminen vaaditaan</span>
+            )
+          }
+        </dd>
+      </div>
+      <div class="event-facts__source">
+        <dt>Järjestäjän sivu</dt>
+        <dd>
+          <a
+            class="source-link"
+            href={data.sourceUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Järjestäjän sivuille
+            <span aria-hidden="true">↗</span>
+            <span class="sr-only"> (avautuu uuteen välilehteen)</span>
+          </a>
+        </dd>
+      </div>
+      <div
+        class:list={[
+          "event-facts__exceptions",
+          data.schedule.exceptionStatus === "confirmation_required" &&
+            "event-facts__exceptions--attention",
+        ]}
+      >
+        <dt>Poikkeukset</dt>
+        <dd>{data.schedule.exceptionNote}</dd>
+      </div>
+    </dl>
+
+    <div class="event-card__footer">
+      <span>Tarkistettu {formatVerifiedDate(data.verifiedAt)}</span>
+    </div>
+  </div>
+</article>

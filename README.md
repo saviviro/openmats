@@ -1,20 +1,20 @@
 # Open Mats Helsinki Region
 
-Open Mats Helsinki Region is a planned public website that collects Brazilian
-jiu-jitsu and submission-wrestling open mats across Helsinki, Espoo, Vantaa,
-and Kauniainen.
+Open Mats Helsinki Region is a planned public website that collects Gi (BJJ)
+and No-gi (submission-wrestling) open mats across Helsinki, Espoo, Vantaa, and
+Kauniainen.
 
-The service will help visitors compare upcoming sessions by date, sport,
-location, price, and participation requirements. Every published event must
+The service will help visitors compare upcoming sessions by date, Gi/No-gi
+format, location, price, and participation requirements. Every published event must
 retain a link to its original source and the time when the information was last
 verified.
 
 ## Project status
 
-The project is in its initial planning and setup phase. The first milestone is
-a small, mobile-friendly static website backed by version-controlled event
-data. A separate collection pipeline will be introduced after the event schema
-and user interface are stable.
+The first mobile-friendly static website foundation, metropolitan-area source
+registry and a limited window of verified real events are under development.
+Recurring timetables are converted into dated events only through an explicitly
+reviewed publication limit.
 
 ## Planned approach
 
@@ -36,22 +36,66 @@ The initial release covers the full Helsinki metropolitan area:
 - Vantaa
 - Kauniainen
 
+The visible city filters currently show Helsinki, Espoo and Vantaa. Kauniainen
+stays in source discovery coverage but is omitted from the filter while no
+active BJJ or No-gi venue or publishable open mat is known there.
+
 ## Data principles
 
 - Never invent missing event details.
 - Prefer the organizer's own current source over secondary listings.
 - Preserve source URLs and verification timestamps.
+- Represent event type directly as Gi, No-gi, both, or unknown; do not maintain
+  a separate sport and attire distinction in published event data.
 - Flag conflicting or uncertain information for review.
 - Treat recurring schedules, holiday exceptions, and cancellations explicitly.
 - Do not automatically remove verified events because one collection run fails.
 
 See [AGENTS.md](AGENTS.md) for the current project conventions and operating
-rules.
+rules. See [docs/source-registry.md](docs/source-registry.md) for the first
+official-source mapping and the distinction between an open-mat label and
+confirmed outside-club access. See
+[docs/source-monitoring.md](docs/source-monitoring.md) for the maintained
+check order, cadence and high-yield official sources. See
+[docs/event-publication.md](docs/event-publication.md) for the first dated-event
+window, exception handling and a documented blocked source conflict.
 
 ## Development
 
-Development commands will be documented here when the web application is
-scaffolded. Do not commit API keys, access tokens, or local environment files.
+Requirements:
+
+- Node.js 22.12 or newer (Node 24 is recommended)
+- pnpm 11.7
+
+Install dependencies and start the local development server:
+
+```sh
+pnpm install
+pnpm dev
+```
+
+Run all local quality checks:
+
+```sh
+pnpm validate
+```
+
+The validation command checks formatting, Astro and TypeScript diagnostics,
+unit tests, content schemas, duplicate event identities, and the production
+build. Do not commit API keys, access tokens, or local environment files.
+
+## Project structure
+
+```text
+data/                  maintained source and recurring-event registries
+docs/                  decisions and collection documentation
+src/components/        reusable Astro interface components
+src/data/              version-controlled event data
+src/lib/               event formatting and validation utilities
+src/pages/             website routes
+src/styles/            global visual styles
+.github/workflows/     continuous integration
+```
 
 ## License
 

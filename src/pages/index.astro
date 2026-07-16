@@ -1,0 +1,234 @@
+---
+import { getCollection } from "astro:content";
+
+import EventCard from "../components/EventCard.astro";
+import FilterBar from "../components/FilterBar.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { findDuplicateEventIds, sortEvents } from "../lib/events";
+
+const events = sortEvents(
+  await getCollection("events"),
+  (event) => event.data.startAt,
+);
+const duplicates = findDuplicateEventIds(
+  events.map((event) => ({
+    id: event.id,
+    title: event.data.title,
+    formats: event.data.formats,
+    startAt: event.data.startAt,
+    venue: event.data.venue,
+  })),
+);
+const latestVerificationDate =
+  events.length === 0
+    ? null
+    : new Intl.DateTimeFormat("fi-FI", {
+        dateStyle: "long",
+        timeZone: "Europe/Helsinki",
+      }).format(
+        new Date(
+          Math.max(
+            ...events.map((event) => new Date(event.data.verifiedAt).getTime()),
+          ),
+        ),
+      );
+
+if (duplicates.length > 0) {
+  throw new Error(
+    `Duplicate event identities found: ${JSON.stringify(duplicates)}`,
+  );
+}
+---
+
+<BaseLayout
+  title="Open Mats — Helsinki Region"
+  description="Pääkaupunkiseudun BJJ- ja lukkopaini-open matit yhdessä paikassa."
+>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Open Mats, etusivu">
+      <span class="brand__mark" aria-hidden="true">OM</span>
+      <span>
+        <strong>Open Mats</strong>
+        <small>Helsinki Region</small>
+      </span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Helsinki · Espoo · Vantaa</p>
+        <h1>Löydä seuraava<br /><em>open mat.</em></h1>
+        <p class="hero__lead">
+          Pääkaupunkiseudun BJJ- ja lukkopaini-open matit koottuna selkeäksi
+          listaksi. Tarkista tiedot aina järjestäjän alkuperäisestä lähteestä.
+        </p>
+        <a class="hero__action" href="#events"
+          >Selaa tapahtumia <span aria-hidden="true">↓</span></a
+        >
+      </div>
+    </section>
+
+    <aside
+      class="example-notice"
+      role="note"
+      aria-label="Tapahtumatietojen huomautus"
+    >
+      <span aria-hidden="true">i</span>
+      <div>
+        <strong>
+          Listalla ovat kaikki tällä hetkellä vahvistetut tulevat tapahtumat.
+        </strong>
+        {
+          latestVerificationDate &&
+            ` Tiedot on tarkistettu viimeksi ${latestVerificationDate}.`
+        }
+        {" Ajantasaiset tiedot kannattaa tarkistaa järjestäjän sivuilta."}
+      </div>
+    </aside>
+
+    <section class="events-section" id="events" aria-labelledby="events-title">
+      <div class="section-intro">
+        <p class="eyebrow">Tulevat open matit</p>
+        <h2 id="events-title">Valitse aika ja paikka</h2>
+        <p>Suodata tapahtumia kaupungin tai tyylin mukaan.</p>
+      </div>
+
+      <FilterBar />
+
+      <div class="event-list" data-event-list>
+        {events.map((event) => <EventCard event={event} />)}
+      </div>
+
+      <div class="pagination" data-pagination hidden>
+        <p data-page-summary aria-live="polite"></p>
+        <nav class="pagination__controls" aria-label="Tapahtumalistan sivut">
+          <button type="button" data-page-action="previous">← Edellinen</button>
+          <p>
+            Sivu <strong data-current-page>1</strong> / <span data-total-pages
+              >1</span
+            >
+          </p>
+          <button type="button" data-page-action="next">Seuraava →</button>
+        </nav>
+      </div>
+
+      <div class="empty-state" data-empty-state hidden>
+        <strong>Ei osumia näillä rajauksilla.</strong>
+        <p>Kokeile toista kaupunkia tai tyyliä.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="brand brand--footer">
+      <span class="brand__mark" aria-hidden="true">OM</span>
+      <span><strong>Open Mats</strong><small>Helsinki Region</small></span>
+    </div>
+    <p>
+      Koontipalvelu ei järjestä tapahtumia. Varmista tiedot aina alkuperäisestä
+      lähteestä.
+    </p>
+  </footer>
+
+  <script>
+    import { EVENTS_PER_PAGE, getPaginationState } from "../lib/pagination";
+
+    const filterState = { city: "all", format: "all" };
+    let currentPage = 1;
+    const cards = [...document.querySelectorAll("[data-event-card]")];
+    const eventList = document.querySelector("[data-event-list]");
+    const emptyState = document.querySelector("[data-empty-state]");
+    const pagination = document.querySelector("[data-pagination]");
+    const pageSummary = document.querySelector("[data-page-summary]");
+    const currentPageLabel = document.querySelector("[data-current-page]");
+    const totalPagesLabel = document.querySelector("[data-total-pages]");
+    const previousButton = document.querySelector(
+      '[data-page-action="previous"]',
+    );
+    const nextButton = document.querySelector('[data-page-action="next"]');
+
+    function updateResults() {
+      const matchingCards = cards.filter((card) => {
+        if (!(card instanceof HTMLElement)) return false;
+
+        const cityMatches =
+          filterState.city === "all" || card.dataset.city === filterState.city;
+        const formats = card.dataset.formats?.split(" ").filter(Boolean) ?? [];
+        const formatMatches =
+          filterState.format === "all" || formats.includes(filterState.format);
+        return cityMatches && formatMatches;
+      });
+      const pageState = getPaginationState(
+        matchingCards.length,
+        currentPage,
+        EVENTS_PER_PAGE,
+      );
+      currentPage = pageState.page || 1;
+      const pageCards = new Set(
+        matchingCards.slice(pageState.startIndex, pageState.endIndex),
+      );
+
+      for (const card of cards) {
+        if (card instanceof HTMLElement) card.hidden = !pageCards.has(card);
+      }
+
+      if (emptyState instanceof HTMLElement)
+        emptyState.hidden = matchingCards.length !== 0;
+      if (pagination instanceof HTMLElement)
+        pagination.hidden = pageState.totalPages <= 1;
+      if (pageSummary)
+        pageSummary.textContent = `Näytetään ${pageState.firstItem}–${pageState.lastItem} / ${matchingCards.length} tapahtumaa`;
+      if (currentPageLabel)
+        currentPageLabel.textContent = String(pageState.page);
+      if (totalPagesLabel)
+        totalPagesLabel.textContent = String(pageState.totalPages);
+      if (previousButton instanceof HTMLButtonElement)
+        previousButton.disabled = pageState.page <= 1;
+      if (nextButton instanceof HTMLButtonElement)
+        nextButton.disabled = pageState.page >= pageState.totalPages;
+    }
+
+    function changePage(direction: number) {
+      currentPage += direction;
+      updateResults();
+      if (eventList instanceof HTMLElement) {
+        eventList.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+            .matches
+            ? "auto"
+            : "smooth",
+          block: "start",
+        });
+      }
+    }
+
+    previousButton?.addEventListener("click", () => changePage(-1));
+    nextButton?.addEventListener("click", () => changePage(1));
+
+    for (const group of document.querySelectorAll("[data-filter-group]")) {
+      if (!(group instanceof HTMLElement)) continue;
+      const filterName = group.dataset.filterGroup;
+      if (filterName !== "city" && filterName !== "format") continue;
+
+      for (const button of group.querySelectorAll(
+        "button[data-filter-value]",
+      )) {
+        button.addEventListener("click", () => {
+          if (!(button instanceof HTMLButtonElement)) return;
+
+          filterState[filterName] = button.dataset.filterValue ?? "all";
+          currentPage = 1;
+          for (const sibling of group.querySelectorAll(
+            "button[data-filter-value]",
+          )) {
+            sibling.setAttribute("aria-pressed", String(sibling === button));
+          }
+          updateResults();
+        });
+      }
+    }
+
+    updateResults();
+  </script>
+</BaseLayout>
