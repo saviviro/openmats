@@ -1,17 +1,28 @@
+---
+import { ui, type Locale } from "../lib/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = ui[locale];
+---
+
 <section class="filters" aria-labelledby="filter-title">
   <div class="filters__heading">
     <div>
-      <p class="eyebrow">Rajaa listaa</p>
-      <h2 id="filter-title">Löydä sopiva open mat</h2>
+      <p class="eyebrow">{copy.filterEyebrow}</p>
+      <h2 id="filter-title">{copy.filterTitle}</h2>
     </div>
   </div>
 
   <div class="filter-groups">
     <fieldset data-filter-group="city">
-      <legend>Kaupunki</legend>
+      <legend>{copy.city}</legend>
       <div class="filter-buttons">
         <button type="button" data-filter-value="all" aria-pressed="true"
-          >Kaikki</button
+          >{copy.all}</button
         >
         <button type="button" data-filter-value="Helsinki" aria-pressed="false"
           >Helsinki</button
@@ -26,16 +37,31 @@
     </fieldset>
 
     <fieldset data-filter-group="format">
-      <legend>Tyyli</legend>
+      <legend>{copy.style}</legend>
       <div class="filter-buttons">
         <button type="button" data-filter-value="all" aria-pressed="true"
-          >Kaikki</button
+          >{copy.all}</button
         >
         <button type="button" data-filter-value="gi" aria-pressed="false"
           >Gi</button
         >
         <button type="button" data-filter-value="no-gi" aria-pressed="false"
           >No-gi</button
+        >
+      </div>
+    </fieldset>
+
+    <fieldset data-filter-group="price">
+      <legend>{copy.price}</legend>
+      <div class="filter-buttons">
+        <button type="button" data-filter-value="free" aria-pressed="true"
+          >{copy.free}</button
+        >
+        <button type="button" data-filter-value="paid" aria-pressed="true"
+          >{copy.paid}</button
+        >
+        <button type="button" data-filter-value="unknown" aria-pressed="true"
+          >{copy.unknown}</button
         >
       </div>
     </fieldset>

@@ -1,9 +1,12 @@
+import { intlLocale, type Locale } from "./i18n";
+
 export const HELSINKI_TIME_ZONE = "Europe/Helsinki";
 
 export type EventStatus =
   "scheduled" | "cancelled" | "rescheduled" | "uncertain";
 export type EventFormat = "gi" | "no-gi";
 export type EventFormatState = "available" | "unavailable" | "unknown";
+export type EventPriceCategory = "free" | "paid" | "unknown";
 
 export interface EventForDisplay {
   id: string;
@@ -16,27 +19,6 @@ export interface EventForDisplay {
   };
 }
 
-const dateFormatter = new Intl.DateTimeFormat("fi-FI", {
-  weekday: "short",
-  day: "numeric",
-  month: "long",
-  timeZone: HELSINKI_TIME_ZONE,
-});
-
-const timeFormatter = new Intl.DateTimeFormat("fi-FI", {
-  hour: "2-digit",
-  minute: "2-digit",
-  hourCycle: "h23",
-  timeZone: HELSINKI_TIME_ZONE,
-});
-
-const verifiedFormatter = new Intl.DateTimeFormat("fi-FI", {
-  day: "numeric",
-  month: "numeric",
-  year: "numeric",
-  timeZone: HELSINKI_TIME_ZONE,
-});
-
 export function sortEvents<T>(
   events: T[],
   getStartAt: (event: T) => string,
@@ -47,20 +29,53 @@ export function sortEvents<T>(
   );
 }
 
-export function formatEventDate(isoDate: string): string {
-  return dateFormatter.format(new Date(isoDate));
+export function formatEventDate(
+  isoDate: string,
+  locale: Locale = "fi",
+): string {
+  return new Intl.DateTimeFormat(intlLocale[locale], {
+    weekday: "short",
+    day: "numeric",
+    month: "long",
+    timeZone: HELSINKI_TIME_ZONE,
+  }).format(new Date(isoDate));
 }
 
-export function formatEventTime(isoDate: string): string {
-  return timeFormatter.format(new Date(isoDate)).replace(".", ":");
+export function formatEventTime(
+  isoDate: string,
+  locale: Locale = "fi",
+): string {
+  return new Intl.DateTimeFormat(intlLocale[locale], {
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZone: HELSINKI_TIME_ZONE,
+  })
+    .format(new Date(isoDate))
+    .replace(".", ":");
 }
 
-export function formatVerifiedDate(isoDate: string): string {
-  return verifiedFormatter.format(new Date(isoDate));
+export function formatVerifiedDate(
+  isoDate: string,
+  locale: Locale = "fi",
+): string {
+  return new Intl.DateTimeFormat(intlLocale[locale], {
+    day: "numeric",
+    month: "numeric",
+    year: "numeric",
+    timeZone: HELSINKI_TIME_ZONE,
+  }).format(new Date(isoDate));
 }
 
 export function keepEuroAmountTogether(text: string): string {
   return text.replace(/(\d)\s+(?=€(?:\s|$))/gu, "$1\u00a0");
+}
+
+export function getEventPriceCategory(
+  amount: number | null,
+): EventPriceCategory {
+  if (amount === null) return "unknown";
+  return amount === 0 ? "free" : "paid";
 }
 
 export function eventIdentity(event: EventForDisplay): string {

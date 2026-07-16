@@ -1,0 +1,179 @@
+export type Locale = "fi" | "en";
+
+export const intlLocale: Record<Locale, string> = {
+  fi: "fi-FI",
+  en: "en-GB",
+};
+
+export const ui = {
+  fi: {
+    description:
+      "Pääkaupunkiseudun BJJ- ja lukkopaini-open matit yhdessä paikassa.",
+    homeLabel: "Open Mats, etusivu",
+    languageLabel: "Kieli",
+    skipLink: "Siirry tapahtumiin",
+    heroTitle: "Löydä seuraava",
+    heroOpenMat: "open mat.",
+    heroLead:
+      "Pääkaupunkiseudun BJJ- ja lukkopaini-open matit koottuna selkeäksi listaksi. Tarkista tiedot aina järjestäjän alkuperäisestä lähteestä.",
+    heroAction: "Selaa tapahtumia",
+    noticeLabel: "Tapahtumatietojen huomautus",
+    noticeStrong:
+      "Listalla ovat kaikki tällä hetkellä vahvistetut tulevat tapahtumat.",
+    lastChecked: "Tiedot on tarkistettu viimeksi",
+    sourceReminder:
+      "Ajantasaiset tiedot kannattaa tarkistaa järjestäjän sivuilta.",
+    upcoming: "Tulevat open matit",
+    sectionTitle: "Valitse aika ja paikka",
+    sectionLead: "Suodata tapahtumia kaupungin, tyylin tai hinnan mukaan.",
+    filterEyebrow: "Rajaa listaa",
+    filterTitle: "Löydä sopiva open mat",
+    city: "Kaupunki",
+    style: "Tyyli",
+    price: "Hinta",
+    all: "Kaikki",
+    free: "Ilmainen",
+    paid: "Maksullinen",
+    unknown: "Ei tietoa",
+    eventStyleLabel: "Open matin tyyli",
+    available: "sallittu",
+    unavailable: "ei sallittu",
+    unknownFormat: "ei tietoa",
+    unknownFormatNote: "Ei tietoa – tarkista järjestäjältä",
+    cancelled: "Peruttu",
+    rescheduled: "Siirretty",
+    time: "Aika",
+    venue: "Paikka",
+    audience: "Kenelle",
+    organizerPage: "Järjestäjän sivu",
+    organizerLink: "Järjestäjän sivuille",
+    exceptions: "Poikkeukset",
+    registrationRequired: "Ilmoittautuminen vaaditaan",
+    checked: "Tarkistettu",
+    opensNewTab: "avautuu uuteen välilehteen",
+    dateAria: "Päivä",
+    paginationLabel: "Tapahtumalistan sivut",
+    previous: "Edellinen",
+    next: "Seuraava",
+    page: "Sivu",
+    emptyTitle: "Ei osumia näillä rajauksilla.",
+    emptyLead: "Kokeile toista kaupunkia, tyyliä tai hintaa.",
+    footer:
+      "Koontipalvelu ei järjestä tapahtumia. Varmista tiedot aina alkuperäisestä lähteestä.",
+  },
+  en: {
+    description:
+      "Brazilian jiu-jitsu and submission wrestling open mats across the Helsinki region.",
+    homeLabel: "Open Mats, home page",
+    languageLabel: "Language",
+    skipLink: "Skip to events",
+    heroTitle: "Find your next",
+    heroOpenMat: "open mat.",
+    heroLead:
+      "Brazilian jiu-jitsu and submission wrestling open mats across the Helsinki region, collected in one clear list. Always confirm the details on the organizer’s original page.",
+    heroAction: "Browse events",
+    noticeLabel: "Event information notice",
+    noticeStrong: "The list includes all currently verified upcoming events.",
+    lastChecked: "Details were last checked on",
+    sourceReminder:
+      "Current details are worth checking on the organizer’s page.",
+    upcoming: "Upcoming open mats",
+    sectionTitle: "Choose a time and place",
+    sectionLead: "Filter events by city, style, or price.",
+    filterEyebrow: "Filter the list",
+    filterTitle: "Find a suitable open mat",
+    city: "City",
+    style: "Style",
+    price: "Price",
+    all: "All",
+    free: "Free",
+    paid: "Paid",
+    unknown: "Unknown",
+    eventStyleLabel: "Open mat style",
+    available: "allowed",
+    unavailable: "not allowed",
+    unknownFormat: "unknown",
+    unknownFormatNote: "Unknown – check with the organizer",
+    cancelled: "Cancelled",
+    rescheduled: "Rescheduled",
+    time: "Time",
+    venue: "Venue",
+    audience: "Who can attend",
+    organizerPage: "Organizer’s page",
+    organizerLink: "Open organizer’s page",
+    exceptions: "Exceptions",
+    registrationRequired: "Registration required",
+    checked: "Checked",
+    opensNewTab: "opens in a new tab",
+    dateAria: "Date",
+    paginationLabel: "Event list pages",
+    previous: "Previous",
+    next: "Next",
+    page: "Page",
+    emptyTitle: "No events match these filters.",
+    emptyLead: "Try another city, style, or price.",
+    footer:
+      "This listing service does not organize the events. Always confirm the details from the original source.",
+  },
+} as const;
+
+export interface EventTranslation {
+  priceNote: string;
+  accessDescription: string;
+  exceptionNote: string;
+}
+
+export const englishEventTranslations: Record<string, EventTranslation> = {
+  "aogg-erottaja-sunday-nogi-open-mat": {
+    priceNote: "Visitor drop-in €15",
+    accessDescription:
+      "Open to practitioners from other clubs. No-gi only; reserve a spot in advance.",
+    exceptionNote: "The official calendar does not list cancelled dates.",
+  },
+  "aogg-sornainen-colored-belts-nogi-open-mat": {
+    priceNote: "Visitor drop-in €15",
+    accessDescription:
+      "Open to coloured belts from other clubs. No-gi only; reserve a spot in advance.",
+    exceptionNote:
+      "The official calendar does not list cancelled dates. The session is for coloured belts.",
+  },
+  "gb-gym-monthly-open-mat": {
+    priceNote: "Free of charge",
+    accessDescription: "Open to all practitioners. Gi or no-gi.",
+    exceptionNote: "No known exceptions.",
+  },
+  "hjjk-saturday-open-mat": {
+    priceNote: "The source does not state a visitor price",
+    accessDescription: "Open to practitioners from other clubs.",
+    exceptionNote:
+      "The session is held only when the venue has no other event. No overlapping BJJ event was found during the reviewed publication window.",
+  },
+  "mma-vantaa-sunday-open-mat": {
+    priceNote: "The source does not state a visitor price",
+    accessDescription:
+      "Open to visitors from other clubs. Be at the door before the session starts, because entry requires a member’s door code.",
+    exceptionNote:
+      "The official summer schedule is valid through 9 August 2026. Attire is not specified.",
+  },
+  "tundra-saturday-open-mat": {
+    priceNote: "Non-member drop-in €14",
+    accessDescription:
+      "Open to members of other clubs. Contact the gym before visiting during summer.",
+    exceptionNote:
+      "The gym notes that summer exceptions are possible and asks visitors to get in touch before attending.",
+  },
+};
+
+export function getEventTranslation(
+  locale: Locale,
+  seriesId: string,
+  finnish: EventTranslation,
+): EventTranslation {
+  if (locale === "fi") return finnish;
+
+  const translation = englishEventTranslations[seriesId];
+  if (!translation) {
+    throw new Error(`Missing English event translation for ${seriesId}`);
+  }
+  return translation;
+}
