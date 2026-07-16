@@ -97,12 +97,13 @@ if (duplicates.length > 0) {
     <aside class="example-notice" role="note" aria-label={copy.noticeLabel}>
       <span aria-hidden="true">i</span>
       <div>
-        <strong>{copy.noticeStrong}</strong>
-        {
-          latestVerificationDate &&
-            ` ${copy.lastChecked} ${latestVerificationDate}.`
-        }
-        {` ${copy.sourceReminder}`}
+        <strong>
+          {
+            latestVerificationDate &&
+              `${copy.lastChecked} ${latestVerificationDate}. `
+          }
+          {copy.sourceReminder}
+        </strong>
       </div>
     </aside>
 
