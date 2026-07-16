@@ -11,10 +11,11 @@ verified.
 
 ## Project status
 
-The first mobile-friendly static website foundation, metropolitan-area source
-registry and a limited window of verified real events are under development.
-Recurring timetables are converted into dated events only through an explicitly
-reviewed publication limit.
+The first mobile-friendly static website is published at
+[openmats.pages.dev](https://openmats.pages.dev). It contains a maintained
+metropolitan-area source registry and an explicitly reviewed window of verified
+real events. Recurring timetables are converted into dated events only through
+an explicitly reviewed publication limit.
 
 ## Planned approach
 
@@ -25,7 +26,7 @@ reviewed publication limit.
 - AI-assisted source discovery and conflict review where it adds value
 - scheduled Codex tasks during the early phase
 - optional OpenAI API integration later if cloud-only automation is needed
-- Cloudflare hosting after the first local version is ready
+- automatic Cloudflare Pages deployment from the GitHub `main` branch
 
 ## Geographic scope
 
@@ -58,7 +59,9 @@ confirmed outside-club access. See
 [docs/source-monitoring.md](docs/source-monitoring.md) for the maintained
 check order, cadence and high-yield official sources. See
 [docs/event-publication.md](docs/event-publication.md) for the first dated-event
-window, exception handling and a documented blocked source conflict.
+window, exception handling and a documented blocked source conflict. See
+[docs/deployment.md](docs/deployment.md) for the production URL and Cloudflare
+Pages deployment workflow.
 
 ## Development
 
