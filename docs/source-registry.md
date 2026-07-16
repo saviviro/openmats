@@ -58,8 +58,8 @@ such as _vapaavuoro_, _omatoimi_ and _avoin sparrivuoro_.
 
 The materialized recurring sources now include Helsingin Ju-jutsuklubi at
 Kaapelitehdas, Tundra Jiu-Jitsu in Suomenoja, Loop Martial Arts in Pitäjänmäki,
-AOGG Erottaja, AOGG Sörnäinen and MMA Vantaa. The AOGG location calendars must
-still be interpreted separately:
+AOGG Erottaja, AOGG Sörnäinen, Dojo Helsinki in Punavuori, Kilo Jiu-Jitsu in
+Kilo and MMA Vantaa. The AOGG location calendars must still be interpreted separately:
 Erottaja has a public Sunday No-gi session, Sörnäinen has a public Saturday
 No-gi session for coloured belts, and Kivenlahti currently lists only
 members-only open mats. MMA Vantaa's live summer timetable now unambiguously
@@ -70,11 +70,23 @@ Buli's membership sources identify a Sunday 12:00–13:30 Gi and No-gi open mat
 at Urhea, but the dated calendar currently lists no occurrence, so the series
 is blocked rather than attached to Konepaja or materialized by assumption.
 
-High-priority manual-review sources include Dojo Helsinki, Combat Academy,
-HIPKO, FireBody, Savate Club and Salini. Their current official
+High-priority manual-review sources include Combat Academy, HIPKO, FireBody,
+Savate Club and Salini. Their current official
 sources show open mats, free practice or sparring, but do not provide enough
 evidence to publish outside-club access automatically. FireBody also needs a
 current seasonal timetable: its live page is still labelled spring 2026.
+
+Dojo Helsinki's official Finnish and English timetables list Saturday
+12:00–13:00 open mat. The project owner confirmed outside-club access and No-gi
+attire on 16 July 2026. The recurring series is published, and Dojo's official
+Instagram account is retained for holiday changes and additional dated open
+mats.
+
+The project owner confirmed Kilo Jiu-Jitsu's public Saturday 11:00–12:30 slot
+on 16 July 2026. Its official site confirms the second-floor Kutojantie venue
+and a current 15-euro drop-in price, but the official schedule page is still
+labelled 2023. Attire remains unknown and the published occurrences visibly
+require confirmation until Kilo publishes a current first-party timetable.
 
 Loop's official summer calendar lists a Saturday 10:30–12:00 BJJ open mat
 through 2 August 2026, while its official English calendar identifies the slot

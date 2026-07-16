@@ -89,7 +89,8 @@ out of published event data.
 | MMA Vantaa              | Seasonal validity, visitor wording and door-access instruction        | [Training schedule](https://www.mmavantaa.net/harjoitusajat-2/)                                                                                                                                                                                                        |
 | Buli Jiu-Jitsu          | Urhea occurrence dates, annual membership and contact rule            | [Dated calendar](https://bulijj.fi/schedule), [membership](https://bulijj.fi/signup?membership=11121&type=2), [pricing](https://bulijj.fi/pricing)                                                                                                                     |
 | Loop Martial Arts       | Saturday slot, seasonal end date and replacement timetable            | [Finnish calendar](https://www.loopmartialarts.fi/kalenteri), [English calendar](https://www.loopmartialarts.fi/en/kalenteri)                                                                                                                                          |
-| Dojo Helsinki           | Weekly time, holidays and outside-club eligibility                    | [Training times](https://www.dojohelsinki.fi/treeniajat/)                                                                                                                                                                                                              |
+| Dojo Helsinki           | Weekly time, holiday changes and additional dated open mats           | [Finnish training times](https://www.dojohelsinki.fi/treeniajat/), [English classes](https://www.dojohelsinki.fi/en/classes/), [Instagram](https://www.instagram.com/dojohelsinki/)                                                                                    |
+| Kilo Jiu-Jitsu          | Weekly time, attire, exceptions and replacement of the stale schedule | [Website](https://www.kilojiujitsu.com/), [schedule](https://www.kilojiujitsu.com/aikataulut/), [prices](https://www.kilojiujitsu.com/hinnat/), [Instagram](https://www.instagram.com/kilojiujitsu/)                                                                   |
 | FireBody                | Weekly schedule, seasonal heading and access wording                  | [Schedule](https://www.firebody.fi/viikkoaikataulu.html)                                                                                                                                                                                                               |
 | Savate Club             | Konala seasonal free-practice slots and visitor access                | [Konala summer schedule](https://www.savate.com/jatkokurssit/bjj/kesaharjoitusajat_konala.php)                                                                                                                                                                         |
 | Salini Sports Center    | Weekly sparring and separately announced public events                | [Schedule](https://www.salini.fi/tuntiohjelma/)                                                                                                                                                                                                                        |
@@ -175,6 +176,20 @@ specific enough:
 The FireBody record was corrected during this audit: the official page currently
 lists Saturday BJJ self-practice at 12:00–13:00 under a spring 2026 heading. The
 previous 13:00–14:00 autumn candidate was not supported by the live source.
+
+## Owner-confirmed additions: 17 July 2026
+
+- Dojo Helsinki's Finnish and English official timetables both list Saturday
+  12:00–13:00 open mat at Pursimiehenkatu 14. The project owner confirmed that
+  the session is public and uses No-gi attire. Four Saturdays through the
+  current materialization window are published. The official Instagram account
+  is now monitored for holiday changes and additional dated open mats.
+- The project owner confirmed Kilo Jiu-Jitsu's public Saturday 11:00–12:30 open
+  mat at Kutojantie 5, second floor. The official site confirms the venue and
+  current 15-euro drop-in price, but its schedule page remains labelled 2023.
+  Four Saturdays are therefore published with confirmation required and attire
+  left unknown. Recheck the official Instagram account and schedule before
+  extending or marking the series fully verified.
 
 ## Buli follow-up: 16 July 2026
 

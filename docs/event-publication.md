@@ -80,6 +80,30 @@ The three remaining Saturdays on 18 July, 25 July and 1 August are published.
 The bounded summer series is not extended to 8 August or into autumn by
 assumption; a new official seasonal timetable must be reviewed first.
 
+### Dojo Helsinki
+
+Dojo's official Finnish and English timetables list Saturday 12:00–13:00 open
+mat at Pursimiehenkatu 14. The project owner confirmed on 16 July 2026 that the
+session is open to outside-club practitioners and uses No-gi attire. The
+visitor price is unknown because the official sources do not state one.
+
+Four Saturdays through 8 August are published. Dojo's official Instagram
+account is a supporting monitoring source for holiday changes and additional
+open mats, which must be added as separately dated events.
+
+### Kilo Jiu-Jitsu
+
+The project owner confirmed on 16 July 2026 that Kilo has a public Saturday
+11:00–12:30 open mat at Kutojantie 5, second floor. The official venue page
+confirms the address, and the price page states a 15-euro drop-in price from 1
+June 2026. The official schedule page remains labelled 2023 and does not
+currently verify the slot, attire or exceptions.
+
+Four Saturdays through 8 August are published with `uncertain` status and a
+visible confirmation reminder. Attire is deliberately stored as unknown. The
+official schedule and Instagram must be checked again before extending or
+fully verifying the recurring series.
+
 ### GB Gym
 
 The official 2026 calendar gives exact open mat dates and times on 30 August,

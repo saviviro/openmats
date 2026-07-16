@@ -47,7 +47,6 @@ export const ui = {
     organizerLink: "Järjestäjän sivuille",
     exceptions: "Poikkeukset",
     registrationRequired: "Ilmoittautuminen vaaditaan",
-    checked: "Tarkistettu",
     opensNewTab: "avautuu uuteen välilehteen",
     dateAria: "Päivä",
     paginationLabel: "Tapahtumalistan sivut",
@@ -101,7 +100,6 @@ export const ui = {
     organizerLink: "Open organizer’s page",
     exceptions: "Exceptions",
     registrationRequired: "Registration required",
-    checked: "Checked",
     opensNewTab: "opens in a new tab",
     dateAria: "Date",
     paginationLabel: "Event list pages",
@@ -136,6 +134,12 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The official calendar does not list cancelled dates. The session is for coloured belts.",
   },
+  "dojo-helsinki-saturday-nogi-open-mat": {
+    priceNote: "The source does not state a visitor price",
+    accessDescription: "Open to practitioners from other clubs. No-gi attire.",
+    exceptionNote:
+      "Dojo announces holiday changes and additional open mats on Instagram.",
+  },
   "gb-gym-monthly-open-mat": {
     priceNote: "Free of charge",
     accessDescription: "Open to all practitioners. Gi or no-gi.",
@@ -146,6 +150,12 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     accessDescription: "Open to practitioners from other clubs.",
     exceptionNote:
       "The session is held only when the venue has no other event. No overlapping BJJ event was found during the reviewed publication window.",
+  },
+  "kilo-jiu-jitsu-saturday-open-mat": {
+    priceNote: "Drop-in €15",
+    accessDescription: "Open to practitioners from other clubs.",
+    exceptionNote:
+      "The gym’s official web schedule is still labelled 2023, so confirm the attire and current schedule with the organizer.",
   },
   "loop-saturday-open-mat": {
     priceNote: "Free of charge",

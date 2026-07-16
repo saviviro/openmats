@@ -4,7 +4,6 @@ import type { CollectionEntry } from "astro:content";
 import {
   formatEventDate,
   formatEventTime,
-  formatVerifiedDate,
   getEventPriceCategory,
   getEventFormatStates,
   keepEuroAmountTogether,
@@ -181,9 +180,5 @@ const statusLabel = {
         <dd>{eventText.exceptionNote}</dd>
       </div>
     </dl>
-
-    <div class="event-card__footer">
-      <span>{copy.checked} {formatVerifiedDate(data.verifiedAt, locale)}</span>
-    </div>
   </div>
 </article>

@@ -43,6 +43,18 @@ const expectedSeriesDisplayData = {
     priceAmount: 0,
     status: "scheduled",
   },
+  "dojo-helsinki-saturday-nogi-open-mat": {
+    venueName: "Dojo Helsinki",
+    formats: ["no-gi"],
+    priceAmount: null,
+    status: "scheduled",
+  },
+  "kilo-jiu-jitsu-saturday-open-mat": {
+    venueName: "Kilo Jiu-Jitsu",
+    formats: null,
+    priceAmount: 15,
+    status: "uncertain",
+  },
   "mma-vantaa-sunday-open-mat": {
     venueName: "MMA Vantaa",
     formats: null,
@@ -105,6 +117,30 @@ describe("event series materialization", () => {
       "2026-07-25",
       "2026-08-01",
     ]);
+  });
+
+  it("materializes the newly confirmed Dojo and Kilo Saturday slots", () => {
+    const dojo = registry.series.find(
+      ({ id }) => id === "dojo-helsinki-saturday-nogi-open-mat",
+    );
+    const kilo = registry.series.find(
+      ({ id }) => id === "kilo-jiu-jitsu-saturday-open-mat",
+    );
+    const expectedDates = [
+      "2026-07-18",
+      "2026-07-25",
+      "2026-08-01",
+      "2026-08-08",
+    ];
+
+    expect(dojo?.publicationStatus).toBe("publish");
+    expect(kilo?.publicationStatus).toBe("publish_with_confirmation");
+    expect(materializeOccurrenceDates(dojo!, registry.window)).toEqual(
+      expectedDates,
+    );
+    expect(materializeOccurrenceDates(kilo!, registry.window)).toEqual(
+      expectedDates,
+    );
   });
 
   it("materializes only the publishable AOGG visitor sessions", () => {

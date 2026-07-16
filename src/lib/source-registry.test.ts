@@ -54,7 +54,9 @@ describe("source registry", () => {
             ["public_confirmed", "public_with_conditions", "mixed"],
             venue.id,
           ).toContain(venue.openMatAccess);
-          expect(candidate.disciplines.length, venue.id).toBeGreaterThan(0);
+          if (candidate.disciplines.length === 0) {
+            expect(candidate.notes, venue.id).toMatch(/not stated|unverified/i);
+          }
         }
       }
     }
@@ -119,6 +121,10 @@ describe("source registry", () => {
       ({ id }) => id === "mma-vantaa-martinlaakso",
     );
     const loop = registry.venues.find(({ id }) => id === "loop-pitajanmaki");
+    const dojo = registry.venues.find(
+      ({ id }) => id === "dojo-helsinki-punavuori",
+    );
+    const kilo = registry.venues.find(({ id }) => id === "kilo-jiu-jitsu-kilo");
 
     expect(erottaja?.candidateOpenMats[0]).toMatchObject({
       weekday: 7,
@@ -156,6 +162,30 @@ describe("source registry", () => {
           disciplines: ["bjj", "nogi"],
           publishStatus: "ready_for_event_review",
           validThrough: "2026-08-02",
+        }),
+      ],
+    });
+    expect(dojo).toMatchObject({
+      openMatAccess: "public_confirmed",
+      collectionReadiness: "ready",
+      candidateOpenMats: [
+        expect.objectContaining({
+          startTime: "12:00",
+          endTime: "13:00",
+          disciplines: ["nogi"],
+          publishStatus: "ready_for_event_review",
+        }),
+      ],
+    });
+    expect(kilo).toMatchObject({
+      openMatAccess: "public_confirmed",
+      collectionReadiness: "ready",
+      candidateOpenMats: [
+        expect.objectContaining({
+          startTime: "11:00",
+          endTime: "12:30",
+          disciplines: [],
+          publishStatus: "ready_for_event_review",
         }),
       ],
     });
