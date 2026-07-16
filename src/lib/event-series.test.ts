@@ -37,6 +37,12 @@ const expectedSeriesDisplayData = {
     priceAmount: 14,
     status: "uncertain",
   },
+  "loop-saturday-open-mat": {
+    venueName: "Loop Martial Arts",
+    formats: ["gi", "no-gi"],
+    priceAmount: 0,
+    status: "scheduled",
+  },
   "mma-vantaa-sunday-open-mat": {
     venueName: "MMA Vantaa",
     formats: null,
@@ -85,6 +91,19 @@ describe("event series materialization", () => {
       "2026-07-26",
       "2026-08-02",
       "2026-08-09",
+    ]);
+  });
+
+  it("materializes Loop only through the current summer timetable", () => {
+    const series = registry.series.find(
+      ({ id }) => id === "loop-saturday-open-mat",
+    );
+
+    expect(series?.publicationStatus).toBe("publish");
+    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
+      "2026-07-18",
+      "2026-07-25",
+      "2026-08-01",
     ]);
   });
 

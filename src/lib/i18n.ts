@@ -150,6 +150,12 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The session is held only when the venue has no other event. No overlapping BJJ event was found during the reviewed publication window.",
   },
+  "loop-saturday-open-mat": {
+    priceNote: "Free of charge",
+    accessDescription: "Open to all practitioners. Gi or no-gi.",
+    exceptionNote:
+      "No known exceptions. The summer schedule ends on 2 August 2026.",
+  },
   "mma-vantaa-sunday-open-mat": {
     priceNote: "The source does not state a visitor price",
     accessDescription:

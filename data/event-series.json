@@ -87,6 +87,24 @@
       }
     },
     {
+      "id": "loop-saturday-open-mat",
+      "venueId": "loop-pitajanmaki",
+      "publicationStatus": "publish",
+      "weekday": 6,
+      "startTime": "10:30",
+      "endTime": "12:00",
+      "validFrom": "2026-06-01",
+      "validThrough": "2026-08-02",
+      "excludedDates": [],
+      "primarySourceUrl": "https://www.loopmartialarts.fi/kalenteri",
+      "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"],
+      "exceptionCheck": {
+        "result": "none_found",
+        "checkedAt": "2026-07-16T22:13:05+03:00",
+        "notes": "The current official summer calendar lists the Saturday slot through 2 August 2026 and no dated cancellation. The project owner confirmed free outside-club access and Gi/No-gi eligibility on 16 July 2026."
+      }
+    },
+    {
       "id": "buli-urhea-sunday-open-mat",
       "venueId": "buli-urhea",
       "publicationStatus": "blocked_conflicting_source",

@@ -918,5 +918,116 @@
       ]
     },
     "isExample": false
+  },
+  {
+    "id": "loop-saturday-open-mat-2026-07-18",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-07-18T10:30:00+03:00",
+    "endAt": "2026-07-18T12:00:00+03:00",
+    "venue": {
+      "name": "Loop Martial Arts",
+      "streetAddress": "Takkatie 7",
+      "postalCode": "00370",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
+    "sourceLabel": "Loop Martial Artsin kesäkalenteri",
+    "verifiedAt": "2026-07-16T22:13:05+03:00",
+    "schedule": {
+      "seriesId": "loop-saturday-open-mat",
+      "validFrom": "2026-06-01",
+      "validThrough": "2026-08-02",
+      "materializedThrough": "2026-08-09",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-07-16T22:13:05+03:00",
+      "exceptionNote": "Ei tiedossa olevia poikkeuksia. Kesäkausi päättyy 2.8.2026.",
+      "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
+    },
+    "isExample": false
+  },
+  {
+    "id": "loop-saturday-open-mat-2026-07-25",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-07-25T10:30:00+03:00",
+    "endAt": "2026-07-25T12:00:00+03:00",
+    "venue": {
+      "name": "Loop Martial Arts",
+      "streetAddress": "Takkatie 7",
+      "postalCode": "00370",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
+    "sourceLabel": "Loop Martial Artsin kesäkalenteri",
+    "verifiedAt": "2026-07-16T22:13:05+03:00",
+    "schedule": {
+      "seriesId": "loop-saturday-open-mat",
+      "validFrom": "2026-06-01",
+      "validThrough": "2026-08-02",
+      "materializedThrough": "2026-08-09",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-07-16T22:13:05+03:00",
+      "exceptionNote": "Ei tiedossa olevia poikkeuksia. Kesäkausi päättyy 2.8.2026.",
+      "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
+    },
+    "isExample": false
+  },
+  {
+    "id": "loop-saturday-open-mat-2026-08-01",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-08-01T10:30:00+03:00",
+    "endAt": "2026-08-01T12:00:00+03:00",
+    "venue": {
+      "name": "Loop Martial Arts",
+      "streetAddress": "Takkatie 7",
+      "postalCode": "00370",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
+    "sourceLabel": "Loop Martial Artsin kesäkalenteri",
+    "verifiedAt": "2026-07-16T22:13:05+03:00",
+    "schedule": {
+      "seriesId": "loop-saturday-open-mat",
+      "validFrom": "2026-06-01",
+      "validThrough": "2026-08-02",
+      "materializedThrough": "2026-08-09",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-07-16T22:13:05+03:00",
+      "exceptionNote": "Ei tiedossa olevia poikkeuksia. Kesäkausi päättyy 2.8.2026.",
+      "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
+    },
+    "isExample": false
   }
 ]

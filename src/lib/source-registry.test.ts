@@ -109,7 +109,7 @@ describe("source registry", () => {
     ]);
   });
 
-  it("keeps the audited AOGG visitor sessions and MMA Vantaa publishable", () => {
+  it("keeps the audited public visitor sessions publishable", () => {
     const erottaja = registry.venues.find(({ id }) => id === "aogg-erottaja");
     const sornainen = registry.venues.find(({ id }) => id === "aogg-sornainen");
     const kivenlahti = registry.venues.find(
@@ -118,6 +118,7 @@ describe("source registry", () => {
     const mmaVantaa = registry.venues.find(
       ({ id }) => id === "mma-vantaa-martinlaakso",
     );
+    const loop = registry.venues.find(({ id }) => id === "loop-pitajanmaki");
 
     expect(erottaja?.candidateOpenMats[0]).toMatchObject({
       weekday: 7,
@@ -141,6 +142,20 @@ describe("source registry", () => {
           startTime: "12:00",
           endTime: "13:30",
           publishStatus: "ready_for_event_review",
+        }),
+      ],
+    });
+    expect(loop).toMatchObject({
+      openMatAccess: "public_confirmed",
+      collectionReadiness: "ready",
+      candidateOpenMats: [
+        expect.objectContaining({
+          weekday: 6,
+          startTime: "10:30",
+          endTime: "12:00",
+          disciplines: ["bjj", "nogi"],
+          publishStatus: "ready_for_event_review",
+          validThrough: "2026-08-02",
         }),
       ],
     });

@@ -319,9 +319,9 @@
       "city": "Helsinki",
       "address": "Takkatie 7, 00370 Helsinki",
       "disciplines": ["bjj", "nogi"],
-      "openMatAccess": "unconfirmed",
-      "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official summer 2026 calendar lists a Saturday BJJ open mat, but the page does not confirm access for visitors from other clubs.",
+      "openMatAccess": "public_confirmed",
+      "collectionReadiness": "ready",
+      "evidenceSummary": "The official summer 2026 calendar lists a Saturday 10:30–12:00 BJJ open mat through 2 August, and the official English calendar identifies the recurring slot as BJJ/No-Gi. The project owner confirmed on 16 July 2026 that it is free, open to outside-club practitioners and allows Gi or No-gi.",
       "sources": [
         {
           "type": "official_schedule",
@@ -336,15 +336,15 @@
           "weekday": 6,
           "startTime": "10:30",
           "endTime": "12:00",
-          "disciplines": ["bjj"],
-          "publishStatus": "needs_access_confirmation",
+          "disciplines": ["bjj", "nogi"],
+          "publishStatus": "ready_for_event_review",
           "validFrom": "2026-06-01",
           "validThrough": "2026-08-02",
-          "notes": "Shown in the summer 2026 schedule; visitor eligibility is not stated."
+          "notes": "The official calendar provides the current seasonal time. The project owner confirmed free outside-club access and Gi/No-gi eligibility on 16 July 2026."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
-      "monitoringNotes": "The summer slot expires after 2 August 2026. Confirm outside-club access before publication and replace it when the autumn schedule appears."
+      "checkedAt": "2026-07-16T22:13:05+03:00",
+      "monitoringNotes": "Publish the summer slot only through 2 August 2026. Recheck the calendar for exceptions and replace the bounded series only after Loop publishes its autumn schedule."
     },
     {
       "id": "dojo-helsinki-punavuori",
