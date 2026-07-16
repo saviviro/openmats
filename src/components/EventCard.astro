@@ -5,23 +5,27 @@ import {
   formatEventDate,
   formatEventTime,
   formatVerifiedDate,
+  getEventPriceCategory,
   getEventFormatStates,
   keepEuroAmountTogether,
 } from "../lib/events";
+import { getEventTranslation, intlLocale, ui, type Locale } from "../lib/i18n";
 
 interface Props {
   event: CollectionEntry<"events">;
+  locale: Locale;
 }
 
-const { event } = Astro.props;
+const { event, locale } = Astro.props;
 const { data } = event;
+const copy = ui[locale];
 const address = `${data.venue.streetAddress}, ${data.venue.postalCode} ${data.venue.city}`;
 const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
 const formatLabels = { gi: "Gi", "no-gi": "No-gi" } as const;
 const formatStateLabels = {
-  available: "sallittu",
-  unavailable: "ei sallittu",
-  unknown: "ei tietoa",
+  available: copy.available,
+  unavailable: copy.unavailable,
+  unknown: copy.unknownFormat,
 } as const;
 const formatStateIcons = {
   available: "✓",
@@ -29,11 +33,17 @@ const formatStateIcons = {
   unknown: "?",
 } as const;
 const formatStates = getEventFormatStates(data.formats);
-const priceNote = keepEuroAmountTogether(data.price.note);
+const priceCategory = getEventPriceCategory(data.price.amount);
+const eventText = getEventTranslation(locale, data.schedule.seriesId, {
+  priceNote: data.price.note,
+  accessDescription: data.access.description,
+  exceptionNote: data.schedule.exceptionNote,
+});
+const priceNote = keepEuroAmountTogether(eventText.priceNote);
 const statusLabel = {
   scheduled: null,
-  cancelled: "Peruttu",
-  rescheduled: "Siirretty",
+  cancelled: copy.cancelled,
+  rescheduled: copy.rescheduled,
   uncertain: null,
 }[data.status];
 ---
@@ -43,16 +53,17 @@ const statusLabel = {
   data-event-card
   data-city={data.venue.city}
   data-formats={data.formats?.join(" ") ?? ""}
+  data-price-category={priceCategory}
   aria-labelledby={`event-${event.id}`}
 >
   <div
     class="event-card__date"
-    aria-label={`Päivä ${formatEventDate(data.startAt)}`}
+    aria-label={`${copy.dateAria} ${formatEventDate(data.startAt, locale)}`}
   >
-    <span>{formatEventDate(data.startAt).split(" ")[0]}</span>
+    <span>{formatEventDate(data.startAt, locale).split(" ")[0]}</span>
     <strong
       >{
-        new Intl.DateTimeFormat("fi-FI", {
+        new Intl.DateTimeFormat(intlLocale[locale], {
           day: "numeric",
           timeZone: "Europe/Helsinki",
         }).format(new Date(data.startAt))
@@ -60,7 +71,7 @@ const statusLabel = {
     >
     <small
       >{
-        new Intl.DateTimeFormat("fi-FI", {
+        new Intl.DateTimeFormat(intlLocale[locale], {
           month: "short",
           timeZone: "Europe/Helsinki",
         }).format(new Date(data.startAt))
@@ -69,7 +80,7 @@ const statusLabel = {
   </div>
 
   <div class="event-card__content">
-    <div class="event-card__labels" aria-label="Open matin tyyli">
+    <div class="event-card__labels" aria-label={copy.eventStyleLabel}>
       {
         formatStates.map(({ format, state }) => (
           <span
@@ -83,9 +94,7 @@ const statusLabel = {
       }
       {
         data.formats === null && (
-          <span class="format-unknown-note">
-            Ei tietoa – tarkista järjestäjältä
-          </span>
+          <span class="format-unknown-note">{copy.unknownFormatNote}</span>
         )
       }
       {
@@ -99,41 +108,39 @@ const statusLabel = {
 
     <dl class="event-facts">
       <div>
-        <dt>Aika</dt>
+        <dt>{copy.time}</dt>
         <dd>
-          {formatEventDate(data.startAt)}, {formatEventTime(data.startAt)}–{
-            formatEventTime(data.endAt)
-          }
+          {formatEventDate(data.startAt, locale)}, {
+            formatEventTime(data.startAt, locale)
+          }–{formatEventTime(data.endAt, locale)}
         </dd>
       </div>
       <div>
-        <dt>Paikka</dt>
+        <dt>{copy.venue}</dt>
         <dd>
           <strong>{data.venue.name}</strong><br />
           <a href={mapUrl} target="_blank" rel="noreferrer"
-            >{address}<span class="sr-only">
-              (avautuu uuteen välilehteen)</span
-            ></a
+            >{address}<span class="sr-only"> ({copy.opensNewTab})</span></a
           >
         </dd>
       </div>
       <div>
-        <dt>Hinta</dt>
+        <dt>{copy.price}</dt>
         <dd>{priceNote}</dd>
       </div>
       <div>
-        <dt>Kenelle</dt>
+        <dt>{copy.audience}</dt>
         <dd>
-          {data.access.description}
+          {eventText.accessDescription}
           {
             data.access.registrationRequired && (
-              <span class="registration-note">Ilmoittautuminen vaaditaan</span>
+              <span class="registration-note">{copy.registrationRequired}</span>
             )
           }
         </dd>
       </div>
       <div class="event-facts__source">
-        <dt>Järjestäjän sivu</dt>
+        <dt>{copy.organizerPage}</dt>
         <dd>
           <a
             class="source-link"
@@ -141,9 +148,9 @@ const statusLabel = {
             target="_blank"
             rel="noreferrer"
           >
-            Järjestäjän sivuille
+            {copy.organizerLink}
             <span aria-hidden="true">↗</span>
-            <span class="sr-only"> (avautuu uuteen välilehteen)</span>
+            <span class="sr-only"> ({copy.opensNewTab})</span>
           </a>
         </dd>
       </div>
@@ -154,13 +161,13 @@ const statusLabel = {
             "event-facts__exceptions--attention",
         ]}
       >
-        <dt>Poikkeukset</dt>
-        <dd>{data.schedule.exceptionNote}</dd>
+        <dt>{copy.exceptions}</dt>
+        <dd>{eventText.exceptionNote}</dd>
       </div>
     </dl>
 
     <div class="event-card__footer">
-      <span>Tarkistettu {formatVerifiedDate(data.verifiedAt)}</span>
+      <span>{copy.checked} {formatVerifiedDate(data.verifiedAt, locale)}</span>
     </div>
   </div>
 </article>

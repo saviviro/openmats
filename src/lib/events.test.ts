@@ -5,6 +5,7 @@ import {
   findDuplicateEventIds,
   formatEventDate,
   formatEventTime,
+  getEventPriceCategory,
   getEventFormatStates,
   keepEuroAmountTogether,
   sortEvents,
@@ -36,6 +37,7 @@ describe("event utilities", () => {
   it("formats date and time in the Helsinki time zone", () => {
     expect(formatEventDate("2026-08-01T09:00:00Z")).toBe("la 1. elokuuta");
     expect(formatEventTime("2026-08-01T09:00:00Z")).toBe("12:00");
+    expect(formatEventDate("2026-08-01T09:00:00Z", "en")).toBe("Sat 1 August");
   });
 
   it("keeps euro amounts together across line breaks", () => {
@@ -46,6 +48,12 @@ describe("event utilities", () => {
       "Hinta 14,50\u00a0€ tänään",
     );
     expect(keepEuroAmountTogether("Maksuton")).toBe("Maksuton");
+  });
+
+  it("classifies free, paid, and unknown prices", () => {
+    expect(getEventPriceCategory(0)).toBe("free");
+    expect(getEventPriceCategory(14)).toBe("paid");
+    expect(getEventPriceCategory(null)).toBe("unknown");
   });
 
   it("normalizes venue whitespace and casing in an event identity", () => {

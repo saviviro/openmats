@@ -1,26 +1,38 @@
 ---
 import "../styles/global.css";
+import { ui, type Locale } from "../lib/i18n";
 
 interface Props {
   title: string;
   description: string;
+  locale: Locale;
 }
 
-const { title, description } = Astro.props;
+const { title, description, locale } = Astro.props;
+const copy = ui[locale];
+const canonicalPath = locale === "fi" ? "/" : "/en/";
 ---
 
 <!doctype html>
-<html lang="fi">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#111612" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={new URL(canonicalPath, Astro.site)} />
+    <link rel="alternate" hreflang="fi" href={new URL("/", Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL("/en/", Astro.site)} />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={new URL("/", Astro.site)}
+    />
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip-link" href="#events">Siirry tapahtumiin</a>
+    <a class="skip-link" href="#events">{copy.skipLink}</a>
     <slot />
   </body>
 </html>

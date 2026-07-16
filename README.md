@@ -15,7 +15,9 @@ The first mobile-friendly static website is published at
 [openmats.pages.dev](https://openmats.pages.dev). It contains a maintained
 metropolitan-area source registry and an explicitly reviewed window of verified
 real events. Recurring timetables are converted into dated events only through
-an explicitly reviewed publication limit.
+an explicitly reviewed publication limit. The Finnish home page and the English
+version at [/en/](https://openmats.pages.dev/en/) use the same event data and can
+be switched from the site header.
 
 ## Planned approach
 
