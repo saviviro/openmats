@@ -18,8 +18,6 @@ export const ui = {
       "Pääkaupunkiseudun BJJ- ja lukkopaini-open matit koottuna selkeäksi listaksi. Tarkista tiedot aina järjestäjän alkuperäisestä lähteestä.",
     heroAction: "Selaa tapahtumia",
     noticeLabel: "Tapahtumatietojen huomautus",
-    noticeStrong:
-      "Listalla ovat kaikki tällä hetkellä vahvistetut tulevat tapahtumat.",
     lastChecked: "Tiedot on tarkistettu viimeksi",
     sourceReminder:
       "Ajantasaiset tiedot kannattaa tarkistaa järjestäjän sivuilta.",
@@ -74,7 +72,6 @@ export const ui = {
       "Brazilian jiu-jitsu and submission wrestling open mats across the Helsinki region, collected in one clear list. Always confirm the details on the organizer’s original page.",
     heroAction: "Browse events",
     noticeLabel: "Event information notice",
-    noticeStrong: "The list includes all currently verified upcoming events.",
     lastChecked: "Details were last checked on",
     sourceReminder:
       "Current details are worth checking on the organizer’s page.",
