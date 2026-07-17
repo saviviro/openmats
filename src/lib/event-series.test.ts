@@ -91,6 +91,12 @@ const expectedSeriesDisplayData = {
     priceAmount: null,
     status: "scheduled",
   },
+  "tk-sports-saturday-open-mat": {
+    venueName: "TK Sports",
+    formats: null,
+    priceAmount: null,
+    status: "uncertain",
+  },
 } as const;
 
 describe("event series materialization", () => {
@@ -211,6 +217,20 @@ describe("event series materialization", () => {
       "2026-08-04",
     ]);
     expect(materializeOccurrenceDates(saturday!, registry.window)).toEqual([
+      "2026-07-18",
+      "2026-07-25",
+      "2026-08-01",
+      "2026-08-08",
+    ]);
+  });
+
+  it("materializes the TK Sports Saturday slot with confirmation", () => {
+    const series = registry.series.find(
+      ({ id }) => id === "tk-sports-saturday-open-mat",
+    );
+
+    expect(series?.publicationStatus).toBe("publish_with_confirmation");
+    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
       "2026-07-18",
       "2026-07-25",
       "2026-08-01",

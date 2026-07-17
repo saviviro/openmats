@@ -206,6 +206,13 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The official timetable does not list dated exceptions. Attire is not specified.",
   },
+  "tk-sports-saturday-open-mat": {
+    priceNote: "The source does not state an open-mat visitor price",
+    accessDescription:
+      "The timetable marks the session for all levels, but does not state whether practitioners from other clubs may attend. Confirm participation with TK Sports.",
+    exceptionNote:
+      "The official timetable lists the weekly session but notes that the schedule may change. Attire is not specified.",
+  },
   "tundra-saturday-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:

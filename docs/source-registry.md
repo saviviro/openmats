@@ -16,7 +16,7 @@ list are documented in [source-monitoring.md](source-monitoring.md).
 
 | City       | Active venues | Planned venues | Result                                                        |
 | ---------- | ------------: | -------------: | ------------------------------------------------------------- |
-| Helsinki   |            18 |              1 | Official sources mapped; several require manual access review |
+| Helsinki   |            19 |              1 | Official sources mapped; several require manual access review |
 | Espoo      |             8 |              0 | Official sources mapped                                       |
 | Vantaa     |             4 |              0 | Official sources mapped                                       |
 | Kauniainen |             0 |              0 | Searched; no active venue with an official source found       |
@@ -59,7 +59,7 @@ such as _vapaavuoro_, _omatoimi_ and _avoin sparrivuoro_.
 The materialized recurring sources now include Helsingin Ju-jutsuklubi at
 Kaapelitehdas, Tundra Jiu-Jitsu in Suomenoja, Loop Martial Arts in Pitäjänmäki,
 AOGG Erottaja, AOGG Sörnäinen, Dojo Helsinki in Punavuori, HIPKO Metsälä,
-Kilo Jiu-Jitsu in Kilo, Takado in Haukilahti and MMA Vantaa. The AOGG location
+Kilo Jiu-Jitsu in Kilo, Takado in Haukilahti, TK Sports in Suutarila and MMA Vantaa. The AOGG location
 calendars must still be interpreted separately:
 Erottaja has a public Sunday No-gi session, Sörnäinen has a public Saturday
 No-gi session for coloured belts, and Kivenlahti currently lists only
@@ -106,6 +106,12 @@ as BJJ/No-Gi. The project owner confirmed on 16 July 2026 that it is free, open
 to outside-club practitioners and allows Gi or No-gi. Only the three remaining
 summer Saturdays are materialized; the bounded series must be replaced rather
 than extended when Loop publishes its autumn schedule.
+
+TK Sports' official timetable lists a Saturday 10:00–12:00 open mat for all
+levels at Halmetie 5. The timetable does not specify Gi or No-gi attire, an
+open-mat visitor price or whether practitioners from other clubs may attend,
+and it warns that the schedule may change. The current dates are therefore
+published with unknown attire and price plus a visible confirmation reminder.
 
 GB Gym's official calendar currently contains exact monthly open mats on 30
 August, 27 September, 25 October and 27 December 2026. It explicitly cancels

@@ -127,6 +127,9 @@ describe("source registry", () => {
     const kilo = registry.venues.find(({ id }) => id === "kilo-jiu-jitsu-kilo");
     const hipko = registry.venues.find(({ id }) => id === "hipko-metsala");
     const takado = registry.venues.find(({ id }) => id === "takado-haukilahti");
+    const tkSports = registry.venues.find(
+      ({ id }) => id === "tk-sports-suutarila",
+    );
 
     expect(erottaja?.candidateOpenMats[0]).toMatchObject({
       weekday: 7,
@@ -228,6 +231,19 @@ describe("source registry", () => {
           endTime: "13:00",
           disciplines: [],
           publishStatus: "ready_for_event_review",
+        }),
+      ],
+    });
+    expect(tkSports).toMatchObject({
+      openMatAccess: "unconfirmed",
+      collectionReadiness: "manual_review",
+      candidateOpenMats: [
+        expect.objectContaining({
+          weekday: 6,
+          startTime: "10:00",
+          endTime: "12:00",
+          disciplines: [],
+          publishStatus: "needs_access_confirmation",
         }),
       ],
     });
