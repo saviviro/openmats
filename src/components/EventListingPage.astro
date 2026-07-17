@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 
 import EventCard from "./EventCard.astro";
 import FilterBar from "./FilterBar.astro";
+import SiteFooter from "./SiteFooter.astro";
+import SiteHeader from "./SiteHeader.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import {
   findDuplicateEventIds,
@@ -17,7 +19,6 @@ interface Props {
 
 const { locale } = Astro.props;
 const copy = ui[locale];
-const homePath = locale === "fi" ? "/" : "/en/";
 const buildTime = new Date();
 const events = sortEvents(
   (await getCollection("events")).filter((event) =>
@@ -60,27 +61,7 @@ if (duplicates.length > 0) {
   description={copy.description}
   locale={locale}
 >
-  <header class="site-header">
-    <a class="brand" href={homePath} aria-label={copy.homeLabel}>
-      <span class="brand__mark" aria-hidden="true">OM</span>
-      <span>
-        <strong>Open Mats</strong>
-        <small>Helsinki Region</small>
-      </span>
-    </a>
-
-    <nav class="language-switcher" aria-label={copy.languageLabel}>
-      <a href="/" lang="fi" aria-current={locale === "fi" ? "page" : undefined}
-        >FI</a
-      >
-      <span aria-hidden="true">/</span>
-      <a
-        href="/en/"
-        lang="en"
-        aria-current={locale === "en" ? "page" : undefined}>EN</a
-      >
-    </nav>
-  </header>
+  <SiteHeader locale={locale} />
 
   <main>
     <section class="hero">
@@ -154,24 +135,7 @@ if (duplicates.length > 0) {
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="brand brand--footer">
-      <span class="brand__mark" aria-hidden="true">OM</span>
-      <span><strong>Open Mats</strong><small>Helsinki Region</small></span>
-    </div>
-    <div class="site-footer__info">
-      <p>{copy.footer}</p>
-      <a
-        class="feedback-link"
-        href="https://github.com/saviviro/openmats/issues/new?template=event-report.yml"
-        target="_blank"
-        rel="noreferrer"
-      >
-        {copy.feedbackLink}<span aria-hidden="true"> ↗</span>
-        <span class="sr-only"> ({copy.opensNewTab})</span>
-      </a>
-    </div>
-  </footer>
+  <SiteFooter locale={locale} />
 
   <script>
     import { isUpcomingEvent } from "../lib/events";
