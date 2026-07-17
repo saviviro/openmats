@@ -117,6 +117,18 @@ fully verifying the recurring series. Kilo's general 15-euro single-visit
 price is not presented as the open-mat price because the price source does not
 make that connection.
 
+### TK Sports
+
+TK Sports' current official timetable lists a Saturday 10:00–12:00 open mat
+for all levels at Halmetie 5. Community feedback prompted the source review,
+but the published time and address come from the official site.
+
+The timetable does not state whether the session uses Gi, No-gi or both,
+whether people from other clubs may attend, or what an open-mat visit costs.
+It also notes that the schedule may change. Four Saturdays through 8 August
+are therefore published with `uncertain` status, unknown attire and price, and
+a visible instruction to confirm participation with TK Sports.
+
 ### HIPKO Metsälä
 
 HIPKO's official 15 June–9 August summer timetable lists unsupervised BJJ open

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timezone": "Europe/Helsinki",
-  "checkedAt": "2026-07-17T12:36:57+03:00",
+  "checkedAt": "2026-07-17T13:15:31+03:00",
   "discoveryReviewedAt": "2026-07-14T15:00:54+03:00",
   "discoveryReviewNotes": "A broad official-source review across Helsinki, Espoo, Vantaa and Kauniainen found no additional in-scope active venue beyond the maintained baseline. New dated and seasonal open-mat evidence was added to existing venue records; out-of-scope neighboring municipalities and non-BJJ wrestling sessions were excluded.",
   "scopeCities": ["Helsinki", "Espoo", "Vantaa", "Kauniainen"],
@@ -9,9 +9,9 @@
     {
       "city": "Helsinki",
       "status": "mapped",
-      "activeVenueCount": 18,
+      "activeVenueCount": 19,
       "plannedVenueCount": 1,
-      "notes": "Official sources were mapped for 18 active training locations and one announced future academy. A venue count is not an organization count because several organizations operate at multiple locations."
+      "notes": "Official sources were mapped for 19 active training locations and one announced future academy. A venue count is not an organization count because several organizations operate at multiple locations."
     },
     {
       "city": "Espoo",
@@ -795,6 +795,41 @@
       ],
       "checkedAt": "2026-07-16T13:17:00+03:00",
       "monitoringNotes": "The candidate is seasonal and must not recur after 23 August 2026."
+    },
+    {
+      "id": "tk-sports-suutarila",
+      "organization": "TK Sports",
+      "venueName": "TK Sports",
+      "status": "active",
+      "city": "Helsinki",
+      "address": "Halmetie 5, 00730 Helsinki",
+      "disciplines": ["bjj", "nogi", "submission_wrestling"],
+      "openMatAccess": "unconfirmed",
+      "collectionReadiness": "manual_review",
+      "evidenceSummary": "The official current timetable lists a Saturday 10:00–12:00 open mat for all levels at Halmetie 5. The page does not specify Gi or No-gi attire, an open-mat visitor price or whether practitioners from other clubs may attend, and it warns that the schedule may change.",
+      "sources": [
+        {
+          "type": "official_schedule",
+          "label": "TK Sports official training timetable",
+          "url": "https://tksportsmma.net/",
+          "format": "html",
+          "priority": 1
+        }
+      ],
+      "candidateOpenMats": [
+        {
+          "weekday": 6,
+          "startTime": "10:00",
+          "endTime": "12:00",
+          "disciplines": [],
+          "publishStatus": "needs_access_confirmation",
+          "validFrom": null,
+          "validThrough": null,
+          "notes": "The official timetable confirms the weekly open mat and marks it for all levels. Attire, open-mat price and outside-club access are not stated; community feedback identified the slot for review."
+        }
+      ],
+      "checkedAt": "2026-07-17T13:15:31+03:00",
+      "monitoringNotes": "Recheck the official timetable for changes and seek first-party confirmation of outside-club access, attire and any open-mat-specific fee."
     },
     {
       "id": "jiujitsu-academy-helsinki-haaga",
