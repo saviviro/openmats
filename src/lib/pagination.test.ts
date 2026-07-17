@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 import { EVENTS_PER_PAGE, getPaginationState } from "./pagination";
 
 describe("event-list pagination", () => {
-  it("shows ten events on the first page by default", () => {
-    expect(getPaginationState(12, 1)).toEqual({
+  it("shows twenty events on the first page by default", () => {
+    expect(getPaginationState(22, 1)).toEqual({
       page: 1,
       totalPages: 2,
       startIndex: 0,
@@ -15,13 +15,13 @@ describe("event-list pagination", () => {
   });
 
   it("shows all remaining events on the last page", () => {
-    expect(getPaginationState(12, 2)).toMatchObject({
+    expect(getPaginationState(22, 2)).toMatchObject({
       page: 2,
       totalPages: 2,
-      startIndex: 10,
-      endIndex: 12,
-      firstItem: 11,
-      lastItem: 12,
+      startIndex: 20,
+      endIndex: 22,
+      firstItem: 21,
+      lastItem: 22,
     });
   });
 

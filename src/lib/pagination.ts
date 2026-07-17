@@ -1,4 +1,4 @@
-export const EVENTS_PER_PAGE = 10;
+export const EVENTS_PER_PAGE = 20;
 
 export type PaginationState = {
   page: number;
