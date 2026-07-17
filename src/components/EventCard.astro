@@ -134,9 +134,17 @@ const statusLabel = {
         <dt>{copy.venue}</dt>
         <dd>
           <strong>{data.venue.name}</strong><br />
-          <a href={mapUrl} target="_blank" rel="noreferrer"
-            >{address}<span class="sr-only"> ({copy.opensNewTab})</span></a
+          <span>{address}</span><br />
+          <a
+            class="source-link map-link"
+            href={mapUrl}
+            target="_blank"
+            rel="noreferrer"
           >
+            <span class="map-link__label">{copy.mapLink}</span>
+            <span aria-hidden="true">↗</span>
+            <span class="sr-only"> ({copy.opensNewTab})</span>
+          </a>
         </dd>
       </div>
       <div>
@@ -182,3 +190,17 @@ const statusLabel = {
     </dl>
   </div>
 </article>
+
+<style>
+  .map-link {
+    box-sizing: border-box;
+    max-width: 100%;
+    margin-top: 0.45rem;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .map-link__label {
+    min-width: 0;
+  }
+</style>
