@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-07-17T00:07:00+03:00",
+  "checkedAt": "2026-07-17T12:36:57+03:00",
   "window": {
     "from": "2026-07-15",
     "through": "2026-08-09",
@@ -66,6 +66,48 @@
         "result": "none_found",
         "checkedAt": "2026-07-16T13:17:00+03:00",
         "notes": "The official BJJ page says the open mat is held only when no other event uses the gym. The official event list shows no conflicting BJJ event during the materialization window; the next listed BJJ event is 22–23 August 2026."
+      }
+    },
+    {
+      "id": "hipko-metsala-saturday-bjj-open-mat",
+      "venueId": "hipko-metsala",
+      "publicationStatus": "publish_with_confirmation",
+      "weekday": 6,
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "validFrom": "2026-06-15",
+      "validThrough": "2026-08-09",
+      "excludedDates": [],
+      "primarySourceUrl": "https://www.hipko.fi/wp-content/uploads/2026/05/Metsala_kesa_2026.pdf",
+      "supportingSourceUrls": [
+        "https://www.hipko.fi/harjoitusajat/",
+        "https://www.hipko.fi/salit/"
+      ],
+      "exceptionCheck": {
+        "result": "confirmation_required",
+        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "notes": "The official 15 June–9 August summer timetable lists an unsupervised BJJ open mat on Saturdays. The timetable does not state whether outside-club visitors may attend or what they pay, so participation must be confirmed with HIPKO."
+      }
+    },
+    {
+      "id": "hipko-metsala-sunday-bjj-open-mat",
+      "venueId": "hipko-metsala",
+      "publicationStatus": "publish_with_confirmation",
+      "weekday": 7,
+      "startTime": "15:00",
+      "endTime": "17:00",
+      "validFrom": "2026-06-15",
+      "validThrough": "2026-08-09",
+      "excludedDates": [],
+      "primarySourceUrl": "https://www.hipko.fi/wp-content/uploads/2026/05/Metsala_kesa_2026.pdf",
+      "supportingSourceUrls": [
+        "https://www.hipko.fi/harjoitusajat/",
+        "https://www.hipko.fi/salit/"
+      ],
+      "exceptionCheck": {
+        "result": "confirmation_required",
+        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "notes": "The official 15 June–9 August summer timetable lists an unsupervised BJJ open mat on Sundays. The timetable does not state whether outside-club visitors may attend or what they pay, so participation must be confirmed with HIPKO."
       }
     },
     {
@@ -144,30 +186,66 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-07-17T00:07:00+03:00",
-        "notes": "The project owner confirmed the public Saturday slot on 16 July 2026, but the official website schedule remains labelled 2023 and does not currently verify attire or dated exceptions. The official site confirms the venue and current drop-in price. Visitors should confirm the session before leaving."
+        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "notes": "The project owner confirmed the public Saturday slot on 16 July 2026, but the official website schedule remains labelled 2023 and does not currently verify attire, dated exceptions or an open-mat-specific price. Visitors should confirm the session before leaving."
+      }
+    },
+    {
+      "id": "takado-tuesday-open-mat",
+      "venueId": "takado-haukilahti",
+      "publicationStatus": "publish",
+      "weekday": 2,
+      "startTime": "16:30",
+      "endTime": "18:00",
+      "validFrom": null,
+      "validThrough": null,
+      "excludedDates": [],
+      "primarySourceUrl": "https://takado.fi/harjoitusajat/",
+      "supportingSourceUrls": ["https://takado.fi/"],
+      "exceptionCheck": {
+        "result": "none_found",
+        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "notes": "The current official BJJ / No-gi timetable lists a Tuesday 16:30–18:00 open mat and describes open mats as open to everyone. No dated cancellation is published."
+      }
+    },
+    {
+      "id": "takado-saturday-open-mat",
+      "venueId": "takado-haukilahti",
+      "publicationStatus": "publish",
+      "weekday": 6,
+      "startTime": "11:00",
+      "endTime": "13:00",
+      "validFrom": null,
+      "validThrough": null,
+      "excludedDates": [],
+      "primarySourceUrl": "https://takado.fi/harjoitusajat/",
+      "supportingSourceUrls": ["https://takado.fi/"],
+      "exceptionCheck": {
+        "result": "none_found",
+        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "notes": "The current official BJJ / No-gi timetable lists a Saturday 11:00–13:00 open mat and describes open mats as open to everyone. No dated cancellation is published."
       }
     },
     {
       "id": "buli-urhea-sunday-open-mat",
       "venueId": "buli-urhea",
-      "publicationStatus": "blocked_conflicting_source",
+      "publicationStatus": "publish_with_confirmation",
       "weekday": 7,
       "startTime": "12:00",
       "endTime": "13:30",
       "validFrom": null,
       "validThrough": null,
-      "excludedDates": ["2026-07-19", "2026-07-26", "2026-08-02", "2026-08-09"],
-      "primarySourceUrl": "https://bulijj.fi/schedule",
+      "excludedDates": [],
+      "primarySourceUrl": "https://bulijj.fi/signup?membership=11121&type=2",
       "supportingSourceUrls": [
+        "https://bulijj.fi/schedule",
         "https://bulijj.fi/pricing",
-        "https://bulijj.fi/signup?membership=11121&type=2",
         "https://bulijj.fi/page/haluatko-tulla-kokeilemaan-bulin-treenej-tai-vierailemaan-meill-"
       ],
       "exceptionCheck": {
-        "result": "conflict_found",
-        "checkedAt": "2026-07-16T03:12:33+03:00",
-        "notes": "The membership sources identify a weekly Urhea open mat, but the dated official calendar contains no occurrence on the checked weeks from 19 July through 20 September 2026. No event is published until an exact date appears."
+        "result": "confirmation_required",
+        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "notes": "The current membership source identifies a weekly Sunday Urhea open mat and recent community feedback says it is running in summer. The dated calendar contains no matching occurrence in the checked publication window, so the materialized dates remain uncertain and must be confirmed before attending."
       }
     },
     {

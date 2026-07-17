@@ -56,6 +56,7 @@ export const ui = {
     emptyTitle: "Ei osumia näillä rajauksilla.",
     emptyLead: "Kokeile toista kaupunkia, tyyliä tai hintaa.",
     feedbackLink: "Ilmoita virheestä tai puuttuvasta open matista",
+    privacyLink: "Tietosuoja ja yhteystiedot",
     footer:
       "Koontipalvelu ei järjestä tapahtumia. Varmista tiedot aina alkuperäisestä lähteestä.",
   },
@@ -109,6 +110,7 @@ export const ui = {
     emptyTitle: "No events match these filters.",
     emptyLead: "Try another city, style, or price.",
     feedbackLink: "Report an error or a missing open mat",
+    privacyLink: "Privacy and contact details",
     footer:
       "This listing service does not organize the events. Always confirm the details from the original source.",
   },
@@ -122,17 +124,24 @@ export interface EventTranslation {
 
 export const englishSeriesTranslations: Record<string, EventTranslation> = {
   "aogg-erottaja-sunday-nogi-open-mat": {
-    priceNote: "Visitor drop-in €15",
+    priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "Open to practitioners from other clubs. No-gi only; reserve a spot in advance.",
     exceptionNote: "The official calendar does not list cancelled dates.",
   },
   "aogg-sornainen-colored-belts-nogi-open-mat": {
-    priceNote: "Visitor drop-in €15",
+    priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "Open to coloured belts from other clubs. No-gi only; reserve a spot in advance.",
     exceptionNote:
       "The official calendar does not list cancelled dates. The session is for coloured belts.",
+  },
+  "buli-urhea-sunday-open-mat": {
+    priceNote: "Open-mat membership €25 per calendar year",
+    accessDescription:
+      "Contact Buli in advance before visiting or trying the open mat. Gi or no-gi.",
+    exceptionNote:
+      "The membership page lists a weekly Sunday session, but the dated calendar has no matching event. Confirm the date before attending.",
   },
   "dojo-helsinki-saturday-nogi-open-mat": {
     priceNote: "The source does not state a visitor price",
@@ -151,8 +160,22 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The session is held only when the venue has no other event. No overlapping BJJ event was found during the reviewed publication window.",
   },
+  "hipko-metsala-saturday-bjj-open-mat": {
+    priceNote: "The source does not state an open-mat visitor price",
+    accessDescription:
+      "The summer timetable does not state whether practitioners from other clubs may attend. Confirm participation with HIPKO.",
+    exceptionNote:
+      "The official summer timetable is valid through 9 August 2026. The session is unsupervised.",
+  },
+  "hipko-metsala-sunday-bjj-open-mat": {
+    priceNote: "The source does not state an open-mat visitor price",
+    accessDescription:
+      "The summer timetable does not state whether practitioners from other clubs may attend. Confirm participation with HIPKO.",
+    exceptionNote:
+      "The official summer timetable is valid through 9 August 2026. The session is unsupervised.",
+  },
   "kilo-jiu-jitsu-saturday-open-mat": {
-    priceNote: "Drop-in €15",
+    priceNote: "The source does not state an open-mat visitor price",
     accessDescription: "Open to practitioners from other clubs.",
     exceptionNote:
       "The gym’s official web schedule is still labelled 2023, so confirm the attire and current schedule with the organizer.",
@@ -170,8 +193,22 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The official summer schedule is valid through 9 August 2026. Attire is not specified.",
   },
+  "takado-tuesday-open-mat": {
+    priceNote: "The source does not state an open-mat visitor price",
+    accessDescription:
+      "Open to everyone. Enroll for the session through myClub.",
+    exceptionNote:
+      "The official timetable does not list dated exceptions. Attire is not specified.",
+  },
+  "takado-saturday-open-mat": {
+    priceNote: "The source does not state an open-mat visitor price",
+    accessDescription:
+      "Open to everyone. Enroll for the session through myClub.",
+    exceptionNote:
+      "The official timetable does not list dated exceptions. Attire is not specified.",
+  },
   "tundra-saturday-open-mat": {
-    priceNote: "Non-member drop-in €14",
+    priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "Open to members of other clubs. Contact the gym before visiting during summer.",
     exceptionNote:

@@ -85,12 +85,13 @@ out of published event data.
 | Combat Academy          | Seasonal validity and the preliminary autumn schedule                 | [Training schedule](https://www.combat.fi/harjoitusajat/)                                                                                                                                                                                                              |
 | HIPKO                   | Location-specific PDFs, member-only labels and separate public events | [Schedules](https://www.hipko.fi/harjoitusajat/), [locations](https://www.hipko.fi/salit/)                                                                                                                                                                             |
 | Helsingin Ju-jutsuklubi | Saturday slot and space-occupying exceptions                          | [BJJ training times](https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/)                                                                                                                                                                                   |
-| Tundra Jiu-Jitsu        | Seasonal slot, price and summer confirmation requirement              | [Schedule](https://tundrajiujitsu.fi/harjoitusajat/), [prices](https://tundrajiujitsu.fi/hinnasto/)                                                                                                                                                                    |
+| Tundra Jiu-Jitsu        | Seasonal slot, summer confirmation and open-mat-specific price        | [Schedule](https://tundrajiujitsu.fi/harjoitusajat/), [general prices](https://tundrajiujitsu.fi/hinnasto/)                                                                                                                                                            |
 | MMA Vantaa              | Seasonal validity, visitor wording and door-access instruction        | [Training schedule](https://www.mmavantaa.net/harjoitusajat-2/)                                                                                                                                                                                                        |
 | Buli Jiu-Jitsu          | Urhea occurrence dates, annual membership and contact rule            | [Dated calendar](https://bulijj.fi/schedule), [membership](https://bulijj.fi/signup?membership=11121&type=2), [pricing](https://bulijj.fi/pricing)                                                                                                                     |
 | Loop Martial Arts       | Saturday slot, seasonal end date and replacement timetable            | [Finnish calendar](https://www.loopmartialarts.fi/kalenteri), [English calendar](https://www.loopmartialarts.fi/en/kalenteri)                                                                                                                                          |
 | Dojo Helsinki           | Weekly time, holiday changes and additional dated open mats           | [Finnish training times](https://www.dojohelsinki.fi/treeniajat/), [English classes](https://www.dojohelsinki.fi/en/classes/), [Instagram](https://www.instagram.com/dojohelsinki/)                                                                                    |
-| Kilo Jiu-Jitsu          | Weekly time, attire, exceptions and replacement of the stale schedule | [Website](https://www.kilojiujitsu.com/), [schedule](https://www.kilojiujitsu.com/aikataulut/), [prices](https://www.kilojiujitsu.com/hinnat/), [Instagram](https://www.instagram.com/kilojiujitsu/)                                                                   |
+| Kilo Jiu-Jitsu          | Weekly time, attire, exceptions and open-mat-specific price           | [Website](https://www.kilojiujitsu.com/), [schedule](https://www.kilojiujitsu.com/aikataulut/), [general prices](https://www.kilojiujitsu.com/hinnat/), [Instagram](https://www.instagram.com/kilojiujitsu/)                                                           |
+| Takado                  | Tuesday/Saturday times, exceptions, attire and price                  | [Training times](https://takado.fi/harjoitusajat/)                                                                                                                                                                                                                     |
 | FireBody                | Weekly schedule, seasonal heading and access wording                  | [Schedule](https://www.firebody.fi/viikkoaikataulu.html)                                                                                                                                                                                                               |
 | Savate Club             | Konala seasonal free-practice slots and visitor access                | [Konala summer schedule](https://www.savate.com/jatkokurssit/bjj/kesaharjoitusajat_konala.php)                                                                                                                                                                         |
 | Salini Sports Center    | Weekly sparring and separately announced public events                | [Schedule](https://www.salini.fi/tuntiohjelma/)                                                                                                                                                                                                                        |
@@ -153,8 +154,9 @@ specific enough:
 
 - AOGG Erottaja's Gymdesk calendar has a public Sunday 12:00–14:00 No-gi open
   mat. AOGG Sörnäinen has a Saturday 12:00–14:00 No-gi open mat for coloured
-  belts. The general visitor policy, 15-euro drop-in price and booking rule
-  apply. Kivenlahti's current open mats are explicitly for members and remain
+  belts. The booking rule applies. The general 15-euro visitor pass is not
+  attributed specifically to open mats, so the event price is unknown.
+  Kivenlahti's current open mats are explicitly for members and remain
   unpublished.
 - MMA Vantaa's time conflict was resolved as described above and its current
   summer Sundays were published.
@@ -164,9 +166,10 @@ specific enough:
   summer Saturdays publishable; the series is not extended into autumn.
 - Helsingin Ju-jutsuklubi, Tundra and GB Gym still match their published data.
   GB Gym's November cancellation remains excluded.
-- Buli Urhea remains blocked because its recurring membership description has
-  no matching dated occurrence in the official calendar.
-- HIPKO, Combat Academy, Dojo Helsinki, FireBody, Savate Club and Salini
+- Buli Urhea's recurring membership description has no matching dated
+  occurrence in the official calendar. The membership recurrence is published
+  only with a visible confirmation warning.
+- Combat Academy, FireBody, Savate Club and Salini
   still lack a source-specific confirmation that the relevant recurring slot is
   open to visitors, or otherwise have unresolved seasonal validity. Their
   candidates remain unpublished.
@@ -186,10 +189,30 @@ previous 13:00–14:00 autumn candidate was not supported by the live source.
   is now monitored for holiday changes and additional dated open mats.
 - The project owner confirmed Kilo Jiu-Jitsu's public Saturday 11:00–12:30 open
   mat at Kutojantie 5, second floor. The official site confirms the venue and
-  current 15-euro drop-in price, but its schedule page remains labelled 2023.
-  Four Saturdays are therefore published with confirmation required and attire
-  left unknown. Recheck the official Instagram account and schedule before
-  extending or marking the series fully verified.
+  lists a general 15-euro single-visit price, but its schedule page remains
+  labelled 2023. Four Saturdays are therefore published with confirmation
+  required and attire and open-mat price left unknown. Recheck the official
+  Instagram account and schedule before extending or marking the series fully
+  verified.
+
+## Source and price audit: 17 July 2026
+
+- HIPKO Metsälä's official 15 June–9 August timetable lists BJJ open mats on
+  Saturdays and Sundays at 15:00–17:00. The remaining dates are published with
+  confirmation required because outside-club access and price are not stated.
+- Takado's official timetable lists Tuesday 16:30–18:00 and Saturday
+  11:00–13:00 open mats, describes them as open to everyone and directs
+  participants to myClub. Both series are published; attire and price remain
+  unknown.
+- AOGG's 15-euro visitor pass, Tundra's 14-euro non-member single visit and
+  Kilo's 15-euro single visit are general gym prices. None of the checked
+  sources explicitly names the amount as the open-mat fee, so all three event
+  records now use unknown price.
+- Buli's annual 25-euro open-mat membership is not a per-session fee. Recent
+  community feedback says the Urhea session is running in summer, but the
+  dated official calendar still provides no exact occurrence in the current
+  window. The four membership-based Sundays are published as uncertain and
+  remain under active monitoring.
 
 ## Buli follow-up: 16 July 2026
 
@@ -199,11 +222,12 @@ Mat: GI & NOGI`, Sundays at 12:00, and the pricing page gives the end time as
 13:30 and the annual open-mat membership price as 25 euros. The visitor page
 requires advance contact for visitors and pre-membership trials.
 
-The dynamic official calendar was checked week by week from 19 July through 20
-September. It did not list a single Urhea open mat. Konepaja therefore has no
-open-mat candidate, while Urhea retains a blocked recurring candidate. During
-weekly checks, inspect the dated calendar first and publish only after an exact
-Urhea occurrence appears.
+The dynamic official calendar was rechecked after community feedback about the
+summer session. It did not list a single Urhea open mat in the current
+publication window. Konepaja therefore has no open-mat candidate, while Urhea
+retains a recurring candidate with confirmation required. During weekly checks,
+inspect the dated calendar first; remove the warning only after exact Urhea
+occurrences appear or the organizer confirms them.
 
 ## Recording a review
 

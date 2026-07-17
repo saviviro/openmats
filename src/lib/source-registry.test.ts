@@ -106,7 +106,7 @@ describe("source registry", () => {
         weekday: 7,
         startTime: "12:00",
         endTime: "13:30",
-        publishStatus: "blocked_by_source_conflict",
+        publishStatus: "needs_access_confirmation",
       }),
     ]);
   });
@@ -125,6 +125,8 @@ describe("source registry", () => {
       ({ id }) => id === "dojo-helsinki-punavuori",
     );
     const kilo = registry.venues.find(({ id }) => id === "kilo-jiu-jitsu-kilo");
+    const hipko = registry.venues.find(({ id }) => id === "hipko-metsala");
+    const takado = registry.venues.find(({ id }) => id === "takado-haukilahti");
 
     expect(erottaja?.candidateOpenMats[0]).toMatchObject({
       weekday: 7,
@@ -184,6 +186,46 @@ describe("source registry", () => {
         expect.objectContaining({
           startTime: "11:00",
           endTime: "12:30",
+          disciplines: [],
+          publishStatus: "ready_for_event_review",
+        }),
+      ],
+    });
+    expect(hipko).toMatchObject({
+      openMatAccess: "mixed",
+      collectionReadiness: "manual_review",
+      candidateOpenMats: [
+        expect.objectContaining({
+          weekday: 6,
+          startTime: "15:00",
+          endTime: "17:00",
+          publishStatus: "needs_access_confirmation",
+          validThrough: "2026-08-09",
+        }),
+        expect.objectContaining({
+          weekday: 7,
+          startTime: "15:00",
+          endTime: "17:00",
+          publishStatus: "needs_access_confirmation",
+          validThrough: "2026-08-09",
+        }),
+      ],
+    });
+    expect(takado).toMatchObject({
+      openMatAccess: "public_confirmed",
+      collectionReadiness: "ready",
+      candidateOpenMats: [
+        expect.objectContaining({
+          weekday: 2,
+          startTime: "16:30",
+          endTime: "18:00",
+          disciplines: [],
+          publishStatus: "ready_for_event_review",
+        }),
+        expect.objectContaining({
+          weekday: 6,
+          startTime: "11:00",
+          endTime: "13:00",
           disciplines: [],
           publishStatus: "ready_for_event_review",
         }),

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timezone": "Europe/Helsinki",
-  "checkedAt": "2026-07-17T00:07:00+03:00",
+  "checkedAt": "2026-07-17T12:36:57+03:00",
   "discoveryReviewedAt": "2026-07-14T15:00:54+03:00",
   "discoveryReviewNotes": "A broad official-source review across Helsinki, Espoo, Vantaa and Kauniainen found no additional in-scope active venue beyond the maintained baseline. New dated and seasonal open-mat evidence was added to existing venue records; out-of-scope neighboring municipalities and non-BJJ wrestling sessions were excluded.",
   "scopeCities": ["Helsinki", "Espoo", "Vantaa", "Kauniainen"],
@@ -86,10 +86,10 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": null,
           "validThrough": null,
-          "notes": "The Gymdesk session is titled OPEN MAT (NOGI), recurs Sundays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot; the official visitor pass is 15 euros."
+          "notes": "The Gymdesk session is titled OPEN MAT (NOGI), recurs Sundays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. The general 15-euro visitor pass is not attributed specifically to open mats, so the event price remains unknown."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
+      "checkedAt": "2026-07-17T12:36:57+03:00",
       "monitoringNotes": "Publish only the Sunday No-gi session. The summer weekday open mats are explicitly labelled for members and remain excluded."
     },
     {
@@ -142,10 +142,10 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": "2026-01-10",
           "validThrough": null,
-          "notes": "The Gymdesk session is titled OPEN MAT FOR COLORED BELTS (NOGI), recurs Saturdays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot; the official visitor pass is 15 euros."
+          "notes": "The Gymdesk session is titled OPEN MAT FOR COLORED BELTS (NOGI), recurs Saturdays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. The general 15-euro visitor pass is not attributed specifically to open mats, so the event price remains unknown."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
+      "checkedAt": "2026-07-17T12:36:57+03:00",
       "monitoringNotes": "Retain the coloured-belt restriction in every published occurrence. The separately listed members-only open mat remains excluded."
     },
     {
@@ -158,7 +158,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "mixed",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The current seasonal schedule contains open mats, some explicitly limited to HIPKO members. Separate official events may be open to visitors, so access must be evaluated session by session.",
+      "evidenceSummary": "The official 15 June–9 August summer schedule lists BJJ open mats on Saturday and Sunday from 15:00 to 17:00. It does not state outside-club eligibility or an open-mat price for these sessions, so they are published only with a confirmation warning.",
       "sources": [
         {
           "type": "official_location",
@@ -211,8 +211,8 @@
           "notes": "The summer PDF labels this BJJ open mat as unsupervised but does not state outside-club access."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
-      "monitoringNotes": "Do not infer public access from the words open mat. The same PDF explicitly limits other general open-mat slots to HIPKO members, while these BJJ rows do not state eligibility."
+      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "monitoringNotes": "Keep both BJJ sessions marked for confirmation. The same PDF explicitly limits other open-mat slots to HIPKO members, while these BJJ rows do not state eligibility or price. Recheck the next seasonal timetable after 9 August."
     },
     {
       "id": "hipko-itakeskus",
@@ -429,7 +429,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "public_with_conditions",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official membership flow identifies a weekly Sunday 12:00–13:30 Gi and No-gi open mat at Urhea. The 25-euro annual open-mat membership and advance-contact visitor rule are current, but the dated official calendar shows no open-mat occurrence from 19 July through 20 September 2026, so publication is blocked until a dated occurrence appears.",
+      "evidenceSummary": "The official membership flow identifies a weekly Sunday 12:00–13:30 Gi and No-gi open mat at Urhea. The 25-euro annual open-mat membership and advance-contact visitor rule are current, and community feedback says the session is running in summer. Because the dated calendar contains no matching occurrence in the current window, dates are published only with a confirmation warning.",
       "sources": [
         {
           "type": "official_home",
@@ -473,14 +473,14 @@
           "startTime": "12:00",
           "endTime": "13:30",
           "disciplines": ["bjj", "nogi"],
-          "publishStatus": "blocked_by_source_conflict",
+          "publishStatus": "needs_access_confirmation",
           "validFrom": null,
           "validThrough": null,
-          "notes": "The membership source says the Urhea session is weekly, but the dated calendar contains no occurrence on the checked Sundays from 19 July through 20 September 2026. Do not materialize dates until the official calendar lists the session."
+          "notes": "The membership source says the Urhea session is weekly and community feedback says it is running in summer, but the dated calendar contains no matching occurrence in the current window. Publish only with a visible confirmation warning."
         }
       ],
-      "checkedAt": "2026-07-16T03:12:33+03:00",
-      "monitoringNotes": "Check the dated calendar weekly. When the Urhea open mat reappears, verify the first exact date before materializing later Sundays."
+      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "monitoringNotes": "Check the dated calendar weekly. Keep materialized dates uncertain until the Urhea open mat reappears there or the organizer confirms exact summer dates."
     },
     {
       "id": "helsingin-ju-jutsuklubi-kaapelitehdas",
@@ -930,7 +930,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "mixed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The official schedule explicitly marks Saturday's gi/no-gi session open to everyone and Wednesday's open mat members-only. Summer visitors are asked to message before attending because of exceptions.",
+      "evidenceSummary": "The official schedule explicitly marks Saturday's gi/no-gi session open to everyone and Wednesday's open mat members-only. Summer visitors are asked to message before attending because of exceptions. The separate 14-euro non-member single-visit price is not attributed specifically to the open mat.",
       "sources": [
         {
           "type": "official_schedule",
@@ -945,6 +945,13 @@
           "url": "https://tundrajiujitsu.fi/yhteystiedot/",
           "format": "html",
           "priority": 1
+        },
+        {
+          "type": "official_visitor_policy",
+          "label": "Tundra Jiu-Jitsu general pricing",
+          "url": "https://tundrajiujitsu.fi/hinnasto/",
+          "format": "html",
+          "priority": 2
         }
       ],
       "candidateOpenMats": [
@@ -969,8 +976,8 @@
           "notes": "The official schedule explicitly limits this open mat to members."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
-      "monitoringNotes": "Only the Saturday candidate is suitable for public event review."
+      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "monitoringNotes": "Only the Saturday candidate is suitable for public event review. Keep its price unknown unless an open-mat-specific fee is published."
     },
     {
       "id": "kilo-jiu-jitsu-kilo",
@@ -982,7 +989,7 @@
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
       "openMatAccess": "public_confirmed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The project owner confirmed a public Saturday 11:00–12:30 open mat on 16 July 2026. The official site confirms the second-floor Kutojantie venue and the current 15 EUR drop-in price, but its public schedule page is still labelled 2023, so attire and exceptions remain unverified.",
+      "evidenceSummary": "The project owner confirmed a public Saturday 11:00–12:30 open mat on 16 July 2026. The official site confirms the second-floor Kutojantie venue, but its public schedule page is still labelled 2023, so attire and exceptions remain unverified. The general 15-euro single-visit price is not attributed specifically to the open mat.",
       "sources": [
         {
           "type": "official_home",
@@ -1032,8 +1039,8 @@
           "notes": "The project owner confirmed the recurring public slot on 16 July 2026. Attire is not stated in a current first-party source."
         }
       ],
-      "checkedAt": "2026-07-17T00:07:00+03:00",
-      "monitoringNotes": "Recheck the official schedule and Instagram for a current first-party timetable, attire and exceptions. Keep the events marked for confirmation while the official schedule page remains labelled 2023."
+      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "monitoringNotes": "Recheck the official schedule and Instagram for a current first-party timetable, attire, exceptions and an open-mat-specific price. Keep the events marked for confirmation while the official schedule page remains labelled 2023."
     },
     {
       "id": "takado-haukilahti",
@@ -1041,11 +1048,11 @@
       "venueName": "Haukilahti",
       "status": "active",
       "city": "Espoo",
-      "address": "Pihatörmä 1 D, 02240 Espoo",
+      "address": "Pihatörmä 1 D, 4. krs, 02240 Espoo",
       "disciplines": ["bjj", "nogi"],
-      "openMatAccess": "no_open_mat_found",
-      "collectionReadiness": "discovery_only",
-      "evidenceSummary": "The official site confirms current BJJ activity and the venue address. No current first-party public open-mat schedule and visitor policy were verified together.",
+      "openMatAccess": "public_confirmed",
+      "collectionReadiness": "ready",
+      "evidenceSummary": "The current official BJJ / No-gi timetable lists open mats on Tuesdays 16:30–18:00 and Saturdays 11:00–13:00. The same page describes open mat as open to everyone and instructs participants to enroll through myClub. It does not specify attire or an open-mat price.",
       "sources": [
         {
           "type": "official_home",
@@ -1053,11 +1060,39 @@
           "url": "https://takado.fi/",
           "format": "html",
           "priority": 1
+        },
+        {
+          "type": "official_schedule",
+          "label": "Takado BJJ and No-gi training times",
+          "url": "https://takado.fi/harjoitusajat/",
+          "format": "html",
+          "priority": 1
         }
       ],
-      "candidateOpenMats": [],
-      "checkedAt": "2026-07-14T13:59:15+03:00",
-      "monitoringNotes": "Old third-party event listings are not sufficient evidence for a current recurring session."
+      "candidateOpenMats": [
+        {
+          "weekday": 2,
+          "startTime": "16:30",
+          "endTime": "18:00",
+          "disciplines": [],
+          "publishStatus": "ready_for_event_review",
+          "validFrom": null,
+          "validThrough": null,
+          "notes": "The current official schedule lists the Tuesday open mat and describes open mats as open to everyone. Attire and price are not stated."
+        },
+        {
+          "weekday": 6,
+          "startTime": "11:00",
+          "endTime": "13:00",
+          "disciplines": [],
+          "publishStatus": "ready_for_event_review",
+          "validFrom": null,
+          "validThrough": null,
+          "notes": "The current official schedule lists the Saturday open mat and describes open mats as open to everyone. Attire and price are not stated."
+        }
+      ],
+      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "monitoringNotes": "Monitor the official schedule for dated exceptions, attire and an open-mat-specific price. The page instructs participants to enroll through myClub."
     },
     {
       "id": "espoo-fight-club-kauklahti",
