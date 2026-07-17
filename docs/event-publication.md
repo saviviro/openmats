@@ -28,6 +28,15 @@ Once a source explicitly identifies one format and excludes the other, the
 interface can show the unavailable format with a cross. Missing information is
 never interpreted as exclusion.
 
+## Price evidence
+
+An event is marked paid only when a first-party source attributes a fee to the
+open mat itself. A gym-wide drop-in, visitor pass or single-visit price is not
+automatically an open-mat price. Such an event remains in the `unknown` price
+category until the organizer publishes or directly confirms the open-mat fee.
+Owner-confirmed free entry may be stored with that provenance stated in the
+review notes.
+
 ## Published series
 
 ### Art of Ground Games
@@ -40,11 +49,12 @@ window:
 - Erottaja: Sunday 12:00–14:00, No-gi;
 - Sörnäinen: Saturday 12:00–14:00, No-gi and coloured belts only.
 
-Both calendars accept advance bookings and show no cancelled dates. The
-official visitor page gives a 15-euro drop-in price and asks visitors to reserve
-a spot. AOGG's separately named members-only open mats remain unpublished.
-Kivenlahti currently shows only members-only open mats, so it has no public
-occurrence in the event list.
+Both calendars accept advance bookings and show no cancelled dates. AOGG's
+visitor page lists a general 15-euro drop-in, but it does not attribute that
+price specifically to open mats; the published events therefore show an
+unknown price. AOGG's separately named members-only open mats remain
+unpublished. Kivenlahti currently shows only members-only open mats, so it has
+no public occurrence in the event list.
 
 ### Helsingin Ju-jutsuklubi
 
@@ -61,8 +71,9 @@ unknown because the open-mat source does not state one.
 
 The official schedule states that Saturday 11:15–12:45 is gi/no-gi and open to
 everyone, including members of other clubs. The official price page gives a
-14-euro non-member single visit and asks visitors to contact the gym before
-attending.
+general 14-euro non-member single visit, but does not identify it as the open
+mat fee. The event price is therefore left unknown. Visitors are asked to
+contact the gym before attending.
 
 The schedule also says that summer training mostly runs normally but may have
 exceptions. It does not publish exact cancelled dates. Four occurrences are
@@ -102,7 +113,31 @@ currently verify the slot, attire or exceptions.
 Four Saturdays through 8 August are published with `uncertain` status and a
 visible confirmation reminder. Attire is deliberately stored as unknown. The
 official schedule and Instagram must be checked again before extending or
-fully verifying the recurring series.
+fully verifying the recurring series. Kilo's general 15-euro single-visit
+price is not presented as the open-mat price because the price source does not
+make that connection.
+
+### HIPKO Metsälä
+
+HIPKO's official 15 June–9 August summer timetable lists unsupervised BJJ open
+mats on Saturdays and Sundays from 15:00 to 17:00. The eight remaining dates
+inside the current publication window are listed with `uncertain` status.
+
+The timetable does not say whether practitioners from other clubs may attend
+these BJJ sessions or what an open-mat visit costs. The event cards therefore
+show an unknown price and tell the visitor to confirm participation with HIPKO.
+No recurrence is generated beyond 9 August.
+
+### Takado
+
+Takado's current official BJJ / No-gi timetable lists open mats on Tuesdays
+16:30–18:00 and Saturdays 11:00–13:00 at Pihatörmä 1 D. The same page describes
+open mat as open to everyone and instructs participants to enroll through
+myClub. Both series are materialized inside the current publication window.
+
+The page does not specify the attire or an open-mat price, so both remain
+unknown in the event cards. No dated cancellation was published during this
+review.
 
 ### GB Gym
 
@@ -131,20 +166,20 @@ live page, so the source conflict is resolved. Four Sunday occurrences are
 published through the current materialization limit. Price and Gi/No-gi
 eligibility remain unknown because the official source does not state them.
 
-## Blocked series: Buli Urhea
+### Buli Urhea
 
 Buli's official pricing and membership flow identify a weekly Sunday
 12:00–13:30 open mat at Urhea for both Gi and No-gi. The open-mat membership
 costs 25 euros per calendar year. The visitor page asks people to contact the
 club before visiting or trying the open mat before buying the membership.
 
-The dated official calendar was reviewed week by week from 19 July through 20
-September 2026. It contains no Urhea open-mat occurrence in that range. The
-membership description and dated calendar therefore do not currently support
-publishing any exact date. The series is stored under `buli-urhea`, marked
-`blocked_conflicting_source`, and produces no public event until the dated
-calendar lists one. The previous registry attachment to Konepaja was incorrect
-and has been removed.
+Recent community feedback says the session is running in summer, but the dated
+official calendar contains no matching Urhea open-mat occurrence in the current
+publication window. The membership page still provides an active weekly
+Sunday recurrence, so four Sundays are published with `uncertain` status and a
+visible confirmation reminder. The price is shown as a 25-euro annual open-mat
+membership, not as a per-session charge. The previous registry attachment to
+Konepaja was incorrect and has been removed.
 
 ## Materialization rules
 
@@ -153,11 +188,13 @@ and has been removed.
 - An exact official calendar entry may be published directly outside the
   recurring window when its date and time are explicit.
 - Dates in `excludedDates` are omitted.
-- A series with conflicting official evidence produces no events.
-- A recurring membership description does not override a dated calendar that
-  contains no matching occurrence.
+- An explicit cancellation or a conflicting official date or time prevents
+  publication. Absence from a dated calendar can instead require a visible
+  confirmation warning when another current official source gives a recurrence.
 - A location-wide visitor policy does not override a session explicitly marked
   members-only or a belt restriction shown in its booking calendar.
+- A general gym drop-in price is not copied to an open mat unless the source
+  explicitly connects the fee to that session.
 - Every event keeps its source URL, verification time, exception-check time,
   materialization limit and a user-facing exception note.
 - Helsinki summer dates in this window use UTC offset `+03:00`. A future window

@@ -16,14 +16,20 @@ const expectedSeriesDisplayData = {
   "aogg-sornainen-colored-belts-nogi-open-mat": {
     venueName: "Art of Ground Games Sörnäinen",
     formats: ["no-gi"],
-    priceAmount: 15,
+    priceAmount: null,
     status: "scheduled",
   },
   "aogg-erottaja-sunday-nogi-open-mat": {
     venueName: "Art of Ground Games Erottaja",
     formats: ["no-gi"],
-    priceAmount: 15,
+    priceAmount: null,
     status: "scheduled",
+  },
+  "buli-urhea-sunday-open-mat": {
+    venueName: "Buli Jiu-Jitsu Urhea",
+    formats: ["gi", "no-gi"],
+    priceAmount: 25,
+    status: "uncertain",
   },
   "hjjk-saturday-open-mat": {
     venueName: "Helsingin Ju-jutsuklubi",
@@ -31,10 +37,22 @@ const expectedSeriesDisplayData = {
     priceAmount: null,
     status: "scheduled",
   },
+  "hipko-metsala-saturday-bjj-open-mat": {
+    venueName: "HIPKO Metsälä",
+    formats: ["gi"],
+    priceAmount: null,
+    status: "uncertain",
+  },
+  "hipko-metsala-sunday-bjj-open-mat": {
+    venueName: "HIPKO Metsälä",
+    formats: ["gi"],
+    priceAmount: null,
+    status: "uncertain",
+  },
   "tundra-saturday-open-mat": {
     venueName: "Tundra Jiu-Jitsu",
     formats: ["gi", "no-gi"],
-    priceAmount: 14,
+    priceAmount: null,
     status: "uncertain",
   },
   "loop-saturday-open-mat": {
@@ -52,11 +70,23 @@ const expectedSeriesDisplayData = {
   "kilo-jiu-jitsu-saturday-open-mat": {
     venueName: "Kilo Jiu-Jitsu",
     formats: null,
-    priceAmount: 15,
+    priceAmount: null,
     status: "uncertain",
   },
   "mma-vantaa-sunday-open-mat": {
     venueName: "MMA Vantaa",
+    formats: null,
+    priceAmount: null,
+    status: "scheduled",
+  },
+  "takado-tuesday-open-mat": {
+    venueName: "Takado",
+    formats: null,
+    priceAmount: null,
+    status: "scheduled",
+  },
+  "takado-saturday-open-mat": {
+    venueName: "Takado",
     formats: null,
     priceAmount: null,
     status: "scheduled",
@@ -143,6 +173,51 @@ describe("event series materialization", () => {
     );
   });
 
+  it("materializes HIPKO only inside its summer timetable", () => {
+    const saturday = registry.series.find(
+      ({ id }) => id === "hipko-metsala-saturday-bjj-open-mat",
+    );
+    const sunday = registry.series.find(
+      ({ id }) => id === "hipko-metsala-sunday-bjj-open-mat",
+    );
+
+    expect(saturday?.publicationStatus).toBe("publish_with_confirmation");
+    expect(sunday?.publicationStatus).toBe("publish_with_confirmation");
+    expect(materializeOccurrenceDates(saturday!, registry.window)).toEqual([
+      "2026-07-18",
+      "2026-07-25",
+      "2026-08-01",
+      "2026-08-08",
+    ]);
+    expect(materializeOccurrenceDates(sunday!, registry.window)).toEqual([
+      "2026-07-19",
+      "2026-07-26",
+      "2026-08-02",
+      "2026-08-09",
+    ]);
+  });
+
+  it("materializes both current Takado open mats", () => {
+    const tuesday = registry.series.find(
+      ({ id }) => id === "takado-tuesday-open-mat",
+    );
+    const saturday = registry.series.find(
+      ({ id }) => id === "takado-saturday-open-mat",
+    );
+
+    expect(materializeOccurrenceDates(tuesday!, registry.window)).toEqual([
+      "2026-07-21",
+      "2026-07-28",
+      "2026-08-04",
+    ]);
+    expect(materializeOccurrenceDates(saturday!, registry.window)).toEqual([
+      "2026-07-18",
+      "2026-07-25",
+      "2026-08-01",
+      "2026-08-08",
+    ]);
+  });
+
   it("materializes only the publishable AOGG visitor sessions", () => {
     const erottaja = registry.series.find(
       ({ id }) => id === "aogg-erottaja-sunday-nogi-open-mat",
@@ -165,14 +240,19 @@ describe("event series materialization", () => {
     ]);
   });
 
-  it("keeps Buli blocked until its dated calendar lists an occurrence", () => {
+  it("materializes Buli with confirmation while its calendars disagree", () => {
     const series = registry.series.find(
       ({ id }) => id === "buli-urhea-sunday-open-mat",
     );
 
     expect(series?.venueId).toBe("buli-urhea");
-    expect(series?.publicationStatus).toBe("blocked_conflicting_source");
-    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([]);
+    expect(series?.publicationStatus).toBe("publish_with_confirmation");
+    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
+      "2026-07-19",
+      "2026-07-26",
+      "2026-08-02",
+      "2026-08-09",
+    ]);
   });
 
   it("references existing source-registry venues", () => {
