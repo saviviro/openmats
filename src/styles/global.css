@@ -634,6 +634,27 @@ main > section,
   text-decoration-color: currentcolor;
 }
 
+.event-facts dd .map-link {
+  min-height: 2rem;
+  padding: 0.32rem 0.55rem;
+  border: 1px solid rgb(17 22 18 / 14%);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  font-weight: 650;
+  transition:
+    background-color 120ms ease,
+    border-color 120ms ease,
+    color 120ms ease;
+}
+
+.event-facts dd .map-link:hover {
+  border-color: rgb(17 22 18 / 24%);
+  background: var(--paper);
+  color: var(--ink);
+}
+
 @media (min-width: 851px) {
   .event-facts__exceptions {
     grid-column: span 3;
