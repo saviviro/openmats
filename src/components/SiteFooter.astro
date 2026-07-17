@@ -18,15 +18,6 @@ const privacyPath = locale === "fi" ? "/tietosuoja/" : "/en/privacy/";
   <div class="site-footer__info">
     <p>{copy.footer}</p>
     <div class="site-footer__links">
-      <a
-        class="feedback-link"
-        href="https://github.com/saviviro/openmats/issues/new?template=event-report.yml"
-        target="_blank"
-        rel="noreferrer"
-      >
-        {copy.feedbackLink}<span aria-hidden="true"> ↗</span>
-        <span class="sr-only"> ({copy.opensNewTab})</span>
-      </a>
       <a class="footer-link" href={privacyPath}>{copy.privacyLink}</a>
     </div>
   </div>

@@ -19,15 +19,16 @@ an explicitly reviewed publication limit. The Finnish home page and the English
 version at [/en/](https://openmats.fi/en/) use the same event data and can
 be switched from the site header.
 
-Visitors can report incorrect information or a missing open mat through the
-public GitHub issue form linked in the site footer. Reports are reviewed against
-an official organizer source before event data changes.
+Contact details for event corrections and missing open mats are available on
+the Finnish and English privacy and contact pages linked in the site footer.
+Messages are reviewed against an official organizer source before event data
+changes.
 
 The site does not set cookies and does not use analytics, advertising or
 marketing tracking. Finnish and English privacy notices explain the limited
-processing performed by Cloudflare Pages and the public GitHub issue workflow. See
-[docs/privacy.md](docs/privacy.md) for the data map, retention routine and the
-changes that require a new privacy and cookie review.
+processing performed by Cloudflare Pages and ordinary email correspondence
+through Gmail. See [docs/privacy.md](docs/privacy.md) for the data map, retention
+routine and the changes that require a new privacy and cookie review.
 
 ## Planned approach
 
@@ -116,7 +117,6 @@ src/data/              version-controlled event data
 src/lib/               event formatting and validation utilities
 src/pages/             website routes
 src/styles/            global visual styles
-.github/ISSUE_TEMPLATE/ public event correction form
 .github/workflows/     continuous integration
 scripts/               deterministic scheduled-task gate and tests
 ```

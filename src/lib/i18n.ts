@@ -22,8 +22,6 @@ export const ui = {
     sourceReminder:
       "Ajantasaiset tiedot kannattaa tarkistaa järjestäjän sivuilta.",
     upcoming: "Tulevat open matit",
-    sectionTitle: "Valitse aika ja paikka",
-    sectionLead: "Suodata tapahtumia kaupungin, tyylin tai hinnan mukaan.",
     filterEyebrow: "Rajaa listaa",
     city: "Kaupunki",
     style: "Tyyli",
@@ -55,7 +53,6 @@ export const ui = {
     page: "Sivu",
     emptyTitle: "Ei osumia näillä rajauksilla.",
     emptyLead: "Kokeile toista kaupunkia, tyyliä tai hintaa.",
-    feedbackLink: "Ilmoita virheestä tai puuttuvasta open matista",
     privacyLink: "Tietosuoja ja yhteystiedot",
     footer:
       "Koontipalvelu ei järjestä tapahtumia. Varmista tiedot aina alkuperäisestä lähteestä.",
@@ -77,8 +74,6 @@ export const ui = {
     sourceReminder:
       "Current details are worth checking on the organizer’s page.",
     upcoming: "Upcoming open mats",
-    sectionTitle: "Choose a time and place",
-    sectionLead: "Filter events by city, style, or price.",
     filterEyebrow: "Filter the list",
     city: "City",
     style: "Style",
@@ -110,7 +105,6 @@ export const ui = {
     page: "Page",
     emptyTitle: "No events match these filters.",
     emptyLead: "Try another city, style, or price.",
-    feedbackLink: "Report an error or a missing open mat",
     privacyLink: "Privacy and contact details",
     footer:
       "This listing service does not organize the events. Always confirm the details from the original source.",
