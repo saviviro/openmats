@@ -1,0 +1,33 @@
+---
+import { ui, type Locale } from "../lib/i18n";
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const copy = ui[locale];
+const privacyPath = locale === "fi" ? "/tietosuoja/" : "/en/privacy/";
+---
+
+<footer class="site-footer">
+  <div class="brand brand--footer">
+    <span class="brand__mark" aria-hidden="true">OM</span>
+    <span><strong>Open Mats</strong><small>Helsinki Region</small></span>
+  </div>
+  <div class="site-footer__info">
+    <p>{copy.footer}</p>
+    <div class="site-footer__links">
+      <a
+        class="feedback-link"
+        href="https://github.com/saviviro/openmats/issues/new?template=event-report.yml"
+        target="_blank"
+        rel="noreferrer"
+      >
+        {copy.feedbackLink}<span aria-hidden="true"> ↗</span>
+        <span class="sr-only"> ({copy.opensNewTab})</span>
+      </a>
+      <a class="footer-link" href={privacyPath}>{copy.privacyLink}</a>
+    </div>
+  </div>
+</footer>

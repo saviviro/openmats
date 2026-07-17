@@ -8,6 +8,8 @@ body:
         Kiitos avusta! / Thank you for helping keep the listing accurate.
 
         Lisää mahdollisuuksien mukaan järjestäjän oma lähdelinkki. Älä kirjoita lomakkeeseen yksityisiä yhteystietoja. / Please include an official organizer source when possible. Do not add private contact details.
+
+        Ilmoitus, GitHub-käyttäjänimesi ja mahdollinen keskustelu näkyvät julkisesti. [Tietosuoja](https://openmats.fi/tietosuoja/) / Your report, GitHub username, and any discussion are public. [Privacy notice](https://openmats.fi/en/privacy/)
   - type: dropdown
     id: report_type
     attributes:
