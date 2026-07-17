@@ -21,29 +21,33 @@ Two processing paths exist in the MVP:
 1. Cloudflare Pages processes request and security data needed to deliver and
    protect the website. Open Mats does not download or maintain a separate copy
    of visitor logs.
-2. Event corrections are submitted as public GitHub issues. A report can expose
-   the reporter's GitHub username, public profile, report content, timestamps and
-   discussion. The issue template warns users before submission and links to both
-   privacy notices.
+2. Contact and event-correction emails are received through a personal Gmail
+   account. A message can contain the sender's name and email address, message
+   content, attachments and communication timestamps. Messages are not copied
+   into a separate feedback register.
 
-The lawful basis used by Open Mats is legitimate interest: delivering and
-securing the site and maintaining an accurate event listing. The privacy notice
-documents the associated purposes, recipients, transfers, retention criteria
-and data-subject rights.
+The lawful basis used by Open Mats is legitimate interest for delivering and
+securing the site, maintaining an accurate event listing and ordinary
+correspondence. A legal obligation applies when an email concerns a formal
+data-protection request. The privacy notice documents the associated purposes,
+recipients, transfers, retention criteria and data-subject rights.
 
 ## Retention routine
 
-Review closed event-report issues at least once every 12 months. Remove or redact
-personal data that is no longer needed. Technical content without personal data
-may remain as project history. Remove unnecessary private contact details from a
-public report as soon as they are noticed.
+Retain an email only while it is needed to handle the correspondence, continue
+necessary communication or meet a legal obligation. Delete the message when it
+is no longer needed for those purposes. An event correction without personal
+data may remain in the version-controlled project history.
 
 ## Cookies and future changes
 
 A normal production-page response was checked on 17 July 2026 and did not set a
-cookie. The repository does not include analytics or browser-storage code.
-Cookie-setting Cloudflare features are outside the approved scope and must not
-be enabled without the review described below.
+cookie. Cloudflare automatically obfuscates the public email address in the
+delivered HTML and restores it for human visitors with its deferred decode
+script. This feature does not change the email address stored in the repository.
+The repository does not include analytics or browser-storage code. Cookie-setting
+Cloudflare features are outside the approved scope and must not be enabled
+without the review described below.
 
 Reassess the privacy notice and consent requirements **before** enabling any of
 the following:
@@ -60,6 +64,11 @@ user has made a valid choice. Keep rejection as easy as acceptance and make
 consent withdrawal available.
 
 ## Service-provider identity
+
+Cloudflare delivers and protects the site. Google Ireland Limited provides the
+consumer Gmail service used for correspondence. The public privacy notices link
+to both providers' privacy information and explain that data may be processed
+outside the European Economic Area.
 
 The provider disclosure rules for commercial information-society services were
 reviewed for the current scope. Because Open Mats is a private, non-commercial

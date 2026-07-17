@@ -22,7 +22,9 @@ Ensimmäinen julkaistava versio:
 - kertoo, milloin tapahtuman tiedot on viimeksi tarkistettu;
 - toimii hyvin puhelimella;
 - kattaa alusta alkaen Helsingin, Espoon, Vantaan ja Kauniaisten salit;
-- sisältää helpon tavan ilmoittaa virheestä tai ehdottaa puuttuvaa tapahtumaa.
+- sisältää helposti löydettävät yhteystiedot, joiden kautta voi ilmoittaa
+  virheestä tai ehdottaa puuttuvaa tapahtumaa; erillistä palautelomaketta tai
+  GitHub-ilmoituslinkkiä ei käytetä.
 
 Älä lisää käyttäjätilejä, maksamista, omaa ilmoittautumisjärjestelmää, keskusteluominaisuuksia tai raskasta karttaratkaisua ilman erillistä päätöstä.
 
