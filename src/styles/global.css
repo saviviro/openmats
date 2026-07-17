@@ -36,6 +36,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 button,
