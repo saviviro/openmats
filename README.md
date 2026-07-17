@@ -23,6 +23,12 @@ Visitors can report incorrect information or a missing open mat through the
 public GitHub issue form linked in the site footer. Reports are reviewed against
 an official organizer source before event data changes.
 
+The site does not set cookies and does not use analytics, advertising or
+marketing tracking. Finnish and English privacy notices explain the limited
+processing performed by Cloudflare Pages and the public GitHub issue workflow. See
+[docs/privacy.md](docs/privacy.md) for the data map, retention routine and the
+changes that require a new privacy and cookie review.
+
 ## Planned approach
 
 - Astro and TypeScript for a statically generated website

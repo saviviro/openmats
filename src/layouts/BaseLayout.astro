@@ -6,11 +6,23 @@ interface Props {
   title: string;
   description: string;
   locale: Locale;
+  canonicalPath?: string;
+  alternatePaths?: Record<Locale, string>;
+  skipHref?: string;
+  skipLabel?: string;
 }
 
-const { title, description, locale } = Astro.props;
+const {
+  title,
+  description,
+  locale,
+  canonicalPath: canonicalPathProp,
+  alternatePaths = { fi: "/", en: "/en/" },
+  skipHref = "#events",
+  skipLabel,
+} = Astro.props;
 const copy = ui[locale];
-const canonicalPath = locale === "fi" ? "/" : "/en/";
+const canonicalPath = canonicalPathProp ?? alternatePaths[locale];
 ---
 
 <!doctype html>
@@ -22,17 +34,25 @@ const canonicalPath = locale === "fi" ? "/" : "/en/";
     <meta name="theme-color" content="#111612" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={new URL(canonicalPath, Astro.site)} />
-    <link rel="alternate" hreflang="fi" href={new URL("/", Astro.site)} />
-    <link rel="alternate" hreflang="en" href={new URL("/en/", Astro.site)} />
+    <link
+      rel="alternate"
+      hreflang="fi"
+      href={new URL(alternatePaths.fi, Astro.site)}
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href={new URL(alternatePaths.en, Astro.site)}
+    />
     <link
       rel="alternate"
       hreflang="x-default"
-      href={new URL("/", Astro.site)}
+      href={new URL(alternatePaths.fi, Astro.site)}
     />
     <title>{title}</title>
   </head>
   <body>
-    <a class="skip-link" href="#events">{copy.skipLink}</a>
+    <a class="skip-link" href={skipHref}>{skipLabel ?? copy.skipLink}</a>
     <slot />
   </body>
 </html>

@@ -1,0 +1,36 @@
+---
+import { ui, type Locale } from "../lib/i18n";
+
+interface Props {
+  locale: Locale;
+  languagePaths?: Record<Locale, string>;
+}
+
+const { locale, languagePaths = { fi: "/", en: "/en/" } } = Astro.props;
+const copy = ui[locale];
+const homePath = locale === "fi" ? "/" : "/en/";
+---
+
+<header class="site-header">
+  <a class="brand" href={homePath} aria-label={copy.homeLabel}>
+    <span class="brand__mark" aria-hidden="true">OM</span>
+    <span>
+      <strong>Open Mats</strong>
+      <small>Helsinki Region</small>
+    </span>
+  </a>
+
+  <nav class="language-switcher" aria-label={copy.languageLabel}>
+    <a
+      href={languagePaths.fi}
+      lang="fi"
+      aria-current={locale === "fi" ? "page" : undefined}>FI</a
+    >
+    <span aria-hidden="true">/</span>
+    <a
+      href={languagePaths.en}
+      lang="en"
+      aria-current={locale === "en" ? "page" : undefined}>EN</a
+    >
+  </nav>
+</header>

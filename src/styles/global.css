@@ -683,11 +683,113 @@ main > section,
   text-align: right;
 }
 
-.feedback-link {
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  justify-content: flex-end;
+}
+
+.feedback-link,
+.footer-link {
   color: var(--ink);
   font-size: 0.82rem;
   font-weight: 750;
   text-underline-offset: 0.2em;
+}
+
+.legal-main {
+  padding-block: 0.5rem 4rem;
+}
+
+.legal-hero {
+  padding: clamp(2rem, 7vw, 5rem);
+  border-radius: var(--radius-lg);
+  background: var(--ink);
+  color: white;
+}
+
+.legal-hero .eyebrow {
+  color: var(--acid);
+}
+
+.legal-hero h1 {
+  max-width: 50rem;
+  margin: 0;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(2.7rem, 8vw, 5.8rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+}
+
+.legal-hero > p:not(.eyebrow, .legal-updated) {
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  color: #d5ddd6;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+}
+
+.legal-hero .legal-updated {
+  margin: 1.5rem 0 0;
+  color: var(--acid);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.legal-content {
+  width: min(54rem, calc(100% - 2rem));
+  max-width: 54rem;
+  margin: 1rem auto 0;
+}
+
+.legal-content section {
+  padding: clamp(1.75rem, 4vw, 3rem);
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  background: var(--paper-bright);
+}
+
+.legal-content section:first-child {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.legal-content section:last-child {
+  border-bottom: 1px solid var(--line);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.legal-content h2 {
+  margin: 0 0 1rem;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.45rem, 4vw, 2rem);
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+
+.legal-content h3 {
+  margin: 1.75rem 0 0.5rem;
+  font-size: 1rem;
+}
+
+.legal-content p,
+.legal-content ul {
+  max-width: 47rem;
+}
+
+.legal-content p:last-child,
+.legal-content ul:last-child {
+  margin-bottom: 0;
+}
+
+.legal-content li + li {
+  margin-top: 0.75rem;
+}
+
+.legal-content a {
+  color: #174f90;
+  overflow-wrap: anywhere;
+  text-underline-offset: 0.18em;
 }
 
 @media (max-width: 850px) {
@@ -725,6 +827,22 @@ main > section,
 
   .site-header {
     gap: 0.75rem;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__info {
+    justify-items: start;
+  }
+
+  .site-footer__info > p {
+    text-align: left;
+  }
+
+  .site-footer__links {
+    justify-content: flex-start;
   }
 
   .language-switcher {
