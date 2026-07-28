@@ -119,13 +119,13 @@ export interface EventTranslation {
 
 export const englishSeriesTranslations: Record<string, EventTranslation> = {
   "aogg-erottaja-sunday-nogi-open-mat": {
-    priceNote: "The source does not state an open-mat visitor price",
+    priceNote: "Free of charge",
     accessDescription:
       "Open to practitioners from other clubs. No-gi only; reserve a spot in advance.",
     exceptionNote: "The official calendar does not list cancelled dates.",
   },
   "aogg-sornainen-colored-belts-nogi-open-mat": {
-    priceNote: "The source does not state an open-mat visitor price",
+    priceNote: "Free of charge",
     accessDescription:
       "Open to coloured belts from other clubs. No-gi only; reserve a spot in advance.",
     exceptionNote:
@@ -153,7 +153,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     priceNote: "The source does not state a visitor price",
     accessDescription: "Open to practitioners from other clubs.",
     exceptionNote:
-      "The session is held only when the venue has no other event. No overlapping BJJ event was found during the reviewed publication window.",
+      "The session is held only when no other event uses the Kaapelitehdas venue. No venue-specific exception was found during the reviewed publication window.",
   },
   "hipko-metsala-saturday-bjj-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",

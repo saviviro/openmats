@@ -393,6 +393,11 @@ main > section,
   display: none;
 }
 
+.event-card:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
 .pagination {
   display: flex;
   gap: 1rem;
@@ -550,11 +555,6 @@ main > section,
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   letter-spacing: -0.045em;
   line-height: 1.1;
-}
-
-.event-card h2:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 4px;
 }
 
 .event-facts {

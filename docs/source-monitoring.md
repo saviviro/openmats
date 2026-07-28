@@ -40,9 +40,17 @@ strictly:
 
 - `authentication_failed` or `missing_credential` is an actual login problem
   and may request GitHub CLI reauthentication;
-- `credential_unavailable`, `network_unavailable` or `git_unavailable` is a
-  keyring, network or Codex execution permission problem and must never be
-  reported as an expired token before a direct-permission retry;
+- `credential_unavailable` means the configured macOS keyring credential could
+  not be read in the current execution environment;
+- `authorization_unavailable` means GitHub was reached but access is blocked by
+  a 403 response, organization SSO or rate limiting;
+- `network_unavailable` and `git_unavailable` indicate connectivity or Git
+  transport failure;
+- `gh_unavailable` means GitHub CLI is not installed or is not visible in the
+  execution environment;
+- none of `credential_unavailable`, `authorization_unavailable`,
+  `network_unavailable`, `git_unavailable` or `gh_unavailable` is evidence of
+  an expired token, and none should request reauthentication;
 - a restricted-shell failure must be retried once with direct network
   permission before the scheduled run stops.
 
@@ -52,32 +60,40 @@ After the GitHub preflight succeeds, a scheduled task must:
    must not be rejected;
 2. fetch `origin/main`, switch the worktree to detached `origin/main` and
    verify that `HEAD` matches it;
-3. acquire the shared operating-system temporary lock with
-   `node scripts/automation-gate.mjs acquire <routine|discovery>`;
-4. record the exact `origin/main` base commit for the final publication check;
-5. read the deterministic due status with
-   `node scripts/automation-gate.mjs status <routine|discovery>`.
+3. verify that production matches that commit with
+   `pnpm automation:verify-production -- --commit <origin-main-sha>`, even when
+   the next source review is not yet due;
+4. acquire the shared operating-system temporary lock with
+   `pnpm automation:gate -- acquire <routine|discovery>` and retain the
+   returned `lock.ownerId`;
+5. record the exact `origin/main` base commit for the final publication check;
+6. read the deterministic due status with
+   `pnpm automation:gate -- status <routine|discovery>`.
 
-The lock is shared by routine and discovery tasks and must be released on every
-exit path with
-`node scripts/automation-gate.mjs release <routine|discovery>`. A due run works
-from `origin/main` on a uniquely timestamped `codex/scheduled-source-...`
-branch; it never checks out the user's local `main` branch. Only a fully
-completed check may update the successful timestamp, using
-`node scripts/automation-gate.mjs record <task> <summary>`. Before recording
-success, every published series needs a fresh source and exception timestamp,
-and `pnpm events:refresh` must advance and rebuild the eight-week publication
-window. The gate rejects a stale window, while `pnpm validate` rejects event
-data that does not match the reviewed series. Permission, source-access,
-materialization or validation failures must be reported without advancing the
-timestamp or publishing to `main`.
+The lock is shared by routine and discovery tasks. Every successfully acquired
+lock must be released on every later exit path with
+`pnpm automation:gate -- release <routine|discovery> <ownerId>`.
+`record` requires the same owner:
+`pnpm automation:gate -- record <routine|discovery> <ownerId> <summary>`.
+Never call either command with another run's owner ID, and do not call
+`release` after an unsuccessful `acquire`.
 
-A lock older than eight hours is reported as stale, but the script does not
-replace it automatically: automatic replacement could race with a slow run.
+A due run works from `origin/main` on a uniquely timestamped
+`codex/scheduled-source-...` branch; it never checks out the user's local
+`main` branch. Only a fully completed check may update the successful
+timestamp. Before recording success, every recurring and explicitly dated
+published source must have been reviewed after this run acquired its lock,
+`pnpm events:refresh` must rebuild the eight-week publication window and the
+generated `src/data/events.json` must match the canonical series, templates and
+source registry. Permission, source-access, materialization or validation
+failures must be reported without advancing the timestamp or publishing to
+`main`.
+
 The lock path is reported by the gate command and lives in the operating
 system's temporary directory so every Openmats worktree sees the same lock.
-Remove a stale lock manually only after confirming from the Scheduled view that
-no source-check task is still active.
+`acquire` automatically reclaims an invalid lock or a lock older than eight
+hours and reports `reclaimedStaleLock: true`. A fresh lock is never reclaimed,
+and the unique owner ID prevents a second run from releasing it.
 
 These are local worktree scheduled tasks. The computer must be awake and the
 Codex app running for a trigger to execute. If the computer is asleep, a later
@@ -85,22 +101,33 @@ one of the staggered triggers can run the still-due check. Review the next due
 run manually from the Scheduled view before relying on the repaired cadence.
 
 After a due check has completed, the task runs `pnpm events:refresh`,
-`pnpm validate` and the success-recording gate. It then commits and pushes its
-timestamped branch, opens a pull request to protected `main` and enables GitHub
-auto-merge. The required GitHub `validate` check must pass before GitHub merges
-the PR. This preserves branch protection while removing the need for a manual
-merge. If authentication, network access, materialization, branch push, PR
-creation, validation or auto-merge fails, the task leaves its branch intact and
-does not change production. After GitHub merges the PR, the task checks both the
-new review date and a newly materialized occurrence near the rolling window's
-end on `https://openmats.fi`; checking the date alone is not sufficient.
+`pnpm validate` and the owner-bound success-recording gate. It then commits and
+pushes its timestamped branch, opens a pull request to protected `main` and
+enables GitHub auto-merge. The required GitHub checks must pass before GitHub
+merges the PR. This preserves branch protection while removing the need for a
+manual merge. If authentication, authorization, network access,
+materialization, branch push, PR creation, validation or auto-merge fails, the
+task leaves its branch intact and does not change production.
+
+After GitHub merges the PR, run:
+
+```sh
+pnpm automation:verify-production -- --commit <merged-main-commit-sha>
+```
+
+The verifier retries `https://openmats.fi` and requires the exact Cloudflare
+build commit, the latest successful automation timestamp and a newly
+materialized recurring occurrence near the rolling window's end. Checking the
+date alone is not sufficient.
 
 Direct scheduled publication requires a narrower evidence rule than a manual
 review: a member-only or cancellation label may be applied only when the
 official source clearly attaches it to that exact session or to an explicitly
-defined scope containing the session. Text from another timetable row must not
-be generalized. An unreadable or missing source is never cancellation evidence
-and must not delete previously verified events.
+defined scope containing the session. Every `excludedDates` value must have one
+matching `excludedDateEvidence` object with the exact date, official source URL,
+review timestamp and explanation. Text from another timetable row, an event at
+another venue, or an unreadable or missing source is never cancellation
+evidence and must not delete previously verified events.
 
 ## Check order
 
@@ -161,7 +188,10 @@ The review did add or refine evidence for existing venues:
   The project owner later confirmed on 16 July that the Saturday open mat is
   free, open to outside-club practitioners and allows Gi or No-gi.
 - Art of Ground Games explicitly welcomes visitors generally, but its dynamic
-  schedule can impose session-specific member or belt restrictions.
+  schedule can impose session-specific member or belt restrictions. The exact
+  Erottaja and Sörnäinen booking settings show zero-euro booking for
+  non-members; their recurring records use dated Gymdesk URL templates so every
+  published occurrence links to its matching booking date.
 
 Discovery results in Kirkkonummi, Vihti and other neighboring municipalities
 were excluded because they are outside the current four-city scope. General
@@ -170,12 +200,13 @@ no-gi or submission wrestling.
 
 ## Vantaa follow-up: 16 July 2026
 
-The focused Vantaa review produced one publishable series:
+The focused Vantaa review produced a publishable series:
 
 - MMA Vantaa's live page now clearly combines the 1 June–9 August summer heading
   with Sunday 12:00–13:30. It explicitly welcomes outside-club visitors and
   instructs them to be at the door before the start. The previous inconsistent
-  rendering is gone, so four Sundays through 9 August are published.
+  rendering is gone, so dates inside the seasonal and rolling publication
+  boundaries are published.
 - Combat Academy's official schedule places its open mat in Sörnäinen,
   Helsinki, not at the Myyrmäki venue.
 - Salini's official schedule includes Saturday BJJ sparring in Rekola but does
@@ -195,16 +226,18 @@ specific enough:
 
 - AOGG Erottaja's Gymdesk calendar has a public Sunday 12:00–14:00 No-gi open
   mat. AOGG Sörnäinen has a Saturday 12:00–14:00 No-gi open mat for coloured
-  belts. The booking rule applies. The general 15-euro visitor pass is not
-  attributed specifically to open mats, so the event price is unknown.
+  belts. The booking rule applies. Both exact session settings show a zero-euro
+  cost and allow free non-member booking, so these open mats are published as
+  free despite the separate general visitor-pass price.
   Kivenlahti's current open mats are explicitly for members and remain
   unpublished.
 - MMA Vantaa's time conflict was resolved as described above and its current
   summer Sundays were published.
 - Loop's official summer calendar still lists Saturday 10:30–12:00 through 2
   August, and its English calendar identifies the slot as BJJ/No-Gi. The
-  project owner's access and price confirmation makes the three remaining
-  summer Saturdays publishable; the series is not extended into autumn.
+  project owner's access and price confirmation makes dates inside the reviewed
+  seasonal and rolling windows publishable; the series is not extended into
+  autumn.
 - Helsingin Ju-jutsuklubi, Tundra and GB Gym still match their published data.
   GB Gym's November cancellation remains excluded.
 - Buli Urhea's recurring membership description has no matching dated
@@ -225,16 +258,16 @@ previous 13:00–14:00 autumn candidate was not supported by the live source.
 
 - Dojo Helsinki's Finnish and English official timetables both list Saturday
   12:00–13:00 open mat at Pursimiehenkatu 14. The project owner confirmed that
-  the session is public and uses No-gi attire. Four Saturdays through the
-  current materialization window are published. The official Instagram account
-  is now monitored for holiday changes and additional dated open mats.
+  the session is public and uses No-gi attire. Dates inside the reviewed
+  publication window are published. The official Instagram account is now
+  monitored for holiday changes and additional dated open mats.
 - The project owner confirmed Kilo Jiu-Jitsu's public Saturday 11:00–12:30 open
   mat at Kutojantie 5, second floor. The official site confirms the venue and
   lists a general 15-euro single-visit price, but its schedule page remains
-  labelled 2023. Four Saturdays are therefore published with confirmation
-  required and attire and open-mat price left unknown. Recheck the official
-  Instagram account and schedule before extending or marking the series fully
-  verified.
+  labelled 2023. Dates inside the reviewed publication window are therefore
+  published with confirmation required and attire and open-mat price left
+  unknown. Recheck the official Instagram account and schedule before extending
+  or marking the series fully verified.
 
 ## Source and price audit: 17 July 2026
 
@@ -245,15 +278,16 @@ previous 13:00–14:00 autumn candidate was not supported by the live source.
   11:00–13:00 open mats, describes them as open to everyone and directs
   participants to myClub. Both series are published; attire and price remain
   unknown.
-- AOGG's 15-euro visitor pass, Tundra's 14-euro non-member single visit and
-  Kilo's 15-euro single visit are general gym prices. None of the checked
-  sources explicitly names the amount as the open-mat fee, so all three event
-  records now use unknown price.
+- Tundra's 14-euro non-member single visit and Kilo's 15-euro single visit are
+  general gym prices. Neither checked source explicitly names that amount as
+  the open-mat fee, so those event records use unknown price. AOGG is different:
+  its exact Erottaja and Sörnäinen booking settings show free non-member booking
+  for the open mat itself, so those occurrences use a zero-euro price.
 - Buli's annual 25-euro open-mat membership is not a per-session fee. Recent
   community feedback says the Urhea session is running in summer, but the
   dated official calendar still provides no exact occurrence in the current
-  window. The four membership-based Sundays are published as uncertain and
-  remain under active monitoring.
+  window. Dates generated from the membership recurrence are published as
+  uncertain and remain under active monitoring.
 
 ## Weekly light check: 28 July 2026
 
@@ -268,6 +302,9 @@ boundary.
   Sunday occurrences remain published with confirmation warnings. The direct
   PDF URL returned a 404 during this check, which is a source-read failure and
   not evidence that the previously verified sessions were cancelled.
+- HJJK's 22 August Saturday is not excluded. The 22–23 August BJJ No-Gi Finnish
+  Open is listed in Vantaa, not at HJJK's Kaapelitehdas gym, and therefore does
+  not prove the venue conflict required by HJJK's exception rule.
 - FireBody replaced its spring timetable with an autumn timetable starting
   10 August. Saturday BJJ self-practice is now 13:00–14:00; outside-club access
   remains unconfirmed, so the candidate stays unpublished.
@@ -294,6 +331,12 @@ occurrences appear or the organizer confirms them.
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a
 broad review. Update a venue's `checkedAt` only when its official evidence was
 actually inspected. Use `datedOpenMats` for exact calendar entries, including
-cancellations, and `candidateOpenMats` for recurring time-bounded slots.
+cancellations, and give every row a stable `seriesId` with a matching event
+template. Use `candidateOpenMats` for recurring time-bounded slots. Every
+recurring `excludedDates` entry requires matching date-specific
+`excludedDateEvidence`; never infer an exclusion from another venue, a
+different timetable row or a source-read error.
 
-Run `pnpm validate` after every registry change.
+Run `pnpm events:refresh` and `pnpm validate` after every canonical input
+change. `src/data/events.json` is generated output and must not be edited
+directly.

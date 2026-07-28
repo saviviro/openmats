@@ -26,7 +26,7 @@ Root directory: repository root
 ```
 
 The repository's `.nvmrc` selects Node.js 24 and `package.json` pins pnpm
-11.7.0 through the `packageManager` field. No Cloudflare API token or other
+11.9.0 through the `packageManager` field. No Cloudflare API token or other
 deployment secret is stored in the repository.
 
 ## Release workflow
@@ -43,9 +43,19 @@ Normal feature and design changes use pull requests:
 Scheduled source checks use the same protected path automatically: after local
 validation, the isolated automation worktree pushes its timestamped branch,
 opens a pull request and enables auto-merge. GitHub merges only after the
-required `validate` check passes. The automation then checks that the new review
-date appears on `openmats.fi`. A rejected push, failed check or failed merge
-leaves the previous production deployment unchanged.
+required checks pass. After the merge, the automation runs:
+
+```sh
+pnpm automation:verify-production -- --commit <main-commit-sha>
+```
+
+The verifier retries the canonical `https://openmats.fi` address and requires
+three independent markers from the reviewed checkout: the exact Cloudflare
+build commit, the latest successful review timestamp and a generated recurring
+event near the end of the rolling publication window. A changed date alone does
+not prove that event data or the intended commit reached production. A rejected
+push, failed check, failed merge or failed production verification leaves an
+explicit failure report instead of claiming a successful publication.
 
 If a Cloudflare build fails, the previously successful deployment remains live.
 Inspect the deployment log in Cloudflare before changing build settings or

@@ -12,16 +12,30 @@ export const PREFLIGHT_EXIT_CODES = Object.freeze({
   executionUnavailable: 3,
   authenticationFailed: 4,
   gitUnavailable: 5,
+  ghUnavailable: 6,
 });
 
 export function classifyApiFailure(stderr) {
   const message = stderr.toLowerCase();
   if (
+    message.includes("proxy authentication failed") ||
+    message.includes("proxyconnect")
+  ) {
+    return "network_unavailable";
+  }
+  if (
     message.includes("http 401") ||
     message.includes("bad credentials") ||
-    message.includes("authentication failed")
+    /authentication failed (?:for|to).*github\.com/u.test(message)
   ) {
     return "authentication_failed";
+  }
+  if (
+    message.includes("http 403") ||
+    message.includes("rate limit") ||
+    message.includes("resource protected by organization sso")
+  ) {
+    return "authorization_unavailable";
   }
   return "network_unavailable";
 }
@@ -52,6 +66,13 @@ function hasConfiguredGitHubHost() {
 function main() {
   const storedCredential = run("gh", ["auth", "token", "-h", "github.com"]);
   if (storedCredential.status !== 0) {
+    if (storedCredential.error?.code === "ENOENT") {
+      printResult({
+        status: "gh_unavailable",
+        message: "GitHub CLI is not available in this execution environment.",
+      });
+      return PREFLIGHT_EXIT_CODES.ghUnavailable;
+    }
     if (hasConfiguredGitHubHost()) {
       printResult({
         status: "credential_unavailable",
@@ -75,7 +96,9 @@ function main() {
       message:
         status === "authentication_failed"
           ? "GitHub rejected the stored credential."
-          : "The GitHub API could not be reached from this execution environment.",
+          : status === "authorization_unavailable"
+            ? "GitHub was reached, but access is temporarily blocked by authorization, SSO or rate limiting."
+            : "The GitHub API could not be reached from this execution environment.",
     });
     return status === "authentication_failed"
       ? PREFLIGHT_EXIT_CODES.authenticationFailed
@@ -91,11 +114,17 @@ function main() {
   if (git.status !== 0) {
     const status = classifyApiFailure(git.stderr);
     printResult({
-      status: status === "authentication_failed" ? status : "git_unavailable",
+      status:
+        status === "authentication_failed" ||
+        status === "authorization_unavailable"
+          ? status
+          : "git_unavailable",
       message:
         status === "authentication_failed"
           ? "GitHub rejected Git credentials."
-          : "The Git remote could not be reached even though the API login succeeded.",
+          : status === "authorization_unavailable"
+            ? "GitHub was reached, but Git access is blocked by authorization or SSO."
+            : "The Git remote could not be reached even though the API login succeeded.",
     });
     return status === "authentication_failed"
       ? PREFLIGHT_EXIT_CODES.authenticationFailed

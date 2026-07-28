@@ -4,11 +4,15 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
+import { format } from "prettier";
+
 import {
   materializeOccurrenceDates,
   occurrenceId,
   parseEventSeriesRegistry,
 } from "../src/lib/event-series.ts";
+import { eventSchema } from "../src/lib/event-schema.ts";
+import { parseSourceRegistry } from "../src/lib/source-registry.ts";
 
 export const PUBLICATION_HORIZON_DAYS = 56;
 
@@ -16,6 +20,7 @@ const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const seriesPath = resolve(repositoryRoot, "data/event-series.json");
 const templatesPath = resolve(repositoryRoot, "data/event-templates.json");
+const sourceRegistryPath = resolve(repositoryRoot, "data/source-registry.json");
 const eventsPath = resolve(repositoryRoot, "src/data/events.json");
 
 export function helsinkiDate(date = new Date()) {
@@ -42,14 +47,29 @@ export function helsinkiOffset(isoDate, localTime) {
 export function buildPublishedEvents(
   registryInput,
   templateInput,
-  eventsInput,
+  sourceRegistryInput,
 ) {
   const registry = parseEventSeriesRegistry(registryInput);
-  const templates = validateTemplates(templateInput, registry);
-  const recurringSeriesIds = new Set(registry.series.map(({ id }) => id));
-  const datedEvents = eventsInput.filter(
-    ({ schedule }) => !recurringSeriesIds.has(schedule.seriesId),
+  const sourceRegistry = parseSourceRegistry(sourceRegistryInput);
+  const datedSeriesIds = new Set(
+    sourceRegistry.venues.flatMap(({ datedOpenMats }) =>
+      datedOpenMats.map(({ seriesId }) => seriesId),
+    ),
   );
+  const recurringSeriesIds = new Set(registry.series.map(({ id }) => id));
+  for (const seriesId of datedSeriesIds) {
+    if (recurringSeriesIds.has(seriesId)) {
+      throw new Error(
+        `Event series ${seriesId} cannot be both recurring and explicitly dated`,
+      );
+    }
+  }
+  const templates = validateTemplates(templateInput, [
+    ...recurringSeriesIds,
+    ...datedSeriesIds,
+  ]);
+  validateSeriesAgainstSources(registry, sourceRegistry, templates);
+
   const recurringEvents = registry.series.flatMap((series) => {
     const template = templates.get(series.id);
     if (series.publicationStatus === "blocked_conflicting_source") return [];
@@ -65,7 +85,7 @@ export function buildPublishedEvents(
       price: template.price,
       access: template.access,
       status: template.status,
-      sourceUrl: series.primarySourceUrl,
+      sourceUrl: occurrenceSourceUrl(series, date),
       sourceLabel: template.sourceLabel,
       verifiedAt: series.exceptionCheck.checkedAt,
       schedule: {
@@ -84,12 +104,136 @@ export function buildPublishedEvents(
       isExample: template.isExample,
     }));
   });
+  const datedEvents = materializeDatedEvents(sourceRegistry, templates);
 
-  return [...recurringEvents, ...datedEvents].sort(
+  const events = [...recurringEvents, ...datedEvents].sort(
     (first, second) =>
       Date.parse(first.startAt) - Date.parse(second.startAt) ||
       first.id.localeCompare(second.id),
   );
+  for (const event of events) eventSchema.parse(event);
+  return events;
+}
+
+function materializeDatedEvents(sourceRegistry, templates) {
+  const allEntriesBySeries = new Map();
+
+  for (const venue of sourceRegistry.venues) {
+    for (const openMat of venue.datedOpenMats) {
+      const existing = allEntriesBySeries.get(openMat.seriesId);
+      if (existing && existing.venue.id !== venue.id) {
+        throw new Error(
+          `Dated event series ${openMat.seriesId} is attached to multiple venues`,
+        );
+      }
+      allEntriesBySeries.set(openMat.seriesId, {
+        venue,
+        entries: [...(existing?.entries ?? []), openMat],
+      });
+    }
+  }
+
+  return [...allEntriesBySeries.entries()].flatMap(
+    ([seriesId, { venue, entries }]) => {
+      const template = templates.get(seriesId);
+      if (!template) throw new Error(`Missing event template for ${seriesId}`);
+
+      const dates = entries.map(({ date }) => date).sort();
+      const primarySource = selectPrimaryDatedSource(venue);
+      const supportingSourceUrls = venue.sources
+        .map(({ url }) => url)
+        .filter((url) => url !== primarySource.url);
+
+      return entries.flatMap((entry) => {
+        if (
+          entry.status !== "scheduled" ||
+          !["ready_for_event_review", "needs_access_confirmation"].includes(
+            entry.publishStatus,
+          )
+        ) {
+          return [];
+        }
+
+        const formats = formatsFromDisciplines(entry.disciplines);
+        if (JSON.stringify(formats) !== JSON.stringify(template.formats)) {
+          throw new Error(
+            `Dated event formats do not match the template for ${seriesId}`,
+          );
+        }
+
+        return {
+          id: occurrenceId(seriesId, entry.date),
+          title: template.title,
+          formats,
+          startAt: localDateTime(entry.date, entry.startTime),
+          endAt: localDateTime(entry.date, entry.endTime),
+          venue: template.venue,
+          price: template.price,
+          access: template.access,
+          status: template.status,
+          sourceUrl: primarySource.url,
+          sourceLabel: template.sourceLabel,
+          verifiedAt: venue.checkedAt,
+          schedule: {
+            seriesId,
+            validFrom: dates.at(0),
+            validThrough: dates.at(-1),
+            materializedThrough: dates.at(-1),
+            exceptionStatus:
+              entry.publishStatus === "needs_access_confirmation"
+                ? "confirmation_required"
+                : "none_found",
+            exceptionCheckedAt: venue.checkedAt,
+            exceptionNote: template.exceptionNote,
+            supportingSourceUrls,
+          },
+          isExample: template.isExample,
+        };
+      });
+    },
+  );
+}
+
+function selectPrimaryDatedSource(venue) {
+  const source = [...venue.sources].sort(
+    (first, second) =>
+      first.priority - second.priority ||
+      sourceTypePriority(first.type) - sourceTypePriority(second.type),
+  )[0];
+  if (!source) {
+    throw new Error(`Dated event venue ${venue.id} has no source`);
+  }
+  return source;
+}
+
+function sourceTypePriority(type) {
+  return {
+    official_event: 0,
+    official_schedule: 1,
+    official_visitor_policy: 2,
+    official_location: 3,
+    official_home: 4,
+  }[type];
+}
+
+function formatsFromDisciplines(disciplines) {
+  const formats = [];
+  if (disciplines.includes("bjj")) formats.push("gi");
+  if (
+    disciplines.includes("nogi") ||
+    disciplines.includes("submission_wrestling")
+  ) {
+    formats.push("no-gi");
+  }
+  return formats.length === 0 ? null : formats;
+}
+
+function occurrenceSourceUrl(series, date) {
+  const sourceUrl =
+    series.occurrenceSourceUrlTemplate?.replace("{date}", date) ??
+    series.primarySourceUrl;
+  new URL(sourceUrl);
+  return sourceUrl;
 }
 
 function localDateTime(isoDate, localTime) {
@@ -111,7 +255,7 @@ function offsetAt(date) {
   return timeZoneName === "GMT" ? "+00:00" : timeZoneName.slice(3);
 }
 
-function validateTemplates(input, registry) {
+function validateTemplates(input, expectedSeriesIds) {
   if (!input || input.version !== 1 || !Array.isArray(input.templates)) {
     throw new Error("Event templates must have version 1");
   }
@@ -124,16 +268,75 @@ function validateTemplates(input, registry) {
     templates.set(template.seriesId, template);
   }
 
-  for (const series of registry.series) {
-    if (
-      series.publicationStatus !== "blocked_conflicting_source" &&
-      !templates.has(series.id)
-    ) {
-      throw new Error(`Missing event template for ${series.id}`);
+  const expected = new Set(expectedSeriesIds);
+  for (const seriesId of expected) {
+    if (!templates.has(seriesId)) {
+      throw new Error(`Missing event template for ${seriesId}`);
+    }
+  }
+  for (const seriesId of templates.keys()) {
+    if (!expected.has(seriesId)) {
+      throw new Error(`Event template has no canonical series: ${seriesId}`);
     }
   }
 
   return templates;
+}
+
+function validateSeriesAgainstSources(registry, sourceRegistry, templates) {
+  const venues = new Map(
+    sourceRegistry.venues.map((venue) => [venue.id, venue]),
+  );
+  const allowedPublicationStatusesByCandidate = {
+    ready_for_event_review: ["publish", "publish_with_confirmation"],
+    needs_access_confirmation: ["publish_with_confirmation"],
+    blocked_by_source_conflict: ["blocked_conflicting_source"],
+    members_only_do_not_publish: [],
+  };
+
+  for (const series of registry.series) {
+    const venue = venues.get(series.venueId);
+    if (!venue) {
+      throw new Error(
+        `Event series ${series.id} references an unknown source venue`,
+      );
+    }
+
+    const candidates = venue.candidateOpenMats.filter(
+      (candidate) =>
+        candidate.weekday === series.weekday &&
+        candidate.startTime === series.startTime &&
+        candidate.endTime === series.endTime,
+    );
+    if (candidates.length !== 1) {
+      throw new Error(
+        `Event series ${series.id} must match exactly one source candidate`,
+      );
+    }
+
+    const [candidate] = candidates;
+    if (
+      !allowedPublicationStatusesByCandidate[candidate.publishStatus].includes(
+        series.publicationStatus,
+      ) ||
+      candidate.validFrom !== series.validFrom ||
+      candidate.validThrough !== series.validThrough
+    ) {
+      throw new Error(
+        `Event series ${series.id} conflicts with its source candidate`,
+      );
+    }
+
+    const formats = formatsFromDisciplines(candidate.disciplines);
+    if (
+      JSON.stringify(formats) !==
+      JSON.stringify(templates.get(series.id)?.formats)
+    ) {
+      throw new Error(
+        `Event series ${series.id} formats conflict with its source candidate`,
+      );
+    }
+  }
 }
 
 function parseArguments(argv) {
@@ -165,10 +368,15 @@ function serialize(value) {
   return `${JSON.stringify(value, null, 2)}\n`;
 }
 
-function runCli(argv) {
+async function serializeForFile(value) {
+  return format(serialize(value), { parser: "json" });
+}
+
+async function runCli(argv) {
   const { command, from } = parseArguments(argv);
   const registry = readJson(seriesPath);
   const templates = readJson(templatesPath);
+  const sourceRegistry = readJson(sourceRegistryPath);
   const events = readJson(eventsPath);
 
   if (command === "refresh") {
@@ -181,10 +389,14 @@ function runCli(argv) {
     const materializedEvents = buildPublishedEvents(
       registry,
       templates,
-      events,
+      sourceRegistry,
     );
-    writeFileSync(seriesPath, serialize(registry), "utf8");
-    writeFileSync(eventsPath, serialize(materializedEvents), "utf8");
+    writeFileSync(seriesPath, await serializeForFile(registry), "utf8");
+    writeFileSync(
+      eventsPath,
+      await serializeForFile(materializedEvents),
+      "utf8",
+    );
     process.stdout.write(
       `${JSON.stringify(
         {
@@ -203,7 +415,7 @@ function runCli(argv) {
   }
 
   if (command === "check") {
-    const expected = buildPublishedEvents(registry, templates, events);
+    const expected = buildPublishedEvents(registry, templates, sourceRegistry);
     if (serialize(expected) !== serialize(events)) {
       throw new Error(
         "src/data/events.json is stale; run pnpm events:refresh after reviewing sources",
@@ -221,10 +433,8 @@ function runCli(argv) {
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) {
-  try {
-    runCli(process.argv.slice(2));
-  } catch (error) {
+  runCli(process.argv.slice(2)).catch((error) => {
     process.stderr.write(`${error instanceof Error ? error.message : error}\n`);
     process.exitCode = 1;
-  }
+  });
 }

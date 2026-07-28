@@ -55,11 +55,13 @@ const statusLabel = {
 <article
   class="event-card"
   data-event-card
+  data-event-id={event.id}
   data-city={data.venue.city}
   data-formats={data.formats?.join(" ") ?? ""}
   data-price-category={priceCategory}
   data-end-at={data.endAt}
   aria-labelledby={`event-${event.id}`}
+  tabindex="-1"
 >
   <div
     class="event-card__date"
@@ -109,7 +111,7 @@ const statusLabel = {
       }
     </div>
 
-    <h2 class="sr-only" id={`event-${event.id}`} tabindex="-1">
+    <h2 class="sr-only" id={`event-${event.id}`}>
       {data.title}
       <span class="sr-only">
         {

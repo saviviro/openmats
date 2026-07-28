@@ -14,18 +14,19 @@ list are documented in [source-monitoring.md](source-monitoring.md).
 
 ## Geographic coverage
 
-| City       | Active venues | Planned venues | Result                                                        |
-| ---------- | ------------: | -------------: | ------------------------------------------------------------- |
-| Helsinki   |            19 |              1 | Official sources mapped; several require manual access review |
-| Espoo      |             8 |              0 | Official sources mapped                                       |
-| Vantaa     |             4 |              0 | Official sources mapped                                       |
-| Kauniainen |             0 |              0 | Searched; no active venue with an official source found       |
+| City       | Current registry status                                       |
+| ---------- | ------------------------------------------------------------- |
+| Helsinki   | Official sources mapped; several require manual access review |
+| Espoo      | Official sources mapped                                       |
+| Vantaa     | Official sources mapped                                       |
+| Kauniainen | Searched; no active venue with an official source found       |
 
-The numbers count physical training locations, not organizations. An
-organization with three gyms therefore contributes three venue records.
-Kauniainen remains explicitly in scope even though the first Finnish- and
-Swedish-language search found no current venue. It must be checked again during
-periodic discovery reviews.
+Machine-readable venue and planning counts live only in the registry's
+`coverage` records and are validated against the maintained data. They are not
+copied into this narrative document, where they would become stale as venues
+are added or renamed. A physical location is one venue record even when an
+organization operates several gyms. Kauniainen remains explicitly in scope and
+must be checked again during periodic discovery reviews.
 
 ## Access classifications
 
@@ -63,9 +64,12 @@ Kilo Jiu-Jitsu in Kilo, Takado in Haukilahti, TK Sports in Suutarila and MMA Van
 calendars must still be interpreted separately:
 Erottaja has a public Sunday No-gi session, Sörnäinen has a public Saturday
 No-gi session for coloured belts, and Kivenlahti currently lists only
-members-only open mats. MMA Vantaa's live summer timetable now unambiguously
-shows 12:00–13:30 and explicitly welcomes visitors, so its previous conflict is
-resolved.
+members-only open mats. The exact Erottaja and Sörnäinen booking settings show
+zero-euro booking for non-members, so those sessions are published as free.
+Their recurring records use date-parameterized organizer URLs so every
+occurrence links to its own booking date. MMA Vantaa's live summer timetable now
+unambiguously shows 12:00–13:30 and explicitly welcomes visitors, so its
+previous conflict is resolved.
 
 Buli's membership sources identify a Sunday 12:00–13:30 Gi and No-gi open mat
 at Urhea, and community feedback says it is running in summer. The dated
@@ -106,9 +110,10 @@ price remain unknown.
 Loop's official summer calendar lists a Saturday 10:30–12:00 BJJ open mat
 through 2 August 2026, while its official English calendar identifies the slot
 as BJJ/No-Gi. The project owner confirmed on 16 July 2026 that it is free, open
-to outside-club practitioners and allows Gi or No-gi. Only the three remaining
-summer Saturdays are materialized; the bounded series must be replaced rather
-than extended when Loop publishes its autumn schedule.
+to outside-club practitioners and allows Gi or No-gi. Only dates inside both the
+seasonal boundary and rolling publication window are materialized; the bounded
+series must be replaced rather than extended when Loop publishes its autumn
+schedule.
 
 TK Sports' official timetable lists a Saturday 10:00–12:00 open mat for all
 levels at Halmetie 5. The timetable does not specify Gi or No-gi attire, an
@@ -119,13 +124,19 @@ published with unknown attire and price plus a visible confirmation reminder.
 GB Gym's official calendar currently contains exact monthly open mats on 30
 August, 27 September, 25 October and 27 December 2026. It explicitly cancels
 the 29 November entry, and contains no dated July open mat. These observations
-are stored under `datedOpenMats`. The four scheduled dates are published with
-their official dates and times. The project owner confirmed on 14 July 2026 that
-they are free, open to all practitioners and allow gi or no-gi; this provenance
-is kept separate from the official calendar evidence. The registry also records
-new time-bounded candidates for Combat Academy's preliminary autumn schedule
-and HIPKO Metsälä's summer PDF, plus a corrected summer end date for Loop
-Martial Arts.
+are stored under `datedOpenMats`, where every row carries the stable
+`gb-gym-monthly-open-mat` `seriesId`. Scheduled dates are published with their
+official dates and times. The project owner confirmed on 14 July 2026 that they
+are free, open to all practitioners and allow gi or no-gi; this provenance is
+kept separate from the official calendar evidence. The registry also records
+time-bounded candidates for Combat Academy's preliminary autumn schedule and
+HIPKO Metsälä's summer PDF, plus the reviewed summer end date for Loop Martial
+Arts.
+
+HJJK's Saturday recurrence is conditional on no other event using its
+Kaapelitehdas gym. The 22–23 August 2026 BJJ No-Gi Finnish Open is listed in
+Vantaa, so it is not evidence of a Kaapelitehdas venue conflict and does not
+exclude the 22 August HJJK open mat.
 
 ## Updating the registry
 
@@ -138,19 +149,29 @@ For every review:
 3. Update seasonal `validFrom` and `validThrough` boundaries. Never extend a
    seasonal candidate beyond its stated end date.
 4. Store exact calendar entries and explicit cancellations in `datedOpenMats`.
-   A cancellation must use `cancelled_do_not_publish`.
-5. Keep uncertain or conflicting information out of published event data and
+   Every row requires a stable `seriesId` with a matching
+   `data/event-templates.json` template. A cancellation must use
+   `cancelled_do_not_publish`.
+5. Record a recurring date in `excludedDates` only with one matching
+   `excludedDateEvidence` record containing the official source URL,
+   `checkedAt` timestamp and date-specific reason. An event at another venue or
+   an unreadable source is not enough.
+6. Keep uncertain or conflicting information out of published event data and
    describe the unresolved point in `monitoringNotes`.
-6. Preserve an existing verified event if one source check fails. Source
+7. Preserve an existing verified event if one source check fails. Source
    failure and event expiration are separate states.
-7. Before automating a source, review its terms, `robots.txt`, request rate and
+8. Before automating a source, review its terms, `robots.txt`, request rate and
    available structured feeds. Do not bypass login, CAPTCHA or access controls.
-8. Run `pnpm validate` before committing registry changes.
+9. Run `pnpm events:refresh` and `pnpm validate` before committing registry
+   changes. `src/data/events.json` is generated output and must not be maintained
+   manually.
 
 For pricing, record a paid amount only when a first-party source specifically
 attributes the fee to the open mat. A general drop-in, visitor pass or
 single-visit price is supporting context, not sufficient price evidence for an
-open-mat event.
+open-mat event. Conversely, AOGG's exact booking settings identify the relevant
+Erottaja and Sörnäinen sessions as free for non-members, which is sufficient
+session-specific zero-euro evidence.
 
 Broad web discovery should periodically look for new venues, renamed gyms and
 changed official channels in all four cities. Routine checks should start from

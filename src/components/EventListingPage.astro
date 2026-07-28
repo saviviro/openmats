@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import automationState from "../../data/automation-state.json";
 
 import EventCard from "./EventCard.astro";
 import FilterBar from "./FilterBar.astro";
@@ -35,19 +36,14 @@ const duplicates = findDuplicateEventIds(
     venue: event.data.venue,
   })),
 );
-const latestVerificationDate =
-  events.length === 0
-    ? null
-    : new Intl.DateTimeFormat(intlLocale[locale], {
-        dateStyle: "long",
-        timeZone: "Europe/Helsinki",
-      }).format(
-        new Date(
-          Math.max(
-            ...events.map((event) => new Date(event.data.verifiedAt).getTime()),
-          ),
-        ),
-      );
+const lastSuccessfulReviewAt = [
+  automationState.routine.lastSuccessfulAt,
+  automationState.discovery.lastSuccessfulAt,
+].sort((first, second) => Date.parse(second) - Date.parse(first))[0];
+const latestVerificationDate = new Intl.DateTimeFormat(intlLocale[locale], {
+  dateStyle: "long",
+  timeZone: "Europe/Helsinki",
+}).format(new Date(lastSuccessfulReviewAt));
 
 if (duplicates.length > 0) {
   throw new Error(
@@ -75,7 +71,12 @@ if (duplicates.length > 0) {
       </div>
     </section>
 
-    <aside class="example-notice" role="note" aria-label={copy.noticeLabel}>
+    <aside
+      class="example-notice"
+      role="note"
+      aria-label={copy.noticeLabel}
+      data-last-reviewed-at={lastSuccessfulReviewAt}
+    >
       <span aria-hidden="true">i</span>
       <div>
         <strong>
@@ -136,12 +137,13 @@ if (duplicates.length > 0) {
   <SiteFooter locale={locale} />
 
   <script>
-    import { isUpcomingEvent } from "../lib/events";
+    import { matchesEventFilters } from "../lib/event-filtering";
     import { EVENTS_PER_PAGE, getPaginationState } from "../lib/pagination";
 
     const filterState = { city: "all", format: "all" };
     const selectedPriceCategories = new Set(["free", "paid", "unknown"]);
     let currentPage = 1;
+    let expiryTimer: number | undefined;
     const cards = [...document.querySelectorAll("[data-event-card]")];
     const eventList = document.querySelector("[data-event-list]");
     const emptyState = document.querySelector("[data-empty-state]");
@@ -161,19 +163,17 @@ if (duplicates.length > 0) {
       const matchingCards = cards.filter((card) => {
         if (!(card instanceof HTMLElement)) return false;
 
-        const cityMatches =
-          filterState.city === "all" || card.dataset.city === filterState.city;
-        const formats = card.dataset.formats?.split(" ").filter(Boolean) ?? [];
-        const formatMatches =
-          filterState.format === "all" || formats.includes(filterState.format);
-        const priceMatches = selectedPriceCategories.has(
-          card.dataset.priceCategory ?? "unknown",
-        );
-        const timeMatches = isUpcomingEvent(
-          card.dataset.endAt ?? "",
+        return matchesEventFilters(
+          {
+            city: card.dataset.city ?? "",
+            formats: card.dataset.formats?.split(" ").filter(Boolean) ?? [],
+            priceCategory: card.dataset.priceCategory ?? "unknown",
+            endAt: card.dataset.endAt ?? "",
+          },
+          filterState,
+          selectedPriceCategories,
           Date.now(),
         );
-        return cityMatches && formatMatches && priceMatches && timeMatches;
       });
       const pageState = getPaginationState(
         matchingCards.length,
@@ -208,17 +208,36 @@ if (duplicates.length > 0) {
       if (nextButton instanceof HTMLButtonElement)
         nextButton.disabled = pageState.page >= pageState.totalPages;
 
+      scheduleNextExpiry();
+
       return [...pageCards].filter(
         (card): card is HTMLElement => card instanceof HTMLElement,
+      );
+    }
+
+    function scheduleNextExpiry() {
+      if (expiryTimer !== undefined) window.clearTimeout(expiryTimer);
+
+      const now = Date.now();
+      const nextEndAt = cards
+        .filter((card): card is HTMLElement => card instanceof HTMLElement)
+        .map((card) => Date.parse(card.dataset.endAt ?? ""))
+        .filter((endAt) => Number.isFinite(endAt) && endAt > now)
+        .sort((first, second) => first - second)[0];
+      if (nextEndAt === undefined) return;
+
+      expiryTimer = window.setTimeout(
+        () => updateResults(),
+        Math.min(nextEndAt - now + 100, 2_147_000_000),
       );
     }
 
     function changePage(direction: number) {
       currentPage += direction;
       const visibleCards = updateResults();
-      const firstHeading = visibleCards[0]?.querySelector("h2");
-      if (firstHeading instanceof HTMLElement) {
-        firstHeading.focus({ preventScroll: true });
+      const firstCard = visibleCards[0];
+      if (firstCard) {
+        firstCard.focus({ preventScroll: true });
       }
       if (eventList instanceof HTMLElement) {
         eventList.scrollIntoView({
@@ -279,6 +298,10 @@ if (duplicates.length > 0) {
         });
       }
     }
+
+    window.addEventListener("pagehide", () => {
+      if (expiryTimer !== undefined) window.clearTimeout(expiryTimer);
+    });
 
     updateResults();
   </script>

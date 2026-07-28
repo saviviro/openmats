@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@11.7.0",
+  "packageManager": "pnpm@11.9.0",
   "engines": {
     "node": ">=22.12.0"
   },
@@ -17,6 +17,8 @@
     "test:watch": "vitest",
     "automation:gate": "node scripts/automation-gate.mjs",
     "automation:github-preflight": "node scripts/github-preflight.mjs",
+    "automation:verify-production": "node scripts/verify-production.mjs",
+    "audit:security": "pnpm audit --audit-level high",
     "events:refresh": "node scripts/materialize-events.mjs refresh",
     "events:check": "node scripts/materialize-events.mjs check",
     "format": "prettier --write .",
@@ -24,7 +26,7 @@
     "validate": "pnpm events:check && pnpm format:check && pnpm check && pnpm test && pnpm build"
   },
   "dependencies": {
-    "astro": "7.0.7"
+    "astro": "7.1.3"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",

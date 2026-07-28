@@ -12,9 +12,9 @@
         "city": "Helsinki"
       },
       "price": {
-        "amount": null,
+        "amount": 0,
         "currency": "EUR",
-        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+        "note": "Maksuton"
       },
       "access": {
         "description": "Avoin muiden seurojen värivöille. Vain no-gi; varaa paikka etukäteen.",
@@ -36,9 +36,9 @@
         "city": "Helsinki"
       },
       "price": {
-        "amount": null,
+        "amount": 0,
         "currency": "EUR",
-        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+        "note": "Maksuton"
       },
       "access": {
         "description": "Avoin muiden seurojen harrastajille. Vain no-gi; varaa paikka etukäteen.",
@@ -70,7 +70,7 @@
       },
       "status": "scheduled",
       "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-      "exceptionNote": "Vuoro järjestetään vain, jos salissa ei ole muuta tapahtumaa. Lauantain 22.8. vuoro on jätetty pois salilla järjestettävän BJJ No-Gi Finnish Openin vuoksi.",
+      "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Tarkistetulle julkaisujaksolle ei löytynyt salikohtaista poikkeusta.",
       "isExample": false
     },
     {
@@ -335,6 +335,30 @@
       "status": "scheduled",
       "sourceLabel": "MMA Vantaan kesän harjoitusajat",
       "exceptionNote": "Virallinen kesäaikataulu on voimassa 9.8.2026 saakka. Varustuksesta ei ole tietoa.",
+      "isExample": false
+    },
+    {
+      "seriesId": "gb-gym-monthly-open-mat",
+      "title": "Open mat",
+      "formats": ["gi", "no-gi"],
+      "venue": {
+        "name": "GB Gym",
+        "streetAddress": "Mekaanikonkatu 21",
+        "postalCode": "00880",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": 0,
+        "currency": "EUR",
+        "note": "Maksuton"
+      },
+      "access": {
+        "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+        "registrationRequired": false
+      },
+      "status": "scheduled",
+      "sourceLabel": "GB Gymin kalenteri 2026",
+      "exceptionNote": "Ei tiedossa olevia poikkeuksia.",
       "isExample": false
     }
   ]

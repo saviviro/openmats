@@ -55,6 +55,7 @@ export const openMatCandidateSchema = z
 
 export const datedOpenMatSchema = z
   .object({
+    seriesId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
     date: isoDateSchema,
     startTime: localTimeSchema,
     endTime: localTimeSchema,
