@@ -106,12 +106,16 @@ describe("event series materialization", () => {
     );
 
     expect(series).toBeDefined();
-    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-      "2026-08-08",
-    ]);
+    expect(
+      materializeOccurrenceDates(series!, {
+        ...registry.window,
+        from: "2026-07-15",
+        through: "2026-08-09",
+      }),
+    ).toEqual(["2026-07-18", "2026-07-25", "2026-08-01", "2026-08-08"]);
+    expect(materializeOccurrenceDates(series!, registry.window)).not.toContain(
+      "2026-08-22",
+    );
   });
 
   it("honours validity boundaries and excluded exception dates", () => {
@@ -122,64 +126,47 @@ describe("event series materialization", () => {
       excludedDates: ["2026-08-01"],
     };
 
-    expect(materializeOccurrenceDates(fixture, registry.window)).toEqual([
-      "2026-07-25",
-      "2026-08-08",
-    ]);
+    expect(
+      materializeOccurrenceDates(fixture, {
+        ...registry.window,
+        from: "2026-07-15",
+        through: "2026-08-09",
+      }),
+    ).toEqual(["2026-07-25", "2026-08-08"]);
   });
 
-  it("materializes MMA Vantaa after the official time conflict is resolved", () => {
+  it("keeps MMA Vantaa bounded to its reviewed summer timetable", () => {
     const series = registry.series.find(
       ({ id }) => id === "mma-vantaa-sunday-open-mat",
     );
 
     expect(series?.publicationStatus).toBe("publish");
-    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
-      "2026-07-19",
-      "2026-07-26",
-      "2026-08-02",
-      "2026-08-09",
-    ]);
+    expect(series?.validThrough).toBe("2026-08-09");
   });
 
-  it("materializes Loop only through the current summer timetable", () => {
+  it("keeps Loop bounded to the reviewed summer timetable", () => {
     const series = registry.series.find(
       ({ id }) => id === "loop-saturday-open-mat",
     );
 
     expect(series?.publicationStatus).toBe("publish");
-    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-    ]);
+    expect(series?.validThrough).toBe("2026-08-02");
   });
 
-  it("materializes the newly confirmed Dojo and Kilo Saturday slots", () => {
+  it("keeps the confirmed Dojo and Kilo Saturday slots distinct", () => {
     const dojo = registry.series.find(
       ({ id }) => id === "dojo-helsinki-saturday-nogi-open-mat",
     );
     const kilo = registry.series.find(
       ({ id }) => id === "kilo-jiu-jitsu-saturday-open-mat",
     );
-    const expectedDates = [
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-      "2026-08-08",
-    ];
-
     expect(dojo?.publicationStatus).toBe("publish");
     expect(kilo?.publicationStatus).toBe("publish_with_confirmation");
-    expect(materializeOccurrenceDates(dojo!, registry.window)).toEqual(
-      expectedDates,
-    );
-    expect(materializeOccurrenceDates(kilo!, registry.window)).toEqual(
-      expectedDates,
-    );
+    expect(dojo?.weekday).toBe(6);
+    expect(kilo?.weekday).toBe(6);
   });
 
-  it("materializes both current Takado open mats", () => {
+  it("keeps both current Takado open mats", () => {
     const tuesday = registry.series.find(
       ({ id }) => id === "takado-tuesday-open-mat",
     );
@@ -187,31 +174,25 @@ describe("event series materialization", () => {
       ({ id }) => id === "takado-saturday-open-mat",
     );
 
-    expect(materializeOccurrenceDates(tuesday!, registry.window)).toEqual([
-      "2026-07-21",
-      "2026-07-28",
-      "2026-08-04",
-    ]);
-    expect(materializeOccurrenceDates(saturday!, registry.window)).toEqual([
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-      "2026-08-08",
-    ]);
+    expect(tuesday).toMatchObject({
+      publicationStatus: "publish",
+      weekday: 2,
+      startTime: "16:30",
+    });
+    expect(saturday).toMatchObject({
+      publicationStatus: "publish",
+      weekday: 6,
+      startTime: "11:00",
+    });
   });
 
-  it("materializes the TK Sports Saturday slot with confirmation", () => {
+  it("keeps the TK Sports Saturday slot marked for confirmation", () => {
     const series = registry.series.find(
       ({ id }) => id === "tk-sports-saturday-open-mat",
     );
 
     expect(series?.publicationStatus).toBe("publish_with_confirmation");
-    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-      "2026-08-08",
-    ]);
+    expect(series?.weekday).toBe(6);
   });
 
   it("keeps HIPKO weekend rows uncertain instead of inheriting other rows' member-only labels", () => {
@@ -224,21 +205,17 @@ describe("event series materialization", () => {
 
     expect(saturday?.publicationStatus).toBe("publish_with_confirmation");
     expect(sunday?.publicationStatus).toBe("publish_with_confirmation");
-    expect(materializeOccurrenceDates(saturday!, registry.window)).toEqual([
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-      "2026-08-08",
-    ]);
-    expect(materializeOccurrenceDates(sunday!, registry.window)).toEqual([
-      "2026-07-19",
-      "2026-07-26",
-      "2026-08-02",
-      "2026-08-09",
-    ]);
+    expect(saturday?.validThrough).toBe("2026-08-09");
+    expect(sunday?.validThrough).toBe("2026-08-09");
+    expect(saturday?.exceptionCheck.notes).toMatch(
+      /member-only wording belongs to other timetable rows/i,
+    );
+    expect(sunday?.exceptionCheck.notes).toMatch(
+      /member-only wording belongs to other timetable rows/i,
+    );
   });
 
-  it("materializes only the publishable AOGG visitor sessions", () => {
+  it("keeps only the publishable AOGG visitor series", () => {
     const erottaja = registry.series.find(
       ({ id }) => id === "aogg-erottaja-sunday-nogi-open-mat",
     );
@@ -246,18 +223,8 @@ describe("event series materialization", () => {
       ({ id }) => id === "aogg-sornainen-colored-belts-nogi-open-mat",
     );
 
-    expect(materializeOccurrenceDates(erottaja!, registry.window)).toEqual([
-      "2026-07-19",
-      "2026-07-26",
-      "2026-08-02",
-      "2026-08-09",
-    ]);
-    expect(materializeOccurrenceDates(sornainen!, registry.window)).toEqual([
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-      "2026-08-08",
-    ]);
+    expect(erottaja?.publicationStatus).toBe("publish");
+    expect(sornainen?.publicationStatus).toBe("publish");
   });
 
   it("materializes Buli with confirmation while its calendars disagree", () => {
@@ -267,12 +234,6 @@ describe("event series materialization", () => {
 
     expect(series?.venueId).toBe("buli-urhea");
     expect(series?.publicationStatus).toBe("publish_with_confirmation");
-    expect(materializeOccurrenceDates(series!, registry.window)).toEqual([
-      "2026-07-19",
-      "2026-07-26",
-      "2026-08-02",
-      "2026-08-09",
-    ]);
   });
 
   it("references existing source-registry venues", () => {

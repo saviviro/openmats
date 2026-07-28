@@ -1,16 +1,22 @@
 # Event publication
 
-The first recurring-event review window covers 15 July–9 August 2026.
-Recurring schedules are materialized into individual dated events only inside
-that review window. This prevents an undated weekly timetable from producing
-events indefinitely. Exact dated entries from an official calendar can extend
-beyond the recurring review window when each occurrence is stored explicitly.
+Recurring schedules are materialized into individual dated events inside a
+rolling publication window that starts on the review date and extends at least
+eight weeks ahead. Each series can still end earlier through its own
+`validThrough` boundary. This prevents an undated weekly timetable from
+producing events indefinitely while keeping the public list useful between
+weekly reviews. Exact dated entries from an official calendar can extend beyond
+the recurring window when each occurrence is stored explicitly.
 
 The recurrence and review records are stored in
 [`data/event-series.json`](../data/event-series.json). The dated public events
-remain in [`src/data/events.json`](../src/data/events.json). Tests require all
-publishable recurring occurrences to be present while allowing separately
-verified, exact calendar entries.
+remain in [`src/data/events.json`](../src/data/events.json), and their stable
+display fields live once per series in
+[`data/event-templates.json`](../data/event-templates.json). After the sources,
+exceptions and validity boundaries have been reviewed, run
+`pnpm events:refresh`; it advances the rolling window and deterministically
+rebuilds every recurring occurrence. `pnpm events:check` and the normal
+validation command reject stale or manually incomplete generated data.
 
 ## Gi and No-gi model
 
@@ -62,10 +68,11 @@ The official BJJ page states that the Saturday 13:00–15:00 open mat welcomes
 people from other clubs who know the BJJ fundamentals. It can be practised in a
 gi or no-gi. The session is held only if no other event uses the gym.
 
-The official event page was checked for the publication window. It lists no
-conflicting BJJ event before the BJJ NoGi Finnish Open on 22–23 August. Four
-dated Saturday occurrences are therefore published. The visitor price is left
-unknown because the open-mat source does not state one.
+The official event page was checked for the publication window. The Saturday
+22 August occurrence is excluded because the BJJ NoGi Finnish Open occupies the
+gym on 22–23 August. Other reviewed Saturdays are materialized through the
+rolling limit. The visitor price is left unknown because the open-mat source
+does not state one.
 
 ### Tundra Jiu-Jitsu
 
@@ -76,8 +83,8 @@ mat fee. The event price is therefore left unknown. Visitors are asked to
 contact the gym before attending.
 
 The schedule also says that summer training mostly runs normally but may have
-exceptions. It does not publish exact cancelled dates. Four occurrences are
-listed with `uncertain` status and a visible advance-confirmation instruction.
+exceptions. It does not publish exact cancelled dates. Occurrences are listed
+with `uncertain` status and a visible advance-confirmation instruction.
 
 ### Loop Martial Arts
 
@@ -87,7 +94,8 @@ recurring slot as BJJ/No-Gi. The project owner confirmed on 16 July 2026 that
 the open mat is free, open to outside-club practitioners and allows either Gi
 or No-gi.
 
-The three remaining Saturdays on 18 July, 25 July and 1 August are published.
+The series remains explicitly bounded to 2 August and is not extended until a
+new official timetable is reviewed.
 The bounded summer series is not extended to 8 August or into autumn by
 assumption; a new official seasonal timetable must be reviewed first.
 

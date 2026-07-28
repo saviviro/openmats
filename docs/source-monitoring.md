@@ -32,7 +32,21 @@ successful routine and discovery runs. The tasks must not infer success from an
 individual event's `verifiedAt` or a venue's `checkedAt`, because a partial
 source check can update those fields without completing the full run.
 
-Before any source-site access or file changes, a scheduled task must:
+Before any source-site access or file changes, a scheduled task must run
+`pnpm automation:github-preflight` with direct network permission. The preflight
+checks the credential stored in the macOS keyring, the GitHub API and
+`origin/main` without printing the token. Its result must be interpreted
+strictly:
+
+- `authentication_failed` or `missing_credential` is an actual login problem
+  and may request GitHub CLI reauthentication;
+- `credential_unavailable`, `network_unavailable` or `git_unavailable` is a
+  keyring, network or Codex execution permission problem and must never be
+  reported as an expired token before a direct-permission retry;
+- a restricted-shell failure must be retried once with direct network
+  permission before the scheduled run stops.
+
+After the GitHub preflight succeeds, a scheduled task must:
 
 1. verify that its isolated worktree is clean; a detached HEAD is expected and
    must not be rejected;
@@ -50,8 +64,12 @@ exit path with
 from `origin/main` on a uniquely timestamped `codex/scheduled-source-...`
 branch; it never checks out the user's local `main` branch. Only a fully
 completed check may update the successful timestamp, using
-`node scripts/automation-gate.mjs record <task> <summary>`. Permission,
-source-access or validation failures must be reported without advancing that
+`node scripts/automation-gate.mjs record <task> <summary>`. Before recording
+success, every published series needs a fresh source and exception timestamp,
+and `pnpm events:refresh` must advance and rebuild the eight-week publication
+window. The gate rejects a stale window, while `pnpm validate` rejects event
+data that does not match the reviewed series. Permission, source-access,
+materialization or validation failures must be reported without advancing the
 timestamp or publishing to `main`.
 
 A lock older than eight hours is reported as stale, but the script does not
@@ -66,15 +84,16 @@ Codex app running for a trigger to execute. If the computer is asleep, a later
 one of the staggered triggers can run the still-due check. Review the next due
 run manually from the Scheduled view before relying on the repaired cadence.
 
-After a due check has completed and `pnpm validate` passes, the task commits and
-pushes its timestamped branch, opens a pull request to protected `main` and
-enables GitHub auto-merge. The required GitHub `validate` check must pass before
-GitHub merges the PR. This preserves branch protection while removing the need
-for a manual merge. If authentication, branch push, PR creation, validation or
-auto-merge fails, the task leaves its branch intact and does not change
-production. After GitHub merges the PR, the task checks `https://openmats.fi`
-for the new review date and reports a deployment-verification failure
-explicitly.
+After a due check has completed, the task runs `pnpm events:refresh`,
+`pnpm validate` and the success-recording gate. It then commits and pushes its
+timestamped branch, opens a pull request to protected `main` and enables GitHub
+auto-merge. The required GitHub `validate` check must pass before GitHub merges
+the PR. This preserves branch protection while removing the need for a manual
+merge. If authentication, network access, materialization, branch push, PR
+creation, validation or auto-merge fails, the task leaves its branch intact and
+does not change production. After GitHub merges the PR, the task checks both the
+new review date and a newly materialized occurrence near the rolling window's
+end on `https://openmats.fi`; checking the date alone is not sufficient.
 
 Direct scheduled publication requires a narrower evidence rule than a manual
 review: a member-only or cancellation label may be applied only when the

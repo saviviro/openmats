@@ -11,6 +11,8 @@ export const AUTOMATION_INTERVAL_HOURS = Object.freeze({
 });
 
 export const LOCK_MAX_AGE_HOURS = 8;
+export const PUBLICATION_REVIEW_MAX_AGE_HOURS = 36;
+export const MIN_PUBLICATION_HORIZON_DAYS = 56;
 export const AUTOMATION_LOCK_PATH = resolve(
   tmpdir(),
   "openmats-automation-run.lock",
@@ -19,6 +21,7 @@ export const AUTOMATION_LOCK_PATH = resolve(
 const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const statePath = resolve(repositoryRoot, "data/automation-state.json");
+const eventSeriesPath = resolve(repositoryRoot, "data/event-series.json");
 const lockPath = AUTOMATION_LOCK_PATH;
 
 export function validateAutomationState(state) {
@@ -94,6 +97,53 @@ export function toHelsinkiIso(date = new Date()) {
   const offsetRemainder = String(absoluteOffset % 60).padStart(2, "0");
 
   return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}${sign}${offsetHours}:${offsetRemainder}`;
+}
+
+export function validatePublicationFreshness(registry, now = new Date()) {
+  const nowDate = now instanceof Date ? now : new Date(now);
+  if (!Number.isFinite(nowDate.getTime()))
+    throw new Error("Invalid current time");
+  if (!registry || registry.version !== 1 || !Array.isArray(registry.series)) {
+    throw new Error("Event series registry must have version 1");
+  }
+
+  const today = toHelsinkiIso(nowDate).slice(0, 10);
+  const minimumThrough = addIsoDays(today, MIN_PUBLICATION_HORIZON_DAYS);
+  if (registry.window?.from !== today) {
+    throw new Error(
+      `Publication window must start today (${today}); run pnpm events:refresh`,
+    );
+  }
+  if (registry.window?.through < minimumThrough) {
+    throw new Error(
+      `Publication window must extend through at least ${minimumThrough}; run pnpm events:refresh`,
+    );
+  }
+
+  const reviewedAt = [
+    registry.checkedAt,
+    ...registry.series.map(({ exceptionCheck }) => exceptionCheck?.checkedAt),
+  ];
+  for (const timestamp of reviewedAt) {
+    const age = nowDate.getTime() - Date.parse(timestamp);
+    if (
+      !Number.isFinite(age) ||
+      age < 0 ||
+      age > PUBLICATION_REVIEW_MAX_AGE_HOURS * 3_600_000
+    ) {
+      throw new Error(
+        "Every published series must have a fresh source and exception review before recording success",
+      );
+    }
+  }
+
+  return registry;
+}
+
+function addIsoDays(isoDate, days) {
+  const date = new Date(`${isoDate}T00:00:00.000Z`);
+  date.setUTCDate(date.getUTCDate() + days);
+  return date.toISOString().slice(0, 10);
 }
 
 function readState() {
@@ -172,6 +222,10 @@ function releaseLock(task) {
 function recordSuccess(task, summary, now = new Date()) {
   assertTask(task);
   if (!summary?.trim()) throw new Error("A non-empty summary is required");
+  validatePublicationFreshness(
+    JSON.parse(readFileSync(eventSeriesPath, "utf8")),
+    now,
+  );
 
   const state = readState();
   state[task] = {
