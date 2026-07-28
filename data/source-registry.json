@@ -1,7 +1,7 @@
 {
   "version": 1,
   "timezone": "Europe/Helsinki",
-  "checkedAt": "2026-07-17T13:15:31+03:00",
+  "checkedAt": "2026-07-28T12:10:42+03:00",
   "discoveryReviewedAt": "2026-07-14T15:00:54+03:00",
   "discoveryReviewNotes": "A broad official-source review across Helsinki, Espoo, Vantaa and Kauniainen found no additional in-scope active venue beyond the maintained baseline. New dated and seasonal open-mat evidence was added to existing venue records; out-of-scope neighboring municipalities and non-BJJ wrestling sessions were excluded.",
   "scopeCities": ["Helsinki", "Espoo", "Vantaa", "Kauniainen"],
@@ -89,7 +89,7 @@
           "notes": "The Gymdesk session is titled OPEN MAT (NOGI), recurs Sundays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. The general 15-euro visitor pass is not attributed specifically to open mats, so the event price remains unknown."
         }
       ],
-      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Publish only the Sunday No-gi session. The summer weekday open mats are explicitly labelled for members and remain excluded."
     },
     {
@@ -145,7 +145,7 @@
           "notes": "The Gymdesk session is titled OPEN MAT FOR COLORED BELTS (NOGI), recurs Saturdays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. The general 15-euro visitor pass is not attributed specifically to open mats, so the event price remains unknown."
         }
       ],
-      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Retain the coloured-belt restriction in every published occurrence. The separately listed members-only open mat remains excluded."
     },
     {
@@ -158,7 +158,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "mixed",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official 15 June–9 August summer schedule lists BJJ open mats on Saturday and Sunday from 15:00 to 17:00. It does not state outside-club eligibility or an open-mat price for these sessions, so they are published only with a confirmation warning.",
+      "evidenceSummary": "The official 15 June–9 August summer schedule lists BJJ open mats on Saturday and Sunday from 15:00 to 17:00. Member-only labels are attached to other open-mat rows, not to these weekend BJJ rows, so outside-club eligibility and price remain unconfirmed.",
       "sources": [
         {
           "type": "official_location",
@@ -198,7 +198,7 @@
           "publishStatus": "needs_access_confirmation",
           "validFrom": "2026-06-15",
           "validThrough": "2026-08-09",
-          "notes": "The summer PDF labels this BJJ open mat as unsupervised but does not state outside-club access."
+          "notes": "The Saturday BJJ row is labelled unsupervised but not member-only. Outside-club access is not stated."
         },
         {
           "weekday": 7,
@@ -208,11 +208,11 @@
           "publishStatus": "needs_access_confirmation",
           "validFrom": "2026-06-15",
           "validThrough": "2026-08-09",
-          "notes": "The summer PDF labels this BJJ open mat as unsupervised but does not state outside-club access."
+          "notes": "The Sunday BJJ row is labelled unsupervised but not member-only. Outside-club access is not stated."
         }
       ],
-      "checkedAt": "2026-07-17T12:36:57+03:00",
-      "monitoringNotes": "Keep both BJJ sessions marked for confirmation. The same PDF explicitly limits other open-mat slots to HIPKO members, while these BJJ rows do not state eligibility or price. Recheck the next seasonal timetable after 9 August."
+      "checkedAt": "2026-07-28T12:10:42+03:00",
+      "monitoringNotes": "Keep both weekend BJJ sessions marked for confirmation. Do not transfer member-only wording from other weekday rows to these sessions. The direct PDF URL returned a 404 on 28 July, so retain the previously verified dates rather than deleting them after a source-read failure. Recheck the next seasonal timetable after 9 August."
     },
     {
       "id": "hipko-itakeskus",
@@ -308,7 +308,7 @@
           "notes": "The autumn timetable is marked preliminary and does not state outside-club access."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Recheck the preliminary autumn timetable after 17 August and confirm visitor access before creating events."
     },
     {
@@ -343,7 +343,7 @@
           "notes": "The official calendar provides the current seasonal time. The project owner confirmed free outside-club access and Gi/No-gi eligibility on 16 July 2026."
         }
       ],
-      "checkedAt": "2026-07-16T22:13:05+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Publish the summer slot only through 2 August 2026. Recheck the calendar for exceptions and replace the bounded series only after Loop publishes its autumn schedule."
     },
     {
@@ -392,7 +392,7 @@
           "notes": "The official timetable provides the recurring time. The project owner confirmed outside-club access and No-gi attire on 16 July 2026."
         }
       ],
-      "checkedAt": "2026-07-17T00:07:00+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Check both official timetables for the weekly slot and the official Instagram account for holiday changes and additional dated open mats. Add extra sessions as dated events rather than changing the weekly series."
     },
     {
@@ -479,7 +479,7 @@
           "notes": "The membership source says the Urhea session is weekly and community feedback says it is running in summer, but the dated calendar contains no matching occurrence in the current window. Publish only with a visible confirmation warning."
         }
       ],
-      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Check the dated calendar weekly. Keep materialized dates uncertain until the Urhea open mat reappears there or the organizer confirms exact summer dates."
     },
     {
@@ -514,7 +514,7 @@
           "notes": "The session is omitted when another event uses the space; check exceptions before creating each dated event."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "A future collector must check club events before materializing the recurring Saturday slot."
     },
     {
@@ -637,7 +637,7 @@
           "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "There is no dated July open mat in the official calendar. The exact open mats on 30 August, 27 September, 25 October and 27 December are published using the calendar dates and times plus the project owner's 14 July 2026 confirmation of free access for all practitioners and gi/no-gi. The 29 November event is explicitly cancelled and must remain unpublished. Summer recurring candidates expire after 3 August."
     },
     {
@@ -705,7 +705,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "unconfirmed",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official page is still labelled as the spring 2026 weekly timetable and lists a Saturday 12:00–13:00 self-directed BJJ session. It neither confirms summer validity nor outside-club access.",
+      "evidenceSummary": "The official autumn timetable starting 10 August 2026 lists a Saturday 13:00–14:00 self-directed BJJ session. It does not identify the session as a public open mat or confirm outside-club access.",
       "sources": [
         {
           "type": "official_schedule",
@@ -725,17 +725,17 @@
       "candidateOpenMats": [
         {
           "weekday": 6,
-          "startTime": "12:00",
-          "endTime": "13:00",
+          "startTime": "13:00",
+          "endTime": "14:00",
           "disciplines": ["bjj", "nogi"],
           "publishStatus": "needs_access_confirmation",
-          "validFrom": "2026-01-07",
+          "validFrom": "2026-08-10",
           "validThrough": null,
-          "notes": "Listed in a page labelled spring 2026 as a self-directed BJJ session, not as a confirmed public open mat. Current seasonal validity is also unclear."
+          "notes": "Listed in the autumn timetable as a self-directed BJJ session, not as a confirmed public open mat. Outside-club access is not stated."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
-      "monitoringNotes": "Do not publish unless the club confirms both the current seasonal timetable and non-member access. The previous 13:00–14:00 entry was corrected to the official page's 12:00–13:00."
+      "checkedAt": "2026-07-28T12:10:42+03:00",
+      "monitoringNotes": "Do not publish unless the club confirms non-member access. The autumn timetable starts on 10 August 2026 and moves the Saturday self-directed BJJ session to 13:00–14:00."
     },
     {
       "id": "orions-belt-pitajanmaki",
@@ -771,7 +771,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "unconfirmed",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official summer schedule lists a Friday self-directed free session without a coach. It does not state that visitors from other clubs may attend.",
+      "evidenceSummary": "The maintained official URL currently shows a summer 2024 BJJ timetable. It does not support the previously recorded summer 2026 free-session candidate.",
       "sources": [
         {
           "type": "official_schedule",
@@ -781,20 +781,9 @@
           "priority": 1
         }
       ],
-      "candidateOpenMats": [
-        {
-          "weekday": 5,
-          "startTime": "18:00",
-          "endTime": "19:30",
-          "disciplines": ["bjj", "nogi"],
-          "publishStatus": "needs_access_confirmation",
-          "validFrom": "2026-06-01",
-          "validThrough": "2026-08-23",
-          "notes": "The official schedule calls this a free session; visitor access is not stated."
-        }
-      ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
-      "monitoringNotes": "The candidate is seasonal and must not recur after 23 August 2026."
+      "candidateOpenMats": [],
+      "checkedAt": "2026-07-28T12:10:42+03:00",
+      "monitoringNotes": "No current 2026 candidate is retained. Recheck only after Savate Club publishes a current seasonal BJJ timetable; do not extend the 2024 page by assumption."
     },
     {
       "id": "tk-sports-suutarila",
@@ -828,7 +817,7 @@
           "notes": "The official timetable confirms the weekly open mat and marks it for all levels. Attire, open-mat price and outside-club access are not stated; community feedback identified the slot for review."
         }
       ],
-      "checkedAt": "2026-07-17T13:15:31+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Recheck the official timetable for changes and seek first-party confirmation of outside-club access, attire and any open-mat-specific fee."
     },
     {
@@ -1011,7 +1000,7 @@
           "notes": "The official schedule explicitly limits this open mat to members."
         }
       ],
-      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Only the Saturday candidate is suitable for public event review. Keep its price unknown unless an open-mat-specific fee is published."
     },
     {
@@ -1074,7 +1063,7 @@
           "notes": "The project owner confirmed the recurring public slot on 16 July 2026. Attire is not stated in a current first-party source."
         }
       ],
-      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Recheck the official schedule and Instagram for a current first-party timetable, attire, exceptions and an open-mat-specific price. Keep the events marked for confirmation while the official schedule page remains labelled 2023."
     },
     {
@@ -1126,7 +1115,7 @@
           "notes": "The current official schedule lists the Saturday open mat and describes open mats as open to everyone. Attire and price are not stated."
         }
       ],
-      "checkedAt": "2026-07-17T12:36:57+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "Monitor the official schedule for dated exceptions, attire and an open-mat-specific price. The page instructs participants to enroll through myClub."
     },
     {
@@ -1223,7 +1212,7 @@
           "notes": "The live official page labels these as the summer slots for 1 June–9 August 2026 and welcomes outside-club visitors. Arrive before 12:00 for door access."
         }
       ],
-      "checkedAt": "2026-07-16T13:17:00+03:00",
+      "checkedAt": "2026-07-28T12:10:42+03:00",
       "monitoringNotes": "The previous conflict was resolved by a fresh read of the live page, which now shows the dated summer heading and 12:00–13:30 together. Do not extend the series beyond 9 August without the next schedule."
     },
     {

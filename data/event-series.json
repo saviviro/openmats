@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checkedAt": "2026-07-17T13:15:31+03:00",
+  "checkedAt": "2026-07-28T12:10:42+03:00",
   "window": {
     "from": "2026-07-15",
     "through": "2026-08-09",
@@ -25,7 +25,7 @@
       ],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-16T13:17:00+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The official Gymdesk session recurs Saturdays at 12:00, has no cancelled dates and is specifically restricted to coloured belts and No-gi. It is not labelled members-only."
       }
     },
@@ -46,7 +46,7 @@
       ],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-16T13:17:00+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The official Gymdesk session recurs Sundays at 12:00, has no cancelled dates and is titled OPEN MAT (NOGI) without a member-only restriction."
       }
     },
@@ -64,7 +64,7 @@
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-16T13:17:00+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The official BJJ page says the open mat is held only when no other event uses the gym. The official event list shows no conflicting BJJ event during the materialization window; the next listed BJJ event is 22–23 August 2026."
       }
     },
@@ -85,8 +85,8 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-07-17T12:36:57+03:00",
-        "notes": "The official 15 June–9 August summer timetable lists an unsupervised BJJ open mat on Saturdays. The timetable does not state whether outside-club visitors may attend or what they pay, so participation must be confirmed with HIPKO."
+        "checkedAt": "2026-07-28T12:10:42+03:00",
+        "notes": "The official 15 June–9 August timetable lists an unsupervised BJJ open mat on Saturdays. Member-only wording belongs to other timetable rows and does not appear on this one. Outside-club access and price remain unconfirmed."
       }
     },
     {
@@ -106,8 +106,8 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-07-17T12:36:57+03:00",
-        "notes": "The official 15 June–9 August summer timetable lists an unsupervised BJJ open mat on Sundays. The timetable does not state whether outside-club visitors may attend or what they pay, so participation must be confirmed with HIPKO."
+        "checkedAt": "2026-07-28T12:10:42+03:00",
+        "notes": "The official 15 June–9 August timetable lists an unsupervised BJJ open mat on Sundays. Member-only wording belongs to other timetable rows and does not appear on this one. Outside-club access and price remain unconfirmed."
       }
     },
     {
@@ -124,7 +124,7 @@
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-07-16T13:17:00+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The official schedule says training mostly continues normally in summer but exceptions may occur, and asks visitors to contact the gym before attending. No exact cancelled dates are published."
       }
     },
@@ -142,7 +142,7 @@
       "supportingSourceUrls": [],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-07-17T13:15:31+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The official timetable lists the weekly Saturday 10:00–12:00 open mat and no dated cancellation. It also says the schedule may change, while attire, visitor price and outside-club eligibility are not specified, so attendance must be confirmed with TK Sports."
       }
     },
@@ -160,7 +160,7 @@
       "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-16T22:13:05+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The current official summer calendar lists the Saturday slot through 2 August 2026 and no dated cancellation. The project owner confirmed free outside-club access and Gi/No-gi eligibility on 16 July 2026."
       }
     },
@@ -181,7 +181,7 @@
       ],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-17T00:07:00+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The official Finnish and English timetables list the weekly Saturday slot. No dated cancellation is published. The project owner confirmed outside-club access and No-gi attire on 16 July 2026; the official Instagram account is monitored for holiday changes and additional open mats."
       }
     },
@@ -204,7 +204,7 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The project owner confirmed the public Saturday slot on 16 July 2026, but the official website schedule remains labelled 2023 and does not currently verify attire, dated exceptions or an open-mat-specific price. Visitors should confirm the session before leaving."
       }
     },
@@ -222,7 +222,7 @@
       "supportingSourceUrls": ["https://takado.fi/"],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The current official BJJ / No-gi timetable lists a Tuesday 16:30–18:00 open mat and describes open mats as open to everyone. No dated cancellation is published."
       }
     },
@@ -240,7 +240,7 @@
       "supportingSourceUrls": ["https://takado.fi/"],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The current official BJJ / No-gi timetable lists a Saturday 11:00–13:00 open mat and describes open mats as open to everyone. No dated cancellation is published."
       }
     },
@@ -262,7 +262,7 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-07-17T12:36:57+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The current membership source identifies a weekly Sunday Urhea open mat and recent community feedback says it is running in summer. The dated calendar contains no matching occurrence in the checked publication window, so the materialized dates remain uncertain and must be confirmed before attending."
       }
     },
@@ -282,7 +282,7 @@
       ],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-07-16T13:17:00+03:00",
+        "checkedAt": "2026-07-28T12:10:42+03:00",
         "notes": "The live official page now shows the dated 1 June–9 August summer heading and Sunday 12:00–13:30 together, resolving the previous inconsistent rendering. No dated closure was found in the checked window."
       }
     }
