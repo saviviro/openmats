@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import { readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -10,11 +11,15 @@ export const AUTOMATION_INTERVAL_HOURS = Object.freeze({
 });
 
 export const LOCK_MAX_AGE_HOURS = 8;
+export const AUTOMATION_LOCK_PATH = resolve(
+  tmpdir(),
+  "openmats-automation-run.lock",
+);
 
 const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const statePath = resolve(repositoryRoot, "data/automation-state.json");
-const lockPath = resolve(repositoryRoot, ".automation-run.lock");
+const lockPath = AUTOMATION_LOCK_PATH;
 
 export function validateAutomationState(state) {
   if (!state || typeof state !== "object" || state.version !== 1) {
@@ -113,6 +118,7 @@ function acquireLock(task, now = new Date()) {
     return {
       acquired: false,
       task,
+      lockPath,
       stale: Number.isFinite(age) && age > LOCK_MAX_AGE_HOURS * 3_600_000,
       existingLock,
     };
@@ -129,10 +135,15 @@ function acquireLock(task, now = new Date()) {
       encoding: "utf8",
       flag: "wx",
     });
-    return { acquired: true, task, lock };
+    return { acquired: true, task, lockPath, lock };
   } catch (error) {
     if (error?.code === "EEXIST") {
-      return { acquired: false, task, existingLock: readLock() };
+      return {
+        acquired: false,
+        task,
+        lockPath,
+        existingLock: readLock(),
+      };
     }
     throw error;
   }
@@ -141,18 +152,21 @@ function acquireLock(task, now = new Date()) {
 function releaseLock(task) {
   assertTask(task);
   const existingLock = readLock();
-  if (!existingLock) return { released: false, task, reason: "no_lock" };
+  if (!existingLock) {
+    return { released: false, task, lockPath, reason: "no_lock" };
+  }
   if (existingLock.task !== task) {
     return {
       released: false,
       task,
+      lockPath,
       reason: "owned_by_other_task",
       existingLock,
     };
   }
 
   unlinkSync(lockPath);
-  return { released: true, task };
+  return { released: true, task, lockPath };
 }
 
 function recordSuccess(task, summary, now = new Date()) {

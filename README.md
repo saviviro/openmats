@@ -41,12 +41,14 @@ routine and the changes that require a new privacy and cookie review.
 - optional OpenAI API integration later if cloud-only automation is needed
 - automatic Cloudflare Pages deployment from the GitHub `main` branch
 
-The local scheduled tasks share the deterministic timestamps in
-`data/automation-state.json` and a short-lived run lock. This prevents the
-staggered weekly and monthly triggers from duplicating work. See
+The local scheduled tasks run in isolated Git worktrees based on `origin/main`,
+so the user's active branch and unfinished work do not block them. They share
+the deterministic timestamps in `data/automation-state.json` and an
+operating-system temporary run lock. This prevents the staggered weekly and
+monthly triggers from duplicating work. See
 [docs/source-monitoring.md](docs/source-monitoring.md) for the exact gate,
-failure and review behavior. Because the tasks use the local project, the
-computer must be awake and the Codex app running when a trigger starts.
+failure and review behavior. The computer must still be awake and the Codex app
+running when a trigger starts.
 
 ## Geographic scope
 

@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { basename, dirname } from "node:path";
 
 import {
+  AUTOMATION_LOCK_PATH,
   getAutomationGate,
   toHelsinkiIso,
   validateAutomationState,
@@ -20,6 +23,11 @@ const state = {
 };
 
 describe("scheduled automation gate", () => {
+  it("uses one operating-system lock path shared by all worktrees", () => {
+    expect(dirname(AUTOMATION_LOCK_PATH)).toBe(tmpdir());
+    expect(basename(AUTOMATION_LOCK_PATH)).toBe("openmats-automation-run.lock");
+  });
+
   it("accepts the committed project state", () => {
     const projectState = JSON.parse(
       readFileSync(new URL("../data/automation-state.json", import.meta.url)),
