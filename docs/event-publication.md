@@ -132,13 +132,16 @@ a visible instruction to confirm participation with TK Sports.
 ### HIPKO Metsälä
 
 HIPKO's official 15 June–9 August summer timetable lists unsupervised BJJ open
-mats on Saturdays and Sundays from 15:00 to 17:00. The eight remaining dates
-inside the current publication window are listed with `uncertain` status.
+mats on Saturdays and Sundays from 15:00 to 17:00. The eight dates inside the
+current materialization window are listed with `uncertain` status.
 
-The timetable does not say whether practitioners from other clubs may attend
-these BJJ sessions or what an open-mat visit costs. The event cards therefore
-show an unknown price and tell the visitor to confirm participation with HIPKO.
-No recurrence is generated beyond 9 August.
+The timetable marks some other open-mat rows as available to HIPKO members,
+but that wording is not attached to the Saturday and Sunday BJJ rows. It also
+does not confirm outside-club access or an open-mat visit price for these
+weekend sessions. The event cards therefore show an unknown price and tell the
+visitor to confirm participation with HIPKO. A member-only label must never be
+transferred from another timetable row. No recurrence is generated beyond
+9 August.
 
 ### Takado
 
@@ -205,6 +208,8 @@ Konepaja was incorrect and has been removed.
   confirmation warning when another current official source gives a recurrence.
 - A location-wide visitor policy does not override a session explicitly marked
   members-only or a belt restriction shown in its booking calendar.
+- A member-only note applies only to the session or timetable scope that
+  explicitly carries it. It must not be transferred from one row to another.
 - A general gym drop-in price is not copied to an open mat unless the source
   explicitly connects the fee to that session.
 - Every event keeps its source URL, verification time, exception-check time,

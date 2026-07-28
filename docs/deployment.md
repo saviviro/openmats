@@ -13,8 +13,8 @@ Workers and Pages GitHub app.
 
 ## Automatic deployment
 
-Cloudflare treats the GitHub `main` branch as the production branch. A commit
-merged into `main` starts a new production deployment automatically.
+Cloudflare treats the GitHub `main` branch as the production branch. Every new
+commit on `main` starts a production deployment automatically.
 
 The current build settings are:
 
@@ -31,12 +31,21 @@ deployment secret is stored in the repository.
 
 ## Release workflow
 
+Normal feature and design changes use pull requests:
+
 1. Make changes on a dedicated branch.
 2. Run `pnpm validate` locally.
 3. Open a pull request and wait for the GitHub `validate` check.
 4. Merge the pull request into `main`.
 5. Confirm that the Cloudflare production deployment succeeds.
 6. Check the live page, key filters, pagination, images and browser console.
+
+Scheduled source checks use the same protected path automatically: after local
+validation, the isolated automation worktree pushes its timestamped branch,
+opens a pull request and enables auto-merge. GitHub merges only after the
+required `validate` check passes. The automation then checks that the new review
+date appears on `openmats.fi`. A rejected push, failed check or failed merge
+leaves the previous production deployment unchanged.
 
 If a Cloudflare build fails, the previously successful deployment remains live.
 Inspect the deployment log in Cloudflare before changing build settings or

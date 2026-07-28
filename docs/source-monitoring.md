@@ -40,7 +40,7 @@ Before any source-site access or file changes, a scheduled task must:
    verify that `HEAD` matches it;
 3. acquire the shared operating-system temporary lock with
    `node scripts/automation-gate.mjs acquire <routine|discovery>`;
-4. stop when any open PR title begins with `chore: scheduled source`;
+4. record the exact `origin/main` base commit for the final publication check;
 5. read the deterministic due status with
    `node scripts/automation-gate.mjs status <routine|discovery>`.
 
@@ -48,11 +48,11 @@ The lock is shared by routine and discovery tasks and must be released on every
 exit path with
 `node scripts/automation-gate.mjs release <routine|discovery>`. A due run works
 from `origin/main` on a uniquely timestamped `codex/scheduled-source-...`
-branch and opens a PR; it never checks out the user's local `main` branch or
-merges itself. Only a fully completed check may update the successful timestamp,
-using `node scripts/automation-gate.mjs record <task> <summary>`. Permission,
+branch; it never checks out the user's local `main` branch. Only a fully
+completed check may update the successful timestamp, using
+`node scripts/automation-gate.mjs record <task> <summary>`. Permission,
 source-access or validation failures must be reported without advancing that
-timestamp.
+timestamp or publishing to `main`.
 
 A lock older than eight hours is reported as stale, but the script does not
 replace it automatically: automatic replacement could race with a slow run.
@@ -65,6 +65,23 @@ These are local worktree scheduled tasks. The computer must be awake and the
 Codex app running for a trigger to execute. If the computer is asleep, a later
 one of the staggered triggers can run the still-due check. Review the next due
 run manually from the Scheduled view before relying on the repaired cadence.
+
+After a due check has completed and `pnpm validate` passes, the task commits and
+pushes its timestamped branch, opens a pull request to protected `main` and
+enables GitHub auto-merge. The required GitHub `validate` check must pass before
+GitHub merges the PR. This preserves branch protection while removing the need
+for a manual merge. If authentication, branch push, PR creation, validation or
+auto-merge fails, the task leaves its branch intact and does not change
+production. After GitHub merges the PR, the task checks `https://openmats.fi`
+for the new review date and reports a deployment-verification failure
+explicitly.
+
+Direct scheduled publication requires a narrower evidence rule than a manual
+review: a member-only or cancellation label may be applied only when the
+official source clearly attaches it to that exact session or to an explicitly
+defined scope containing the session. Text from another timetable row must not
+be generalized. An unreadable or missing source is never cancellation evidence
+and must not delete previously verified events.
 
 ## Check order
 
@@ -218,6 +235,25 @@ previous 13:00–14:00 autumn candidate was not supported by the live source.
   dated official calendar still provides no exact occurrence in the current
   window. The four membership-based Sundays are published as uncertain and
   remain under active monitoring.
+
+## Weekly light check: 28 July 2026
+
+The maintained priority-one sources for published series and time-bounded
+manual-review candidates were checked. Most published schedules remained
+unchanged, including AOGG's dated Gymdesk sessions, GB Gym's exact dates and
+November cancellation, Loop's 2 August boundary and MMA Vantaa's 9 August
+boundary.
+
+- HIPKO Metsälä's weekend BJJ rows are not labelled members-only; that wording
+  belongs to other weekday open-mat rows in the same table. The Saturday and
+  Sunday occurrences remain published with confirmation warnings. The direct
+  PDF URL returned a 404 during this check, which is a source-read failure and
+  not evidence that the previously verified sessions were cancelled.
+- FireBody replaced its spring timetable with an autumn timetable starting
+  10 August. Saturday BJJ self-practice is now 13:00–14:00; outside-club access
+  remains unconfirmed, so the candidate stays unpublished.
+- Savate Club's maintained Konala URL currently shows a summer 2024 timetable,
+  not a 2026 schedule. The unsupported 2026 candidate was removed.
 
 ## Buli follow-up: 16 July 2026
 

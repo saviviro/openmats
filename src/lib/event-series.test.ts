@@ -179,30 +179,6 @@ describe("event series materialization", () => {
     );
   });
 
-  it("materializes HIPKO only inside its summer timetable", () => {
-    const saturday = registry.series.find(
-      ({ id }) => id === "hipko-metsala-saturday-bjj-open-mat",
-    );
-    const sunday = registry.series.find(
-      ({ id }) => id === "hipko-metsala-sunday-bjj-open-mat",
-    );
-
-    expect(saturday?.publicationStatus).toBe("publish_with_confirmation");
-    expect(sunday?.publicationStatus).toBe("publish_with_confirmation");
-    expect(materializeOccurrenceDates(saturday!, registry.window)).toEqual([
-      "2026-07-18",
-      "2026-07-25",
-      "2026-08-01",
-      "2026-08-08",
-    ]);
-    expect(materializeOccurrenceDates(sunday!, registry.window)).toEqual([
-      "2026-07-19",
-      "2026-07-26",
-      "2026-08-02",
-      "2026-08-09",
-    ]);
-  });
-
   it("materializes both current Takado open mats", () => {
     const tuesday = registry.series.find(
       ({ id }) => id === "takado-tuesday-open-mat",
@@ -235,6 +211,30 @@ describe("event series materialization", () => {
       "2026-07-25",
       "2026-08-01",
       "2026-08-08",
+    ]);
+  });
+
+  it("keeps HIPKO weekend rows uncertain instead of inheriting other rows' member-only labels", () => {
+    const saturday = registry.series.find(
+      ({ id }) => id === "hipko-metsala-saturday-bjj-open-mat",
+    );
+    const sunday = registry.series.find(
+      ({ id }) => id === "hipko-metsala-sunday-bjj-open-mat",
+    );
+
+    expect(saturday?.publicationStatus).toBe("publish_with_confirmation");
+    expect(sunday?.publicationStatus).toBe("publish_with_confirmation");
+    expect(materializeOccurrenceDates(saturday!, registry.window)).toEqual([
+      "2026-07-18",
+      "2026-07-25",
+      "2026-08-01",
+      "2026-08-08",
+    ]);
+    expect(materializeOccurrenceDates(sunday!, registry.window)).toEqual([
+      "2026-07-19",
+      "2026-07-26",
+      "2026-08-02",
+      "2026-08-09",
     ]);
   });
 

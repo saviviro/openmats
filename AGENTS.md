@@ -34,6 +34,8 @@ Ensimmäinen julkaistava versio:
 - Säilytä jokaiselle tapahtumalle alkuperäinen lähde-URL ja tarkistusajankohta.
 - Suosi salin tai tapahtumajärjestäjän omaa verkkosivua, kalenteria tai julkista somejulkaisua toissijaisten listausten sijaan.
 - Merkitse epävarmat tai ristiriitaiset tiedot tarkistettaviksi. Älä julkaise niitä automaattisesti varmoina.
+- Kohdista jäsenrajaus, peruutus ja muu poissulkeva ehto vain siihen tapahtumariviin tai yksiselitteisesti määriteltyyn aikataulun osaan, johon lähde sen liittää. Älä yleistä toisen rivin tekstiä saman taulukon muihin open mateihin.
+- Säilytä aiemmin vahvistettu epävarma tapahtuma, jos uusi lähde on kadonnut, palauttaa 404-virheen tai sen taulukkorakenne jää epäselväksi. Lähteen lukuvirhe ei ole todiste peruutuksesta tai jäsenrajauksesta.
 - Normalisoi ajat aikavyöhykkeelle `Europe/Helsinki` ja säilytä koneellisesti käsiteltävät ajat ISO 8601 -muodossa.
 - Tunnista peruutukset, poikkeusajat, juhlapyhät ja vanhentuneet toistuvat tapahtumat mahdollisuuksien mukaan.
 - Tapahtuman yksilöinti ei saa perustua vain nimeen; huomioi vähintään sali, ajankohta ja laji.

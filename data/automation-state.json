@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-07-16T13:17:00+03:00",
-    "summary": "Publication audit completed against the maintained official sources; recurring events and the dated publication window were updated and validated."
+    "lastSuccessfulAt": "2026-07-28T12:13:53+03:00",
+    "summary": "Checked maintained priority sources; retained HIPKO weekend events as access-unconfirmed, removed a stale Savate candidate, and updated the FireBody autumn schedule."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-07-14T15:00:54+03:00",

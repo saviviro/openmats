@@ -74,11 +74,13 @@ so the materialized Sundays are visibly marked for confirmation. The series is
 attached to Urhea rather than Konepaja.
 
 High-priority manual-review sources include Combat Academy, HIPKO, FireBody,
-Savate Club and Salini. Their current official
-sources show open mats, free practice or sparring, but do not provide enough
-evidence to fully verify outside-club access automatically. HIPKO's dated BJJ
-sessions are therefore published only with a confirmation warning. FireBody
-also needs a current seasonal timetable: its live page is still labelled spring 2026.
+Savate Club and Salini. HIPKO's summer timetable marks some weekday open mats
+for HIPKO members, but the weekend BJJ rows do not carry that label. Those
+dated sessions remain published only with a confirmation warning. FireBody's autumn
+timetable starts on 10 August and lists Saturday BJJ self-practice at
+13:00–14:00, but outside-club access is still unconfirmed. Savate Club's
+maintained URL currently shows a 2024 timetable and therefore supports no
+current 2026 candidate.
 
 Dojo Helsinki's official Finnish and English timetables list Saturday
 12:00–13:00 open mat. The project owner confirmed outside-club access and No-gi
@@ -95,10 +97,11 @@ price is not treated as an open-mat price.
 
 HIPKO Metsälä's official summer timetable lists Saturday and Sunday BJJ open
 mats through 9 August. Because outside-club access and price are not stated,
-the dates are published only with a confirmation warning. Takado's current
-official timetable lists Tuesday and Saturday open mats, explicitly calls them
-open to everyone and directs participants to myClub; attire and price remain
-unknown.
+the dates are published only with a confirmation warning. Member-only wording
+shown on other rows must not be generalized to these weekend sessions. Takado's
+current official timetable lists Tuesday and Saturday open mats, explicitly
+calls them open to everyone and directs participants to myClub; attire and
+price remain unknown.
 
 Loop's official summer calendar lists a Saturday 10:30–12:00 BJJ open mat
 through 2 August 2026, while its official English calendar identifies the slot
