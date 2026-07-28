@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "templates": [
+    {
+      "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
+      "title": "Open mat",
+      "formats": ["no-gi"],
+      "venue": {
+        "name": "Art of Ground Games Sörnäinen",
+        "streetAddress": "Suvilahdenkatu 10 E",
+        "postalCode": "00500",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin muiden seurojen värivöille. Vain no-gi; varaa paikka etukäteen.",
+        "registrationRequired": true
+      },
+      "status": "scheduled",
+      "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
+      "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
+      "isExample": false
+    },
+    {
+      "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
+      "title": "Open mat",
+      "formats": ["no-gi"],
+      "venue": {
+        "name": "Art of Ground Games Erottaja",
+        "streetAddress": "Erottajankatu 11 B",
+        "postalCode": "00130",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin muiden seurojen harrastajille. Vain no-gi; varaa paikka etukäteen.",
+        "registrationRequired": true
+      },
+      "status": "scheduled",
+      "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
+      "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
+      "isExample": false
+    },
+    {
+      "seriesId": "hjjk-saturday-open-mat",
+      "title": "Open mat",
+      "formats": ["gi", "no-gi"],
+      "venue": {
+        "name": "Helsingin Ju-jutsuklubi",
+        "streetAddress": "Tallberginkatu 1 D",
+        "postalCode": "00180",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin muiden seurojen harrastajille.",
+        "registrationRequired": false
+      },
+      "status": "scheduled",
+      "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
+      "exceptionNote": "Vuoro järjestetään vain, jos salissa ei ole muuta tapahtumaa. Lauantain 22.8. vuoro on jätetty pois salilla järjestettävän BJJ No-Gi Finnish Openin vuoksi.",
+      "isExample": false
+    },
+    {
+      "seriesId": "hipko-metsala-saturday-bjj-open-mat",
+      "title": "Open mat",
+      "formats": ["gi"],
+      "venue": {
+        "name": "HIPKO Metsälä",
+        "streetAddress": "Tinasepäntie 36",
+        "postalCode": "00620",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Kesäaikataulu ei kerro, voivatko muiden seurojen harrastajat osallistua. Varmista osallistuminen HIPKOlta.",
+        "registrationRequired": false
+      },
+      "status": "uncertain",
+      "sourceLabel": "HIPKO Metsälän kesäaikataulu",
+      "exceptionNote": "Virallinen kesäaikataulu on voimassa 9.8.2026 asti. Vuoro on ilman ohjausta; ulkopuolisten osallistumista ei ilmoiteta.",
+      "isExample": false
+    },
+    {
+      "seriesId": "hipko-metsala-sunday-bjj-open-mat",
+      "title": "Open mat",
+      "formats": ["gi"],
+      "venue": {
+        "name": "HIPKO Metsälä",
+        "streetAddress": "Tinasepäntie 36",
+        "postalCode": "00620",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Kesäaikataulu ei kerro, voivatko muiden seurojen harrastajat osallistua. Varmista osallistuminen HIPKOlta.",
+        "registrationRequired": false
+      },
+      "status": "uncertain",
+      "sourceLabel": "HIPKO Metsälän kesäaikataulu",
+      "exceptionNote": "Virallinen kesäaikataulu on voimassa 9.8.2026 asti. Vuoro on ilman ohjausta; ulkopuolisten osallistumista ei ilmoiteta.",
+      "isExample": false
+    },
+    {
+      "seriesId": "tundra-saturday-open-mat",
+      "title": "Open mat",
+      "formats": ["gi", "no-gi"],
+      "venue": {
+        "name": "Tundra Jiu-Jitsu",
+        "streetAddress": "Suomalaistentie 7",
+        "postalCode": "02270",
+        "city": "Espoo"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin myös muiden seurojen jäsenille. Ota kesällä yhteyttä ennen vierailua.",
+        "registrationRequired": true
+      },
+      "status": "uncertain",
+      "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
+      "exceptionNote": "Sali kertoo kesäpoikkeusten olevan mahdollisia ja pyytää ottamaan yhteyttä ennen vierailua.",
+      "isExample": false
+    },
+    {
+      "seriesId": "tk-sports-saturday-open-mat",
+      "title": "Open mat",
+      "formats": null,
+      "venue": {
+        "name": "TK Sports",
+        "streetAddress": "Halmetie 5",
+        "postalCode": "00730",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Aikataulussa vuoro on merkitty kaikille tasoille. Muiden seurojen harrastajien osallistumista ei ilmoiteta erikseen, joten varmista osallistuminen TK Sportsilta.",
+        "registrationRequired": false
+      },
+      "status": "uncertain",
+      "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
+      "exceptionNote": "Virallinen viikkoaikataulu ilmoittaa lauantain vuoron, mutta aikataulu voi muuttua. Varustus, vierailuhinta ja muiden seurojen harrastajien osallistuminen kannattaa varmistaa TK Sportsilta.",
+      "isExample": false
+    },
+    {
+      "seriesId": "loop-saturday-open-mat",
+      "title": "Open mat",
+      "formats": ["gi", "no-gi"],
+      "venue": {
+        "name": "Loop Martial Arts",
+        "streetAddress": "Takkatie 7",
+        "postalCode": "00370",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": 0,
+        "currency": "EUR",
+        "note": "Maksuton"
+      },
+      "access": {
+        "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
+        "registrationRequired": false
+      },
+      "status": "scheduled",
+      "sourceLabel": "Loop Martial Artsin kesäkalenteri",
+      "exceptionNote": "Ei tiedossa olevia poikkeuksia. Kesäkausi päättyy 2.8.2026.",
+      "isExample": false
+    },
+    {
+      "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
+      "title": "Open mat",
+      "formats": ["no-gi"],
+      "venue": {
+        "name": "Dojo Helsinki",
+        "streetAddress": "Pursimiehenkatu 14",
+        "postalCode": "00140",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin muiden seurojen harrastajille. No-gi-varustus.",
+        "registrationRequired": false
+      },
+      "status": "scheduled",
+      "sourceLabel": "Dojo Helsingin treeniajat",
+      "exceptionNote": "Mahdollisista pyhäpäivien muutoksista ja ylimääräisistä open mateista ilmoitetaan Dojon Instagramissa.",
+      "isExample": false
+    },
+    {
+      "seriesId": "kilo-jiu-jitsu-saturday-open-mat",
+      "title": "Open mat",
+      "formats": null,
+      "venue": {
+        "name": "Kilo Jiu-Jitsu",
+        "streetAddress": "Kutojantie 5, 2. krs",
+        "postalCode": "02630",
+        "city": "Espoo"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin muiden seurojen harrastajille.",
+        "registrationRequired": false
+      },
+      "status": "uncertain",
+      "sourceLabel": "Kilo Jiu-Jitsun Instagram",
+      "exceptionNote": "Salin virallinen verkkokalenteri on yhä merkitty vuodelle 2023, joten varustus ja ajantasaisuus kannattaa varmistaa järjestäjältä.",
+      "isExample": false
+    },
+    {
+      "seriesId": "takado-tuesday-open-mat",
+      "title": "Open mat",
+      "formats": null,
+      "venue": {
+        "name": "Takado",
+        "streetAddress": "Pihatörmä 1 D, 4. krs",
+        "postalCode": "02240",
+        "city": "Espoo"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin kaikille. Ilmoittaudu vuorolle myClubin kautta.",
+        "registrationRequired": true
+      },
+      "status": "scheduled",
+      "sourceLabel": "Takadon harjoitusajat",
+      "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
+      "isExample": false
+    },
+    {
+      "seriesId": "takado-saturday-open-mat",
+      "title": "Open mat",
+      "formats": null,
+      "venue": {
+        "name": "Takado",
+        "streetAddress": "Pihatörmä 1 D, 4. krs",
+        "postalCode": "02240",
+        "city": "Espoo"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin kaikille. Ilmoittaudu vuorolle myClubin kautta.",
+        "registrationRequired": true
+      },
+      "status": "scheduled",
+      "sourceLabel": "Takadon harjoitusajat",
+      "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
+      "isExample": false
+    },
+    {
+      "seriesId": "buli-urhea-sunday-open-mat",
+      "title": "Open mat",
+      "formats": ["gi", "no-gi"],
+      "venue": {
+        "name": "Buli Jiu-Jitsu Urhea",
+        "streetAddress": "Mäkelänkatu 47",
+        "postalCode": "00550",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": 25,
+        "currency": "EUR",
+        "note": "Open mat -jäsenyys 25 € / kalenterivuosi"
+      },
+      "access": {
+        "description": "Ota Buliin yhteyttä etukäteen ennen vierailua tai open matin kokeilua. Gi tai no-gi.",
+        "registrationRequired": true
+      },
+      "status": "uncertain",
+      "sourceLabel": "Bulin open mat -jäsenyys",
+      "exceptionNote": "Jäsenyyssivu ilmoittaa viikoittaisen sunnuntaivuoron, mutta päiväkalenterissa ei näy vastaavaa tapahtumaa. Varmista päivämäärä ennen lähtöä.",
+      "isExample": false
+    },
+    {
+      "seriesId": "mma-vantaa-sunday-open-mat",
+      "title": "Open mat",
+      "formats": null,
+      "venue": {
+        "name": "MMA Vantaa",
+        "streetAddress": "Rajatorpantie 27",
+        "postalCode": "01650",
+        "city": "Vantaa"
+      },
+      "price": {
+        "amount": null,
+        "currency": "EUR",
+        "note": "Vierailuhintaa ei ilmoitettu lähteessä"
+      },
+      "access": {
+        "description": "Avoin seuran ulkopuolisille. Ole ovella ennen vuoron alkua, koska sisäänpääsy vaatii jäsenen ovikoodin.",
+        "registrationRequired": false
+      },
+      "status": "scheduled",
+      "sourceLabel": "MMA Vantaan kesän harjoitusajat",
+      "exceptionNote": "Virallinen kesäaikataulu on voimassa 9.8.2026 saakka. Varustuksesta ei ole tietoa.",
+      "isExample": false
+    }
+  ]
+}

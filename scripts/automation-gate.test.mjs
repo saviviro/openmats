@@ -8,6 +8,7 @@ import {
   getAutomationGate,
   toHelsinkiIso,
   validateAutomationState,
+  validatePublicationFreshness,
 } from "./automation-gate.mjs";
 
 const state = {
@@ -84,5 +85,49 @@ describe("scheduled automation gate", () => {
         routine: state.routine,
       }),
     ).toThrow(/invalid discovery entry/);
+  });
+
+  it("rejects a stale publication window before recording success", () => {
+    expect(() =>
+      validatePublicationFreshness(
+        {
+          version: 1,
+          checkedAt: "2026-07-28T12:00:00+03:00",
+          window: {
+            from: "2026-07-15",
+            through: "2026-08-09",
+            timezone: "Europe/Helsinki",
+          },
+          series: [],
+        },
+        new Date("2026-07-28T12:30:00+03:00"),
+      ),
+    ).toThrow(/must start today/);
+  });
+
+  it("accepts a freshly reviewed eight-week publication window", () => {
+    const registry = {
+      version: 1,
+      checkedAt: "2026-07-28T12:00:00+03:00",
+      window: {
+        from: "2026-07-28",
+        through: "2026-09-22",
+        timezone: "Europe/Helsinki",
+      },
+      series: [
+        {
+          exceptionCheck: {
+            checkedAt: "2026-07-28T11:45:00+03:00",
+          },
+        },
+      ],
+    };
+
+    expect(
+      validatePublicationFreshness(
+        registry,
+        new Date("2026-07-28T12:30:00+03:00"),
+      ),
+    ).toBe(registry);
   });
 });

@@ -48,6 +48,13 @@ Ensimmäinen julkaistava versio:
 - Tekoäly voi auttaa muuttuvien tekstien jäsentämisessä, mutta sen tulos on validoitava ennen julkaisua.
 - Keräyksen epäonnistuminen ei saa poistaa aiemmin vahvistettuja tapahtumia automaattisesti. Vanhentuminen käsitellään erikseen.
 - Keräysajojen pitää tuottaa ymmärrettävä loki: onnistuneet lähteet, virheet, löydetyt muutokset ja tarkistusta vaativat havainnot.
+- Onnistunut ajastettu tarkistus päivittää jokaisen julkaistavan sarjan
+  tarkistusajan, ajaa `pnpm events:refresh` -komennon ja muodostaa vähintään
+  kahdeksan viikon rullaavan julkaisujakson. Pelkkä yleisen tarkistuspäivän
+  muuttaminen ei ole onnistunut julkaisu.
+- GitHub CLI:n verkkoyhteysvirhettä ei saa tulkita vanhentuneeksi tokeniksi.
+  Uudelleenkirjautumista pyydetään vain, jos avainnipun tunnus puuttuu tai
+  GitHub vastaa aidolla 401-/Bad credentials -virheellä.
 
 ## Tekniset periaatteet
 

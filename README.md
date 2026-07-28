@@ -14,10 +14,11 @@ verified.
 The first mobile-friendly static website is published at
 [openmats.fi](https://openmats.fi). It contains a maintained
 metropolitan-area source registry and an explicitly reviewed window of verified
-real events. Recurring timetables are converted into dated events only through
-an explicitly reviewed publication limit. The Finnish home page and the English
-version at [/en/](https://openmats.fi/en/) use the same event data and can
-be switched from the site header.
+real events. Recurring timetables are converted into dated events through a
+reviewed, rolling eight-week publication limit, while shorter seasonal
+boundaries still take precedence. The Finnish home page and the English version
+at [/en/](https://openmats.fi/en/) use the same event data and can be switched
+from the site header.
 
 Contact details for event corrections and missing open mats are available on
 the Finnish and English privacy and contact pages linked in the site footer.
@@ -105,9 +106,17 @@ Run all local quality checks:
 pnpm validate
 ```
 
-The validation command checks formatting, Astro and TypeScript diagnostics,
-unit tests, content schemas, duplicate event identities, and the production
-build. Do not commit API keys, access tokens, or local environment files.
+After reviewing recurring sources and their exceptions, rebuild the rolling
+event window with:
+
+```sh
+pnpm events:refresh
+```
+
+The validation command checks that generated events match the reviewed series,
+formatting, Astro and TypeScript diagnostics, unit tests, content schemas,
+duplicate event identities, and the production build. Do not commit API keys,
+access tokens, or local environment files.
 
 ## Project structure
 

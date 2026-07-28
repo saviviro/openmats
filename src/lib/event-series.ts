@@ -10,7 +10,6 @@ export const eventSeriesRegistrySchema = z.object({
     from: isoDateSchema,
     through: isoDateSchema,
     timezone: z.literal("Europe/Helsinki"),
-    utcOffset: z.string().regex(/^[+-]\d{2}:\d{2}$/),
   }),
   series: z
     .array(
