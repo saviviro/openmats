@@ -16,13 +16,13 @@ const expectedSeriesDisplayData = {
   "aogg-sornainen-colored-belts-nogi-open-mat": {
     venueName: "Art of Ground Games Sörnäinen",
     formats: ["no-gi"],
-    priceAmount: null,
+    priceAmount: 0,
     status: "scheduled",
   },
   "aogg-erottaja-sunday-nogi-open-mat": {
     venueName: "Art of Ground Games Erottaja",
     formats: ["no-gi"],
-    priceAmount: null,
+    priceAmount: 0,
     status: "scheduled",
   },
   "buli-urhea-sunday-open-mat": {
@@ -113,7 +113,7 @@ describe("event series materialization", () => {
         through: "2026-08-09",
       }),
     ).toEqual(["2026-07-18", "2026-07-25", "2026-08-01", "2026-08-08"]);
-    expect(materializeOccurrenceDates(series!, registry.window)).not.toContain(
+    expect(materializeOccurrenceDates(series!, registry.window)).toContain(
       "2026-08-22",
     );
   });
@@ -256,6 +256,19 @@ describe("event series materialization", () => {
         ],
       }),
     ).toThrow(/must match its exception-check result/);
+  });
+
+  it("requires source evidence for every excluded date", () => {
+    expect(() =>
+      parseEventSeriesRegistry({
+        ...seriesData,
+        series: seriesData.series.map((series) =>
+          series.id === "hjjk-saturday-open-mat"
+            ? { ...series, excludedDates: ["2026-08-22"] }
+            : series,
+        ),
+      }),
+    ).toThrow(/matching source-evidence record/);
   });
 
   it("keeps series identifiers unique", () => {

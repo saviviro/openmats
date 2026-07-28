@@ -44,6 +44,23 @@ describe("localization", () => {
     });
   });
 
+  it("keeps the HJJK venue-specific exception accurate in English", () => {
+    const translation = getEventTranslation(
+      "en",
+      "hjjk-saturday-open-mat-2026-08-22",
+      "hjjk-saturday-open-mat",
+      {
+        priceNote: "Vierailuhintaa ei ilmoitettu lähteessä",
+        accessDescription: "Avoin muiden seurojen harrastajille.",
+        exceptionNote: "Suomenkielinen poikkeusteksti.",
+      },
+    );
+
+    expect(translation.exceptionNote).toMatch(/Kaapelitehdas venue/);
+    expect(translation.exceptionNote).toMatch(/no other event uses/);
+    expect(translation.exceptionNote).not.toMatch(/No-Gi Finnish Open/);
+  });
+
   it("requires event-specific English overrides when Finnish source text varies inside a series", () => {
     const fields = [
       ["priceNote", (event: (typeof events)[number]) => event.price.note],

@@ -8,15 +8,24 @@ producing events indefinitely while keeping the public list useful between
 weekly reviews. Exact dated entries from an official calendar can extend beyond
 the recurring window when each occurrence is stored explicitly.
 
-The recurrence and review records are stored in
-[`data/event-series.json`](../data/event-series.json). The dated public events
-remain in [`src/data/events.json`](../src/data/events.json), and their stable
-display fields live once per series in
-[`data/event-templates.json`](../data/event-templates.json). After the sources,
-exceptions and validity boundaries have been reviewed, run
+Publication has three canonical inputs:
+
+- [`data/event-series.json`](../data/event-series.json) contains recurring
+  series, rolling-window limits, occurrence-specific source URL templates and
+  source-backed exclusions;
+- [`data/source-registry.json`](../data/source-registry.json) contains venues,
+  maintained official sources and exact `datedOpenMats` calendar entries;
+- [`data/event-templates.json`](../data/event-templates.json) contains the
+  stable user-facing fields for every recurring or explicitly dated
+  `seriesId`.
+
+[`src/data/events.json`](../src/data/events.json) is version-controlled for the
+static build, but it is generated output rather than a canonical input. After
+the sources, exceptions and validity boundaries have been reviewed, run
 `pnpm events:refresh`; it advances the rolling window and deterministically
-rebuilds every recurring occurrence. `pnpm events:check` and the normal
-validation command reject stale or manually incomplete generated data.
+rebuilds both recurring and explicitly dated occurrences. Do not edit
+`src/data/events.json` by hand. `pnpm events:check` and the normal validation
+command reject stale, incomplete or manually changed generated data.
 
 ## Gi and No-gi model
 
@@ -49,16 +58,19 @@ review notes.
 
 The official AOGG open-mat policy welcomes visitors from other clubs, while
 the location-specific Gymdesk calendars provide the session restrictions and
-recurrence data. Two visitor sessions are published inside the current review
-window:
+recurrence data. The visitor series currently eligible for publication are:
 
 - Erottaja: Sunday 12:00–14:00, No-gi;
 - Sörnäinen: Saturday 12:00–14:00, No-gi and coloured belts only.
 
-Both calendars accept advance bookings and show no cancelled dates. AOGG's
-visitor page lists a general 15-euro drop-in, but it does not attribute that
-price specifically to open mats; the published events therefore show an
-unknown price. AOGG's separately named members-only open mats remain
+Both calendars accept advance bookings and show no cancelled dates. The exact
+Erottaja and Sörnäinen booking settings show a zero-euro cost and permit free
+booking for non-members, so these open mats are published as free. This
+session-specific evidence takes precedence over AOGG's separate general
+visitor-pass price. Each generated occurrence uses an
+`occurrenceSourceUrlTemplate` that inserts its ISO date into the Gymdesk URL;
+the organizer link therefore opens the matching booking date rather than an old
+example date. AOGG's separately named members-only open mats remain
 unpublished. Kivenlahti currently shows only members-only open mats, so it has
 no public occurrence in the event list.
 
@@ -68,11 +80,13 @@ The official BJJ page states that the Saturday 13:00–15:00 open mat welcomes
 people from other clubs who know the BJJ fundamentals. It can be practised in a
 gi or no-gi. The session is held only if no other event uses the gym.
 
-The official event page was checked for the publication window. The Saturday
-22 August occurrence is excluded because the BJJ NoGi Finnish Open occupies the
-gym on 22–23 August. Other reviewed Saturdays are materialized through the
-rolling limit. The visitor price is left unknown because the open-mat source
-does not state one.
+The official event page was checked for the publication window. The BJJ No-Gi
+Finnish Open on 22–23 August is listed in Vantaa, not at HJJK's Kaapelitehdas
+gym. It is therefore not evidence of a Kaapelitehdas venue conflict, and the
+22 August open mat is not excluded. A Saturday may be added to `excludedDates`
+only when an official source links a cancellation or another event to that
+exact date at Kaapelitehdas. The visitor price is left unknown because the
+open-mat source does not state one.
 
 ### Tundra Jiu-Jitsu
 
@@ -106,9 +120,10 @@ mat at Pursimiehenkatu 14. The project owner confirmed on 16 July 2026 that the
 session is open to outside-club practitioners and uses No-gi attire. The
 visitor price is unknown because the official sources do not state one.
 
-Four Saturdays through 8 August are published. Dojo's official Instagram
-account is a supporting monitoring source for holiday changes and additional
-open mats, which must be added as separately dated events.
+Occurrences are generated only inside the reviewed validity and publication
+windows. Dojo's official Instagram account is a supporting monitoring source
+for holiday changes and additional open mats, which must be recorded as
+separately dated events with their own `seriesId`.
 
 ### Kilo Jiu-Jitsu
 
@@ -118,12 +133,12 @@ confirms the address, and the price page states a 15-euro drop-in price from 1
 June 2026. The official schedule page remains labelled 2023 and does not
 currently verify the slot, attire or exceptions.
 
-Four Saturdays through 8 August are published with `uncertain` status and a
-visible confirmation reminder. Attire is deliberately stored as unknown. The
-official schedule and Instagram must be checked again before extending or
-fully verifying the recurring series. Kilo's general 15-euro single-visit
-price is not presented as the open-mat price because the price source does not
-make that connection.
+Occurrences inside the reviewed validity and publication windows are published
+with `uncertain` status and a visible confirmation reminder. Attire is
+deliberately stored as unknown. The official schedule and Instagram must be
+checked again before extending or fully verifying the recurring series. Kilo's
+general 15-euro single-visit price is not presented as the open-mat price
+because the price source does not make that connection.
 
 ### TK Sports
 
@@ -133,15 +148,17 @@ but the published time and address come from the official site.
 
 The timetable does not state whether the session uses Gi, No-gi or both,
 whether people from other clubs may attend, or what an open-mat visit costs.
-It also notes that the schedule may change. Four Saturdays through 8 August
-are therefore published with `uncertain` status, unknown attire and price, and
-a visible instruction to confirm participation with TK Sports.
+It also notes that the schedule may change. Occurrences inside the reviewed
+validity and publication windows are therefore published with `uncertain`
+status, unknown attire and price, and a visible instruction to confirm
+participation with TK Sports.
 
 ### HIPKO Metsälä
 
 HIPKO's official 15 June–9 August summer timetable lists unsupervised BJJ open
-mats on Saturdays and Sundays from 15:00 to 17:00. The eight dates inside the
-current materialization window are listed with `uncertain` status.
+mats on Saturdays and Sundays from 15:00 to 17:00. Dates inside both the
+seasonal boundary and rolling publication window are listed with `uncertain`
+status.
 
 The timetable marks some other open-mat rows as available to HIPKO members,
 but that wording is not attached to the Saturday and Sunday BJJ rows. It also
@@ -171,10 +188,11 @@ an upcoming event.
 
 The project owner confirmed on 14 July 2026 that these open mats are free, open
 to all practitioners and allow either Gi or No-gi. Those details are recorded
-as owner-provided confirmation rather than attributed to the calendar. The four
-scheduled entries are published with both formats available. August and
-September use UTC offset `+03:00`; October and December use `+02:00` according to
-`Europe/Helsinki` daylight-saving rules.
+as owner-provided confirmation rather than attributed to the calendar.
+Scheduled entries are published with both formats available. August and
+September use UTC offset `+03:00`; October and December use `+02:00` according
+to `Europe/Helsinki` daylight-saving rules. Every calendar row, including the
+cancelled one, carries the dated series' stable `seriesId`.
 
 ### MMA Vantaa
 
@@ -185,8 +203,8 @@ before the session starts because entry to the rock shelter requires a member's
 door code.
 
 The earlier inconsistent 12:00–14:00 rendering is no longer present on the
-live page, so the source conflict is resolved. Four Sunday occurrences are
-published through the current materialization limit. Price and Gi/No-gi
+live page, so the source conflict is resolved. Occurrences are generated only
+through the reviewed seasonal and rolling limits. Price and Gi/No-gi
 eligibility remain unknown because the official source does not state them.
 
 ### Buli Urhea
@@ -199,18 +217,24 @@ club before visiting or trying the open mat before buying the membership.
 Recent community feedback says the session is running in summer, but the dated
 official calendar contains no matching Urhea open-mat occurrence in the current
 publication window. The membership page still provides an active weekly
-Sunday recurrence, so four Sundays are published with `uncertain` status and a
-visible confirmation reminder. The price is shown as a 25-euro annual open-mat
-membership, not as a per-session charge. The previous registry attachment to
-Konepaja was incorrect and has been removed.
+Sunday recurrence, so occurrences inside the reviewed window are published
+with `uncertain` status and a visible confirmation reminder. The price is shown
+as a 25-euro annual open-mat membership, not as a per-session charge. The
+previous registry attachment to Konepaja was incorrect and has been removed.
 
 ## Materialization rules
 
 - A series produces only the requested ISO weekday between the publication
   window and its own validity boundaries.
 - An exact official calendar entry may be published directly outside the
-  recurring window when its date and time are explicit.
-- Dates in `excludedDates` are omitted.
+  recurring window when its date and time are explicit. Every
+  `datedOpenMats` row must carry a stable `seriesId` with a matching template;
+  one identifier cannot represent both a recurring and an explicitly dated
+  series.
+- Dates in `excludedDates` are omitted only when each date has exactly one
+  matching `excludedDateEvidence` entry containing the official source URL,
+  review timestamp and date-specific explanation. A source-read failure or an
+  event at another venue is not exclusion evidence.
 - An explicit cancellation or a conflicting official date or time prevents
   publication. Absence from a dated calendar can instead require a visible
   confirmation warning when another current official source gives a recurrence.
@@ -222,7 +246,10 @@ Konepaja was incorrect and has been removed.
   explicitly connects the fee to that session.
 - Every event keeps its source URL, verification time, exception-check time,
   materialization limit and a user-facing exception note.
+- When a booking system supports dated links, an
+  `occurrenceSourceUrlTemplate` must link each generated occurrence to its own
+  organizer page.
 - Helsinki summer dates in this window use UTC offset `+03:00`. A future window
   crossing a daylight-saving boundary must use the correct Helsinki offset.
-- The source and exception pages must be checked again before extending the
-  window beyond 9 August 2026.
+- Sources and exception pages must be checked again before advancing the
+  rolling window or extending a seasonal validity boundary.

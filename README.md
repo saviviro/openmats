@@ -18,7 +18,9 @@ real events. Recurring timetables are converted into dated events through a
 reviewed, rolling eight-week publication limit, while shorter seasonal
 boundaries still take precedence. The Finnish home page and the English version
 at [/en/](https://openmats.fi/en/) use the same event data and can be switched
-from the site header.
+from the site header. `https://openmats.fi` is the canonical production address;
+`https://openmats.pages.dev` is only the underlying Cloudflare Pages project
+hostname.
 
 Contact details for event corrections and missing open mats are available on
 the Finnish and English privacy and contact pages linked in the site footer.
@@ -34,7 +36,7 @@ routine and the changes that require a new privacy and cookie review.
 ## Planned approach
 
 - Astro and TypeScript for a statically generated website
-- structured JSON or YAML event data before introducing a database
+- version-controlled canonical JSON inputs before introducing a database
 - a maintained registry of official gym and event sources
 - deterministic collectors for routine source checks
 - AI-assisted source discovery and conflict review where it adds value
@@ -45,8 +47,13 @@ routine and the changes that require a new privacy and cookie review.
 The local scheduled tasks run in isolated Git worktrees based on `origin/main`,
 so the user's active branch and unfinished work do not block them. They share
 the deterministic timestamps in `data/automation-state.json` and an
-operating-system temporary run lock. This prevents the staggered weekly and
-monthly triggers from duplicating work. See
+operating-system temporary run lock. Each run must retain the lock's unique
+`ownerId` and use it when recording success and releasing the lock, so one run
+cannot release another run's lock. This prevents the staggered weekly and
+monthly triggers from duplicating work. GitHub preflight results distinguish an
+actual missing or rejected credential from keyring, authorization, CLI and
+network failures; only a missing credential or GitHub's explicit 401 response
+calls for reauthentication. See
 [docs/source-monitoring.md](docs/source-monitoring.md) for the exact gate,
 failure and review behavior. The computer must still be awake and the Codex app
 running when a trigger starts.
@@ -91,7 +98,7 @@ Pages deployment workflow.
 Requirements:
 
 - Node.js 22.12 or newer (Node 24 is recommended)
-- pnpm 11.7
+- pnpm 11.9
 
 Install dependencies and start the local development server:
 
@@ -113,18 +120,31 @@ event window with:
 pnpm events:refresh
 ```
 
-The validation command checks that generated events match the reviewed series,
-formatting, Astro and TypeScript diagnostics, unit tests, content schemas,
-duplicate event identities, and the production build. Do not commit API keys,
-access tokens, or local environment files.
+The canonical publication inputs are `data/event-series.json`,
+`data/event-templates.json` and `data/source-registry.json`.
+`src/data/events.json` is generated from those inputs by `pnpm events:refresh`;
+do not maintain it manually. `pnpm events:check`, which is part of
+`pnpm validate`, rejects a generated file that no longer matches its canonical
+inputs. The validation command also checks formatting, Astro and TypeScript
+diagnostics, unit tests, content schemas, duplicate event identities, and the
+production build.
+
+After a merged production release, verify the exact Cloudflare deployment,
+latest completed review and a sentinel occurrence near the rolling window's end:
+
+```sh
+pnpm automation:verify-production -- --commit <main-commit-sha>
+```
+
+Do not commit API keys, access tokens, or local environment files.
 
 ## Project structure
 
 ```text
-data/                  maintained source and recurring-event registries
+data/                  canonical source, series and event-template inputs
 docs/                  decisions and collection documentation
 src/components/        reusable Astro interface components
-src/data/              version-controlled event data
+src/data/              generated, version-controlled publication output
 src/lib/               event formatting and validation utilities
 src/pages/             website routes
 src/styles/            global visual styles

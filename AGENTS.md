@@ -48,6 +48,13 @@ Ensimmäinen julkaistava versio:
 - Tekoäly voi auttaa muuttuvien tekstien jäsentämisessä, mutta sen tulos on validoitava ennen julkaisua.
 - Keräyksen epäonnistuminen ei saa poistaa aiemmin vahvistettuja tapahtumia automaattisesti. Vanhentuminen käsitellään erikseen.
 - Keräysajojen pitää tuottaa ymmärrettävä loki: onnistuneet lähteet, virheet, löydetyt muutokset ja tarkistusta vaativat havainnot.
+- Jokainen `excludedDates`-poikkeus tarvitsee samalle päivälle yksilöidyn
+  `excludedDateEvidence`-tietueen, jossa ovat lähde-URL, tarkistusajankohta ja
+  perustelu. Samassa kaupungissa tai lajissa järjestettävä muu tapahtuma ei ole
+  poissulkemisperuste, ellei lähde osoita sen käyttävän juuri open matin salia.
+- Jokaisella `datedOpenMats`-rivillä pitää olla pysyvä `seriesId`, joka yhdistää
+  sen omaan tapahtumapohjaansa. Sama `seriesId` ei saa olla yhtä aikaa
+  toistuvalla ja erikseen päivätyllä sarjalla.
 - Onnistunut ajastettu tarkistus päivittää jokaisen julkaistavan sarjan
   tarkistusajan, ajaa `pnpm events:refresh` -komennon ja muodostaa vähintään
   kahdeksan viikon rullaavan julkaisujakson. Pelkkä yleisen tarkistuspäivän
@@ -55,6 +62,10 @@ Ensimmäinen julkaistava versio:
 - GitHub CLI:n verkkoyhteysvirhettä ei saa tulkita vanhentuneeksi tokeniksi.
   Uudelleenkirjautumista pyydetään vain, jos avainnipun tunnus puuttuu tai
   GitHub vastaa aidolla 401-/Bad credentials -virheellä.
+- `credential_unavailable`, `authorization_unavailable`,
+  `network_unavailable`, `git_unavailable` ja `gh_unavailable` ovat
+  käyttöoikeus-, verkko-, SSO/rate limit-, Git- tai asennusongelmia. Ne eivät
+  yksin oikeuta pyytämään GitHub-uudelleenkirjautumista.
 
 ## Tekniset periaatteet
 
@@ -64,9 +75,23 @@ Ensimmäinen julkaistava versio:
 - Lisää ulkoinen palvelu tai maksullinen riippuvuus vain, kun sille on konkreettinen tarve.
 - Säilytä salaisuudet ympäristömuuttujissa tai julkaisualustan secret-varastossa. Älä koskaan commitoi API-avaimia, tunnuksia tai henkilötietoja.
 - Käytä riippuvuuksista lukittuja versioita ja vältä tarpeettomia paketteja.
+- Julkaistavan tapahtumadatan ensisijaiset syötteet ovat
+  `data/event-series.json`, `data/event-templates.json` ja
+  `data/source-registry.json`. `src/data/events.json` on näistä
+  deterministisesti generoitu tuloste eikä käsin ylläpidettävä lähde.
 - Huomioi saavutettavuus, semanttinen HTML, näppäimistökäyttö, riittävä kontrasti ja selkeät virhetilat.
 - Kerää vain palvelun toiminnan kannalta tarpeellista dataa. Vältä analytiikka- ja seurantakoodeja MVP:ssä.
-- Tuotantosivusto julkaistaan Cloudflare Pagesissa osoitteeseen `https://openmats.pages.dev`. GitHubin `main`-haaran onnistuneet muutokset käynnistävät automaattisen tuotantobuildin.
+- Kanoninen tuotantosivusto on `https://openmats.fi`. Cloudflare Pagesin
+  tekninen projektiosoite on `https://openmats.pages.dev`. GitHubin
+  `main`-haaran onnistuneet muutokset käynnistävät automaattisen
+  tuotantobuildin.
+- Ajastettu ajo säilyttää `acquire`-komennon palauttaman `ownerId`-arvon ja
+  käyttää täsmälleen samaa arvoa `record`- ja `release`-komennoissa. Toisen ajon
+  lukkoa ei saa vapauttaa.
+- Yhdistämisen jälkeen tuotanto varmennetaan komennolla
+  `pnpm automation:verify-production -- --commit <main-commit-sha>`. Pelkkä
+  Cloudflare-checkin onnistuminen tai näkyvän tarkistuspäivän muuttuminen ei
+  riitä.
 
 ## Työskentelytapa
 

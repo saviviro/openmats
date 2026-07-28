@@ -65,7 +65,7 @@ describe("source registry", () => {
   it("keeps dated open mats unique and cancellations out of publication", () => {
     for (const venue of registry.venues) {
       const identities = venue.datedOpenMats.map(
-        ({ date, startTime }) => `${date}-${startTime}`,
+        ({ seriesId, date, startTime }) => `${seriesId}-${date}-${startTime}`,
       );
       expect(new Set(identities).size, venue.id).toBe(identities.length);
 
@@ -77,6 +77,50 @@ describe("source registry", () => {
         }
       }
     }
+  });
+
+  it("keeps GB Gym exact dates canonical, including the November cancellation", () => {
+    const gbGym = registry.venues.find(({ id }) => id === "gb-gym-herttoniemi");
+
+    expect(
+      gbGym?.datedOpenMats.map(({ seriesId, date, status, publishStatus }) => ({
+        seriesId,
+        date,
+        status,
+        publishStatus,
+      })),
+    ).toEqual([
+      {
+        seriesId: "gb-gym-monthly-open-mat",
+        date: "2026-08-30",
+        status: "scheduled",
+        publishStatus: "ready_for_event_review",
+      },
+      {
+        seriesId: "gb-gym-monthly-open-mat",
+        date: "2026-09-27",
+        status: "scheduled",
+        publishStatus: "ready_for_event_review",
+      },
+      {
+        seriesId: "gb-gym-monthly-open-mat",
+        date: "2026-10-25",
+        status: "scheduled",
+        publishStatus: "ready_for_event_review",
+      },
+      {
+        seriesId: "gb-gym-monthly-open-mat",
+        date: "2026-11-29",
+        status: "cancelled",
+        publishStatus: "cancelled_do_not_publish",
+      },
+      {
+        seriesId: "gb-gym-monthly-open-mat",
+        date: "2026-12-27",
+        status: "scheduled",
+        publishStatus: "ready_for_event_review",
+      },
+    ]);
   });
 
   it("does not silently omit Kauniainen when no venue is found", () => {

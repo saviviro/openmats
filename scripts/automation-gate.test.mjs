@@ -1,14 +1,22 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { basename, dirname } from "node:path";
+import { basename, dirname, resolve } from "node:path";
 
+import seriesRegistry from "../data/event-series.json";
+import templates from "../data/event-templates.json";
+import sourceRegistry from "../data/source-registry.json";
+import events from "../src/data/events.json";
 import {
   AUTOMATION_LOCK_PATH,
+  acquireLock,
   getAutomationGate,
+  parseGateArguments,
+  releaseLock,
   toHelsinkiIso,
   validateAutomationState,
   validatePublicationFreshness,
+  validatePublicationPackage,
 } from "./automation-gate.mjs";
 
 const state = {
@@ -24,6 +32,16 @@ const state = {
 };
 
 describe("scheduled automation gate", () => {
+  it("accepts the argument separator forwarded by pnpm", () => {
+    expect(
+      parseGateArguments(["--", "record", "routine", "owner-a", "summary"]),
+    ).toEqual({
+      command: "record",
+      task: "routine",
+      rest: ["owner-a", "summary"],
+    });
+  });
+
   it("uses one operating-system lock path shared by all worktrees", () => {
     expect(dirname(AUTOMATION_LOCK_PATH)).toBe(tmpdir());
     expect(basename(AUTOMATION_LOCK_PATH)).toBe("openmats-automation-run.lock");
@@ -129,5 +147,118 @@ describe("scheduled automation gate", () => {
         new Date("2026-07-28T12:30:00+03:00"),
       ),
     ).toBe(registry);
+  });
+
+  it("validates the complete committed recurring and dated publication package", () => {
+    expect(
+      validatePublicationPackage(
+        { seriesRegistry, sourceRegistry, templates, events },
+        new Date("2026-07-28T12:30:00+03:00"),
+      ),
+    ).toEqual({ seriesRegistry, sourceRegistry, templates, events });
+  });
+
+  it("rejects a success record when published events are not synchronized", () => {
+    expect(() =>
+      validatePublicationPackage(
+        {
+          seriesRegistry,
+          sourceRegistry,
+          templates,
+          events: events.slice(1),
+        },
+        new Date("2026-07-28T12:30:00+03:00"),
+      ),
+    ).toThrow(/do not match/);
+  });
+
+  it("requires every publication source to be reviewed after this run acquired the lock", () => {
+    expect(() =>
+      validatePublicationPackage(
+        { seriesRegistry, sourceRegistry, templates, events },
+        new Date("2026-07-28T12:30:00+03:00"),
+        "2026-07-28T12:11:00+03:00",
+      ),
+    ).toThrow(/current automation run/);
+  });
+
+  it("allows only the run that acquired a lock to release it", () => {
+    const directory = mkdtempSync(resolve(tmpdir(), "openmats-lock-test-"));
+    const path = resolve(directory, "lock");
+
+    try {
+      expect(
+        acquireLock(
+          "routine",
+          new Date("2026-07-28T09:00:00Z"),
+          path,
+          "owner-a",
+        ).acquired,
+      ).toBe(true);
+      expect(
+        acquireLock(
+          "routine",
+          new Date("2026-07-28T09:01:00Z"),
+          path,
+          "owner-b",
+        ).acquired,
+      ).toBe(false);
+      expect(releaseLock("routine", "owner-b", path)).toMatchObject({
+        released: false,
+        reason: "owned_by_other_run",
+      });
+      expect(releaseLock("discovery", "owner-a", path)).toMatchObject({
+        released: false,
+        reason: "owned_by_other_task",
+      });
+      expect(releaseLock("routine", "owner-a", path).released).toBe(true);
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
+  });
+
+  it("recovers a stale or corrupted lock without letting its former owner remove the replacement", () => {
+    const directory = mkdtempSync(resolve(tmpdir(), "openmats-lock-test-"));
+    const path = resolve(directory, "lock");
+
+    try {
+      acquireLock(
+        "routine",
+        new Date("2026-07-28T00:00:00Z"),
+        path,
+        "old-owner",
+      );
+      const replacement = acquireLock(
+        "routine",
+        new Date("2026-07-28T09:00:01Z"),
+        path,
+        "new-owner",
+      );
+      expect(replacement).toMatchObject({
+        acquired: true,
+        reclaimedStaleLock: true,
+        lock: { ownerId: "new-owner" },
+      });
+      expect(releaseLock("routine", "old-owner", path)).toMatchObject({
+        released: false,
+        reason: "owned_by_other_run",
+      });
+      expect(releaseLock("routine", "new-owner", path).released).toBe(true);
+
+      writeFileSync(path, "{broken", "utf8");
+      expect(
+        acquireLock(
+          "discovery",
+          new Date("2026-07-28T10:00:00Z"),
+          path,
+          "recovery-owner",
+        ),
+      ).toMatchObject({
+        acquired: true,
+        reclaimedStaleLock: true,
+      });
+    } finally {
+      rmSync(directory, { recursive: true, force: true });
+    }
   });
 });

@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
+import { randomUUID } from "node:crypto";
 import { readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+
+import { buildPublishedEvents } from "./materialize-events.mjs";
 
 export const AUTOMATION_INTERVAL_HOURS = Object.freeze({
   routine: 168,
@@ -22,6 +25,9 @@ const scriptDirectory = fileURLToPath(new URL(".", import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const statePath = resolve(repositoryRoot, "data/automation-state.json");
 const eventSeriesPath = resolve(repositoryRoot, "data/event-series.json");
+const eventTemplatesPath = resolve(repositoryRoot, "data/event-templates.json");
+const sourceRegistryPath = resolve(repositoryRoot, "data/source-registry.json");
+const publishedEventsPath = resolve(repositoryRoot, "src/data/events.json");
 const lockPath = AUTOMATION_LOCK_PATH;
 
 export function validateAutomationState(state) {
@@ -99,7 +105,11 @@ export function toHelsinkiIso(date = new Date()) {
   return `${parts.year}-${parts.month}-${parts.day}T${parts.hour}:${parts.minute}:${parts.second}${sign}${offsetHours}:${offsetRemainder}`;
 }
 
-export function validatePublicationFreshness(registry, now = new Date()) {
+export function validatePublicationFreshness(
+  registry,
+  now = new Date(),
+  reviewStartedAt = null,
+) {
   const nowDate = now instanceof Date ? now : new Date(now);
   if (!Number.isFinite(nowDate.getTime()))
     throw new Error("Invalid current time");
@@ -135,9 +145,79 @@ export function validatePublicationFreshness(registry, now = new Date()) {
         "Every published series must have a fresh source and exception review before recording success",
       );
     }
+    if (
+      reviewStartedAt !== null &&
+      Date.parse(timestamp) < Date.parse(reviewStartedAt)
+    ) {
+      throw new Error(
+        "Every published series must be reviewed after the current automation run acquired its lock",
+      );
+    }
   }
 
   return registry;
+}
+
+export function validatePublicationPackage(
+  { seriesRegistry, sourceRegistry, templates, events },
+  now = new Date(),
+  reviewStartedAt = null,
+) {
+  validatePublicationFreshness(seriesRegistry, now, reviewStartedAt);
+  if (
+    !sourceRegistry ||
+    sourceRegistry.version !== 1 ||
+    !Array.isArray(sourceRegistry.venues)
+  ) {
+    throw new Error("Source registry must have version 1");
+  }
+
+  const relevantVenueIds = new Set([
+    ...seriesRegistry.series.map(({ venueId }) => venueId),
+    ...sourceRegistry.venues
+      .filter(({ datedOpenMats }) => (datedOpenMats ?? []).length > 0)
+      .map(({ id }) => id),
+  ]);
+  const sourceTimestamps = [
+    sourceRegistry.checkedAt,
+    ...sourceRegistry.venues
+      .filter(({ id }) => relevantVenueIds.has(id))
+      .map(({ checkedAt }) => checkedAt),
+  ];
+  const nowDate = now instanceof Date ? now : new Date(now);
+  for (const timestamp of sourceTimestamps) {
+    const age = nowDate.getTime() - Date.parse(timestamp);
+    if (
+      !Number.isFinite(age) ||
+      age < 0 ||
+      age > PUBLICATION_REVIEW_MAX_AGE_HOURS * 3_600_000
+    ) {
+      throw new Error(
+        "Every published recurring and dated source must have a fresh review before recording success",
+      );
+    }
+    if (
+      reviewStartedAt !== null &&
+      Date.parse(timestamp) < Date.parse(reviewStartedAt)
+    ) {
+      throw new Error(
+        "Every published recurring and dated source must be reviewed during the current automation run",
+      );
+    }
+  }
+
+  const expectedEvents = buildPublishedEvents(
+    seriesRegistry,
+    templates,
+    sourceRegistry,
+  );
+  if (JSON.stringify(expectedEvents) !== JSON.stringify(events)) {
+    throw new Error(
+      "Published events do not match the reviewed recurring and dated source data",
+    );
+  }
+
+  return { seriesRegistry, sourceRegistry, templates, events };
 }
 
 function addIsoDays(isoDate, days) {
@@ -150,81 +230,152 @@ function readState() {
   return validateAutomationState(JSON.parse(readFileSync(statePath, "utf8")));
 }
 
-function readLock() {
+function readLock(targetLockPath = lockPath) {
   try {
-    return JSON.parse(readFileSync(lockPath, "utf8"));
+    return JSON.parse(readFileSync(targetLockPath, "utf8"));
   } catch (error) {
     if (error?.code === "ENOENT") return null;
+    if (error instanceof SyntaxError) {
+      return { invalid: true };
+    }
     throw error;
   }
 }
 
-function acquireLock(task, now = new Date()) {
+export function acquireLock(
+  task,
+  now = new Date(),
+  targetLockPath = lockPath,
+  ownerId = randomUUID(),
+) {
   assertTask(task);
-  const existingLock = readLock();
+  const existingLock = readLock(targetLockPath);
 
   if (existingLock) {
     const age = now.getTime() - Date.parse(existingLock.acquiredAt);
-    return {
-      acquired: false,
-      task,
-      lockPath,
-      stale: Number.isFinite(age) && age > LOCK_MAX_AGE_HOURS * 3_600_000,
-      existingLock,
-    };
+    const stale =
+      existingLock.invalid === true ||
+      !Number.isFinite(age) ||
+      age > LOCK_MAX_AGE_HOURS * 3_600_000;
+    if (!stale) {
+      return {
+        acquired: false,
+        task,
+        lockPath: targetLockPath,
+        stale: false,
+        existingLock,
+      };
+    }
+
+    try {
+      unlinkSync(targetLockPath);
+    } catch (error) {
+      if (error?.code !== "ENOENT") throw error;
+    }
   }
 
   const lock = {
     version: 1,
     task,
+    ownerId,
     acquiredAt: now.toISOString(),
+    heartbeatAt: now.toISOString(),
   };
 
   try {
-    writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`, {
+    writeFileSync(targetLockPath, `${JSON.stringify(lock, null, 2)}\n`, {
       encoding: "utf8",
       flag: "wx",
     });
-    return { acquired: true, task, lockPath, lock };
+    return {
+      acquired: true,
+      task,
+      lockPath: targetLockPath,
+      reclaimedStaleLock: existingLock !== null,
+      lock,
+    };
   } catch (error) {
     if (error?.code === "EEXIST") {
       return {
         acquired: false,
         task,
-        lockPath,
-        existingLock: readLock(),
+        lockPath: targetLockPath,
+        existingLock: readLock(targetLockPath),
       };
     }
     throw error;
   }
 }
 
-function releaseLock(task) {
+export function releaseLock(task, ownerId, targetLockPath = lockPath) {
   assertTask(task);
-  const existingLock = readLock();
+  if (!ownerId?.trim()) throw new Error("Lock ownerId is required");
+  const existingLock = readLock(targetLockPath);
   if (!existingLock) {
-    return { released: false, task, lockPath, reason: "no_lock" };
+    return {
+      released: false,
+      task,
+      lockPath: targetLockPath,
+      reason: "no_lock",
+    };
+  }
+  if (existingLock.invalid === true) {
+    return {
+      released: false,
+      task,
+      lockPath: targetLockPath,
+      reason: "invalid_lock",
+    };
   }
   if (existingLock.task !== task) {
     return {
       released: false,
       task,
-      lockPath,
+      lockPath: targetLockPath,
       reason: "owned_by_other_task",
       existingLock,
     };
   }
+  if (existingLock.ownerId !== ownerId) {
+    return {
+      released: false,
+      task,
+      lockPath: targetLockPath,
+      reason: "owned_by_other_run",
+      existingLock,
+    };
+  }
 
-  unlinkSync(lockPath);
-  return { released: true, task, lockPath };
+  unlinkSync(targetLockPath);
+  return { released: true, task, lockPath: targetLockPath };
 }
 
-function recordSuccess(task, summary, now = new Date()) {
+function assertLockOwnership(task, ownerId) {
+  const existingLock = readLock();
+  if (
+    !existingLock ||
+    existingLock.invalid === true ||
+    existingLock.task !== task ||
+    existingLock.ownerId !== ownerId
+  ) {
+    throw new Error("The current automation run does not own the shared lock");
+  }
+  return existingLock;
+}
+
+function recordSuccess(task, ownerId, summary, now = new Date()) {
   assertTask(task);
+  const lock = assertLockOwnership(task, ownerId);
   if (!summary?.trim()) throw new Error("A non-empty summary is required");
-  validatePublicationFreshness(
-    JSON.parse(readFileSync(eventSeriesPath, "utf8")),
+  validatePublicationPackage(
+    {
+      seriesRegistry: JSON.parse(readFileSync(eventSeriesPath, "utf8")),
+      sourceRegistry: JSON.parse(readFileSync(sourceRegistryPath, "utf8")),
+      templates: JSON.parse(readFileSync(eventTemplatesPath, "utf8")),
+      events: JSON.parse(readFileSync(publishedEventsPath, "utf8")),
+    },
     now,
+    lock.acquiredAt,
   );
 
   const state = readState();
@@ -246,8 +397,13 @@ function printResult(result) {
   process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
 }
 
+export function parseGateArguments(argv) {
+  const [command, task, ...rest] = argv.filter((argument) => argument !== "--");
+  return { command, task, rest };
+}
+
 function runCli(argv) {
-  const [command, task, ...rest] = argv;
+  const { command, task, rest } = parseGateArguments(argv);
 
   if (command === "status") {
     printResult(getAutomationGate(task, readState()));
@@ -258,16 +414,16 @@ function runCli(argv) {
     return;
   }
   if (command === "release") {
-    printResult(releaseLock(task));
+    printResult(releaseLock(task, rest[0]));
     return;
   }
   if (command === "record") {
-    printResult(recordSuccess(task, rest.join(" ")));
+    printResult(recordSuccess(task, rest[0], rest.slice(1).join(" ")));
     return;
   }
 
   throw new Error(
-    "Usage: node scripts/automation-gate.mjs <status|acquire|release|record> <routine|discovery> [summary]",
+    "Usage: node scripts/automation-gate.mjs <status|acquire|release|record> <routine|discovery> [ownerId] [summary]",
   );
 }
 

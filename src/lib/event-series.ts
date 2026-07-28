@@ -28,7 +28,25 @@ export const eventSeriesRegistrySchema = z.object({
           validFrom: isoDateSchema.nullable(),
           validThrough: isoDateSchema.nullable(),
           excludedDates: z.array(isoDateSchema),
+          excludedDateEvidence: z
+            .array(
+              z.object({
+                date: isoDateSchema,
+                sourceUrl: z.url(),
+                checkedAt: z.iso.datetime({ offset: true }),
+                notes: z.string().min(10),
+              }),
+            )
+            .default([]),
           primarySourceUrl: z.url(),
+          occurrenceSourceUrlTemplate: z
+            .string()
+            .refine(
+              (value) => value.includes("{date}"),
+              "Occurrence source URL template must contain {date}",
+            )
+            .nullable()
+            .default(null),
           supportingSourceUrls: z.array(z.url()),
           exceptionCheck: z.object({
             result: z.enum([
@@ -66,6 +84,25 @@ export const eventSeriesRegistrySchema = z.object({
             message:
               "Series publication status must match its exception-check result",
             path: ["publicationStatus"],
+          },
+        )
+        .refine(
+          ({ excludedDates, excludedDateEvidence }) => {
+            const dates = [...excludedDates].sort();
+            const evidenceDates = excludedDateEvidence
+              .map(({ date }) => date)
+              .sort();
+            return (
+              new Set(dates).size === dates.length &&
+              new Set(evidenceDates).size === evidenceDates.length &&
+              dates.length === evidenceDates.length &&
+              dates.every((date, index) => date === evidenceDates[index])
+            );
+          },
+          {
+            message:
+              "Every excluded date must have one matching source-evidence record",
+            path: ["excludedDates"],
           },
         ),
     )

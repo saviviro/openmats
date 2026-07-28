@@ -23,6 +23,7 @@ const {
 } = Astro.props;
 const copy = ui[locale];
 const canonicalPath = canonicalPathProp ?? alternatePaths[locale];
+const buildCommit = import.meta.env.CF_PAGES_COMMIT_SHA ?? "local";
 ---
 
 <!doctype html>
@@ -32,6 +33,7 @@ const canonicalPath = canonicalPathProp ?? alternatePaths[locale];
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#111612" />
+    <meta name="build-commit" content={buildCommit} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={new URL(canonicalPath, Astro.site)} />
     <link

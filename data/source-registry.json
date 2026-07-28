@@ -46,7 +46,7 @@
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
       "openMatAccess": "public_confirmed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The official open-mat policy welcomes visitors from other clubs. The official Gymdesk calendar lists a recurring Sunday 12:00–14:00 No-gi open mat without a member-only restriction and accepts visitor bookings.",
+      "evidenceSummary": "The official open-mat policy welcomes visitors from other clubs. The official Gymdesk calendar lists a recurring Sunday 12:00–14:00 No-gi open mat without a member-only restriction, accepts visitor bookings and marks the exact session free for non-members.",
       "sources": [
         {
           "type": "official_visitor_policy",
@@ -86,7 +86,7 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": null,
           "validThrough": null,
-          "notes": "The Gymdesk session is titled OPEN MAT (NOGI), recurs Sundays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. The general 15-euro visitor pass is not attributed specifically to open mats, so the event price remains unknown."
+          "notes": "The Gymdesk session is titled OPEN MAT (NOGI), recurs Sundays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. Its booking settings show a zero-euro cost and allow free booking for non-members, so this exact open mat is published as free."
         }
       ],
       "checkedAt": "2026-07-28T12:10:42+03:00",
@@ -102,7 +102,7 @@
       "disciplines": ["bjj", "nogi", "submission_wrestling"],
       "openMatAccess": "public_confirmed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The official open-mat policy welcomes visitors from other clubs. The official Gymdesk calendar lists a recurring Saturday 12:00–14:00 No-gi open mat restricted to coloured belts and accepts visitor bookings.",
+      "evidenceSummary": "The official open-mat policy welcomes visitors from other clubs. The official Gymdesk calendar lists a recurring Saturday 12:00–14:00 No-gi open mat restricted to coloured belts, accepts visitor bookings and marks the exact session free for non-members.",
       "sources": [
         {
           "type": "official_visitor_policy",
@@ -142,7 +142,7 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": "2026-01-10",
           "validThrough": null,
-          "notes": "The Gymdesk session is titled OPEN MAT FOR COLORED BELTS (NOGI), recurs Saturdays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. The general 15-euro visitor pass is not attributed specifically to open mats, so the event price remains unknown."
+          "notes": "The Gymdesk session is titled OPEN MAT FOR COLORED BELTS (NOGI), recurs Saturdays, has no cancelled dates and is not labelled members-only. Visitors must reserve a spot. Its booking settings show a zero-euro cost and allow free booking for non-members, so this exact open mat is published as free."
         }
       ],
       "checkedAt": "2026-07-28T12:10:42+03:00",
@@ -515,7 +515,7 @@
         }
       ],
       "checkedAt": "2026-07-28T12:10:42+03:00",
-      "monitoringNotes": "A future collector must check club events before materializing the recurring Saturday slot."
+      "monitoringNotes": "Check club events for a Kaapelitehdas venue conflict before excluding a Saturday. The 22–23 August 2026 BJJ No-Gi Finnish Open is listed in Vantaa and is not evidence that the Kaapelitehdas open mat is cancelled."
     },
     {
       "id": "barreto-malmi",
@@ -592,6 +592,7 @@
       ],
       "datedOpenMats": [
         {
+          "seriesId": "gb-gym-monthly-open-mat",
           "date": "2026-08-30",
           "startTime": "12:00",
           "endTime": "13:30",
@@ -601,6 +602,7 @@
           "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         },
         {
+          "seriesId": "gb-gym-monthly-open-mat",
           "date": "2026-09-27",
           "startTime": "12:00",
           "endTime": "13:30",
@@ -610,6 +612,7 @@
           "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         },
         {
+          "seriesId": "gb-gym-monthly-open-mat",
           "date": "2026-10-25",
           "startTime": "12:00",
           "endTime": "13:30",
@@ -619,6 +622,7 @@
           "notes": "Exact date and time are listed in the official calendar. The project owner confirmed free access for all practitioners and gi/no-gi on 14 July 2026."
         },
         {
+          "seriesId": "gb-gym-monthly-open-mat",
           "date": "2026-11-29",
           "startTime": "12:00",
           "endTime": "13:30",
@@ -628,6 +632,7 @@
           "notes": "The official calendar explicitly cancels this open mat because of a junior competition."
         },
         {
+          "seriesId": "gb-gym-monthly-open-mat",
           "date": "2026-12-27",
           "startTime": "12:00",
           "endTime": "13:30",
@@ -1205,11 +1210,11 @@
           "weekday": 7,
           "startTime": "12:00",
           "endTime": "13:30",
-          "disciplines": ["bjj", "nogi", "submission_wrestling"],
+          "disciplines": [],
           "publishStatus": "ready_for_event_review",
           "validFrom": "2026-06-01",
           "validThrough": "2026-08-09",
-          "notes": "The live official page labels these as the summer slots for 1 June–9 August 2026 and welcomes outside-club visitors. Arrive before 12:00 for door access."
+          "notes": "The live official page labels these as the summer slots for 1 June–9 August 2026 and welcomes outside-club visitors. Arrive before 12:00 for door access. Gi/No-gi attire is not stated."
         }
       ],
       "checkedAt": "2026-07-28T12:10:42+03:00",

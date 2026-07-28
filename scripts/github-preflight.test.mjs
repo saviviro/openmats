@@ -16,4 +16,21 @@ describe("GitHub automation preflight", () => {
       ),
     ).toBe("network_unavailable");
   });
+
+  it("does not mislabel VPN or proxy authentication as a GitHub token failure", () => {
+    expect(
+      classifyApiFailure(
+        "proxyconnect tcp: proxy authentication failed while dialing github.com",
+      ),
+    ).toBe("network_unavailable");
+  });
+
+  it("keeps GitHub authorization and rate-limit failures separate from reauthentication", () => {
+    expect(classifyApiFailure("HTTP 403: rate limit exceeded")).toBe(
+      "authorization_unavailable",
+    );
+    expect(classifyApiFailure("Resource protected by organization SSO")).toBe(
+      "authorization_unavailable",
+    );
+  });
 });
