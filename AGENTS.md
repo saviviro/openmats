@@ -88,10 +88,14 @@ Ensimmäinen julkaistava versio:
 - Ajastettu ajo säilyttää `acquire`-komennon palauttaman `ownerId`-arvon ja
   käyttää täsmälleen samaa arvoa `record`- ja `release`-komennoissa. Toisen ajon
   lukkoa ei saa vapauttaa.
+- Ajastetussa worktreessa kaikki Node- ja pnpm-komennot suoritetaan muodossa
+  `sh scripts/with-automation-runtime.sh <command>`. Wrapper lisää Codexin
+  versionhallinnasta riippumattoman, mukana toimitetun Node-runtimen `PATH`:iin;
+  ajon ei pidä jäädä odottamaan erillistä runtime-polun hakua.
 - Yhdistämisen jälkeen tuotanto varmennetaan komennolla
-  `pnpm automation:verify-production -- --commit <main-commit-sha>`. Pelkkä
-  Cloudflare-checkin onnistuminen tai näkyvän tarkistuspäivän muuttuminen ei
-  riitä.
+  `sh scripts/with-automation-runtime.sh pnpm automation:verify-production -- --commit <main-commit-sha>`.
+  Pelkkä Cloudflare-checkin onnistuminen tai näkyvän tarkistuspäivän muuttuminen
+  ei riitä.
 
 ## Työskentelytapa
 

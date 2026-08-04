@@ -43,10 +43,12 @@ Normal feature and design changes use pull requests:
 Scheduled source checks use the same protected path automatically: after local
 validation, the isolated automation worktree pushes its timestamped branch,
 opens a pull request and enables auto-merge. GitHub merges only after the
-required checks pass. After the merge, the automation runs:
+required checks pass. Every Node and pnpm command in a scheduled worktree runs
+through the repository's runtime wrapper so it does not depend on the
+background shell's initial `PATH`. After the merge, the automation runs:
 
 ```sh
-pnpm automation:verify-production -- --commit <main-commit-sha>
+sh scripts/with-automation-runtime.sh pnpm automation:verify-production -- --commit <main-commit-sha>
 ```
 
 The verifier retries the canonical `https://openmats.fi` address and requires

@@ -32,11 +32,19 @@ successful routine and discovery runs. The tasks must not infer success from an
 individual event's `verifiedAt` or a venue's `checkedAt`, because a partial
 source check can update those fields without completing the full run.
 
+Every Node or pnpm command in a scheduled worktree must be run through
+`sh scripts/with-automation-runtime.sh <command>`. The wrapper prepends Codex's
+versionless bundled Node and fallback-binary directories to `PATH`, while still
+falling back to an already configured system Node. It is checked into the
+repository so every newly created automation worktree receives the same
+bootstrap logic; a scheduled run must not wait for a separate runtime-path
+lookup before starting.
+
 Before any source-site access or file changes, a scheduled task must run
-`pnpm automation:github-preflight` with direct network permission. The preflight
-checks the credential stored in the macOS keyring, the GitHub API and
-`origin/main` without printing the token. Its result must be interpreted
-strictly:
+`sh scripts/with-automation-runtime.sh pnpm automation:github-preflight` with
+direct network permission. The preflight checks the credential stored in the
+macOS keyring, the GitHub API and `origin/main` without printing the token. Its
+result must be interpreted strictly:
 
 - `authentication_failed` or `missing_credential` is an actual login problem
   and may request GitHub CLI reauthentication;
@@ -61,20 +69,20 @@ After the GitHub preflight succeeds, a scheduled task must:
 2. fetch `origin/main`, switch the worktree to detached `origin/main` and
    verify that `HEAD` matches it;
 3. verify that production matches that commit with
-   `pnpm automation:verify-production -- --commit <origin-main-sha>`, even when
-   the next source review is not yet due;
+   `sh scripts/with-automation-runtime.sh pnpm automation:verify-production -- --commit <origin-main-sha>`,
+   even when the next source review is not yet due;
 4. acquire the shared operating-system temporary lock with
-   `pnpm automation:gate -- acquire <routine|discovery>` and retain the
-   returned `lock.ownerId`;
+   `sh scripts/with-automation-runtime.sh pnpm automation:gate -- acquire <routine|discovery>`
+   and retain the returned `lock.ownerId`;
 5. record the exact `origin/main` base commit for the final publication check;
 6. read the deterministic due status with
-   `pnpm automation:gate -- status <routine|discovery>`.
+   `sh scripts/with-automation-runtime.sh pnpm automation:gate -- status <routine|discovery>`.
 
 The lock is shared by routine and discovery tasks. Every successfully acquired
 lock must be released on every later exit path with
-`pnpm automation:gate -- release <routine|discovery> <ownerId>`.
+`sh scripts/with-automation-runtime.sh pnpm automation:gate -- release <routine|discovery> <ownerId>`.
 `record` requires the same owner:
-`pnpm automation:gate -- record <routine|discovery> <ownerId> <summary>`.
+`sh scripts/with-automation-runtime.sh pnpm automation:gate -- record <routine|discovery> <ownerId> <summary>`.
 Never call either command with another run's owner ID, and do not call
 `release` after an unsuccessful `acquire`.
 
@@ -101,18 +109,18 @@ one of the staggered triggers can run the still-due check. Review the next due
 run manually from the Scheduled view before relying on the repaired cadence.
 
 After a due check has completed, the task runs `pnpm events:refresh`,
-`pnpm validate` and the owner-bound success-recording gate. It then commits and
-pushes its timestamped branch, opens a pull request to protected `main` and
-enables GitHub auto-merge. The required GitHub checks must pass before GitHub
-merges the PR. This preserves branch protection while removing the need for a
-manual merge. If authentication, authorization, network access,
-materialization, branch push, PR creation, validation or auto-merge fails, the
-task leaves its branch intact and does not change production.
+`pnpm validate` and the owner-bound success-recording gate through the runtime
+wrapper. It then commits and pushes its timestamped branch, opens a pull request
+to protected `main` and enables GitHub auto-merge. The required GitHub checks
+must pass before GitHub merges the PR. This preserves branch protection while
+removing the need for a manual merge. If authentication, authorization, network
+access, materialization, branch push, PR creation, validation or auto-merge
+fails, the task leaves its branch intact and does not change production.
 
 After GitHub merges the PR, run:
 
 ```sh
-pnpm automation:verify-production -- --commit <merged-main-commit-sha>
+sh scripts/with-automation-runtime.sh pnpm automation:verify-production -- --commit <merged-main-commit-sha>
 ```
 
 The verifier retries `https://openmats.fi` and requires the exact Cloudflare
