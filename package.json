@@ -26,7 +26,7 @@
     "validate": "pnpm events:check && pnpm format:check && pnpm check && pnpm test && pnpm build"
   },
   "dependencies": {
-    "astro": "7.1.3"
+    "astro": "7.1.6"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
