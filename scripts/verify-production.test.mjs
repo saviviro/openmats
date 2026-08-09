@@ -32,7 +32,7 @@ describe("production verification", () => {
     expect(
       expectedProductionState(seriesRegistry, events, automationState),
     ).toEqual({
-      reviewedAt: "2026-07-28T12:13:53+03:00",
+      reviewedAt: "2026-08-09T20:19:45+03:00",
       sentinelEventId: "buli-urhea-sunday-open-mat-2026-10-04",
     });
   });
