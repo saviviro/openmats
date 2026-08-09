@@ -210,7 +210,7 @@ describe("source registry", () => {
           endTime: "12:00",
           disciplines: ["bjj", "nogi"],
           publishStatus: "ready_for_event_review",
-          validThrough: "2026-08-02",
+          validThrough: "2026-12-23",
         }),
       ],
     });

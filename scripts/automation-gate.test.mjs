@@ -118,7 +118,7 @@ describe("scheduled automation gate", () => {
           },
           series: [],
         },
-        new Date("2026-07-28T12:30:00+03:00"),
+        new Date("2026-08-09T20:30:00+03:00"),
       ),
     ).toThrow(/must start today/);
   });
@@ -126,16 +126,16 @@ describe("scheduled automation gate", () => {
   it("accepts a freshly reviewed eight-week publication window", () => {
     const registry = {
       version: 1,
-      checkedAt: "2026-07-28T12:00:00+03:00",
+      checkedAt: "2026-08-09T20:14:00+03:00",
       window: {
-        from: "2026-07-28",
-        through: "2026-09-22",
+        from: "2026-08-09",
+        through: "2026-10-04",
         timezone: "Europe/Helsinki",
       },
       series: [
         {
           exceptionCheck: {
-            checkedAt: "2026-07-28T11:45:00+03:00",
+            checkedAt: "2026-08-09T20:14:00+03:00",
           },
         },
       ],
@@ -144,7 +144,7 @@ describe("scheduled automation gate", () => {
     expect(
       validatePublicationFreshness(
         registry,
-        new Date("2026-07-28T12:30:00+03:00"),
+        new Date("2026-08-09T20:30:00+03:00"),
       ),
     ).toBe(registry);
   });
@@ -153,7 +153,7 @@ describe("scheduled automation gate", () => {
     expect(
       validatePublicationPackage(
         { seriesRegistry, sourceRegistry, templates, events },
-        new Date("2026-07-28T12:30:00+03:00"),
+        new Date("2026-08-09T20:30:00+03:00"),
       ),
     ).toEqual({ seriesRegistry, sourceRegistry, templates, events });
   });
@@ -167,7 +167,7 @@ describe("scheduled automation gate", () => {
           templates,
           events: events.slice(1),
         },
-        new Date("2026-07-28T12:30:00+03:00"),
+        new Date("2026-08-09T20:30:00+03:00"),
       ),
     ).toThrow(/do not match/);
   });
@@ -176,8 +176,8 @@ describe("scheduled automation gate", () => {
     expect(() =>
       validatePublicationPackage(
         { seriesRegistry, sourceRegistry, templates, events },
-        new Date("2026-07-28T12:30:00+03:00"),
-        "2026-07-28T12:11:00+03:00",
+        new Date("2026-08-09T20:30:00+03:00"),
+        "2026-08-09T20:15:00+03:00",
       ),
     ).toThrow(/current automation run/);
   });

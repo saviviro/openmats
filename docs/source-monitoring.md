@@ -334,6 +334,24 @@ retains a recurring candidate with confirmation required. During weekly checks,
 inspect the dated calendar first; remove the warning only after exact Urhea
 occurrences appear or the organizer confirms them.
 
+## Weekly light check: 9 August 2026
+
+The maintained priority-one sources for published series and time-bounded
+candidates were reviewed. Most recurring schedules and GB Gym's dated calendar
+entries remained unchanged.
+
+- Loop Martial Arts published its autumn timetable for 3 August–23 December.
+  The Saturday 10:30–12:00 BJJ open mat continues, so the recurring series is
+  extended only through the new official seasonal boundary.
+- AOGG Sörnäinen's exact Gymdesk booking data marks the 15 August coloured-belt
+  No-gi open mat cancelled. Only that occurrence is excluded.
+- Buli Urhea's dated calendar shows the 9 August open mat but marks the day and
+  session closed. Only 9 August is excluded; later Sundays remain uncertain
+  because the weekly membership source is still active and the dated calendar
+  does not establish later cancellations.
+- HIPKO Metsälä and MMA Vantaa still end on 9 August. Their summer series were
+  not extended without a new venue-specific official timetable.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

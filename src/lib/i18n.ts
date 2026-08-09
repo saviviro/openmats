@@ -129,7 +129,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     accessDescription:
       "Open to coloured belts from other clubs. No-gi only; reserve a spot in advance.",
     exceptionNote:
-      "The official calendar does not list cancelled dates. The session is for coloured belts.",
+      "The 15 August 2026 session is cancelled. The session is for coloured belts.",
   },
   "buli-urhea-sunday-open-mat": {
     priceNote: "Open-mat membership €25 per calendar year",
@@ -155,13 +155,6 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The session is held only when no other event uses the Kaapelitehdas venue. No venue-specific exception was found during the reviewed publication window.",
   },
-  "hipko-metsala-saturday-bjj-open-mat": {
-    priceNote: "The source does not state an open-mat visitor price",
-    accessDescription:
-      "The summer timetable does not state whether practitioners from other clubs may attend. Confirm participation with HIPKO.",
-    exceptionNote:
-      "The official summer timetable is valid through 9 August 2026. The session is unsupervised.",
-  },
   "hipko-metsala-sunday-bjj-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
@@ -179,7 +172,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     priceNote: "Free of charge",
     accessDescription: "Open to all practitioners. Gi or no-gi.",
     exceptionNote:
-      "No known exceptions. The summer schedule ends on 2 August 2026.",
+      "No known exceptions. The autumn schedule ends on 23 December 2026.",
   },
   "mma-vantaa-sunday-open-mat": {
     priceNote: "The source does not state a visitor price",
