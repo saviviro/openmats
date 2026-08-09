@@ -144,13 +144,13 @@ describe("event series materialization", () => {
     expect(series?.validThrough).toBe("2026-08-09");
   });
 
-  it("keeps Loop bounded to the reviewed summer timetable", () => {
+  it("keeps Loop bounded to the reviewed autumn timetable", () => {
     const series = registry.series.find(
       ({ id }) => id === "loop-saturday-open-mat",
     );
 
     expect(series?.publicationStatus).toBe("publish");
-    expect(series?.validThrough).toBe("2026-08-02");
+    expect(series?.validThrough).toBe("2026-12-23");
   });
 
   it("keeps the confirmed Dojo and Kilo Saturday slots distinct", () => {

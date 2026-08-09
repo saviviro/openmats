@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-07-28T12:13:53+03:00",
-    "summary": "Checked maintained priority sources; retained HIPKO weekend events as access-unconfirmed, removed a stale Savate candidate, and updated the FireBody autumn schedule."
+    "lastSuccessfulAt": "2026-08-09T20:19:45+03:00",
+    "summary": "Reviewed maintained official sources; extended Loop autumn schedule, excluded AOGG Sörnäinen 15 August and Buli Urhea 9 August with dated evidence, refreshed 94 events through 4 October, and patched audited transitive dependencies."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-07-14T15:00:54+03:00",

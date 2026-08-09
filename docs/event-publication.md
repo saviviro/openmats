@@ -102,16 +102,14 @@ with `uncertain` status and a visible advance-confirmation instruction.
 
 ### Loop Martial Arts
 
-Loop's official summer 2026 calendar lists a Saturday 10:30–12:00 BJJ open mat
-from 1 June through 2 August. Its official English calendar identifies the
+Loop's official autumn 2026 calendar lists a Saturday 10:30–12:00 BJJ open mat
+from 3 August through 23 December. Its official English calendar identifies the
 recurring slot as BJJ/No-Gi. The project owner confirmed on 16 July 2026 that
 the open mat is free, open to outside-club practitioners and allows either Gi
 or No-gi.
 
-The series remains explicitly bounded to 2 August and is not extended until a
-new official timetable is reviewed.
-The bounded summer series is not extended to 8 August or into autumn by
-assumption; a new official seasonal timetable must be reviewed first.
+The series remains explicitly bounded to 23 December and is not extended
+beyond the reviewed autumn timetable by assumption.
 
 ### Dojo Helsinki
 
