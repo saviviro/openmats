@@ -1,11 +1,11 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-08-09T20:19:45+03:00",
-    "summary": "Reviewed maintained official sources; extended Loop autumn schedule, excluded AOGG Sörnäinen 15 August and Buli Urhea 9 August with dated evidence, refreshed 94 events through 4 October, and patched audited transitive dependencies."
+    "lastSuccessfulAt": "2026-08-17T22:18:57+03:00",
+    "summary": "Reviewed all published series, added dated evidence for Buli Urhea's 16 August closure, confirmed Kilo's live calendar, retained expired HIPKO and MMA Vantaa boundaries, and refreshed 92 events through 12 October."
   },
   "discovery": {
-    "lastSuccessfulAt": "2026-07-14T15:00:54+03:00",
-    "summary": "Broad official-source discovery across Helsinki, Espoo, Vantaa and Kauniainen completed without finding an additional active in-scope venue."
+    "lastSuccessfulAt": "2026-08-17T22:18:57+03:00",
+    "summary": "Broad four-city discovery added five active discovery-only venues with no verified public open mat; Kauniainen still has no verified active in-scope venue."
   }
 }

@@ -155,31 +155,17 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The session is held only when no other event uses the Kaapelitehdas venue. No venue-specific exception was found during the reviewed publication window.",
   },
-  "hipko-metsala-sunday-bjj-open-mat": {
-    priceNote: "The source does not state an open-mat visitor price",
-    accessDescription:
-      "The summer timetable does not state whether practitioners from other clubs may attend. Confirm participation with HIPKO.",
-    exceptionNote:
-      "The official summer timetable is valid through 9 August 2026. The session is unsupervised.",
-  },
   "kilo-jiu-jitsu-saturday-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription: "Open to practitioners from other clubs.",
     exceptionNote:
-      "The gym’s official web schedule is still labelled 2023, so confirm the attire and current schedule with the organizer.",
+      "The official web calendar confirms most reviewed Saturdays, but 5 September is absent without a separate cancellation notice. Confirm the date and attire with the organizer.",
   },
   "loop-saturday-open-mat": {
     priceNote: "Free of charge",
     accessDescription: "Open to all practitioners. Gi or no-gi.",
     exceptionNote:
       "No known exceptions. The autumn schedule ends on 23 December 2026.",
-  },
-  "mma-vantaa-sunday-open-mat": {
-    priceNote: "The source does not state a visitor price",
-    accessDescription:
-      "Open to visitors from other clubs. Be at the door before the session starts, because entry requires a member’s door code.",
-    exceptionNote:
-      "The official summer schedule is valid through 9 August 2026. Attire is not specified.",
   },
   "takado-tuesday-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",

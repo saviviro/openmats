@@ -8,9 +8,11 @@ questions that must not be treated as the same thing:
 2. Does an official source show an open mat or an equivalent sparring session?
 3. Does an official source confirm that people from other clubs may attend?
 
-The initial mapping and a broader discovery review were checked on 14 July 2026. It is a documented baseline, not a claim that an internet search can
-prove permanent completeness. The repeatable check order and high-yield source
-list are documented in [source-monitoring.md](source-monitoring.md).
+The initial mapping was checked on 14 July 2026 and expanded in a broad review
+on 17 August 2026. It is a documented baseline, not a claim that an internet
+search can prove permanent completeness. The repeatable check order and
+high-yield source list are documented in
+[source-monitoring.md](source-monitoring.md).
 
 ## Geographic coverage
 
@@ -57,11 +59,13 @@ such as _vapaavuoro_, _omatoimi_ and _avoin sparrivuoro_.
 - `planned`: the venue has been announced but has not opened with complete
   location and schedule information.
 
-The materialized recurring sources now include Helsingin Ju-jutsuklubi at
+The maintained recurring sources include Helsingin Ju-jutsuklubi at
 Kaapelitehdas, Tundra Jiu-Jitsu in Suomenoja, Loop Martial Arts in Pitäjänmäki,
 AOGG Erottaja, AOGG Sörnäinen, Dojo Helsinki in Punavuori, HIPKO Metsälä,
-Kilo Jiu-Jitsu in Kilo, Takado in Haukilahti, TK Sports in Suutarila and MMA Vantaa. The AOGG location
-calendars must still be interpreted separately:
+Kilo Jiu-Jitsu in Kilo, Takado in Haukilahti, TK Sports in Suutarila and MMA
+Vantaa. HIPKO and MMA Vantaa remain bounded historical series and currently
+produce no future events. The AOGG location calendars must still be interpreted
+separately:
 Erottaja has a public Sunday No-gi session, Sörnäinen has a public Saturday
 No-gi session for coloured belts, and Kivenlahti currently lists only
 members-only open mats. The exact Erottaja and Sörnäinen booking settings show
@@ -72,16 +76,16 @@ unambiguously shows 12:00–13:30 and explicitly welcomes visitors, so its
 previous conflict is resolved.
 
 Buli's membership sources identify a Sunday 12:00–13:30 Gi and No-gi open mat
-at Urhea, and community feedback says it is running in summer. The dated
-calendar still lists no matching occurrence in the current publication window,
-so the materialized Sundays are visibly marked for confirmation. The series is
-attached to Urhea rather than Konepaja.
+at Urhea. The dated calendar explicitly marks 9 and 16 August closed but does
+not establish later cancellations, so future Sundays are visibly marked for
+confirmation. The series is attached to Urhea rather than Konepaja.
 
 High-priority manual-review sources include Combat Academy, HIPKO, FireBody,
-Savate Club and Salini. HIPKO's summer timetable marks some weekday open mats
-for HIPKO members, but the weekend BJJ rows do not carry that label. Those
-dated sessions remain published only with a confirmation warning. FireBody's autumn
-timetable starts on 10 August and lists Saturday BJJ self-practice at
+Savate Club and Salini. HIPKO's verified summer timetable expired on 9 August,
+and its current autumn page links a BJJ curriculum rather than a weekly public
+open-mat timetable. The summer candidates are retained but not extended.
+FireBody's autumn timetable starts on 10 August and lists Saturday BJJ
+self-practice at
 13:00–14:00, but outside-club access is still unconfirmed. Savate Club's
 maintained URL currently shows a 2024 timetable and therefore supports no
 current 2026 candidate.
@@ -92,28 +96,25 @@ attire on 16 July 2026. The recurring series is published, and Dojo's official
 Instagram account is retained for holiday changes and additional dated open
 mats.
 
-The project owner confirmed Kilo Jiu-Jitsu's public Saturday 11:00–12:30 slot
-on 16 July 2026. Its official site confirms the second-floor Kutojantie venue,
-but the official schedule page is still labelled 2023. Attire remains unknown
-and the published occurrences visibly require confirmation until Kilo
-publishes a current first-party timetable. Its general 15-euro single-visit
+Kilo Jiu-Jitsu's live embedded official calendar now confirms Saturday
+11:00–12:30 open mats on most reviewed dates through 10 October. It omits
+5 September without an explicit cancellation, so the recurring event remains
+visible with a confirmation warning. The project owner confirmed public access
+on 16 July 2026. Attire remains unknown, and the general 15-euro single-visit
 price is not treated as an open-mat price.
 
-HIPKO Metsälä's official summer timetable lists Saturday and Sunday BJJ open
-mats through 9 August. Because outside-club access and price are not stated,
-the dates are published only with a confirmation warning. Member-only wording
-shown on other rows must not be generalized to these weekend sessions. Takado's
-current official timetable lists Tuesday and Saturday open mats, explicitly
-calls them open to everyone and directs participants to myClub; attire and
-price remain unknown.
+HIPKO Metsälä's historical summer rows keep their original row-specific access
+interpretation; member-only wording shown on other rows must not be generalized
+to them. No recurrence is generated after 9 August. Takado's current official
+timetable lists Tuesday and Saturday open mats, explicitly calls them open to
+everyone and directs participants to myClub; attire and price remain unknown.
 
-Loop's official summer calendar lists a Saturday 10:30–12:00 BJJ open mat
-through 2 August 2026, while its official English calendar identifies the slot
-as BJJ/No-Gi. The project owner confirmed on 16 July 2026 that it is free, open
-to outside-club practitioners and allows Gi or No-gi. Only dates inside both the
-seasonal boundary and rolling publication window are materialized; the bounded
-series must be replaced rather than extended when Loop publishes its autumn
-schedule.
+Loop's official autumn calendar lists a Saturday 10:30–12:00 BJJ open mat from
+3 August through 23 December 2026, while its official English calendar
+identifies the slot as BJJ/No-Gi. The project owner confirmed on 16 July 2026
+that it is free, open to outside-club practitioners and allows Gi or No-gi.
+Only dates inside both the seasonal boundary and rolling publication window are
+materialized.
 
 TK Sports' official timetable lists a Saturday 10:00–12:00 open mat for all
 levels at Halmetie 5. The timetable does not specify Gi or No-gi attire, an
@@ -129,9 +130,16 @@ are stored under `datedOpenMats`, where every row carries the stable
 official dates and times. The project owner confirmed on 14 July 2026 that they
 are free, open to all practitioners and allow gi or no-gi; this provenance is
 kept separate from the official calendar evidence. The registry also records
-time-bounded candidates for Combat Academy's preliminary autumn schedule and
-HIPKO Metsälä's summer PDF, plus the reviewed summer end date for Loop Martial
-Arts.
+time-bounded candidates for Combat Academy's preliminary autumn schedule,
+HIPKO Metsälä's expired summer PDF and Loop Martial Arts' current autumn
+calendar.
+
+The 17 August broad discovery added five active venues that were missing from
+the baseline: Kaski Kamppailu in Maunula; Espoon Kehähait in Lippulaiva; Sambo
+Espoo in Tapiola; Sport Club Achilles in Matinkylä; and PP Jiujitsu Helsinki's
+training venue in Myyrmäki, Vantaa. Governing-body records or first-party pages
+confirm each venue, but no current official public open mat was found. They are
+therefore retained as `discovery_only` and do not create event candidates.
 
 HJJK's Saturday recurrence is conditional on no other event using its
 Kaapelitehdas gym. The 22–23 August 2026 BJJ No-Gi Finnish Open is listed in

@@ -190,7 +190,7 @@
       },
       "status": "scheduled",
       "sourceLabel": "Loop Martial Artsin kesäkalenteri",
-      "exceptionNote": "Ei tiedossa olevia poikkeuksia. Kesäkausi päättyy 2.8.2026.",
+      "exceptionNote": "Ei tiedossa olevia poikkeuksia. Syyskausi päättyy 23.12.2026.",
       "isExample": false
     },
     {
@@ -237,8 +237,8 @@
         "registrationRequired": false
       },
       "status": "uncertain",
-      "sourceLabel": "Kilo Jiu-Jitsun Instagram",
-      "exceptionNote": "Salin virallinen verkkokalenteri on yhä merkitty vuodelle 2023, joten varustus ja ajantasaisuus kannattaa varmistaa järjestäjältä.",
+      "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
+      "exceptionNote": "Virallinen verkkokalenteri vahvistaa useimmat tarkistetut lauantait, mutta 5.9. puuttuu ilman erillistä peruutusilmoitusta. Varmista ajankohta ja varustus järjestäjältä.",
       "isExample": false
     },
     {
@@ -310,7 +310,7 @@
       },
       "status": "uncertain",
       "sourceLabel": "Bulin open mat -jäsenyys",
-      "exceptionNote": "Jäsenyyssivu ilmoittaa viikoittaisen sunnuntaivuoron, mutta päiväkalenterissa ei näy vastaavaa tapahtumaa. Varmista päivämäärä ennen lähtöä.",
+      "exceptionNote": "Jäsenyyssivu ilmoittaa viikoittaisen sunnuntaivuoron. Päiväkalenteri merkitsi 9.8. ja 16.8. suljetuiksi, eikä vielä vahvista myöhempiä sunnuntaita. Varmista päivämäärä ennen lähtöä.",
       "isExample": false
     },
     {

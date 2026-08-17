@@ -166,7 +166,7 @@ out of published event data.
 | Buli Jiu-Jitsu          | Urhea occurrence dates, annual membership and contact rule            | [Dated calendar](https://bulijj.fi/schedule), [membership](https://bulijj.fi/signup?membership=11121&type=2), [pricing](https://bulijj.fi/pricing)                                                                                                                     |
 | Loop Martial Arts       | Saturday slot, seasonal end date and replacement timetable            | [Finnish calendar](https://www.loopmartialarts.fi/kalenteri), [English calendar](https://www.loopmartialarts.fi/en/kalenteri)                                                                                                                                          |
 | Dojo Helsinki           | Weekly time, holiday changes and additional dated open mats           | [Finnish training times](https://www.dojohelsinki.fi/treeniajat/), [English classes](https://www.dojohelsinki.fi/en/classes/), [Instagram](https://www.instagram.com/dojohelsinki/)                                                                                    |
-| Kilo Jiu-Jitsu          | Weekly time, attire, exceptions and open-mat-specific price           | [Website](https://www.kilojiujitsu.com/), [schedule](https://www.kilojiujitsu.com/aikataulut/), [general prices](https://www.kilojiujitsu.com/hinnat/), [Instagram](https://www.instagram.com/kilojiujitsu/)                                                           |
+| Kilo Jiu-Jitsu          | Embedded dated calendar, attire and open-mat-specific price           | [Website](https://www.kilojiujitsu.com/), [live schedule](https://www.kilojiujitsu.com/aikataulut/), [general prices](https://www.kilojiujitsu.com/hinnat/), [Instagram](https://www.instagram.com/kilojiujitsu/)                                                      |
 | Takado                  | Tuesday/Saturday times, exceptions, attire and price                  | [Training times](https://takado.fi/harjoitusajat/)                                                                                                                                                                                                                     |
 | FireBody                | Weekly schedule, seasonal heading and access wording                  | [Schedule](https://www.firebody.fi/viikkoaikataulu.html)                                                                                                                                                                                                               |
 | Savate Club             | Konala seasonal free-practice slots and visitor access                | [Konala summer schedule](https://www.savate.com/jatkokurssit/bjj/kesaharjoitusajat_konala.php)                                                                                                                                                                         |
@@ -351,6 +351,36 @@ entries remained unchanged.
   does not establish later cancellations.
 - HIPKO Metsälä and MMA Vantaa still end on 9 August. Their summer series were
   not extended without a new venue-specific official timetable.
+
+## Weekly check and broad discovery: 17 August 2026
+
+The published series and their exception sources were reviewed, and the
+four-city discovery baseline was compared with the Finnish BJJ Federation's
+current academy list and current official venue sources.
+
+- Buli Urhea's dated calendar explicitly marks the 16 August open mat and the
+  whole day closed. That date now has its own exclusion evidence; later Sundays
+  remain uncertain rather than cancelled by assumption.
+- Kilo Jiu-Jitsu's live embedded official calendar lists Saturday 11:00–12:30
+  open mats on 22 and 29 August, 12, 19 and 26 September, and 3 and 10 October.
+  It omits 5 September without an explicit cancellation, so the recurring date
+  remains visible with a confirmation warning.
+- HIPKO Metsälä's current autumn page links a technique curriculum rather than
+  a weekly timetable, and MMA Vantaa still publishes only its expired summer
+  schedule. Neither series was extended beyond 9 August.
+- AOGG, HJJK, Tundra, TK Sports, Loop, Dojo, Takado and GB Gym retained their
+  existing times and restrictions. No new dated cancellation was found for
+  those published series.
+- Five active venues missing from the baseline were added as discovery-only:
+  Kaski Kamppailu in Helsinki; Espoon Kehähait, Sambo Espoo and Sport Club
+  Achilles in Espoo; and PP Jiujitsu Helsinki's training venue in Vantaa. No
+  current official public open mat was found for any of them.
+- Finnish, English and Swedish searches still found no verified active BJJ or
+  submission-wrestling venue in Kauniainen.
+
+Competitions, seminars, coached classes and free-practice rows for other sports
+were not treated as open mats. The additional venues expand discovery coverage
+without creating speculative event rows.
 
 ## Recording a review
 
