@@ -63,7 +63,8 @@ recurrence data. The visitor series currently eligible for publication are:
 - Erottaja: Sunday 12:00–14:00, No-gi;
 - Sörnäinen: Saturday 12:00–14:00, No-gi and coloured belts only.
 
-Both calendars accept advance bookings and show no cancelled dates. The exact
+Both calendars accept advance bookings. The reviewed Sörnäinen booking evidence
+marks 15 August cancelled; Erottaja has no reviewed cancellation. The exact
 Erottaja and Sörnäinen booking settings show a zero-euro cost and permit free
 booking for non-members, so these open mats are published as free. This
 session-specific evidence takes precedence over AOGG's separate general
@@ -125,18 +126,18 @@ separately dated events with their own `seriesId`.
 
 ### Kilo Jiu-Jitsu
 
-The project owner confirmed on 16 July 2026 that Kilo has a public Saturday
-11:00–12:30 open mat at Kutojantie 5, second floor. The official venue page
-confirms the address, and the price page states a 15-euro drop-in price from 1
-June 2026. The official schedule page remains labelled 2023 and does not
-currently verify the slot, attire or exceptions.
+Kilo's live embedded official calendar lists Saturday 11:00–12:30 open mats on
+22 and 29 August, 12, 19 and 26 September, and 3 and 10 October 2026. The
+project owner confirmed public access on 16 July 2026. The official venue page
+confirms the address, and the price page states a 15-euro drop-in price from
+1 June 2026.
 
 Occurrences inside the reviewed validity and publication windows are published
-with `uncertain` status and a visible confirmation reminder. Attire is
-deliberately stored as unknown. The official schedule and Instagram must be
-checked again before extending or fully verifying the recurring series. Kilo's
-general 15-euro single-visit price is not presented as the open-mat price
-because the price source does not make that connection.
+with `uncertain` status and a visible confirmation reminder. The calendar omits
+5 September without explicitly cancelling it, so that date is not excluded by
+assumption. Attire is deliberately stored as unknown. Kilo's general 15-euro
+single-visit price is not presented as the open-mat price because the price
+source does not make that connection.
 
 ### TK Sports
 
@@ -153,18 +154,18 @@ participation with TK Sports.
 
 ### HIPKO Metsälä
 
-HIPKO's official 15 June–9 August summer timetable lists unsupervised BJJ open
-mats on Saturdays and Sundays from 15:00 to 17:00. Dates inside both the
-seasonal boundary and rolling publication window are listed with `uncertain`
-status.
+HIPKO's verified 15 June–9 August summer timetable listed unsupervised BJJ open
+mats on Saturdays and Sundays from 15:00 to 17:00. The current autumn schedule
+page links a BJJ technique curriculum rather than a weekly timetable, so the
+summer series remains bounded to 9 August and currently produces no events.
 
 The timetable marks some other open-mat rows as available to HIPKO members,
 but that wording is not attached to the Saturday and Sunday BJJ rows. It also
 does not confirm outside-club access or an open-mat visit price for these
 weekend sessions. The event cards therefore show an unknown price and tell the
 visitor to confirm participation with HIPKO. A member-only label must never be
-transferred from another timetable row. No recurrence is generated beyond
-9 August.
+transferred from another timetable row. The historical candidates are retained
+instead of being deleted merely because the current source structure changed.
 
 ### Takado
 
@@ -194,16 +195,13 @@ cancelled one, carries the dated series' stable `seriesId`.
 
 ### MMA Vantaa
 
-MMA Vantaa's live official page now places the dates and time in the same clear
-summer schedule: Sunday 12:00–13:30 from 1 June through 9 August 2026. It
-explicitly welcomes people from outside the club. Visitors must be at the door
-before the session starts because entry to the rock shelter requires a member's
-door code.
+MMA Vantaa's official page still shows only the summer schedule: Sunday
+12:00–13:30 from 1 June through 9 August 2026. It welcomed people from outside
+the club and instructed visitors to be at the door before the session starts
+because entry to the rock shelter requires a member's door code.
 
-The earlier inconsistent 12:00–14:00 rendering is no longer present on the
-live page, so the source conflict is resolved. Occurrences are generated only
-through the reviewed seasonal and rolling limits. Price and Gi/No-gi
-eligibility remain unknown because the official source does not state them.
+The source conflict was resolved during the summer, but the seasonal series has
+now expired. It is not extended without a current official autumn timetable.
 
 ### Buli Urhea
 
@@ -212,13 +210,13 @@ Buli's official pricing and membership flow identify a weekly Sunday
 costs 25 euros per calendar year. The visitor page asks people to contact the
 club before visiting or trying the open mat before buying the membership.
 
-Recent community feedback says the session is running in summer, but the dated
-official calendar contains no matching Urhea open-mat occurrence in the current
-publication window. The membership page still provides an active weekly
-Sunday recurrence, so occurrences inside the reviewed window are published
-with `uncertain` status and a visible confirmation reminder. The price is shown
-as a 25-euro annual open-mat membership, not as a per-session charge. The
-previous registry attachment to Konepaja was incorrect and has been removed.
+The dated official calendar marks 9 and 16 August closed. Each date has its own
+source-backed exclusion evidence; neither closure is generalized to later
+Sundays. The membership page still provides an active weekly recurrence, so
+future occurrences are published with `uncertain` status and a visible
+confirmation reminder. The price is shown as a 25-euro annual open-mat
+membership, not as a per-session charge. The previous registry attachment to
+Konepaja was incorrect and has been removed.
 
 ## Materialization rules
 
