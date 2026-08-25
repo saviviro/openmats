@@ -32,7 +32,7 @@ describe("production verification", () => {
     expect(
       expectedProductionState(seriesRegistry, events, automationState),
     ).toEqual({
-      reviewedAt: "2026-08-17T22:18:57+03:00",
+      reviewedAt: "2026-08-25T12:13:45+03:00",
       sentinelEventId: "takado-tuesday-open-mat-2026-10-20",
     });
   });
