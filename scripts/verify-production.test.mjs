@@ -33,7 +33,7 @@ describe("production verification", () => {
       expectedProductionState(seriesRegistry, events, automationState),
     ).toEqual({
       reviewedAt: "2026-08-17T22:18:57+03:00",
-      sentinelEventId: "buli-urhea-sunday-open-mat-2026-10-11",
+      sentinelEventId: "takado-tuesday-open-mat-2026-10-20",
     });
   });
 

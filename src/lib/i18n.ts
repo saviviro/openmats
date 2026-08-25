@@ -167,6 +167,13 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "No known exceptions. The autumn schedule ends on 23 December 2026.",
   },
+  "mma-vantaa-sunday-open-mat": {
+    priceNote: "The source does not state an open-mat visitor price",
+    accessDescription:
+      "Open to practitioners from other clubs. Arrive before the session starts because entry requires a member's door code.",
+    exceptionNote:
+      "The official Vantaa exception calendar lists no venue closure in the reviewed publication window. Attire is not specified.",
+  },
   "takado-tuesday-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:

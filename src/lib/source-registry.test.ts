@@ -195,7 +195,7 @@ describe("source registry", () => {
       candidateOpenMats: [
         expect.objectContaining({
           startTime: "12:00",
-          endTime: "13:30",
+          endTime: "14:00",
           publishStatus: "ready_for_event_review",
         }),
       ],
