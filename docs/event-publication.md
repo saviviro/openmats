@@ -195,13 +195,15 @@ cancelled one, carries the dated series' stable `seriesId`.
 
 ### MMA Vantaa
 
-MMA Vantaa's official page still shows only the summer schedule: Sunday
-12:00–13:30 from 1 June through 9 August 2026. It welcomed people from outside
-the club and instructed visitors to be at the door before the session starts
-because entry to the rock shelter requires a member's door code.
+MMA Vantaa's current official timetable lists a Sunday 12:00–14:00 open mat on
+the small tatami. It welcomes people from outside the club and instructs
+visitors to be at the door before the session starts because entry to the rock
+shelter requires a member's door code. Gi/No-gi attire and an open-mat-specific
+price are not stated.
 
-The source conflict was resolved during the summer, but the seasonal series has
-now expired. It is not extended without a current official autumn timetable.
+The linked official Vantaa exception-hours page is checked before publication.
+No Rajatorppa kalliosuoja Sunday closure falls inside the current rolling
+window.
 
 ### Buli Urhea
 

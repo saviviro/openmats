@@ -120,10 +120,10 @@ describe("event materialization", () => {
     }
   });
 
-  it("publishes HJJK on 22 August because the reviewed competition is in Vantaa", () => {
+  it("publishes HJJK on the next Saturday without a venue conflict", () => {
     expect(
       buildPublishedEvents(seriesData, templatesData, sourceRegistryData).some(
-        ({ id }) => id === "hjjk-saturday-open-mat-2026-08-22",
+        ({ id }) => id === "hjjk-saturday-open-mat-2026-08-29",
       ),
     ).toBe(true);
   });

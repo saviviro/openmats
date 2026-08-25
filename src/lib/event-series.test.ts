@@ -114,7 +114,7 @@ describe("event series materialization", () => {
       }),
     ).toEqual(["2026-07-18", "2026-07-25", "2026-08-01", "2026-08-08"]);
     expect(materializeOccurrenceDates(series!, registry.window)).toContain(
-      "2026-08-22",
+      "2026-08-29",
     );
   });
 
@@ -135,13 +135,14 @@ describe("event series materialization", () => {
     ).toEqual(["2026-07-25", "2026-08-08"]);
   });
 
-  it("keeps MMA Vantaa bounded to its reviewed summer timetable", () => {
+  it("keeps MMA Vantaa on its current reviewed weekly timetable", () => {
     const series = registry.series.find(
       ({ id }) => id === "mma-vantaa-sunday-open-mat",
     );
 
     expect(series?.publicationStatus).toBe("publish");
-    expect(series?.validThrough).toBe("2026-08-09");
+    expect(series?.endTime).toBe("14:00");
+    expect(series?.validThrough).toBeNull();
   });
 
   it("keeps Loop bounded to the reviewed autumn timetable", () => {

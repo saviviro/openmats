@@ -382,6 +382,23 @@ Competitions, seminars, coached classes and free-practice rows for other sports
 were not treated as open mats. The additional venues expand discovery coverage
 without creating speculative event rows.
 
+## Weekly light check: 25 August 2026
+
+The maintained official sources for every published recurring series, GB Gym's
+dated entries and the time-bounded manual-review candidates were checked.
+
+- MMA Vantaa's current official timetable replaces the expired summer slot
+  with a weekly Sunday 12:00–14:00 open mat on the small tatami. Outside-club
+  visitors remain welcome. The linked Vantaa exception-hours page shows no
+  Rajatorppa kalliosuoja Sunday closure inside the reviewed rolling window.
+- Buli Urhea's dated calendar lists the 30 August and 6 September open mats as
+  bookable. The earlier 9 and 16 August closures remain date-specific.
+- AOGG, HJJK, Tundra, TK Sports, Loop, Dojo, Kilo, Takado and GB Gym retained
+  their published times and restrictions. No new source-backed cancellation
+  was found.
+- HIPKO Metsälä remains bounded to its expired summer schedule. Combat Academy
+  and FireBody still do not establish outside-club access for their candidates.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a
