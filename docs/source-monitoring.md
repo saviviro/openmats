@@ -399,6 +399,25 @@ dated entries and the time-bounded manual-review candidates were checked.
 - HIPKO Metsälä remains bounded to its expired summer schedule. Combat Academy
   and FireBody still do not establish outside-club access for their candidates.
 
+## Weekly light check: 1 September 2026
+
+The maintained official sources for every published recurring series, GB Gym's
+dated entries and the time-bounded manual-review candidates were checked.
+
+- Kilo Jiu-Jitsu's live calendar lists a Sebastian Sonntag seminar at the Kilo
+  gym from 11:00 to 15:00 on 5 September, overlapping the full 11:00–12:30
+  open-mat slot. Only 5 September is excluded with date- and venue-specific
+  official evidence. The calendar lists the normal Saturday open mat from 12
+  September through the reviewed rolling window.
+- Buli Urhea's live calendar lists the Sunday 12:00–13:30 open mat on every
+  reviewed date through 25 October. The earlier 9 and 16 August closures remain
+  date-specific.
+- AOGG, HJJK, Tundra, TK Sports, Loop, Dojo, Takado, MMA Vantaa and GB Gym
+  retained their published times and restrictions. The Vantaa exception-hours
+  page shows no Rajatorppa Sunday closure inside the reviewed rolling window.
+- HIPKO Metsälä remains bounded to its expired summer schedule. Combat Academy
+  and FireBody still do not establish outside-club access for their candidates.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

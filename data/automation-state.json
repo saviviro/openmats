@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-08-25T12:13:45+03:00",
-    "summary": "Reviewed all published and time-bounded official sources; updated MMA Vantaa Sunday open mat to 12:00-14:00; materialized 101 events through 2026-10-20."
+    "lastSuccessfulAt": "2026-09-01T12:23:07+03:00",
+    "summary": "Reviewed all published and time-bounded sources; excluded Kilo 2026-09-05 for an official same-venue seminar; materialized 100 events through 2026-10-27."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-08-17T22:18:57+03:00",
