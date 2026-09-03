@@ -226,6 +226,8 @@ Konepaja was incorrect and has been removed.
   window and its own validity boundaries.
 - An exact official calendar entry may be published directly outside the
   recurring window when its date and time are explicit. Every
+  dated entry before the window's start is omitted from generated events;
+  its historical source record is retained. Every
   `datedOpenMats` row must carry a stable `seriesId` with a matching template;
   one identifier cannot represent both a recurring and an explicitly dated
   series.

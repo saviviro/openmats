@@ -1,42 +1,5 @@
 [
   {
-    "id": "gb-gym-monthly-open-mat-2026-08-30",
-    "title": "Open mat",
-    "formats": ["gi", "no-gi"],
-    "startAt": "2026-08-30T12:00:00+03:00",
-    "endAt": "2026-08-30T13:30:00+03:00",
-    "venue": {
-      "name": "GB Gym",
-      "streetAddress": "Mekaanikonkatu 21",
-      "postalCode": "00880",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": 0,
-      "currency": "EUR",
-      "note": "Maksuton"
-    },
-    "access": {
-      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
-      "registrationRequired": false
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://www.gbgym.com/kalenteri/",
-    "sourceLabel": "GB Gymin kalenteri 2026",
-    "verifiedAt": "2026-09-01T12:20:39+03:00",
-    "schedule": {
-      "seriesId": "gb-gym-monthly-open-mat",
-      "validFrom": "2026-08-30",
-      "validThrough": "2026-12-27",
-      "materializedThrough": "2026-12-27",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-09-01T12:20:39+03:00",
-      "exceptionNote": "Ei tiedossa olevia poikkeuksia.",
-      "supportingSourceUrls": ["https://www.gbgym.com/kesaaikataulu/"]
-    },
-    "isExample": false
-  },
-  {
     "id": "takado-tuesday-open-mat-2026-09-01",
     "title": "Open mat",
     "formats": null,

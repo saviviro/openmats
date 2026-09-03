@@ -103,7 +103,29 @@ describe("event materialization", () => {
       events.filter(
         ({ schedule }) => schedule.seriesId === "gb-gym-monthly-open-mat",
       ),
-    ).toHaveLength(4);
+    ).toHaveLength(3);
+  });
+
+  it("omits dated events before the window but keeps its first day and later dates", () => {
+    const registry = structuredClone(seriesData);
+    registry.window.from = "2026-09-27";
+    registry.window.through = "2026-11-22";
+    const events = buildPublishedEvents(
+      registry,
+      templatesData,
+      sourceRegistryData,
+    );
+    expect(
+      events
+        .filter(
+          ({ schedule }) => schedule.seriesId === "gb-gym-monthly-open-mat",
+        )
+        .map(({ id }) => id),
+    ).toEqual([
+      "gb-gym-monthly-open-mat-2026-09-27",
+      "gb-gym-monthly-open-mat-2026-10-25",
+      "gb-gym-monthly-open-mat-2026-12-27",
+    ]);
   });
 
   it("generates a date-specific AOGG booking link for every occurrence", () => {

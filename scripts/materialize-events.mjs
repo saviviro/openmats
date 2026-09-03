@@ -104,7 +104,11 @@ export function buildPublishedEvents(
       isExample: template.isExample,
     }));
   });
-  const datedEvents = materializeDatedEvents(sourceRegistry, templates);
+  const datedEvents = materializeDatedEvents(
+    sourceRegistry,
+    templates,
+    registry.window.from,
+  );
 
   const events = [...recurringEvents, ...datedEvents].sort(
     (first, second) =>
@@ -115,7 +119,7 @@ export function buildPublishedEvents(
   return events;
 }
 
-function materializeDatedEvents(sourceRegistry, templates) {
+function materializeDatedEvents(sourceRegistry, templates, windowFrom) {
   const allEntriesBySeries = new Map();
 
   for (const venue of sourceRegistry.venues) {
@@ -146,6 +150,7 @@ function materializeDatedEvents(sourceRegistry, templates) {
 
       return entries.flatMap((entry) => {
         if (
+          entry.date < windowFrom ||
           entry.status !== "scheduled" ||
           !["ready_for_event_review", "needs_access_confirmation"].includes(
             entry.publishStatus,
