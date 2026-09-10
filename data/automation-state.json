@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-09-01T12:23:07+03:00",
-    "summary": "Reviewed all published and time-bounded sources; excluded Kilo 2026-09-05 for an official same-venue seminar; materialized 100 events through 2026-10-27."
+    "lastSuccessfulAt": "2026-09-10T17:19:34+03:00",
+    "summary": "Checked maintained official sources; bounded Buli Urhea through 2026-12-13, updated Takado schedule URL, refreshed 99 events through 2026-11-05, and patched high/critical dependency advisories."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-08-17T22:18:57+03:00",

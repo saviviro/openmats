@@ -153,7 +153,7 @@ describe("scheduled automation gate", () => {
     expect(
       validatePublicationPackage(
         { seriesRegistry, sourceRegistry, templates, events },
-        new Date("2026-09-01T12:30:00+03:00"),
+        new Date("2026-09-10T17:00:00+03:00"),
       ),
     ).toEqual({ seriesRegistry, sourceRegistry, templates, events });
   });
@@ -167,7 +167,7 @@ describe("scheduled automation gate", () => {
           templates,
           events: events.slice(1),
         },
-        new Date("2026-09-01T12:30:00+03:00"),
+        new Date("2026-09-10T17:00:00+03:00"),
       ),
     ).toThrow(/do not match/);
   });
@@ -176,8 +176,8 @@ describe("scheduled automation gate", () => {
     expect(() =>
       validatePublicationPackage(
         { seriesRegistry, sourceRegistry, templates, events },
-        new Date("2026-09-01T12:30:00+03:00"),
-        "2026-09-01T12:21:00+03:00",
+        new Date("2026-09-10T17:00:00+03:00"),
+        "2026-09-10T16:52:00+03:00",
       ),
     ).toThrow(/current automation run/);
   });
