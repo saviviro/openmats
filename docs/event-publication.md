@@ -214,11 +214,12 @@ club before visiting or trying the open mat before buying the membership.
 
 The dated official calendar marks 9 and 16 August closed. Each date has its own
 source-backed exclusion evidence; neither closure is generalized to later
-Sundays. The membership page still provides an active weekly recurrence, so
-future occurrences are published with `uncertain` status and a visible
-confirmation reminder. The price is shown as a 25-euro annual open-mat
-membership, not as a per-session charge. The previous registry attachment to
-Konepaja was incorrect and has been removed.
+Sundays. The membership page and dated calendar provide a weekly recurrence
+through 13 December 2026, so occurrences inside that source-backed boundary
+are published with `uncertain` status and a visible confirmation reminder. The
+price is shown as a 25-euro annual open-mat membership, not as a per-session
+charge. The previous registry attachment to Konepaja was incorrect and has
+been removed.
 
 ## Materialization rules
 

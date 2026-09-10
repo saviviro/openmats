@@ -418,6 +418,27 @@ dated entries and the time-bounded manual-review candidates were checked.
 - HIPKO Metsälä remains bounded to its expired summer schedule. Combat Academy
   and FireBody still do not establish outside-club access for their candidates.
 
+## Weekly light check: 10 September 2026
+
+The maintained official sources for every published recurring series, GB Gym's
+dated entries and the time-bounded manual-review candidates were checked.
+
+- Buli Urhea's dated calendar lists the reviewed Sundays through 1 November as
+  bookable and now gives the recurring open mat an explicit end date of
+  13 December 2026. The series is bounded to that date; the earlier 9 and
+  16 August closures remain date-specific.
+- Takado replaced its former `/harjoitusajat/` page with a single-page official
+  site. The new `#harjoitusajat` section retains the Tuesday 16:30–18:00 and
+  Saturday 11:00–13:00 open mats. The retired URL's 404 is not treated as
+  evidence that previously confirmed visitor access has ended.
+- AOGG, HJJK, Tundra, TK Sports, Loop, Dojo, Kilo, MMA Vantaa and GB Gym retain
+  their published times and restrictions. Kilo's live calendar lists the
+  Saturday open mat through 31 October without a new same-venue conflict, and
+  the Vantaa exception-hours page shows no Rajatorppa Sunday closure inside
+  the reviewed rolling window.
+- HIPKO Metsälä remains bounded to its expired summer schedule. Combat Academy
+  and FireBody still do not establish outside-club access for their candidates.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

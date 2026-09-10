@@ -145,7 +145,7 @@ describe("event materialization", () => {
   it("publishes HJJK on the next Saturday without a venue conflict", () => {
     expect(
       buildPublishedEvents(seriesData, templatesData, sourceRegistryData).some(
-        ({ id }) => id === "hjjk-saturday-open-mat-2026-09-05",
+        ({ id }) => id === "hjjk-saturday-open-mat-2026-09-12",
       ),
     ).toBe(true);
   });
