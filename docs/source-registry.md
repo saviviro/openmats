@@ -146,6 +146,18 @@ Kaapelitehdas gym. The 22–23 August 2026 BJJ No-Gi Finnish Open is listed in
 Vantaa, so it is not evidence of a Kaapelitehdas venue conflict and does not
 exclude the 22 August HJJK open mat.
 
+## Discovery review: 16 September 2026
+
+The four-city review rechecked the maintained official-source baseline and
+current Finnish- and English-language discovery results. It found no new
+first-party evidence for an additional publishable public BJJ or submission-
+wrestling open mat. A secondary listing showed current Art of Ground Games
+Kivenlahti sessions, but the official evidence reviewed for this project did
+not resolve their session-specific visitor restrictions, so no event was added.
+Kauniainen still has no verified active in-scope venue. Unreachable or expired
+sources were retained as monitoring issues and were not treated as evidence of
+cancellation or member-only access.
+
 ## Updating the registry
 
 For every review:

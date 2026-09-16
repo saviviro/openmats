@@ -29,11 +29,21 @@ describe("production verification", () => {
   });
 
   it("selects the latest complete review and a rolling-window sentinel", () => {
+    const reviewedAt = [
+      automationState.routine.lastSuccessfulAt,
+      automationState.discovery.lastSuccessfulAt,
+    ]
+      .sort()
+      .at(-1);
+    const sentinelEventId = events
+      .filter(({ schedule }) => schedule.seriesId === "takado-tuesday-open-mat")
+      .at(-1).id;
+
     expect(
       expectedProductionState(seriesRegistry, events, automationState),
     ).toEqual({
-      reviewedAt: "2026-09-10T17:19:34+03:00",
-      sentinelEventId: "takado-tuesday-open-mat-2026-11-03",
+      reviewedAt,
+      sentinelEventId,
     });
   });
 

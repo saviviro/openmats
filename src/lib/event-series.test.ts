@@ -113,8 +113,8 @@ describe("event series materialization", () => {
         through: "2026-08-09",
       }),
     ).toEqual(["2026-07-18", "2026-07-25", "2026-08-01", "2026-08-08"]);
-    expect(materializeOccurrenceDates(series!, registry.window)).toContain(
-      "2026-09-12",
+    expect(materializeOccurrenceDates(series!, registry.window)[0]).toBe(
+      "2026-09-19",
     );
   });
 
