@@ -143,11 +143,13 @@ describe("event materialization", () => {
   });
 
   it("publishes HJJK on the next Saturday without a venue conflict", () => {
-    expect(
-      buildPublishedEvents(seriesData, templatesData, sourceRegistryData).some(
-        ({ id }) => id === "hjjk-saturday-open-mat-2026-09-12",
-      ),
-    ).toBe(true);
+    const firstHjjkEvent = buildPublishedEvents(
+      seriesData,
+      templatesData,
+      sourceRegistryData,
+    ).find(({ schedule }) => schedule.seriesId === "hjjk-saturday-open-mat");
+
+    expect(firstHjjkEvent?.startAt.slice(0, 10)).toBe("2026-09-19");
   });
 
   it("rejects a display template without a canonical recurring or dated series", () => {

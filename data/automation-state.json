@@ -5,7 +5,7 @@
     "summary": "Checked maintained official sources; bounded Buli Urhea through 2026-12-13, updated Takado schedule URL, refreshed 99 events through 2026-11-05, and patched high/critical dependency advisories."
   },
   "discovery": {
-    "lastSuccessfulAt": "2026-08-17T22:18:57+03:00",
-    "summary": "Broad four-city discovery added five active discovery-only venues with no verified public open mat; Kauniainen still has no verified active in-scope venue."
+    "lastSuccessfulAt": "2026-09-16T22:31:32+03:00",
+    "summary": "Broad four-city official-source review found no new publishable series; refreshed 99 events through 2026-11-11 and retained unresolved Kivenlahti visitor access for manual review."
   }
 }
