@@ -63,17 +63,18 @@ The maintained recurring sources include Helsingin Ju-jutsuklubi at
 Kaapelitehdas, Tundra Jiu-Jitsu in Suomenoja, Loop Martial Arts in Pitäjänmäki,
 AOGG Erottaja, AOGG Sörnäinen, Dojo Helsinki in Punavuori, HIPKO Metsälä,
 Kilo Jiu-Jitsu in Kilo, Takado in Haukilahti, TK Sports in Suutarila and MMA
-Vantaa. HIPKO and MMA Vantaa remain bounded historical series and currently
-produce no future events. The AOGG location calendars must still be interpreted
+Vantaa. HIPKO remains a bounded historical series and currently
+produces no future events. The AOGG location calendars must still be interpreted
 separately:
 Erottaja has a public Sunday No-gi session, Sörnäinen has a public Saturday
 No-gi session for coloured belts, and Kivenlahti currently lists only
 members-only open mats. The exact Erottaja and Sörnäinen booking settings show
 zero-euro booking for non-members, so those sessions are published as free.
 Their recurring records use date-parameterized organizer URLs so every
-occurrence links to its own booking date. MMA Vantaa's live summer timetable now
-unambiguously shows 12:00–13:30 and explicitly welcomes visitors, so its
-previous conflict is resolved.
+occurrence links to its own booking date. MMA Vantaa's current official timetable
+lists Sunday 12:00–14:00 on the small tatami and explicitly welcomes visitors.
+Its recurring series is published within the rolling window; the club timetable
+and linked Vantaa exception-hours page are checked before extending that window.
 
 Buli's membership sources identify a Sunday 12:00–13:30 Gi and No-gi open mat
 at Urhea. The dated calendar explicitly marks 9 and 16 August closed but does
