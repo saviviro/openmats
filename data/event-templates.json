@@ -333,8 +333,8 @@
         "registrationRequired": false
       },
       "status": "scheduled",
-      "sourceLabel": "MMA Vantaan kesän harjoitusajat",
-      "exceptionNote": "Virallinen kesäaikataulu on voimassa 9.8.2026 saakka. Varustuksesta ei ole tietoa.",
+      "sourceLabel": "MMA Vantaan harjoitusajat",
+      "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
       "isExample": false
     },
     {

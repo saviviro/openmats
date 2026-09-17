@@ -33,7 +33,7 @@ describe("production verification", () => {
       automationState.routine.lastSuccessfulAt,
       automationState.discovery.lastSuccessfulAt,
     ]
-      .sort()
+      .sort((first, second) => Date.parse(first) - Date.parse(second))
       .at(-1);
     const sentinelEventId = events
       .filter(({ schedule }) => schedule.seriesId === "takado-tuesday-open-mat")
@@ -45,6 +45,17 @@ describe("production verification", () => {
       reviewedAt,
       sentinelEventId,
     });
+  });
+
+  it("compares review timestamps chronologically across the Helsinki DST change", () => {
+    const state = {
+      routine: { lastSuccessfulAt: "2026-10-25T03:45:00+03:00" },
+      discovery: { lastSuccessfulAt: "2026-10-25T03:15:00+02:00" },
+    };
+
+    expect(
+      expectedProductionState(seriesRegistry, events, state).reviewedAt,
+    ).toBe("2026-10-25T03:15:00+02:00");
   });
 
   it("requires the review marker, rolling event, and expected build commit", () => {
