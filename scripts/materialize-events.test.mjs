@@ -144,7 +144,14 @@ describe("event materialization", () => {
 
   it("publishes HJJK on the next Saturday without a venue conflict", () => {
     const firstHjjkEvent = buildPublishedEvents(
-      seriesData,
+      {
+        ...seriesData,
+        window: {
+          ...seriesData.window,
+          from: "2026-09-16",
+          through: "2026-11-11",
+        },
+      },
       templatesData,
       sourceRegistryData,
     ).find(({ schedule }) => schedule.seriesId === "hjjk-saturday-open-mat");

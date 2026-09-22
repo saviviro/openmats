@@ -19,6 +19,20 @@ import {
   validatePublicationPackage,
 } from "./automation-gate.mjs";
 
+const publicationReviewTime = new Date(
+  Math.max(
+    Date.parse(seriesRegistry.checkedAt),
+    ...seriesRegistry.series.map((s) => Date.parse(s.exceptionCheck.checkedAt)),
+    ...sourceRegistry.venues
+      .filter(
+        (v) =>
+          seriesRegistry.series.some((s) => s.venueId === v.id) ||
+          v.datedOpenMats?.length,
+      )
+      .map((v) => Date.parse(v.checkedAt)),
+  ),
+);
+
 const state = {
   version: 1,
   routine: {
@@ -153,7 +167,7 @@ describe("scheduled automation gate", () => {
     expect(
       validatePublicationPackage(
         { seriesRegistry, sourceRegistry, templates, events },
-        new Date("2026-09-16T23:00:00+03:00"),
+        publicationReviewTime,
       ),
     ).toEqual({ seriesRegistry, sourceRegistry, templates, events });
   });
@@ -167,7 +181,7 @@ describe("scheduled automation gate", () => {
           templates,
           events: events.slice(1),
         },
-        new Date("2026-09-16T23:00:00+03:00"),
+        publicationReviewTime,
       ),
     ).toThrow(/do not match/);
   });
@@ -176,8 +190,8 @@ describe("scheduled automation gate", () => {
     expect(() =>
       validatePublicationPackage(
         { seriesRegistry, sourceRegistry, templates, events },
-        new Date("2026-09-16T23:00:00+03:00"),
-        "2026-09-16T22:31:00+03:00",
+        new Date(publicationReviewTime.getTime() + 1000),
+        new Date(publicationReviewTime.getTime() + 500).toISOString(),
       ),
     ).toThrow(/current automation run/);
   });

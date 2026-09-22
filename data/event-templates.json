@@ -68,9 +68,9 @@
         "description": "Avoin muiden seurojen harrastajille.",
         "registrationRequired": false
       },
-      "status": "scheduled",
+      "status": "uncertain",
       "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-      "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Tarkistetulle julkaisujaksolle ei löytynyt salikohtaista poikkeusta.",
+      "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. ja 31.10. vuorot: seuran tapahtumakalenteri ei yksilöi näiden päivien tapahtumien salia.",
       "isExample": false
     },
     {
@@ -212,9 +212,9 @@
         "description": "Avoin muiden seurojen harrastajille. No-gi-varustus.",
         "registrationRequired": false
       },
-      "status": "scheduled",
+      "status": "uncertain",
       "sourceLabel": "Dojo Helsingin treeniajat",
-      "exceptionNote": "Mahdollisista pyhäpäivien muutoksista ja ylimääräisistä open mateista ilmoitetaan Dojon Instagramissa.",
+      "exceptionNote": "Varmista erityisesti 26.9. open mat: Dojo mainostaa samalle ajalle Aki Teräväisen seminaaria, mutta julkisesta ilmoituksesta ei varmistunut tapahtumapaikka. Muiden lauantain vuorojen viikkoaika on klo 12–13.",
       "isExample": false
     },
     {
@@ -238,7 +238,7 @@
       },
       "status": "uncertain",
       "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
-      "exceptionNote": "Virallinen verkkokalenteri vahvistaa useimmat tarkistetut lauantait, mutta 5.9. puuttuu ilman erillistä peruutusilmoitusta. Varmista ajankohta ja varustus järjestäjältä.",
+      "exceptionNote": "Virallinen verkkokalenteri vahvistaa lauantait 26.9.–14.11. klo 11–12.30. Varmista varustus ja osallistumisen yksityiskohdat järjestäjältä.",
       "isExample": false
     },
     {
@@ -310,7 +310,7 @@
       },
       "status": "uncertain",
       "sourceLabel": "Bulin open mat -jäsenyys",
-      "exceptionNote": "Jäsenyyssivu ilmoittaa viikoittaisen sunnuntaivuoron. Päiväkalenteri merkitsi 9.8. ja 16.8. suljetuiksi, eikä vielä vahvista myöhempiä sunnuntaita. Varmista päivämäärä ennen lähtöä.",
+      "exceptionNote": "Päiväkalenteri vahvistaa sunnuntait 27.9.–15.11. klo 12–13.30. Sovi vierailusta etukäteen seuran kanssa. Syyskauden sarja päättyy 13.12.2026.",
       "isExample": false
     },
     {

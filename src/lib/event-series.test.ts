@@ -35,7 +35,7 @@ const expectedSeriesDisplayData = {
     venueName: "Helsingin Ju-jutsuklubi",
     formats: ["gi", "no-gi"],
     priceAmount: null,
-    status: "scheduled",
+    status: "uncertain",
   },
   "hipko-metsala-saturday-bjj-open-mat": {
     venueName: "HIPKO Metsälä",
@@ -65,7 +65,7 @@ const expectedSeriesDisplayData = {
     venueName: "Dojo Helsinki",
     formats: ["no-gi"],
     priceAmount: null,
-    status: "scheduled",
+    status: "uncertain",
   },
   "kilo-jiu-jitsu-saturday-open-mat": {
     venueName: "Kilo Jiu-Jitsu",
@@ -113,9 +113,13 @@ describe("event series materialization", () => {
         through: "2026-08-09",
       }),
     ).toEqual(["2026-07-18", "2026-07-25", "2026-08-01", "2026-08-08"]);
-    expect(materializeOccurrenceDates(series!, registry.window)[0]).toBe(
-      "2026-09-19",
-    );
+    expect(
+      materializeOccurrenceDates(series!, {
+        ...registry.window,
+        from: "2026-09-16",
+        through: "2026-11-11",
+      })[0],
+    ).toBe("2026-09-19");
   });
 
   it("honours validity boundaries and excluded exception dates", () => {
@@ -161,7 +165,7 @@ describe("event series materialization", () => {
     const kilo = registry.series.find(
       ({ id }) => id === "kilo-jiu-jitsu-saturday-open-mat",
     );
-    expect(dojo?.publicationStatus).toBe("publish");
+    expect(dojo?.publicationStatus).toBe("publish_with_confirmation");
     expect(kilo?.publicationStatus).toBe("publish_with_confirmation");
     expect(dojo?.weekday).toBe(6);
     expect(kilo?.weekday).toBe(6);
