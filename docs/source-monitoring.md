@@ -439,6 +439,27 @@ dated entries and the time-bounded manual-review candidates were checked.
 - HIPKO Metsälä remains bounded to its expired summer schedule. Combat Academy
   and FireBody still do not establish outside-club access for their candidates.
 
+## Weekly light check: 22 September 2026
+
+The maintained schedules and exception sources were reviewed for the rolling
+22 September–17 November publication window. Kilo's live calendar confirms
+Saturday open mats through 14 November, and Buli's dated calendar confirms all
+eight Sundays through 15 November as bookable without cancellation flags.
+GB Gym's dated entries and November cancellation remain unchanged.
+
+Dojo's public Instagram profile advertises an Aki Teräväinen seminar on
+26 September at 11:30–13:00 and 13:30–15:00. The public poster does not explicitly
+identify the venue and the full caption requires login. The open mat is retained
+with a confirmation warning; no cancellation is inferred. HJJK's event list names
+events on 10 and 31 October without exact venue details. Its occurrences are also
+retained with a warning identifying these dates. No new exclusions were added.
+
+The public Instagram profiles were readable in the browser after the text-fetch
+tool failed; restricted post captions were not accessed. Other published weekly
+times and prices remain unchanged. HIPKO's expired summer series is retained
+without extension; Combat Academy and FireBody still lack confirmed visitor
+access. Historical exclusions and owner-provided confirmations remain intact.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

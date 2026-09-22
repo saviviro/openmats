@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "checkedAt": "2026-09-16T22:30:00+03:00",
+  "checkedAt": "2026-09-22T06:49:10.443Z",
   "window": {
-    "from": "2026-09-16",
-    "through": "2026-11-11",
+    "from": "2026-09-22",
+    "through": "2026-11-17",
     "timezone": "Europe/Helsinki"
   },
   "series": [
@@ -33,7 +33,7 @@
       ],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The official Gymdesk session recurs Saturdays at 12:00 and is specifically restricted to coloured belts and No-gi. The earlier booking evidence marks 15 August 2026 cancelled; no other cancellation was found in the reviewed window. It is not labelled members-only."
       }
     },
@@ -55,14 +55,14 @@
       ],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The official Gymdesk session recurs Sundays at 12:00, has no cancelled dates and is titled OPEN MAT (NOGI) without a member-only restriction."
       }
     },
     {
       "id": "hjjk-saturday-open-mat",
       "venueId": "helsingin-ju-jutsuklubi-kaapelitehdas",
-      "publicationStatus": "publish",
+      "publicationStatus": "publish_with_confirmation",
       "weekday": 6,
       "startTime": "13:00",
       "endTime": "15:00",
@@ -72,9 +72,9 @@
       "primarySourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"],
       "exceptionCheck": {
-        "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
-        "notes": "The official BJJ page says the open mat is held only when no other event uses the Kaapelitehdas gym. The 22–23 August BJJ No-Gi Finnish Open is listed in Vantaa, so it is not evidence of a venue conflict and no reviewed date is excluded."
+        "result": "confirmation_required",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
+        "notes": "The official BJJ timetable still lists Saturday 13:00–15:00 for visitors in Gi or No-gi. The event page lists a 10 October preparation day in Helsinki and 31 October Kickboxing Helsinki Open without identifying the gym or exact hours. Neither establishes a Kaapelitehdas conflict, so no date is excluded; visitors should confirm those dates."
       }
     },
     {
@@ -94,7 +94,7 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The verified 15 June–9 August summer timetable has expired; member-only wording belongs to other timetable rows. The current autumn schedule page and linked Metsälä BJJ curriculum do not provide a public weekly open-mat timetable, so this series remains bounded to 9 August and produces no new events."
       }
     },
@@ -115,7 +115,7 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The verified 15 June–9 August summer timetable has expired; member-only wording belongs to other timetable rows. The current autumn schedule page and linked Metsälä BJJ curriculum do not provide a public weekly open-mat timetable, so this series remains bounded to 9 August and produces no new events."
       }
     },
@@ -133,7 +133,7 @@
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The official schedule says training mostly continues normally in summer but exceptions may occur, and asks visitors to contact the gym before attending. No exact cancelled dates are published."
       }
     },
@@ -151,7 +151,7 @@
       "supportingSourceUrls": [],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The official timetable lists the weekly Saturday 10:00–12:00 open mat and no dated cancellation. It also says the schedule may change, while attire, visitor price and outside-club eligibility are not specified, so attendance must be confirmed with TK Sports."
       }
     },
@@ -169,14 +169,14 @@
       "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The official autumn calendar lists the Saturday 10:30–12:00 BJJ open mat from 3 August through 23 December 2026 and no dated cancellation. The project owner confirmed free outside-club access and Gi/No-gi eligibility on 16 July 2026."
       }
     },
     {
       "id": "dojo-helsinki-saturday-nogi-open-mat",
       "venueId": "dojo-helsinki-punavuori",
-      "publicationStatus": "publish",
+      "publicationStatus": "publish_with_confirmation",
       "weekday": 6,
       "startTime": "12:00",
       "endTime": "13:00",
@@ -189,9 +189,9 @@
         "https://www.instagram.com/dojohelsinki/"
       ],
       "exceptionCheck": {
-        "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
-        "notes": "The official Finnish and English timetables list the weekly Saturday slot. No dated cancellation is published. The project owner confirmed outside-club access and No-gi attire on 16 July 2026; the official Instagram account is monitored for holiday changes and additional open mats."
+        "result": "confirmation_required",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
+        "notes": "Both official timetables retain Saturday 12:00–13:00. The public Instagram profile shows an Aki Teräväinen seminar on 26 September at 11:30–13:00 and 13:30–15:00. The full caption requires login and the visible poster does not explicitly identify the venue, so a same-gym conflict remains unconfirmed. Preserve the occurrence with a visible confirmation warning instead of inferring cancellation."
       }
     },
     {
@@ -221,8 +221,8 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
-        "notes": "The live official embedded calendar lists Saturday 11:00–12:30 open mats from 12 September through the reviewed rolling window. On 5 September it instead lists a Sebastian Sonntag seminar at the same gym from 11:00 to 15:00, so only that overlapping occurrence is excluded. Attire and an open-mat-specific price are still unstated."
+        "checkedAt": "2026-09-22T06:49:10.443Z",
+        "notes": "The live official embedded calendar lists every Saturday 11:00–12:30 open mat from 26 September through 14 November, with no new overlapping venue event. The historical 5 September seminar exclusion is retained. The public Instagram profile was inspected; attire and an open-mat-specific price remain unstated."
       }
     },
     {
@@ -239,7 +239,7 @@
       "supportingSourceUrls": ["https://takado.fi/"],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "Takado's new official single-page timetable confirms the Tuesday 16:30–18:00 open mat. The former official timetable URL now returns 404, but that source change is not evidence that the previously confirmed public access has ended. No dated cancellation is published."
       }
     },
@@ -257,7 +257,7 @@
       "supportingSourceUrls": ["https://takado.fi/"],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "Takado's new official single-page timetable confirms the Saturday 11:00–13:00 open mat. The former official timetable URL now returns 404, but that source change is not evidence that the previously confirmed public access has ended. No dated cancellation is published."
       }
     },
@@ -293,8 +293,8 @@
       ],
       "exceptionCheck": {
         "result": "confirmation_required",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
-        "notes": "The current membership source identifies a weekly Sunday Urhea open mat. The dated calendar lists the reviewed Sundays through 1 November as bookable and bounds the recurrence through 13 December 2026; the earlier 9 and 16 August closures remain date-specific and are not generalized. Attendance remains uncertain because visitors are instructed to confirm in advance."
+        "checkedAt": "2026-09-22T06:49:10.443Z",
+        "notes": "The official dated calendar confirms every Sunday from 27 September through 15 November at 12:00–13:30 as bookable, with cancel and canceled flags both zero. The recurrence ends on 13 December 2026. The historical August exclusions remain date-specific. The annual open-mat membership is 25 euros and visitors should contact the club before attending."
       }
     },
     {
@@ -313,7 +313,7 @@
       ],
       "exceptionCheck": {
         "result": "none_found",
-        "checkedAt": "2026-09-16T22:30:00+03:00",
+        "checkedAt": "2026-09-22T06:49:10.443Z",
         "notes": "The current official timetable lists a weekly Sunday 12:00–14:00 open mat on the small tatami and explicitly welcomes visitors from outside the club. The linked official Vantaa exception calendar shows no Rajatorppa kalliosuoja Sunday closure inside the reviewed publication window."
       }
     }

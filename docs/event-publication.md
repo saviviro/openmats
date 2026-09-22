@@ -77,6 +77,10 @@ no public occurrence in the event list.
 
 ### Helsingin Ju-jutsuklubi
 
+The 22 September review found events listed on 10 and 31 October without exact
+venue details. The series currently carries a confirmation warning naming these
+dates; no occurrence is excluded without Kaapelitehdas-specific evidence.
+
 The official BJJ page states that the Saturday 13:00–15:00 open mat welcomes
 people from other clubs who know the BJJ fundamentals. It can be practised in a
 gi or no-gi. The session is held only if no other event uses the gym.
@@ -113,6 +117,11 @@ The series remains explicitly bounded to 23 December and is not extended
 beyond the reviewed autumn timetable by assumption.
 
 ### Dojo Helsinki
+
+The public official Instagram profile advertises an Aki Teräväinen seminar on
+26 September at 11:30–13:00 and 13:30–15:00. Its visible poster does not explicitly
+identify the venue, while the caption requires login. The series currently carries
+a confirmation warning for 26 September and retains the occurrence.
 
 Dojo's official Finnish and English timetables list Saturday 12:00–13:00 open
 mat at Pursimiehenkatu 14. The project owner confirmed on 16 July 2026 that the

@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-09-10T17:19:34+03:00",
-    "summary": "Checked maintained official sources; bounded Buli Urhea through 2026-12-13, updated Takado schedule URL, refreshed 99 events through 2026-11-05, and patched high/critical dependency advisories."
+    "lastSuccessfulAt": "2026-09-22T15:02:57+03:00",
+    "summary": "Reviewed published official sources; materialized 100 events (97 recurring) for 2026-09-22 through 2026-11-17 plus GB Gym dated entries through December. Retained uncertain Dojo 26 September and HJJK October dates with confirmation warnings; no new exclusions. Validation: 88 tests and build passed; security audit has no high/critical findings."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-09-16T22:31:32+03:00",
