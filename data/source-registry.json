@@ -436,7 +436,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "public_with_conditions",
       "collectionReadiness": "manual_review",
-      "evidenceSummary": "The official membership flow identifies a weekly Sunday 12:00–13:30 Gi and No-gi open mat at Urhea. The 25-euro annual open-mat membership and advance-contact visitor rule are current. The dated calendar marks 9 and 16 August closed, lists the reviewed Sundays through 1 November as bookable and bounds the recurrence through 13 December 2026; events remain published with a confirmation warning because visitors must contact the club in advance.",
+      "evidenceSummary": "The official membership flow identifies a weekly Sunday 12:00–13:30 Gi and No-gi open mat at Urhea. The 25-euro annual open-mat membership and advance-contact visitor rule are current. The dated calendar marks 9 and 16 August closed, lists the reviewed Sundays through 15 November as bookable and bounds the recurrence through 13 December 2026; events remain published with a confirmation warning because visitors must contact the club in advance.",
       "sources": [
         {
           "type": "official_home",
@@ -483,11 +483,11 @@
           "publishStatus": "needs_access_confirmation",
           "validFrom": null,
           "validThrough": "2026-12-13",
-          "notes": "The membership source says the Urhea session is weekly through 13 December 2026. The dated calendar marks 9 and 16 August closed and lists the reviewed Sundays through 1 November as bookable. Publish with a visible confirmation warning because visitors must contact the club in advance."
+          "notes": "The membership source says the Urhea session is weekly through 13 December 2026. The dated calendar marks 9 and 16 August closed and lists the reviewed Sundays through 15 November as bookable. Publish with a visible confirmation warning because visitors must contact the club in advance."
         }
       ],
       "checkedAt": "2026-09-22T06:49:10.443Z",
-      "monitoringNotes": "Check the dated calendar weekly. The 9 and 16 August 2026 occurrences were explicitly marked closed; the reviewed Sundays through 1 November are bookable and the current recurrence ends 13 December. Keep events uncertain because the visitor rule still requires advance contact."
+      "monitoringNotes": "Check the dated calendar weekly. The 9 and 16 August 2026 occurrences were explicitly marked closed; the reviewed Sundays through 15 November are bookable and the current recurrence ends 13 December. Keep events uncertain because the visitor rule still requires advance contact."
     },
     {
       "id": "helsingin-ju-jutsuklubi-kaapelitehdas",

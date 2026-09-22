@@ -136,13 +136,13 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     accessDescription:
       "Contact Buli in advance before visiting or trying the open mat. Gi or no-gi.",
     exceptionNote:
-      "The membership page lists a weekly Sunday session, but the dated calendar has no matching event. Confirm the date before attending.",
+      "The dated calendar confirms Sundays from 27 September through 15 November at 12:00–13:30. Arrange the visit with the club in advance. The autumn series ends on 13 December 2026.",
   },
   "dojo-helsinki-saturday-nogi-open-mat": {
     priceNote: "The source does not state a visitor price",
     accessDescription: "Open to practitioners from other clubs. No-gi attire.",
     exceptionNote:
-      "Dojo announces holiday changes and additional open mats on Instagram.",
+      "Confirm the 26 September open mat in particular: Dojo advertises an Aki Teräväinen seminar at the same time, but the public announcement does not confirm the venue. The regular Saturday session is 12:00–13:00.",
   },
   "gb-gym-monthly-open-mat": {
     priceNote: "Free of charge",
@@ -153,7 +153,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     priceNote: "The source does not state a visitor price",
     accessDescription: "Open to practitioners from other clubs.",
     exceptionNote:
-      "The session is held only when no other event uses the Kaapelitehdas venue. No venue-specific exception was found during the reviewed publication window.",
+      "The session is held only when no other event uses the Kaapelitehdas venue. Confirm the 10 and 31 October sessions in particular: the club's event calendar does not identify the venue for the events on those dates.",
   },
   "kilo-jiu-jitsu-saturday-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",

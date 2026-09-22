@@ -58,7 +58,41 @@ describe("localization", () => {
 
     expect(translation.exceptionNote).toMatch(/Kaapelitehdas venue/);
     expect(translation.exceptionNote).toMatch(/no other event uses/);
+    expect(translation.exceptionNote).toMatch(/10 and 31 October/);
     expect(translation.exceptionNote).not.toMatch(/No-Gi Finnish Open/);
+  });
+
+  it("keeps the Dojo seminar warning accurate in English", () => {
+    const translation = getEventTranslation(
+      "en",
+      "dojo-helsinki-saturday-nogi-open-mat-2026-09-26",
+      "dojo-helsinki-saturday-nogi-open-mat",
+      {
+        priceNote: "Vierailuhintaa ei ilmoitettu lähteessä",
+        accessDescription: "Avoin muiden seurojen harrastajille.",
+        exceptionNote: "Suomenkielinen poikkeusteksti.",
+      },
+    );
+
+    expect(translation.exceptionNote).toMatch(/26 September/);
+    expect(translation.exceptionNote).toMatch(/Aki Teräväinen seminar/);
+    expect(translation.exceptionNote).toMatch(/does not confirm the venue/);
+  });
+
+  it("keeps the Buli reviewed date range accurate in English", () => {
+    const translation = getEventTranslation(
+      "en",
+      "buli-urhea-sunday-open-mat-2026-11-15",
+      "buli-urhea-sunday-open-mat",
+      {
+        priceNote: "Open mat -jäsenyys 25 € / kalenterivuosi",
+        accessDescription: "Ota yhteyttä etukäteen.",
+        exceptionNote: "Suomenkielinen poikkeusteksti.",
+      },
+    );
+
+    expect(translation.exceptionNote).toMatch(/through 15 November/);
+    expect(translation.exceptionNote).toMatch(/ends on 13 December 2026/);
   });
 
   it("requires event-specific English overrides when Finnish source text varies inside a series", () => {
