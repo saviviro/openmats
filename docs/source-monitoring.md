@@ -460,6 +460,32 @@ times and prices remain unchanged. HIPKO's expired summer series is retained
 without extension; Combat Academy and FireBody still lack confirmed visitor
 access. Historical exclusions and owner-provided confirmations remain intact.
 
+## Weekly light check: 1 October 2026
+
+The maintained official sources for every published recurring series, GB Gym's
+dated entries and the time-bounded manual-review candidates were checked for
+the rolling 1 October–26 November publication window.
+
+- AOGG's Erottaja and Sörnäinen booking calendars list every reviewed weekly
+  occurrence without a new cancellation marker. Kilo's live Asio calendar
+  lists the Saturday 11:00–12:30 open mat through 21 November, and Buli's dated
+  calendar lists the Sunday 12:00–13:30 Urhea open mat through 22 November with
+  its cancellation flag unset.
+- HJJK's timetable still lists Saturday 13:00–15:00. Its 10 October event is
+  identified only as being in Helsinki and therefore still requires
+  confirmation, while the 31 October autumn camp is explicitly in Riihimäki
+  and no longer creates a possible Kaapelitehdas conflict.
+- Dojo's Finnish and English timetables retain Saturday 12:00–13:00. The
+  previously monitored 26 September seminar is outside the new publication
+  window, and no current dated exception was found.
+- TK Sports' official domain now displays an expired-domain notice. The
+  previously verified uncertain series is retained because a source-read
+  failure is not cancellation or access-restriction evidence.
+- Tundra, Loop, Takado, MMA Vantaa and GB Gym retain their published schedules
+  and access or price qualifications. The Vantaa exception-hours page gives no
+  Sunday Rajatorppa closure in this window. HIPKO remains expired, while Combat
+  Academy and FireBody still do not confirm outside-club access.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

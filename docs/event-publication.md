@@ -77,9 +77,10 @@ no public occurrence in the event list.
 
 ### Helsingin Ju-jutsuklubi
 
-The 22 September review found events listed on 10 and 31 October without exact
-venue details. The series currently carries a confirmation warning naming these
-dates; no occurrence is excluded without Kaapelitehdas-specific evidence.
+The 1 October review found a 10 October preparation day listed only as being in
+Helsinki, without exact venue details. The series carries a confirmation warning
+for that date. The 31 October autumn camp is explicitly in Riihimäki and does
+not establish a Kaapelitehdas conflict.
 
 The official BJJ page states that the Saturday 13:00–15:00 open mat welcomes
 people from other clubs who know the BJJ fundamentals. It can be practised in a
@@ -118,10 +119,9 @@ beyond the reviewed autumn timetable by assumption.
 
 ### Dojo Helsinki
 
-The public official Instagram profile advertises an Aki Teräväinen seminar on
-26 September at 11:30–13:00 and 13:30–15:00. Its visible poster does not explicitly
-identify the venue, while the caption requires login. The series currently carries
-a confirmation warning for 26 September and retains the occurrence.
+The previously monitored Aki Teräväinen seminar on 26 September is outside the
+current publication window. No current dated exception was found in the
+reviewed official sources.
 
 Dojo's official Finnish and English timetables list Saturday 12:00–13:00 open
 mat at Pursimiehenkatu 14. The project owner confirmed on 16 July 2026 that the
@@ -136,7 +136,7 @@ separately dated events with their own `seriesId`.
 ### Kilo Jiu-Jitsu
 
 Kilo's live embedded official calendar lists Saturday 11:00–12:30 open mats on
-22 and 29 August, 12, 19 and 26 September, and 3 and 10 October 2026. The
+every reviewed date from 3 October through 21 November 2026. The
 project owner confirmed public access on 16 July 2026. The official venue page
 confirms the address, and the price page states a 15-euro drop-in price from
 1 June 2026.
@@ -150,9 +150,10 @@ source does not make that connection.
 
 ### TK Sports
 
-TK Sports' current official timetable lists a Saturday 10:00–12:00 open mat
-for all levels at Halmetie 5. Community feedback prompted the source review,
-but the published time and address come from the official site.
+TK Sports' previously verified official timetable listed a Saturday
+10:00–12:00 open mat for all levels at Halmetie 5. During the 1 October review,
+the official domain displayed an expired-domain notice. The source failure is
+not treated as cancellation evidence, so the uncertain series is retained.
 
 The timetable does not state whether the session uses Gi, No-gi or both,
 whether people from other clubs may attend, or what an open-mat visit costs.
@@ -223,7 +224,8 @@ club before visiting or trying the open mat before buying the membership.
 
 The dated official calendar marks 9 and 16 August closed. Each date has its own
 source-backed exclusion evidence; neither closure is generalized to later
-Sundays. The membership page and dated calendar provide a weekly recurrence
+Sundays. The calendar lists the reviewed Sundays through 22 November with its
+cancellation flag unset. The membership page and dated calendar provide a weekly recurrence
 through 13 December 2026, so occurrences inside that source-backed boundary
 are published with `uncertain` status and a visible confirmation reminder. The
 price is shown as a 25-euro annual open-mat membership, not as a per-session

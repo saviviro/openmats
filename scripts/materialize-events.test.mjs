@@ -103,7 +103,7 @@ describe("event materialization", () => {
       events.filter(
         ({ schedule }) => schedule.seriesId === "gb-gym-monthly-open-mat",
       ),
-    ).toHaveLength(3);
+    ).toHaveLength(2);
   });
 
   it("omits dated events before the window but keeps its first day and later dates", () => {
