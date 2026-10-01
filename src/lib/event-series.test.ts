@@ -165,7 +165,7 @@ describe("event series materialization", () => {
     const kilo = registry.series.find(
       ({ id }) => id === "kilo-jiu-jitsu-saturday-open-mat",
     );
-    expect(dojo?.publicationStatus).toBe("publish_with_confirmation");
+    expect(dojo?.publicationStatus).toBe("publish");
     expect(kilo?.publicationStatus).toBe("publish_with_confirmation");
     expect(dojo?.weekday).toBe(6);
     expect(kilo?.weekday).toBe(6);

@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-09-22T15:02:57+03:00",
-    "summary": "Reviewed published official sources; materialized 100 events (97 recurring) for 2026-09-22 through 2026-11-17 plus GB Gym dated entries through December. Retained uncertain Dojo 26 September and HJJK October dates with confirmation warnings; no new exclusions. Validation: 88 tests and build passed; security audit has no high/critical findings."
+    "lastSuccessfulAt": "2026-10-01T17:06:34+03:00",
+    "summary": "Reviewed all maintained publishable sources; retained TK Sports after expired-domain read failure, narrowed HJJK warning, cleared past Dojo exception, refreshed 98 events for 2026-10-01 through 2026-11-26, and updated fast-uri to 3.1.7."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-09-16T22:31:32+03:00",
