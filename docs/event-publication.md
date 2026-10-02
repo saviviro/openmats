@@ -100,7 +100,8 @@ The official schedule states that Saturday 11:15–12:45 is gi/no-gi and open to
 everyone, including members of other clubs. The official price page gives a
 general 14-euro non-member single visit, but does not identify it as the open
 mat fee. The event price is therefore left unknown. Visitors are asked to
-contact the gym before attending.
+contact the gym before attending. The pricing page gives this instruction without
+a seasonal restriction, as verified on 2 October 2026.
 
 The schedule also says that summer training mostly runs normally but may have
 exceptions. It does not publish exact cancelled dates. Occurrences are listed
