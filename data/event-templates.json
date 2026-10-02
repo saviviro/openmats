@@ -137,12 +137,12 @@
         "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
       },
       "access": {
-        "description": "Avoin myös muiden seurojen jäsenille. Ota kesällä yhteyttä ennen vierailua.",
+        "description": "Avoin myös muiden seurojen jäsenille. Ota yhteyttä saliin ennen vierailua.",
         "registrationRequired": true
       },
       "status": "uncertain",
       "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-      "exceptionNote": "Sali kertoo kesäpoikkeusten olevan mahdollisia ja pyytää ottamaan yhteyttä ennen vierailua.",
+      "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "isExample": false
     },
     {
