@@ -142,7 +142,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     priceNote: "Free of charge",
     accessDescription: "Open to all clubs and experience levels. No-gi attire.",
     exceptionNote:
-      "Confirm the 26 September open mat in particular: Dojo advertises an Aki Teräväinen seminar at the same time, but the public announcement does not confirm the venue. The regular Saturday session is 12:00–13:00.",
+      "The official timetable lists no exceptions. The regular Saturday open mat is 12:00–13:00.",
   },
   "gb-gym-monthly-open-mat": {
     priceNote: "Free of charge",
