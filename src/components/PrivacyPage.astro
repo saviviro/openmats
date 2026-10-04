@@ -12,11 +12,11 @@ const { locale } = Astro.props;
 const isFinnish = locale === "fi";
 const privacyPaths = { fi: "/tietosuoja/", en: "/en/privacy/" };
 const title = isFinnish
-  ? "Tietosuoja ja yhteystiedot — Open Mats"
-  : "Privacy and contact details — Open Mats";
+  ? "Tietosuoja ja yhteystiedot — openmats.fi"
+  : "Privacy and contact details — openmats.fi";
 const description = isFinnish
-  ? "Tietoa Open Mats Helsinki Region -palvelun ylläpitäjästä ja henkilötietojen käsittelystä."
-  : "Information about the operator of Open Mats Helsinki Region and the processing of personal data.";
+  ? "Tietoa openmats.fi-palvelun ylläpitäjästä ja henkilötietojen käsittelystä."
+  : "Information about the operator of openmats.fi and the processing of personal data.";
 ---
 
 <BaseLayout
@@ -32,7 +32,7 @@ const description = isFinnish
 
   <main class="legal-main" id="privacy-content">
     <section class="legal-hero" aria-labelledby="privacy-title">
-      <p class="eyebrow">Open Mats · Helsinki Region</p>
+      <p class="eyebrow">openmats.fi · Helsinki Region</p>
       <h1 id="privacy-title">
         {
           isFinnish
@@ -43,12 +43,12 @@ const description = isFinnish
       <p>
         {
           isFinnish
-            ? "Open Mats Helsinki Region on yksityinen, ei-kaupallinen koontipalvelu. Sivusto on suunniteltu keräämään mahdollisimman vähän henkilötietoja."
-            : "Open Mats Helsinki Region is a private, non-commercial listing service. The site is designed to collect as little personal data as possible."
+            ? "openmats.fi on yksityinen, ei-kaupallinen koontipalvelu. Sivusto on suunniteltu keräämään mahdollisimman vähän henkilötietoja."
+            : "openmats.fi is a private, non-commercial listing service. The site is designed to collect as little personal data as possible."
         }
       </p>
       <p class="legal-updated">
-        {isFinnish ? "Päivitetty 17.7.2026" : "Updated 17 July 2026"}
+        {isFinnish ? "Päivitetty 4.10.2026" : "Updated 4 October 2026"}
       </p>
     </section>
 
@@ -68,7 +68,7 @@ const description = isFinnish
             <p>
               Voit ottaa tähän osoitteeseen yhteyttä myös tapahtumatietojen
               korjauksista tai puuttuvista open mateista. Lähetä
-              henkilötietojasi koskevat pyynnöt samaan osoitteeseen. Open Mats
+              henkilötietojasi koskevat pyynnöt samaan osoitteeseen. openmats.fi
               ei ole yrityksen tai yhdistyksen toimintaa.
             </p>
           </section>
@@ -87,8 +87,8 @@ const description = isFinnish
               väärinkäytösten torjumiseen ja teknisten virheiden selvittämiseen.
               Käsittely perustuu rekisterinpitäjän oikeutettuun etuun pitää
               palvelu saatavilla ja turvallisena (EU:n yleisen
-              tietosuoja-asetuksen 6 artiklan 1 kohdan f alakohta). Open Mats ei
-              ylläpidä erillistä kävijärekisteriä, muodosta kävijäprofiileja
+              tietosuoja-asetuksen 6 artiklan 1 kohdan f alakohta). openmats.fi
+              ei ylläpidä erillistä kävijärekisteriä, muodosta kävijäprofiileja
               eikä käytä tietoja mainontaan.
             </p>
 
@@ -100,7 +100,7 @@ const description = isFinnish
               erillistä palauterekisteriä.
             </p>
             <p>
-              Open Mats käsittelee viestiä siihen vastaamiseksi,
+              openmats.fi käsittelee viestiä siihen vastaamiseksi,
               tapahtumatietojen tarkistamiseksi tai korjaamiseksi taikka
               henkilötietoja koskevan pyynnön hoitamiseksi. Käsittely perustuu
               tarkoituksesta riippuen oikeutettuun etuun ylläpitää luotettavaa
@@ -153,7 +153,7 @@ const description = isFinnish
             <p>
               Cloudflare käsittelee teknisiä tietoja vain palvelun
               toimittamiseen ja suojaamiseen tarvittavan ajan omien
-              säilytyskäytäntöjensä mukaisesti. Open Mats ei lataa tai säilytä
+              säilytyskäytäntöjensä mukaisesti. openmats.fi ei lataa tai säilytä
               niistä erillistä kopiota.
             </p>
             <p>
@@ -168,7 +168,7 @@ const description = isFinnish
           <section aria-labelledby="cookies-title">
             <h2 id="cookies-title">5. Evästeet ja seuranta</h2>
             <p>
-              Open Mats ei käytä eikä aseta evästeitä, eikä sivustolla ole
+              openmats.fi ei käytä eikä aseta evästeitä, eikä sivustolla ole
               analytiikkaa, mainontaa, markkinointiseurantaa tai selaimen
               paikalliseen tallennustilaan kirjoittavaa toimintoa. Nykyinen
               toteutus ei käytä myöskään evästeen asettavia
@@ -224,10 +224,10 @@ const description = isFinnish
               Email: <a href="mailto:savi1993@gmail.com">savi1993@gmail.com</a>
             </p>
             <p>
-              You can also use this address to contact Open Mats about event
+              You can also use this address to contact openmats.fi about event
               corrections or missing open mats. Send requests concerning your
-              personal data to the same address. Open Mats is not operated by a
-              company or an association.
+              personal data to the same address. openmats.fi is not operated by
+              a company or an association.
             </p>
           </section>
 
@@ -245,7 +245,7 @@ const description = isFinnish
               abuse, and investigate technical errors. The legal basis is the
               controller’s legitimate interest in keeping the service available
               and secure (Article 6(1)(f) of the EU General Data Protection
-              Regulation). Open Mats does not maintain a separate visitor
+              Regulation). openmats.fi does not maintain a separate visitor
               register, create visitor profiles, or use the data for
               advertising.
             </p>
@@ -258,8 +258,8 @@ const description = isFinnish
               separate feedback register.
             </p>
             <p>
-              Open Mats processes the message to reply, verify or correct event
-              information, or handle a request concerning personal data.
+              openmats.fi processes the message to reply, verify or correct
+              event information, or handle a request concerning personal data.
               Depending on the purpose, the legal basis is the legitimate
               interest in maintaining a reliable service and communicating with
               you, or a legal obligation to handle data-protection requests.
@@ -310,7 +310,7 @@ const description = isFinnish
             <p>
               Cloudflare processes technical data only for as long as necessary
               to deliver and protect the service under its retention practices.
-              Open Mats does not download or retain a separate copy of that
+              openmats.fi does not download or retain a separate copy of that
               data.
             </p>
             <p>
@@ -325,7 +325,7 @@ const description = isFinnish
           <section aria-labelledby="cookies-title">
             <h2 id="cookies-title">5. Cookies and tracking</h2>
             <p>
-              Open Mats does not use or set cookies, and the site has no
+              openmats.fi does not use or set cookies, and the site has no
               analytics, advertising, marketing tracking, or functionality that
               writes to browser local storage. The current implementation also
               does not use Cloudflare features that set cookies. If this

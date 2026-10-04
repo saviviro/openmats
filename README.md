@@ -1,6 +1,6 @@
-# Open Mats Helsinki Region
+# openmats.fi
 
-Open Mats Helsinki Region is a planned public website that collects Gi (BJJ)
+openmats.fi is a public website that collects Gi (BJJ)
 and No-gi (submission-wrestling) open mats across Helsinki, Espoo, Vantaa, and
 Kauniainen.
 
