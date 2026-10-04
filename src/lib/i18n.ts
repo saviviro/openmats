@@ -139,10 +139,10 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The dated calendar confirms Sundays from 27 September through 15 November at 12:00–13:30. Arrange the visit with the club in advance. The autumn series ends on 13 December 2026.",
   },
   "dojo-helsinki-saturday-nogi-open-mat": {
-    priceNote: "The source does not state a visitor price",
-    accessDescription: "Open to practitioners from other clubs. No-gi attire.",
+    priceNote: "Free of charge",
+    accessDescription: "Open to all clubs and experience levels. No-gi attire.",
     exceptionNote:
-      "Confirm the 26 September open mat in particular: Dojo advertises an Aki Teräväinen seminar at the same time, but the public announcement does not confirm the venue. The regular Saturday session is 12:00–13:00.",
+      "The official timetable lists no exceptions. The regular Saturday open mat is 12:00–13:00.",
   },
   "gb-gym-monthly-open-mat": {
     priceNote: "Free of charge",
@@ -198,9 +198,9 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
   "tundra-saturday-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
-      "Open to members of other clubs. Contact the gym before visiting during summer.",
+      "Open to members of other clubs. Contact the gym before visiting.",
     exceptionNote:
-      "The gym notes that summer exceptions are possible and asks visitors to get in touch before attending.",
+      "The gym’s pricing page asks visitors to get in touch before attending. This instruction is not limited to summer.",
   },
 };
 

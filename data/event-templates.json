@@ -137,12 +137,12 @@
         "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
       },
       "access": {
-        "description": "Avoin myös muiden seurojen jäsenille. Ota kesällä yhteyttä ennen vierailua.",
+        "description": "Avoin myös muiden seurojen jäsenille. Ota yhteyttä saliin ennen vierailua.",
         "registrationRequired": true
       },
       "status": "uncertain",
       "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-      "exceptionNote": "Sali kertoo kesäpoikkeusten olevan mahdollisia ja pyytää ottamaan yhteyttä ennen vierailua.",
+      "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "isExample": false
     },
     {
@@ -204,15 +204,15 @@
         "city": "Helsinki"
       },
       "price": {
-        "amount": null,
+        "amount": 0,
         "currency": "EUR",
-        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+        "note": "Maksuton"
       },
       "access": {
-        "description": "Avoin muiden seurojen harrastajille. No-gi-varustus.",
+        "description": "Avoin kaikille seurasta ja tasosta riippumatta. No-gi-varustus.",
         "registrationRequired": false
       },
-      "status": "uncertain",
+      "status": "scheduled",
       "sourceLabel": "Dojo Helsingin treeniajat",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "isExample": false

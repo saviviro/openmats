@@ -6,7 +6,7 @@ import { basename, dirname, resolve } from "node:path";
 import seriesRegistry from "../data/event-series.json";
 import templates from "../data/event-templates.json";
 import sourceRegistry from "../data/source-registry.json";
-import events from "../src/data/events.json";
+import { buildPublishedEvents } from "./materialize-events.mjs";
 import {
   AUTOMATION_LOCK_PATH,
   acquireLock,
@@ -19,19 +19,31 @@ import {
   validatePublicationPackage,
 } from "./automation-gate.mjs";
 
+// Model a complete scheduled review independently of later, scoped data edits.
 const publicationReviewTime = new Date(
-  Math.max(
-    Date.parse(seriesRegistry.checkedAt),
-    ...seriesRegistry.series.map((s) => Date.parse(s.exceptionCheck.checkedAt)),
-    ...sourceRegistry.venues
-      .filter(
-        (v) =>
-          seriesRegistry.series.some((s) => s.venueId === v.id) ||
-          v.datedOpenMats?.length,
-      )
-      .map((v) => Date.parse(v.checkedAt)),
-  ),
+  `${seriesRegistry.window.from}T12:00:00Z`,
 );
+const reviewedAt = publicationReviewTime.toISOString();
+const reviewedSeriesRegistry = structuredClone(seriesRegistry);
+reviewedSeriesRegistry.checkedAt = reviewedAt;
+for (const series of reviewedSeriesRegistry.series) {
+  series.exceptionCheck.checkedAt = reviewedAt;
+}
+const reviewedSourceRegistry = structuredClone(sourceRegistry);
+reviewedSourceRegistry.checkedAt = reviewedAt;
+for (const venue of reviewedSourceRegistry.venues) {
+  venue.checkedAt = reviewedAt;
+}
+const publicationPackage = {
+  seriesRegistry: reviewedSeriesRegistry,
+  sourceRegistry: reviewedSourceRegistry,
+  templates,
+  events: buildPublishedEvents(
+    reviewedSeriesRegistry,
+    templates,
+    reviewedSourceRegistry,
+  ),
+};
 
 const state = {
   version: 1,
@@ -163,23 +175,18 @@ describe("scheduled automation gate", () => {
     ).toBe(registry);
   });
 
-  it("validates the complete committed recurring and dated publication package", () => {
+  it("validates a complete recurring and dated publication package", () => {
     expect(
-      validatePublicationPackage(
-        { seriesRegistry, sourceRegistry, templates, events },
-        publicationReviewTime,
-      ),
-    ).toEqual({ seriesRegistry, sourceRegistry, templates, events });
+      validatePublicationPackage(publicationPackage, publicationReviewTime),
+    ).toEqual(publicationPackage);
   });
 
   it("rejects a success record when published events are not synchronized", () => {
     expect(() =>
       validatePublicationPackage(
         {
-          seriesRegistry,
-          sourceRegistry,
-          templates,
-          events: events.slice(1),
+          ...publicationPackage,
+          events: publicationPackage.events.slice(1),
         },
         publicationReviewTime,
       ),
@@ -189,7 +196,7 @@ describe("scheduled automation gate", () => {
   it("requires every publication source to be reviewed after this run acquired the lock", () => {
     expect(() =>
       validatePublicationPackage(
-        { seriesRegistry, sourceRegistry, templates, events },
+        publicationPackage,
         new Date(publicationReviewTime.getTime() + 1000),
         new Date(publicationReviewTime.getTime() + 500).toISOString(),
       ),

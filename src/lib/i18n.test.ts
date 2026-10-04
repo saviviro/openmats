@@ -62,10 +62,10 @@ describe("localization", () => {
     expect(translation.exceptionNote).not.toMatch(/No-Gi Finnish Open/);
   });
 
-  it("keeps the Dojo seminar warning accurate in English", () => {
+  it("keeps the confirmed Dojo details current in English", () => {
     const translation = getEventTranslation(
       "en",
-      "dojo-helsinki-saturday-nogi-open-mat-2026-09-26",
+      "dojo-helsinki-saturday-nogi-open-mat-2026-10-10",
       "dojo-helsinki-saturday-nogi-open-mat",
       {
         priceNote: "Vierailuhintaa ei ilmoitettu lähteessä",
@@ -74,9 +74,13 @@ describe("localization", () => {
       },
     );
 
-    expect(translation.exceptionNote).toMatch(/26 September/);
-    expect(translation.exceptionNote).toMatch(/Aki Teräväinen seminar/);
-    expect(translation.exceptionNote).toMatch(/does not confirm the venue/);
+    expect(translation.priceNote).toBe("Free of charge");
+    expect(translation.accessDescription).toMatch(
+      /all clubs and experience levels/,
+    );
+    expect(translation.exceptionNote).toMatch(/no exceptions/);
+    expect(translation.exceptionNote).toMatch(/12:00–13:00/);
+    expect(translation.exceptionNote).not.toMatch(/September|seminar/);
   });
 
   it("keeps the Buli reviewed date range accurate in English", () => {

@@ -363,7 +363,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "public_confirmed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The official Finnish and English timetables list a Saturday 12:00–13:00 open mat at the Punavuori address. The project owner confirmed outside-club access and No-gi attire on 16 July 2026.",
+      "evidenceSummary": "The official Finnish and English timetables list a Saturday 12:00–13:00 open mat at the Punavuori address. The project owner confirmed outside-club access and No-gi attire on 16 July 2026. On 4 October 2026, the organizer confirmed by private correspondence that the Saturday open mat starts at 12:00, is free and welcomes all clubs and experience levels. This confirmation does not establish an end time; 13:00 remains based on the official timetable.",
       "sources": [
         {
           "type": "official_schedule",
@@ -396,10 +396,10 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": null,
           "validThrough": null,
-          "notes": "The official timetable provides the recurring time. The project owner confirmed outside-club access and No-gi attire on 16 July 2026."
+          "notes": "The official timetable provides the recurring time. The project owner confirmed outside-club access and No-gi attire on 16 July 2026. On 4 October 2026, the organizer confirmed by private correspondence that the Saturday open mat starts at 12:00, is free and welcomes all clubs and experience levels. This confirmation does not establish an end time; 13:00 remains based on the official timetable."
         }
       ],
-      "checkedAt": "2026-10-01T17:00:55+03:00",
+      "checkedAt": "2026-10-04T11:02:48+03:00",
       "monitoringNotes": "Check both official timetables for the weekly slot and the official Instagram account for holiday changes and additional dated open mats. Add extra sessions as dated events rather than changing the weekly series."
     },
     {
@@ -971,7 +971,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "mixed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The official schedule explicitly marks Saturday's gi/no-gi session open to everyone and Wednesday's open mat members-only. Summer visitors are asked to message before attending because of exceptions. The separate 14-euro non-member single-visit price is not attributed specifically to the open mat.",
+      "evidenceSummary": "The official schedule explicitly marks Saturday's gi/no-gi session open to everyone and Wednesday's open mat members-only. The official pricing page asks non-member visitors to contact the gym before attending, without a seasonal restriction (visitor policy verified on 2026-10-02). The separate 14-euro non-member single-visit price is not attributed specifically to the open mat.",
       "sources": [
         {
           "type": "official_schedule",
@@ -1004,7 +1004,7 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": null,
           "validThrough": null,
-          "notes": "Open to everyone; the club asks summer visitors to message before attending because exceptions are possible."
+          "notes": "Open to everyone; the official pricing page asks non-member visitors to contact the gym before attending without a seasonal restriction (verified on 2026-10-02)."
         },
         {
           "weekday": 3,
