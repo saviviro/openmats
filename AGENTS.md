@@ -2,7 +2,7 @@
 
 ## Projektin tarkoitus
 
-Tämä repositorio sisältää **Open Mats Helsinki Region** -palvelun. Palvelu kokoaa koko Helsingin seudun eli Helsingin, Espoon, Vantaan ja Kauniaisten brasilialaisen jujutsun (BJJ) ja lukkopainin avoimet sparrivuorot yhdelle verkkosivulle heti ensimmäisestä julkaistavasta versiosta alkaen.
+Tämä repositorio sisältää **openmats.fi**-palvelun. Palvelu kokoaa koko Helsingin seudun eli Helsingin, Espoon, Vantaan ja Kauniaisten brasilialaisen jujutsun (BJJ) ja lukkopainin avoimet sparrivuorot yhdelle verkkosivulle heti ensimmäisestä julkaistavasta versiosta alkaen.
 
 Projektin omistaja aloittaa verkkokehityksen ja julkaisemisen perusteista. Kerro olennaiset valinnat selkeästi suomeksi, vältä tarpeetonta ammattisanastoa ja tee turvalliset, palautettavat oletukset aina kun mahdollista.
 

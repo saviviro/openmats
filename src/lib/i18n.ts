@@ -9,7 +9,7 @@ export const ui = {
   fi: {
     description:
       "Pääkaupunkiseudun BJJ- ja lukkopaini-open matit yhdessä paikassa.",
-    homeLabel: "Open Mats, etusivu",
+    homeLabel: "openmats.fi, etusivu",
     languageLabel: "Kieli",
     skipLink: "Siirry tapahtumiin",
     heroTitle: "Löydä seuraava",
@@ -60,7 +60,7 @@ export const ui = {
   en: {
     description:
       "Brazilian jiu-jitsu and submission wrestling open mats across the Helsinki region.",
-    homeLabel: "Open Mats, home page",
+    homeLabel: "openmats.fi, home page",
     languageLabel: "Language",
     skipLink: "Skip to events",
     heroTitle: "Find your next",

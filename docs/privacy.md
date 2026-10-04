@@ -2,7 +2,7 @@
 
 ## Current scope
 
-Open Mats Helsinki Region is operated by Savi Santeri Pauli Virolainen as a
+openmats.fi is operated by Savi Santeri Pauli Virolainen as a
 private, non-commercial project. The site has no user accounts, first-party
 forms, payments, advertising, analytics, marketing trackers or embedded
 third-party content. It is free to use and does not seek financial benefit.
@@ -19,14 +19,14 @@ The footer must link to the locale-matching notice from every public page.
 Two processing paths exist in the MVP:
 
 1. Cloudflare Pages processes request and security data needed to deliver and
-   protect the website. Open Mats does not download or maintain a separate copy
+   protect the website. openmats.fi does not download or maintain a separate copy
    of visitor logs.
 2. Contact and event-correction emails are received through a personal Gmail
    account. A message can contain the sender's name and email address, message
    content, attachments and communication timestamps. Messages are not copied
    into a separate feedback register.
 
-The lawful basis used by Open Mats is legitimate interest for delivering and
+The lawful basis used by openmats.fi is legitimate interest for delivering and
 securing the site, maintaining an accurate event listing and ordinary
 correspondence. A legal obligation applies when an email concerns a formal
 data-protection request. The privacy notice documents the associated purposes,
@@ -71,7 +71,7 @@ to both providers' privacy information and explain that data may be processed
 outside the European Economic Area.
 
 The provider disclosure rules for commercial information-society services were
-reviewed for the current scope. Because Open Mats is a private, non-commercial
+reviewed for the current scope. Because openmats.fi is a private, non-commercial
 project without advertising or other economic activity, the privacy notice does
 not publish a home address or Business ID. Reassess this if the operating model
 changes.
