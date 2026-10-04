@@ -126,7 +126,10 @@ reviewed official sources.
 Dojo's official Finnish and English timetables list Saturday 12:00–13:00 open
 mat at Pursimiehenkatu 14. The project owner confirmed on 16 July 2026 that the
 session is open to outside-club practitioners and uses No-gi attire. The
-visitor price is unknown because the official sources do not state one.
+organizer confirmed by private correspondence on 4 October 2026 that the Saturday
+open mat starts at 12:00, is free and welcomes all clubs and experience levels.
+The reply did not confirm an end time; 13:00 remains based on the official
+timetable. Only this non-personal factual summary is recorded publicly.
 
 Occurrences are generated only inside the reviewed validity and publication
 windows. Dojo's official Instagram account is a supporting monitoring source

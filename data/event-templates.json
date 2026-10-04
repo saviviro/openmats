@@ -204,12 +204,12 @@
         "city": "Helsinki"
       },
       "price": {
-        "amount": null,
+        "amount": 0,
         "currency": "EUR",
-        "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+        "note": "Maksuton"
       },
       "access": {
-        "description": "Avoin muiden seurojen harrastajille. No-gi-varustus.",
+        "description": "Avoin kaikille seurasta ja tasosta riippumatta. No-gi-varustus.",
         "registrationRequired": false
       },
       "status": "uncertain",

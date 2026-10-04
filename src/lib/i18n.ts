@@ -139,8 +139,8 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The dated calendar confirms Sundays from 27 September through 15 November at 12:00–13:30. Arrange the visit with the club in advance. The autumn series ends on 13 December 2026.",
   },
   "dojo-helsinki-saturday-nogi-open-mat": {
-    priceNote: "The source does not state a visitor price",
-    accessDescription: "Open to practitioners from other clubs. No-gi attire.",
+    priceNote: "Free of charge",
+    accessDescription: "Open to all clubs and experience levels. No-gi attire.",
     exceptionNote:
       "Confirm the 26 September open mat in particular: Dojo advertises an Aki Teräväinen seminar at the same time, but the public announcement does not confirm the venue. The regular Saturday session is 12:00–13:00.",
   },

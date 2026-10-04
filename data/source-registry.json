@@ -363,7 +363,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "public_confirmed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The official Finnish and English timetables list a Saturday 12:00–13:00 open mat at the Punavuori address. The project owner confirmed outside-club access and No-gi attire on 16 July 2026.",
+      "evidenceSummary": "The official Finnish and English timetables list a Saturday 12:00–13:00 open mat at the Punavuori address. The project owner confirmed outside-club access and No-gi attire on 16 July 2026. On 4 October 2026, the organizer confirmed by private correspondence that the Saturday open mat starts at 12:00, is free and welcomes all clubs and experience levels. This confirmation does not establish an end time; 13:00 remains based on the official timetable.",
       "sources": [
         {
           "type": "official_schedule",
@@ -396,7 +396,7 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": null,
           "validThrough": null,
-          "notes": "The official timetable provides the recurring time. The project owner confirmed outside-club access and No-gi attire on 16 July 2026."
+          "notes": "The official timetable provides the recurring time. The project owner confirmed outside-club access and No-gi attire on 16 July 2026. On 4 October 2026, the organizer confirmed by private correspondence that the Saturday open mat starts at 12:00, is free and welcomes all clubs and experience levels. This confirmation does not establish an end time; 13:00 remains based on the official timetable."
         }
       ],
       "checkedAt": "2026-10-01T17:00:55+03:00",

@@ -64,7 +64,7 @@ const expectedSeriesDisplayData = {
   "dojo-helsinki-saturday-nogi-open-mat": {
     venueName: "Dojo Helsinki",
     formats: ["no-gi"],
-    priceAmount: null,
+    priceAmount: 0,
     status: "uncertain",
   },
   "kilo-jiu-jitsu-saturday-open-mat": {
