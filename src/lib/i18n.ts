@@ -198,9 +198,9 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
   "tundra-saturday-open-mat": {
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
-      "Open to members of other clubs. Contact the gym before visiting during summer.",
+      "Open to members of other clubs. Contact the gym before visiting.",
     exceptionNote:
-      "The gym notes that summer exceptions are possible and asks visitors to get in touch before attending.",
+      "The gym’s pricing page asks visitors to get in touch before attending. This instruction is not limited to summer.",
   },
 };
 

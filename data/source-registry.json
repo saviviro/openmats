@@ -971,7 +971,7 @@
       "disciplines": ["bjj", "nogi"],
       "openMatAccess": "mixed",
       "collectionReadiness": "ready",
-      "evidenceSummary": "The official schedule explicitly marks Saturday's gi/no-gi session open to everyone and Wednesday's open mat members-only. Summer visitors are asked to message before attending because of exceptions. The separate 14-euro non-member single-visit price is not attributed specifically to the open mat.",
+      "evidenceSummary": "The official schedule explicitly marks Saturday's gi/no-gi session open to everyone and Wednesday's open mat members-only. The official pricing page asks non-member visitors to contact the gym before attending, without a seasonal restriction (visitor policy verified on 2026-10-02). The separate 14-euro non-member single-visit price is not attributed specifically to the open mat.",
       "sources": [
         {
           "type": "official_schedule",
@@ -1004,7 +1004,7 @@
           "publishStatus": "ready_for_event_review",
           "validFrom": null,
           "validThrough": null,
-          "notes": "Open to everyone; the club asks summer visitors to message before attending because exceptions are possible."
+          "notes": "Open to everyone; the official pricing page asks non-member visitors to contact the gym before attending without a seasonal restriction (verified on 2026-10-02)."
         },
         {
           "weekday": 3,
