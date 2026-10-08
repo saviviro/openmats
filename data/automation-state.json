@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-10-01T17:06:34+03:00",
-    "summary": "Reviewed all maintained publishable sources; retained TK Sports after expired-domain read failure, narrowed HJJK warning, cleared past Dojo exception, refreshed 98 events for 2026-10-01 through 2026-11-26, and updated fast-uri to 3.1.7."
+    "lastSuccessfulAt": "2026-10-08T17:47:50+03:00",
+    "summary": "Reviewed all maintained publishable and time-bounded sources; confirmed no schedule or access changes, extended Kilo and Buli date evidence through 28-29 November, refreshed 98 events for 2026-10-08 through 2026-12-03, and fixed high-severity sharp and source-map-js advisories."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-09-16T22:31:32+03:00",
