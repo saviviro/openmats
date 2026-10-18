@@ -35,9 +35,7 @@ describe("production verification", () => {
     ]
       .sort((first, second) => Date.parse(first) - Date.parse(second))
       .at(-1);
-    const sentinelEventId = events
-      .filter(({ schedule }) => schedule.seriesId === "takado-tuesday-open-mat")
-      .at(-1).id;
+    const sentinelEventId = "mma-vantaa-sunday-open-mat-2026-12-13";
 
     expect(
       expectedProductionState(seriesRegistry, events, automationState),

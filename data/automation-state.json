@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-10-08T17:47:50+03:00",
-    "summary": "Reviewed all maintained publishable and time-bounded sources; confirmed no schedule or access changes, extended Kilo and Buli date evidence through 28-29 November, refreshed 98 events for 2026-10-08 through 2026-12-03, and fixed high-severity sharp and source-map-js advisories."
+    "lastSuccessfulAt": "2026-10-18T20:16:30+03:00",
+    "summary": "Checked maintained official sources; no new exclusions or restrictions; refreshed 101 events for 2026-10-18 through 2026-12-27."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-09-16T22:31:32+03:00",
