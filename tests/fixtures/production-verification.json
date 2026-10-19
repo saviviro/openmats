@@ -1,0 +1,32 @@
+{
+  "seriesRegistry": {
+    "window": { "through": "2026-12-20" },
+    "series": [{ "id": "recurring-a" }, { "id": "recurring-b" }]
+  },
+  "events": [
+    {
+      "id": "recurring-b-2026-12-27",
+      "startAt": "2026-12-27T12:00:00+02:00",
+      "schedule": { "seriesId": "recurring-b" }
+    },
+    {
+      "id": "dated-2026-12-20",
+      "startAt": "2026-12-20T18:00:00+02:00",
+      "schedule": { "seriesId": "dated-only" }
+    },
+    {
+      "id": "recurring-a-2026-12-20",
+      "startAt": "2026-12-20T14:00:00+02:00",
+      "schedule": { "seriesId": "recurring-a" }
+    },
+    {
+      "id": "recurring-b-2026-12-20",
+      "startAt": "2026-12-20T12:00:00+02:00",
+      "schedule": { "seriesId": "recurring-b" }
+    }
+  ],
+  "automationState": {
+    "routine": { "lastSuccessfulAt": "2026-12-20T15:00:00+02:00" },
+    "discovery": { "lastSuccessfulAt": "2026-12-19T15:00:00+02:00" }
+  }
+}

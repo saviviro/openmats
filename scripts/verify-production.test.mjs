@@ -1,8 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import automationState from "../data/automation-state.json";
-import seriesRegistry from "../data/event-series.json";
-import events from "../src/data/events.json";
+import fixture from "../tests/fixtures/production-verification.json";
 import {
   expectedProductionState,
   inspectProductionHtml,
@@ -29,20 +27,31 @@ describe("production verification", () => {
   });
 
   it("selects the latest complete review and a rolling-window sentinel", () => {
-    const reviewedAt = [
-      automationState.routine.lastSuccessfulAt,
-      automationState.discovery.lastSuccessfulAt,
-    ]
-      .sort((first, second) => Date.parse(first) - Date.parse(second))
-      .at(-1);
-    const sentinelEventId = "mma-vantaa-sunday-open-mat-2026-12-13";
+    expect(
+      expectedProductionState(
+        fixture.seriesRegistry,
+        fixture.events,
+        fixture.automationState,
+      ),
+    ).toEqual({
+      reviewedAt: "2026-12-20T15:00:00+02:00",
+      sentinelEventId: "recurring-a-2026-12-20",
+    });
+  });
+
+  it("selects the new sentinel when the publication window moves", () => {
+    const seriesRegistry = {
+      ...fixture.seriesRegistry,
+      window: { through: "2026-12-27" },
+    };
 
     expect(
-      expectedProductionState(seriesRegistry, events, automationState),
-    ).toEqual({
-      reviewedAt,
-      sentinelEventId,
-    });
+      expectedProductionState(
+        seriesRegistry,
+        fixture.events,
+        fixture.automationState,
+      ).sentinelEventId,
+    ).toBe("recurring-b-2026-12-27");
   });
 
   it("compares review timestamps chronologically across the Helsinki DST change", () => {
@@ -52,7 +61,8 @@ describe("production verification", () => {
     };
 
     expect(
-      expectedProductionState(seriesRegistry, events, state).reviewedAt,
+      expectedProductionState(fixture.seriesRegistry, fixture.events, state)
+        .reviewedAt,
     ).toBe("2026-10-25T03:15:00+02:00");
   });
 
