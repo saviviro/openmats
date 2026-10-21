@@ -537,6 +537,19 @@ the rolling 18 October–13 December publication window.
 No new exclusion, visitor restriction, format or open-mat-specific price was
 supported by the reviewed sources.
 
+## Broad discovery: 21 October 2026
+
+The maintained four-city baseline was compared with the current Finnish BJJ
+Federation and ADCC Finland club lists, and all maintained official source URLs
+were checked. No additional publishable public BJJ or submission-wrestling
+open mat was verified. The published schedules, visitor conditions, formats
+and prices remained unchanged.
+
+The old HIPKO summer PDF still returns 404, TK Sports and Vantaan
+Kamppailukeskus remain unreadable because of TLS errors, and the PP Jiujitsu
+domain still does not resolve. These source failures were retained for
+monitoring and were not interpreted as cancellations or new access limits.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

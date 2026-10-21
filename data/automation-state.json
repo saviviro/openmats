@@ -5,7 +5,7 @@
     "summary": "Checked maintained official sources; no new exclusions or restrictions; refreshed 101 events for 2026-10-18 through 2026-12-27."
   },
   "discovery": {
-    "lastSuccessfulAt": "2026-09-16T22:31:32+03:00",
-    "summary": "Broad four-city official-source review found no new publishable series; refreshed 99 events through 2026-11-11 and retained unresolved Kivenlahti visitor access for manual review."
+    "lastSuccessfulAt": "2026-10-21T19:32:27+03:00",
+    "summary": "Four-city official-source discovery completed; no new publishable series, 98 events materialized for 2026-10-21 through 2026-12-27, and Vite high-severity advisory remediated."
   }
 }

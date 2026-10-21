@@ -159,6 +159,19 @@ Kauniainen still has no verified active in-scope venue. Unreachable or expired
 sources were retained as monitoring issues and were not treated as evidence of
 cancellation or member-only access.
 
+## Discovery review: 21 October 2026
+
+The four-city broad review compared the maintained venue baseline with the
+current Finnish BJJ Federation and ADCC Finland club lists and checked all
+maintained official source URLs. It found no new first-party evidence for an
+additional publishable public BJJ or submission-wrestling open mat. Kauniainen
+still has no verified active in-scope venue.
+
+The expired HIPKO summer PDF, TK Sports and Vantaan Kamppailukeskus TLS
+failures, and unresolved PP Jiujitsu domain were retained as source-access
+issues. They were not treated as cancellations, member-only evidence or a
+reason to delete previously verified events.
+
 ## Updating the registry
 
 For every review:
