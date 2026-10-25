@@ -550,6 +550,35 @@ Kamppailukeskus remain unreadable because of TLS errors, and the PP Jiujitsu
 domain still does not resolve. These source failures were retained for
 monitoring and were not interpreted as cancellations or new access limits.
 
+## Weekly light check: 25 October 2026
+
+The maintained official sources for every published recurring series, GB Gym's
+dated entries and the time-bounded manual-review candidates were checked for
+the rolling 25 October–20 December publication window.
+
+- AOGG's Erottaja and Sörnäinen booking pages retain their weekly sessions
+  through the end of the window without a new cancellation marker. Kilo's live
+  Asio calendar lists every Saturday 11:00–12:30 open mat through 19 December;
+  the following week has no open mat listed. Buli's dated calendar still shows
+  the current Sunday 12:00–13:30 Urhea open mat, while its source-backed series
+  remains bounded to 13 December.
+- MMA Vantaa retains its public Sunday 12:00–14:00 slot at Rajatorppa. Vantaa's
+  official exception-hours calendar now places Sunday 6 December inside the
+  rolling window and marks Hakunila and Rajatorppa rock shelters closed for
+  Independence Day. That exact occurrence is excluded with date- and
+  venue-specific evidence; no other date is generalized from the closure.
+- GB Gym's calendar retains the explicit 29 November cancellation and the
+  scheduled 27 December open mat. HJJK, Tundra, Loop and Dojo retain their
+  published schedules and existing access, format and price qualifications.
+- HIPKO remains bounded to its expired summer schedule. Combat Academy and
+  FireBody retain their current autumn slots but still do not confirm
+  outside-club access. TK Sports remains unreadable, and Takado's dynamic
+  content did not load during this check; both previously verified series were
+  retained rather than treated as cancelled.
+
+No new visitor restriction, format or open-mat-specific price was supported by
+the reviewed sources.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

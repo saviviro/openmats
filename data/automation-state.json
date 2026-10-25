@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-10-18T20:16:30+03:00",
-    "summary": "Checked maintained official sources; no new exclusions or restrictions; refreshed 101 events for 2026-10-18 through 2026-12-27."
+    "lastSuccessfulAt": "2026-10-25T21:43:59+02:00",
+    "summary": "Reviewed maintained official sources; excluded MMA Vantaa on 2026-12-06 for the official Rajatorppa closure, extended Kilo calendar evidence through 2026-12-19, materialized 99 events through 2026-12-27, and patched high-severity transitive dependency advisories."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-10-21T19:32:27+03:00",
