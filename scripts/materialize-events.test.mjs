@@ -83,6 +83,11 @@ describe("event materialization", () => {
 
   it("keeps exact dated events while another recurring series is removed", () => {
     const removedSeriesId = "hjjk-saturday-open-mat";
+    const expectedDatedEvents = buildPublishedEvents(
+      seriesData,
+      templatesData,
+      sourceRegistryData,
+    ).filter(({ schedule }) => schedule.seriesId === "gb-gym-monthly-open-mat");
     const registry = {
       ...seriesData,
       series: seriesData.series.filter(({ id }) => id !== removedSeriesId),
@@ -103,7 +108,7 @@ describe("event materialization", () => {
       events.filter(
         ({ schedule }) => schedule.seriesId === "gb-gym-monthly-open-mat",
       ),
-    ).toHaveLength(2);
+    ).toEqual(expectedDatedEvents);
   });
 
   it("omits dated events before the window but keeps its first day and later dates", () => {
