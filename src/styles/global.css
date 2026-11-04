@@ -294,7 +294,7 @@ main > section,
 }
 
 .events-section {
-  padding-block: 0.6rem clamp(1.5rem, 3vw, 2.5rem);
+  padding-block: 1rem clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .section-intro {
@@ -876,7 +876,7 @@ main > section,
   }
 
   .events-section {
-    padding-block: 0.55rem 1.5rem;
+    padding-block: 0.9rem 1.5rem;
   }
 
   .filters__heading,
