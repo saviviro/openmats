@@ -15,8 +15,8 @@ const copy = ui[locale];
   </div>
 
   <div class="filter-groups">
-    <fieldset data-filter-group="city">
-      <legend>{copy.city}</legend>
+    <div data-filter-group="city" role="group" aria-label={copy.city}>
+      <span class="filter-label" aria-hidden="true">{copy.city}</span>
       <div class="filter-buttons">
         <button type="button" data-filter-value="all" aria-pressed="true"
           >{copy.all}</button
@@ -31,10 +31,10 @@ const copy = ui[locale];
           >Vantaa</button
         >
       </div>
-    </fieldset>
+    </div>
 
-    <fieldset data-filter-group="format">
-      <legend>{copy.style}</legend>
+    <div data-filter-group="format" role="group" aria-label={copy.style}>
+      <span class="filter-label" aria-hidden="true">{copy.style}</span>
       <div class="filter-buttons">
         <button type="button" data-filter-value="all" aria-pressed="true"
           >{copy.all}</button
@@ -46,10 +46,10 @@ const copy = ui[locale];
           >No-gi</button
         >
       </div>
-    </fieldset>
+    </div>
 
-    <fieldset data-filter-group="price">
-      <legend>{copy.price}</legend>
+    <div data-filter-group="price" role="group" aria-label={copy.price}>
+      <span class="filter-label" aria-hidden="true">{copy.price}</span>
       <div class="filter-buttons">
         <button type="button" data-filter-value="free" aria-pressed="true"
           >{copy.free}</button
@@ -61,6 +61,6 @@ const copy = ui[locale];
           >{copy.unknown}</button
         >
       </div>
-    </fieldset>
+    </div>
   </div>
 </section>
