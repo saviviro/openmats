@@ -40,9 +40,15 @@ export function inspectProductionHtml(
   html,
   { reviewedAt, sentinelEventId, commit = null },
 ) {
+  const inlineStyles = [
+    ...html.matchAll(/<style(?:\s[^>]*)?>([\s\S]*?)<\/style>/g),
+  ]
+    .map((match) => match[1])
+    .some((css) => css.includes(".hero") && css.includes(".event-card"));
   const checks = {
     reviewedAt: html.includes(`data-last-reviewed-at="${reviewedAt}"`),
     sentinelEvent: html.includes(`data-event-id="${sentinelEventId}"`),
+    inlineStyles,
     commit:
       commit === null ||
       html.includes(`<meta name="build-commit" content="${commit}"`),

@@ -25,6 +25,11 @@ Build output directory: dist
 Root directory: repository root
 ```
 
+Astro inlines the site's CSS into each HTML page. This keeps the layout usable
+even if a separate stylesheet request fails or an edge cache briefly serves
+HTML and assets from different deployments. The production verifier checks that
+the built HTML contains the page styles.
+
 The repository's `.nvmrc` selects Node.js 24 and `package.json` pins pnpm
 11.9.0 through the `packageManager` field. No Cloudflare API token or other
 deployment secret is stored in the repository.
@@ -52,10 +57,10 @@ sh scripts/with-automation-runtime.sh pnpm automation:verify-production -- --com
 ```
 
 The verifier retries the canonical `https://openmats.fi` address and requires
-three independent markers from the reviewed checkout: the exact Cloudflare
-build commit, the latest successful review timestamp and a generated recurring
-event near the end of the rolling publication window. A changed date alone does
-not prove that event data or the intended commit reached production. A rejected
+the exact Cloudflare build commit, the latest successful review timestamp, a
+generated recurring event near the end of the rolling publication window, and
+inline page styles. A changed date alone does not prove that event data or the
+intended commit reached production. A rejected
 push, failed check, failed merge or failed production verification leaves an
 explicit failure report instead of claiming a successful publication.
 
