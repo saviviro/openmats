@@ -50,6 +50,10 @@ const statusLabel = {
   rescheduled: copy.rescheduled,
   uncertain: null,
 }[data.status];
+const checkedOn = new Intl.DateTimeFormat(intlLocale[locale], {
+  dateStyle: "medium",
+  timeZone: "Europe/Helsinki",
+}).format(new Date(data.verifiedAt));
 ---
 
 <article
@@ -87,65 +91,59 @@ const statusLabel = {
   </div>
 
   <div class="event-card__content">
-    <div class="event-card__labels" aria-label={copy.eventStyleLabel}>
-      {
-        formatStates.map(({ format, state }) => (
-          <span
-            class:list={["format-pill", `format-pill--${state}`]}
-            aria-label={`${formatLabels[format]}: ${formatStateLabels[state]}`}
+    <div class="event-card__overview">
+      <div class="event-card__headline">
+        <p class="event-card__time">
+          <span class="sr-only">{copy.time}: </span>
+          {formatEventTime(data.startAt, locale)}–{
+            formatEventTime(data.endAt, locale)
+          }
+        </p>
+        <h2 id={`event-${event.id}`}>
+          {data.venue.name}<span class="sr-only">
+            — {data.title}, {formatEventDate(data.startAt, locale)}</span
           >
-            <span aria-hidden="true">{formatStateIcons[state]}</span>
-            {formatLabels[format]}
-          </span>
-        ))
-      }
-      {
-        data.formats === null && (
-          <span class="format-unknown-note">{copy.unknownFormatNote}</span>
-        )
-      }
-      {
-        statusLabel && (
-          <span class:list={["pill", "pill--warning"]}>{statusLabel}</span>
-        )
-      }
+        </h2>
+      </div>
+      <div class="event-card__labels" aria-label={copy.eventStyleLabel}>
+        {
+          formatStates.map(({ format, state }) => (
+            <span
+              class:list={["format-pill", `format-pill--${state}`]}
+              aria-label={`${formatLabels[format]}: ${formatStateLabels[state]}`}
+            >
+              <span aria-hidden="true">{formatStateIcons[state]}</span>
+              {formatLabels[format]}
+            </span>
+          ))
+        }
+        {
+          data.formats === null && (
+            <span class="format-unknown-note">{copy.unknownFormatNote}</span>
+          )
+        }
+        {
+          statusLabel && (
+            <span class:list={["pill", "pill--warning"]}>{statusLabel}</span>
+          )
+        }
+      </div>
     </div>
 
-    <h2 class="sr-only" id={`event-${event.id}`}>
-      {data.title}
-      <span class="sr-only">
-        {
-          ` — ${data.venue.name}, ${formatEventDate(data.startAt, locale)}, ${formatEventTime(
-            data.startAt,
-            locale,
-          )}`
-        }
-      </span>
-    </h2>
-
     <dl class="event-facts">
-      <div>
-        <dt>{copy.time}</dt>
+      <div class="event-facts__address">
+        <dt>{copy.address}</dt>
         <dd>
-          {formatEventDate(data.startAt, locale)}, {
-            formatEventTime(data.startAt, locale)
-          }–{formatEventTime(data.endAt, locale)}
-        </dd>
-      </div>
-      <div>
-        <dt>{copy.venue}</dt>
-        <dd>
-          <strong>{data.venue.name}</strong><br />
-          <span>{address}</span><br />
+          <span>{address}</span>{" "}
           <a
             class="source-link map-link"
             href={mapUrl}
             target="_blank"
             rel="noreferrer"
+            aria-label={`${copy.mapLink} (${copy.opensNewTab})`}
           >
-            <span class="map-link__label">{copy.mapLink}</span>
+            <span class="map-link__label">{copy.mapShort}</span>
             <span aria-hidden="true">↗</span>
-            <span class="sr-only"> ({copy.opensNewTab})</span>
           </a>
         </dd>
       </div>
@@ -177,6 +175,7 @@ const statusLabel = {
             <span aria-hidden="true">↗</span>
             <span class="sr-only"> ({copy.opensNewTab})</span>
           </a>
+          <span class="event-facts__checked">{copy.checkedOn} {checkedOn}</span>
         </dd>
       </div>
       <div
@@ -197,7 +196,6 @@ const statusLabel = {
   .map-link {
     box-sizing: border-box;
     max-width: 100%;
-    margin-top: 0.45rem;
     line-height: 1.2;
     text-align: left;
   }
