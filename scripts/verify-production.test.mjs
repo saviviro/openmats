@@ -66,7 +66,7 @@ describe("production verification", () => {
     ).toBe("2026-10-25T03:15:00+02:00");
   });
 
-  it("requires the review marker, rolling event, and expected build commit", () => {
+  it("requires the review marker, rolling event, inline styles, and expected build commit", () => {
     const expected = {
       reviewedAt: "2026-07-28T12:13:53+03:00",
       sentinelEventId: "takado-tuesday-open-mat-2026-09-22",
@@ -74,19 +74,39 @@ describe("production verification", () => {
     };
     const html = `
       <meta name="build-commit" content="abc123">
+      <style>.hero{color:white}.event-card{display:grid}</style>
       <aside data-last-reviewed-at="2026-07-28T12:13:53+03:00"></aside>
       <article data-event-id="takado-tuesday-open-mat-2026-09-22"></article>
     `;
 
     expect(inspectProductionHtml(html, expected)).toEqual({
       ok: true,
-      checks: { reviewedAt: true, sentinelEvent: true, commit: true },
+      checks: {
+        reviewedAt: true,
+        sentinelEvent: true,
+        inlineStyles: true,
+        commit: true,
+      },
     });
     expect(
       inspectProductionHtml(html.replace("abc123", "stale"), expected),
     ).toEqual({
       ok: false,
-      checks: { reviewedAt: true, sentinelEvent: true, commit: false },
+      checks: {
+        reviewedAt: true,
+        sentinelEvent: true,
+        inlineStyles: true,
+        commit: false,
+      },
     });
+    expect(
+      inspectProductionHtml(
+        html.replace(
+          "<style>.hero{color:white}.event-card{display:grid}</style>",
+          "",
+        ),
+        expected,
+      ).checks.inlineStyles,
+    ).toBe(false);
   });
 });
