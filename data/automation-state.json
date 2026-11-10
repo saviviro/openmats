@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-11-03T12:33:04+02:00",
-    "summary": "Reviewed maintained official sources; bounded Kilo to 2026-12-19; materialized 93 events through 2026-12-29; validation and security audit passed."
+    "lastSuccessfulAt": "2026-11-10T13:54:14+02:00",
+    "summary": "Reviewed all maintained published and time-bounded official sources; excluded four date-specific closed Buli Urhea sessions; materialized 86 events through 2027-01-05; validation and security audit passed."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-10-21T19:32:27+03:00",

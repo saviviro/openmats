@@ -239,6 +239,14 @@ describe("event series materialization", () => {
 
     expect(series?.venueId).toBe("buli-urhea");
     expect(series?.publicationStatus).toBe("publish_with_confirmation");
+    expect(series?.excludedDates).toEqual(
+      expect.arrayContaining([
+        "2026-11-22",
+        "2026-11-29",
+        "2026-12-06",
+        "2026-12-13",
+      ]),
+    );
   });
 
   it("references existing source-registry venues", () => {

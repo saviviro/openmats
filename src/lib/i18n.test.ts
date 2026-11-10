@@ -95,8 +95,10 @@ describe("localization", () => {
       },
     );
 
-    expect(translation.exceptionNote).toMatch(/through 15 November/);
-    expect(translation.exceptionNote).toMatch(/ends on 13 December 2026/);
+    expect(translation.exceptionNote).toMatch(/confirms the 15 November/);
+    expect(translation.exceptionNote).toMatch(
+      /22 and 29 November and 6 and 13 December sessions are marked closed/,
+    );
   });
 
   it("requires event-specific English overrides when Finnish source text varies inside a series", () => {
