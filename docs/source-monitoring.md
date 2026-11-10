@@ -606,6 +606,33 @@ the rolling 3 November–29 December publication window.
 No new visitor restriction, format or open-mat-specific price was supported by
 the reviewed sources.
 
+## Weekly light check: 10 November 2026
+
+The maintained official sources for every published recurring series, GB Gym's
+dated entries and the time-bounded manual-review candidates were checked for
+the rolling 10 November 2026–5 January 2027 publication window.
+
+- Buli Urhea's dated calendar lists the 15 November 12:00–13:30 open mat
+  normally, then marks the 22 and 29 November and 6 and 13 December sessions
+  closed. Only those four occurrences are excluded, each with its own dated
+  official calendar URL and review timestamp.
+- AOGG's Gymdesk records retain the Erottaja and Sörnäinen weekly sessions,
+  zero-euro non-member booking and existing No-gi or coloured-belt scope. GB
+  Gym retains the explicit 29 November cancellation and scheduled 27 December
+  open mat.
+- HJJK, Tundra, Loop, Dojo, Takado and MMA Vantaa retain their published
+  schedules and existing access, format and price qualifications. Vantaa's 6
+  December Rajatorppa closure remains excluded with venue- and date-specific
+  official evidence.
+- Kilo remains bounded to the last previously source-backed calendar date, 19
+  December. HIPKO remains bounded to its expired summer schedule. Combat
+  Academy and FireBody retain their current autumn candidates but still do not
+  confirm outside-club access. TK Sports returned a source-read error and was
+  retained rather than treated as cancelled.
+
+No new visitor restriction, format or open-mat-specific price was supported by
+the reviewed sources.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

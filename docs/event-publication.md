@@ -226,15 +226,14 @@ Buli's official pricing and membership flow identify a weekly Sunday
 costs 25 euros per calendar year. The visitor page asks people to contact the
 club before visiting or trying the open mat before buying the membership.
 
-The dated official calendar marks 9 and 16 August closed. Each date has its own
-source-backed exclusion evidence; neither closure is generalized to later
-Sundays. The calendar lists the reviewed Sundays through 22 November with its
-cancellation flag unset. The membership page and dated calendar provide a weekly recurrence
-through 13 December 2026, so occurrences inside that source-backed boundary
-are published with `uncertain` status and a visible confirmation reminder. The
-price is shown as a 25-euro annual open-mat membership, not as a per-session
-charge. The previous registry attachment to Konepaja was incorrect and has
-been removed.
+The dated official calendar marks 9 and 16 August closed. In the current
+publication window it lists 15 November normally, then marks 22 and 29 November
+and 6 and 13 December closed. Every closure has its own date-specific official
+evidence URL and is excluded only for that occurrence. The remaining
+source-backed occurrence is published with `uncertain` status and a visible
+confirmation reminder. The price is shown as a 25-euro annual open-mat
+membership, not as a per-session charge. The previous registry attachment to
+Konepaja was incorrect and has been removed.
 
 ## Materialization rules
 

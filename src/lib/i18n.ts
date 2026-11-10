@@ -136,7 +136,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     accessDescription:
       "Contact Buli in advance before visiting or trying the open mat. Gi or no-gi.",
     exceptionNote:
-      "The dated calendar confirms Sundays from 27 September through 15 November at 12:00–13:30. Arrange the visit with the club in advance. The autumn series ends on 13 December 2026.",
+      "The dated calendar confirms the 15 November open mat at 12:00–13:30. The 22 and 29 November and 6 and 13 December sessions are marked closed. Arrange the visit with the club in advance.",
   },
   "dojo-helsinki-saturday-nogi-open-mat": {
     priceNote: "Free of charge",
