@@ -175,25 +175,46 @@ if (duplicates.length > 0) {
     const viewSwitch = document.querySelector("[data-view-switch]");
 
     if (viewSwitch instanceof HTMLElement && eventList instanceof HTMLElement) {
+      const mobileView = window.matchMedia("(max-width: 570px)");
+      let viewChosenByUser = false;
+
+      function setView(view: "full" | "compact") {
+        if (
+          !(viewSwitch instanceof HTMLElement) ||
+          !(eventList instanceof HTMLElement)
+        )
+          return;
+
+        eventList.dataset.view = view;
+        for (const disclosure of eventList.querySelectorAll(
+          "details[data-event-details]",
+        )) {
+          if (disclosure instanceof HTMLDetailsElement)
+            disclosure.open = view === "full";
+        }
+        for (const option of viewSwitch.querySelectorAll("button[data-view]")) {
+          option.setAttribute(
+            "aria-pressed",
+            String(option.getAttribute("data-view") === view),
+          );
+        }
+      }
+
+      function setDefaultView() {
+        if (!viewChosenByUser) setView(mobileView.matches ? "compact" : "full");
+      }
+
+      setDefaultView();
       viewSwitch.hidden = false;
+      mobileView.addEventListener("change", setDefaultView);
+
       for (const button of viewSwitch.querySelectorAll("button[data-view]")) {
         button.addEventListener("click", () => {
           if (!(button instanceof HTMLButtonElement)) return;
           const view = button.dataset.view;
           if (view !== "full" && view !== "compact") return;
-
-          eventList.dataset.view = view;
-          for (const disclosure of eventList.querySelectorAll(
-            "details[data-event-details]",
-          )) {
-            if (disclosure instanceof HTMLDetailsElement)
-              disclosure.open = view === "full";
-          }
-          for (const option of viewSwitch.querySelectorAll(
-            "button[data-view]",
-          )) {
-            option.setAttribute("aria-pressed", String(option === button));
-          }
+          viewChosenByUser = true;
+          setView(view);
         });
       }
     }
