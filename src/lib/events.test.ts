@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   eventIdentity,
   findDuplicateEventIds,
+  formatCompactEventDate,
   formatEventDate,
   formatEventTime,
   getEventPriceCategory,
@@ -47,6 +48,14 @@ describe("event utilities", () => {
     expect(formatEventDate("2026-08-01T09:00:00Z")).toBe("la 1. elokuuta");
     expect(formatEventTime("2026-08-01T09:00:00Z")).toBe("12:00");
     expect(formatEventDate("2026-08-01T09:00:00Z", "en")).toBe("Sat 1 August");
+    expect(formatCompactEventDate("2026-11-21T08:00:00Z")).toEqual({
+      weekday: "la",
+      dayMonth: "21.11.",
+    });
+    expect(formatCompactEventDate("2026-11-21T08:00:00Z", "en")).toEqual({
+      weekday: "Sat",
+      dayMonth: "21/11",
+    });
   });
 
   it("keeps euro amounts together across line breaks", () => {

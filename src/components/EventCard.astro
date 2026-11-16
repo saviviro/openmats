@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 
 import {
+  formatCompactEventDate,
   formatEventDate,
   formatEventTime,
   getEventPriceCategory,
@@ -50,6 +51,15 @@ const statusLabel = {
   rescheduled: copy.rescheduled,
   uncertain: null,
 }[data.status];
+const compactPriceLabel = {
+  free: copy.free,
+  paid: copy.paid,
+  unknown: copy.priceUnknown,
+}[priceCategory];
+const compactFormatLabel = data.formats
+  ? data.formats.map((format) => formatLabels[format]).join(" + ")
+  : copy.formatUnknown;
+const compactDate = formatCompactEventDate(data.startAt, locale);
 ---
 
 <article
@@ -63,134 +73,158 @@ const statusLabel = {
   aria-labelledby={`event-${event.id}`}
   tabindex="-1"
 >
-  <div
-    class="event-card__date"
-    aria-label={`${copy.dateAria} ${formatEventDate(data.startAt, locale)}`}
-  >
-    <span>{formatEventDate(data.startAt, locale).split(" ")[0]}</span>
-    <strong
-      >{
-        new Intl.DateTimeFormat(intlLocale[locale], {
-          day: "numeric",
-          timeZone: "Europe/Helsinki",
-        }).format(new Date(data.startAt))
-      }</strong
-    >
-    <small
-      >{
-        new Intl.DateTimeFormat(intlLocale[locale], {
-          month: "short",
-          timeZone: "Europe/Helsinki",
-        }).format(new Date(data.startAt))
-      }</small
-    >
-  </div>
-
-  <div class="event-card__content">
-    <div class="event-card__labels" aria-label={copy.eventStyleLabel}>
+  <h2 class="sr-only" id={`event-${event.id}`}>
+    {data.title}
+    <span class="sr-only">
       {
-        formatStates.map(({ format, state }) => (
-          <span
-            class:list={["format-pill", `format-pill--${state}`]}
-            aria-label={`${formatLabels[format]}: ${formatStateLabels[state]}`}
+        ` — ${data.venue.name}, ${formatEventDate(data.startAt, locale)}, ${formatEventTime(
+          data.startAt,
+          locale,
+        )}`
+      }
+    </span>
+  </h2>
+  <details class="event-card__details" data-event-details open>
+    <summary class="event-card__summary">
+      <span class="event-card__summary-main">
+        <span class="event-card__summary-time">
+          <span class="event-card__weekday">{compactDate.weekday}</span>
+          <strong
+            >{compactDate.dayMonth} · {formatEventTime(data.startAt, locale)}–{
+              formatEventTime(data.endAt, locale)
+            }</strong
           >
-            <span aria-hidden="true">{formatStateIcons[state]}</span>
-            {formatLabels[format]}
-          </span>
-        ))
-      }
-      {
-        data.formats === null && (
-          <span class="format-unknown-note">{copy.unknownFormatNote}</span>
-        )
-      }
-      {
-        statusLabel && (
-          <span class:list={["pill", "pill--warning"]}>{statusLabel}</span>
-        )
-      }
-    </div>
-
-    <h2 class="sr-only" id={`event-${event.id}`}>
-      {data.title}
-      <span class="sr-only">
-        {
-          ` — ${data.venue.name}, ${formatEventDate(data.startAt, locale)}, ${formatEventTime(
-            data.startAt,
-            locale,
-          )}`
-        }
+        </span>
+        <span class="event-card__summary-venue"
+          >{data.venue.name} · {data.venue.city}</span
+        >
+        <span class="event-card__summary-meta"
+          >{compactFormatLabel} · {compactPriceLabel}</span
+        >
       </span>
-    </h2>
+      <span class="event-card__summary-chevron" aria-hidden="true">⌄</span>
+    </summary>
+    <div class="event-card__expanded">
+      <div
+        class="event-card__date"
+        aria-label={`${copy.dateAria} ${formatEventDate(data.startAt, locale)}`}
+      >
+        <span>{formatEventDate(data.startAt, locale).split(" ")[0]}</span>
+        <strong
+          >{
+            new Intl.DateTimeFormat(intlLocale[locale], {
+              day: "numeric",
+              timeZone: "Europe/Helsinki",
+            }).format(new Date(data.startAt))
+          }</strong
+        >
+        <small
+          >{
+            new Intl.DateTimeFormat(intlLocale[locale], {
+              month: "short",
+              timeZone: "Europe/Helsinki",
+            }).format(new Date(data.startAt))
+          }</small
+        >
+      </div>
 
-    <dl class="event-facts">
-      <div>
-        <dt>{copy.time}</dt>
-        <dd>
-          {formatEventDate(data.startAt, locale)}, {
-            formatEventTime(data.startAt, locale)
-          }–{formatEventTime(data.endAt, locale)}
-        </dd>
-      </div>
-      <div>
-        <dt>{copy.venue}</dt>
-        <dd>
-          <strong>{data.venue.name}</strong><br />
-          <span>{address}</span><br />
-          <a
-            class="source-link map-link"
-            href={mapUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span class="map-link__label">{copy.mapLink}</span>
-            <span aria-hidden="true">↗</span>
-            <span class="sr-only"> ({copy.opensNewTab})</span>
-          </a>
-        </dd>
-      </div>
-      <div>
-        <dt>{copy.price}</dt>
-        <dd>{priceNote}</dd>
-      </div>
-      <div>
-        <dt>{copy.audience}</dt>
-        <dd>
-          {eventText.accessDescription}
+      <div class="event-card__content">
+        <div class="event-card__labels" aria-label={copy.eventStyleLabel}>
           {
-            data.access.registrationRequired && (
-              <span class="registration-note">{copy.registrationRequired}</span>
+            formatStates.map(({ format, state }) => (
+              <span
+                class:list={["format-pill", `format-pill--${state}`]}
+                aria-label={`${formatLabels[format]}: ${formatStateLabels[state]}`}
+              >
+                <span aria-hidden="true">{formatStateIcons[state]}</span>
+                {formatLabels[format]}
+              </span>
+            ))
+          }
+          {
+            data.formats === null && (
+              <span class="format-unknown-note">{copy.unknownFormatNote}</span>
             )
           }
-        </dd>
-      </div>
-      <div class="event-facts__source">
-        <dt>{copy.organizerPage}</dt>
-        <dd>
-          <a
-            class="source-link"
-            href={data.sourceUrl}
-            target="_blank"
-            rel="noreferrer"
+          {
+            statusLabel && (
+              <span class:list={["pill", "pill--warning"]}>{statusLabel}</span>
+            )
+          }
+        </div>
+
+        <dl class="event-facts">
+          <div>
+            <dt>{copy.time}</dt>
+            <dd>
+              {formatEventDate(data.startAt, locale)}, {
+                formatEventTime(data.startAt, locale)
+              }–{formatEventTime(data.endAt, locale)}
+            </dd>
+          </div>
+          <div>
+            <dt>{copy.venue}</dt>
+            <dd>
+              <strong>{data.venue.name}</strong><br />
+              <span>{address}</span><br />
+              <a
+                class="source-link map-link"
+                href={mapUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="map-link__label">{copy.mapLink}</span>
+                <span aria-hidden="true">↗</span>
+                <span class="sr-only"> ({copy.opensNewTab})</span>
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt>{copy.price}</dt>
+            <dd>{priceNote}</dd>
+          </div>
+          <div>
+            <dt>{copy.audience}</dt>
+            <dd>
+              {eventText.accessDescription}
+              {
+                data.access.registrationRequired && (
+                  <span class="registration-note">
+                    {copy.registrationRequired}
+                  </span>
+                )
+              }
+            </dd>
+          </div>
+          <div class="event-facts__source">
+            <dt>{copy.organizerPage}</dt>
+            <dd>
+              <a
+                class="source-link"
+                href={data.sourceUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {copy.organizerLink}
+                <span aria-hidden="true">↗</span>
+                <span class="sr-only"> ({copy.opensNewTab})</span>
+              </a>
+            </dd>
+          </div>
+          <div
+            class:list={[
+              "event-facts__exceptions",
+              data.schedule.exceptionStatus === "confirmation_required" &&
+                "event-facts__exceptions--attention",
+            ]}
           >
-            {copy.organizerLink}
-            <span aria-hidden="true">↗</span>
-            <span class="sr-only"> ({copy.opensNewTab})</span>
-          </a>
-        </dd>
+            <dt>{copy.exceptions}</dt>
+            <dd>{eventText.exceptionNote}</dd>
+          </div>
+        </dl>
       </div>
-      <div
-        class:list={[
-          "event-facts__exceptions",
-          data.schedule.exceptionStatus === "confirmation_required" &&
-            "event-facts__exceptions--attention",
-        ]}
-      >
-        <dt>{copy.exceptions}</dt>
-        <dd>{eventText.exceptionNote}</dd>
-      </div>
-    </dl>
-  </div>
+    </div>
+  </details>
 </article>
 
 <style>

@@ -51,6 +51,24 @@ export function formatEventDate(
   }).format(new Date(isoDate));
 }
 
+export function formatCompactEventDate(
+  isoDate: string,
+  locale: Locale = "fi",
+): { weekday: string; dayMonth: string } {
+  const date = new Date(isoDate);
+  return {
+    weekday: new Intl.DateTimeFormat(intlLocale[locale], {
+      weekday: "short",
+      timeZone: HELSINKI_TIME_ZONE,
+    }).format(date),
+    dayMonth: new Intl.DateTimeFormat(intlLocale[locale], {
+      day: "numeric",
+      month: "numeric",
+      timeZone: HELSINKI_TIME_ZONE,
+    }).format(date),
+  };
+}
+
 export function formatEventTime(
   isoDate: string,
   locale: Locale = "fi",
