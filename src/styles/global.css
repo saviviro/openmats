@@ -467,8 +467,8 @@ main > section,
   display: grid;
   min-width: 0;
   gap: 0;
-  font-size: 0.76rem;
-  line-height: 1.08;
+  font-size: 0.84rem;
+  line-height: 1.12;
 }
 
 .event-card__summary-time {
@@ -480,12 +480,12 @@ main > section,
 
 .event-card__summary-time > strong {
   white-space: nowrap;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
 }
 
 .event-card__summary-meta {
   color: var(--ink-soft);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
 }
 
 .event-card__summary-venue {
@@ -498,13 +498,13 @@ main > section,
 .event-card__weekday {
   display: inline-grid;
   flex: 0 0 auto;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.3rem;
+  height: 1.3rem;
   place-items: center;
   border-radius: 50%;
   background: var(--ink);
   color: var(--acid);
-  font-size: 0.56rem;
+  font-size: 0.63rem;
   font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
