@@ -92,6 +92,20 @@ if (duplicates.length > 0) {
     <section class="events-section" id="events" aria-labelledby="events-title">
       <div class="section-intro">
         <h2 class="eyebrow" id="events-title">{copy.upcoming}</h2>
+        <div
+          class="view-switch"
+          role="group"
+          aria-label={copy.viewLabel}
+          data-view-switch
+          hidden
+        >
+          <button type="button" data-view="full" aria-pressed="true"
+            >{copy.fullView}</button
+          >
+          <button type="button" data-view="compact" aria-pressed="false"
+            >{copy.compactView}</button
+          >
+        </div>
       </div>
 
       <FilterBar locale={locale} />
@@ -158,6 +172,31 @@ if (duplicates.length > 0) {
       '[data-page-action="previous"]',
     );
     const nextButton = document.querySelector('[data-page-action="next"]');
+    const viewSwitch = document.querySelector("[data-view-switch]");
+
+    if (viewSwitch instanceof HTMLElement && eventList instanceof HTMLElement) {
+      viewSwitch.hidden = false;
+      for (const button of viewSwitch.querySelectorAll("button[data-view]")) {
+        button.addEventListener("click", () => {
+          if (!(button instanceof HTMLButtonElement)) return;
+          const view = button.dataset.view;
+          if (view !== "full" && view !== "compact") return;
+
+          eventList.dataset.view = view;
+          for (const disclosure of eventList.querySelectorAll(
+            "details[data-event-details]",
+          )) {
+            if (disclosure instanceof HTMLDetailsElement)
+              disclosure.open = view === "full";
+          }
+          for (const option of viewSwitch.querySelectorAll(
+            "button[data-view]",
+          )) {
+            option.setAttribute("aria-pressed", String(option === button));
+          }
+        });
+      }
+    }
 
     function updateResults() {
       const matchingCards = cards.filter((card) => {

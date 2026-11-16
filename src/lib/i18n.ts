@@ -22,6 +22,11 @@ export const ui = {
     sourceReminder:
       "Ajantasaiset tiedot kannattaa tarkistaa järjestäjän sivuilta.",
     upcoming: "Tulevat open matit",
+    viewLabel: "Tapahtumien näkymä",
+    fullView: "Laaja",
+    compactView: "Tiivis",
+    priceUnknown: "Hinta ei tiedossa",
+    formatUnknown: "Laji ei tiedossa",
     filterEyebrow: "Rajaa listaa",
     city: "Kaupunki",
     style: "Tyyli",
@@ -74,6 +79,11 @@ export const ui = {
     sourceReminder:
       "Current details are worth checking on the organizer’s page.",
     upcoming: "Upcoming open mats",
+    viewLabel: "Event view",
+    fullView: "Full",
+    compactView: "Compact",
+    priceUnknown: "Price unknown",
+    formatUnknown: "Style unknown",
     filterEyebrow: "Filter the list",
     city: "City",
     style: "Style",
