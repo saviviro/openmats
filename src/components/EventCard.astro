@@ -39,6 +39,7 @@ const eventText = getEventTranslation(
   event.id,
   data.schedule.seriesId,
   {
+    title: data.title,
     priceNote: data.price.note,
     accessDescription: data.access.description,
     exceptionNote: data.schedule.exceptionNote,
@@ -74,7 +75,7 @@ const compactDate = formatCompactEventDate(data.startAt, locale);
   tabindex="-1"
 >
   <h2 class="sr-only" id={`event-${event.id}`}>
-    {data.title}
+    {eventText.title}
     <span class="sr-only">
       {
         ` — ${data.venue.name}, ${formatEventDate(data.startAt, locale)}, ${formatEventTime(
