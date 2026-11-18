@@ -172,6 +172,24 @@ failures, and unresolved PP Jiujitsu domain were retained as source-access
 issues. They were not treated as cancellations, member-only evidence or a
 reason to delete previously verified events.
 
+## Discovery review: 18 November 2026
+
+The four-city broad review rechecked the maintained official-source baseline
+and current Finnish BJJ Federation and ADCC Finland club lists. It found no new
+in-scope venue with first-party evidence for an additional public recurring
+open mat. Kauniainen still has no verified active BJJ or submission-wrestling
+venue.
+
+HIPKO's official autumn announcement publishes women's open mats at Metsälä on
+29 November from 12:00 to 14:00 and 20 December from 12:00 to 15:00. Both are
+free, open to women from all clubs, allow Gi or No-gi and require no advance
+registration. They are stored as exact `datedOpenMats` rows with the stable
+`hipko-metsala-women-open-mat-autumn-2026` series identifier. The announcement
+does not change the access interpretation of HIPKO's other timetable rows.
+
+The expired HIPKO summer PDF and unreadable TK Sports endpoint remain
+source-access issues, not cancellation or member-only evidence.
+
 ## Updating the registry
 
 For every review:

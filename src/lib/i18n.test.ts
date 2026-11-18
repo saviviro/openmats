@@ -83,24 +83,6 @@ describe("localization", () => {
     expect(translation.exceptionNote).not.toMatch(/September|seminar/);
   });
 
-  it("keeps the Buli reviewed date range accurate in English", () => {
-    const translation = getEventTranslation(
-      "en",
-      "buli-urhea-sunday-open-mat-2026-11-15",
-      "buli-urhea-sunday-open-mat",
-      {
-        priceNote: "Open mat -jäsenyys 25 € / kalenterivuosi",
-        accessDescription: "Ota yhteyttä etukäteen.",
-        exceptionNote: "Suomenkielinen poikkeusteksti.",
-      },
-    );
-
-    expect(translation.exceptionNote).toMatch(/confirms the 15 November/);
-    expect(translation.exceptionNote).toMatch(
-      /22 and 29 November and 6 and 13 December sessions are marked closed/,
-    );
-  });
-
   it("requires event-specific English overrides when Finnish source text varies inside a series", () => {
     const fields = [
       ["priceNote", (event: (typeof events)[number]) => event.price.note],

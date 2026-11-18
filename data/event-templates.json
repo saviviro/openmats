@@ -338,6 +338,30 @@
       "isExample": false
     },
     {
+      "seriesId": "hipko-metsala-women-open-mat-autumn-2026",
+      "title": "Naisten open mat",
+      "formats": ["gi", "no-gi"],
+      "venue": {
+        "name": "HIPKO Metsälä",
+        "streetAddress": "Tinasepäntie 36",
+        "postalCode": "00620",
+        "city": "Helsinki"
+      },
+      "price": {
+        "amount": 0,
+        "currency": "EUR",
+        "note": "Maksuton"
+      },
+      "access": {
+        "description": "Avoin eri seurojen BJJ- ja lukkopainin naisharrastajille. Gi tai no-gi. Ei ohjausta tai lajikokeilua.",
+        "registrationRequired": false
+      },
+      "status": "scheduled",
+      "sourceLabel": "HIPKOn naisten open matit syksyllä 2026",
+      "exceptionNote": "Virallinen tapahtumasivu ilmoittaa täsmälliset syksyn 2026 päivät ja kellonajat.",
+      "isExample": false
+    },
+    {
       "seriesId": "gb-gym-monthly-open-mat",
       "title": "Open mat",
       "formats": ["gi", "no-gi"],
