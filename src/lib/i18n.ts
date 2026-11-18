@@ -141,13 +141,6 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     exceptionNote:
       "The 15 August 2026 session is cancelled. The session is for coloured belts.",
   },
-  "buli-urhea-sunday-open-mat": {
-    priceNote: "Open-mat membership €25 per calendar year",
-    accessDescription:
-      "Contact Buli in advance before visiting or trying the open mat. Gi or no-gi.",
-    exceptionNote:
-      "The dated calendar confirms the 15 November open mat at 12:00–13:30. The 22 and 29 November and 6 and 13 December sessions are marked closed. Arrange the visit with the club in advance.",
-  },
   "dojo-helsinki-saturday-nogi-open-mat": {
     priceNote: "Free of charge",
     accessDescription: "Open to all clubs and experience levels. No-gi attire.",
@@ -158,6 +151,13 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
     priceNote: "Free of charge",
     accessDescription: "Open to all practitioners. Gi or no-gi.",
     exceptionNote: "No known exceptions.",
+  },
+  "hipko-metsala-women-open-mat-autumn-2026": {
+    priceNote: "Free of charge",
+    accessDescription:
+      "Open to women who practise BJJ or submission wrestling at any club. Gi or no-gi. This is not a coached class or a trial session.",
+    exceptionNote:
+      "The official event announcement lists the exact autumn 2026 dates and times.",
   },
   "hjjk-saturday-open-mat": {
     priceNote: "The source does not state a visitor price",

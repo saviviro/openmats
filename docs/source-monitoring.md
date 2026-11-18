@@ -633,6 +633,26 @@ the rolling 10 November 2026–5 January 2027 publication window.
 No new visitor restriction, format or open-mat-specific price was supported by
 the reviewed sources.
 
+## Broad discovery: 18 November 2026
+
+The maintained four-city baseline was compared with current official venue
+sources and the Finnish BJJ Federation and ADCC Finland club lists. No new
+in-scope venue with a first-party public open mat was verified, and Kauniainen
+still has no verified active BJJ or submission-wrestling venue.
+
+HIPKO's official autumn announcement added two publishable women's open mats at
+Metsälä: 29 November from 12:00 to 14:00 and 20 December from 12:00 to 15:00.
+The announcement explicitly welcomes women from all clubs, permits Gi or No-gi,
+states that the events are free and requires no advance registration. These are
+stored as exact dated events under their own stable series identifier; the
+information is not generalized to HIPKO's other open-mat rows.
+
+The other published schedules and dated exceptions retained their existing
+times and restrictions. The old HIPKO summer PDF still returns 404 and TK
+Sports remains unreadable because of a protocol error. Those access failures
+were retained for monitoring and were not interpreted as cancellations or new
+access limits.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

@@ -168,6 +168,12 @@ participation with TK Sports.
 
 ### HIPKO Metsälä
 
+HIPKO's official autumn 2026 announcement lists separate women's open mats at
+Metsälä on 29 November from 12:00 to 14:00 and 20 December from 12:00 to 15:00.
+They are free, open to women from all clubs, allow Gi or No-gi and require no
+advance registration. These exact dates are published through their own dated
+series and are not treated as evidence about access to other HIPKO sessions.
+
 HIPKO's verified 15 June–9 August summer timetable listed unsupervised BJJ open
 mats on Saturdays and Sundays from 15:00 to 17:00. The current autumn schedule
 page links a BJJ technique curriculum rather than a weekly timetable, so the

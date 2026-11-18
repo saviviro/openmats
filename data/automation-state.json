@@ -5,7 +5,7 @@
     "summary": "Reviewed all maintained published and time-bounded official sources; excluded four date-specific closed Buli Urhea sessions; materialized 86 events through 2027-01-05; validation and security audit passed."
   },
   "discovery": {
-    "lastSuccessfulAt": "2026-10-21T19:32:27+03:00",
-    "summary": "Four-city official-source discovery completed; no new publishable series, 98 events materialized for 2026-10-21 through 2026-12-27, and Vite high-severity advisory remediated."
+    "lastSuccessfulAt": "2026-11-18T20:14:04+02:00",
+    "summary": "Broad four-city review added two official HIPKO Metsala women's open mats; 84 events materialized for 2026-11-18 through 2027-01-13; validation and security audit passed."
   }
 }

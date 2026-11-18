@@ -1,506 +1,5 @@
 [
   {
-    "id": "takado-tuesday-open-mat-2026-11-10",
-    "title": "Open mat",
-    "formats": null,
-    "startAt": "2026-11-10T16:30:00+02:00",
-    "endAt": "2026-11-10T18:00:00+02:00",
-    "venue": {
-      "name": "Takado",
-      "streetAddress": "Pihatörmä 1 D, 4. krs",
-      "postalCode": "02240",
-      "city": "Espoo"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Avoin kaikille. Ilmoittaudu vuorolle myClubin kautta.",
-      "registrationRequired": true
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://takado.fi/#harjoitusajat",
-    "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "takado-tuesday-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
-      "supportingSourceUrls": ["https://takado.fi/"]
-    },
-    "isExample": false
-  },
-  {
-    "id": "tk-sports-saturday-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": null,
-    "startAt": "2026-11-14T10:00:00+02:00",
-    "endAt": "2026-11-14T12:00:00+02:00",
-    "venue": {
-      "name": "TK Sports",
-      "streetAddress": "Halmetie 5",
-      "postalCode": "00730",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Aikataulussa vuoro on merkitty kaikille tasoille. Muiden seurojen harrastajien osallistumista ei ilmoiteta erikseen, joten varmista osallistuminen TK Sportsilta.",
-      "registrationRequired": false
-    },
-    "status": "uncertain",
-    "sourceUrl": "https://tksportsmma.net/",
-    "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "tk-sports-saturday-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
-      "supportingSourceUrls": []
-    },
-    "isExample": false
-  },
-  {
-    "id": "loop-saturday-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": ["gi", "no-gi"],
-    "startAt": "2026-11-14T10:30:00+02:00",
-    "endAt": "2026-11-14T12:00:00+02:00",
-    "venue": {
-      "name": "Loop Martial Arts",
-      "streetAddress": "Takkatie 7",
-      "postalCode": "00370",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": 0,
-      "currency": "EUR",
-      "note": "Maksuton"
-    },
-    "access": {
-      "description": "Vapaa pääsy kaikille harrastajille. Gi tai no-gi.",
-      "registrationRequired": false
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
-    "sourceLabel": "Loop Martial Artsin kesäkalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "loop-saturday-open-mat",
-      "validFrom": "2026-06-01",
-      "validThrough": "2026-12-23",
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Ei tiedossa olevia poikkeuksia. Syyskausi päättyy 23.12.2026.",
-      "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
-    },
-    "isExample": false
-  },
-  {
-    "id": "kilo-jiu-jitsu-saturday-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": null,
-    "startAt": "2026-11-14T11:00:00+02:00",
-    "endAt": "2026-11-14T12:30:00+02:00",
-    "venue": {
-      "name": "Kilo Jiu-Jitsu",
-      "streetAddress": "Kutojantie 5, 2. krs",
-      "postalCode": "02630",
-      "city": "Espoo"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Avoin muiden seurojen harrastajille.",
-      "registrationRequired": false
-    },
-    "status": "uncertain",
-    "sourceUrl": "https://www.kilojiujitsu.com/aikataulut/",
-    "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "kilo-jiu-jitsu-saturday-open-mat",
-      "validFrom": null,
-      "validThrough": "2026-12-19",
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallinen verkkokalenteri vahvistaa lauantait 3.10.–21.11. klo 11–12.30. Varmista varustus ja osallistumisen yksityiskohdat järjestäjältä.",
-      "supportingSourceUrls": [
-        "https://www.kilojiujitsu.com/",
-        "https://www.kilojiujitsu.com/hinnat/",
-        "https://www.kilojiujitsu.com/sali/",
-        "https://www.instagram.com/kilojiujitsu/"
-      ]
-    },
-    "isExample": false
-  },
-  {
-    "id": "takado-saturday-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": null,
-    "startAt": "2026-11-14T11:00:00+02:00",
-    "endAt": "2026-11-14T13:00:00+02:00",
-    "venue": {
-      "name": "Takado",
-      "streetAddress": "Pihatörmä 1 D, 4. krs",
-      "postalCode": "02240",
-      "city": "Espoo"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Avoin kaikille. Ilmoittaudu vuorolle myClubin kautta.",
-      "registrationRequired": true
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://takado.fi/#harjoitusajat",
-    "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "takado-saturday-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
-      "supportingSourceUrls": ["https://takado.fi/"]
-    },
-    "isExample": false
-  },
-  {
-    "id": "tundra-saturday-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": ["gi", "no-gi"],
-    "startAt": "2026-11-14T11:15:00+02:00",
-    "endAt": "2026-11-14T12:45:00+02:00",
-    "venue": {
-      "name": "Tundra Jiu-Jitsu",
-      "streetAddress": "Suomalaistentie 7",
-      "postalCode": "02270",
-      "city": "Espoo"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Avoin myös muiden seurojen jäsenille. Ota yhteyttä saliin ennen vierailua.",
-      "registrationRequired": true
-    },
-    "status": "uncertain",
-    "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
-    "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "tundra-saturday-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
-      "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
-    },
-    "isExample": false
-  },
-  {
-    "id": "aogg-sornainen-colored-belts-nogi-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": ["no-gi"],
-    "startAt": "2026-11-14T12:00:00+02:00",
-    "endAt": "2026-11-14T14:00:00+02:00",
-    "venue": {
-      "name": "Art of Ground Games Sörnäinen",
-      "streetAddress": "Suvilahdenkatu 10 E",
-      "postalCode": "00500",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": 0,
-      "currency": "EUR",
-      "note": "Maksuton"
-    },
-    "access": {
-      "description": "Avoin muiden seurojen värivöille. Vain no-gi; varaa paikka etukäteen.",
-      "registrationRequired": true
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2026-11-14&s=1403054",
-    "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
-      "validFrom": "2026-01-10",
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
-      "supportingSourceUrls": [
-        "https://www.artofgroundgames.com/classes/open-mat",
-        "https://www.artofgroundgames.com/visitors"
-      ]
-    },
-    "isExample": false
-  },
-  {
-    "id": "dojo-helsinki-saturday-nogi-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": ["no-gi"],
-    "startAt": "2026-11-14T12:00:00+02:00",
-    "endAt": "2026-11-14T13:00:00+02:00",
-    "venue": {
-      "name": "Dojo Helsinki",
-      "streetAddress": "Pursimiehenkatu 14",
-      "postalCode": "00140",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": 0,
-      "currency": "EUR",
-      "note": "Maksuton"
-    },
-    "access": {
-      "description": "Avoin kaikille seurasta ja tasosta riippumatta. No-gi-varustus.",
-      "registrationRequired": false
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
-    "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
-      "supportingSourceUrls": [
-        "https://www.dojohelsinki.fi/en/classes/",
-        "https://www.instagram.com/dojohelsinki/"
-      ]
-    },
-    "isExample": false
-  },
-  {
-    "id": "hjjk-saturday-open-mat-2026-11-14",
-    "title": "Open mat",
-    "formats": ["gi", "no-gi"],
-    "startAt": "2026-11-14T13:00:00+02:00",
-    "endAt": "2026-11-14T15:00:00+02:00",
-    "venue": {
-      "name": "Helsingin Ju-jutsuklubi",
-      "streetAddress": "Tallberginkatu 1 D",
-      "postalCode": "00180",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Avoin muiden seurojen harrastajille.",
-      "registrationRequired": false
-    },
-    "status": "uncertain",
-    "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
-    "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "hjjk-saturday-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
-      "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
-    },
-    "isExample": false
-  },
-  {
-    "id": "aogg-erottaja-sunday-nogi-open-mat-2026-11-15",
-    "title": "Open mat",
-    "formats": ["no-gi"],
-    "startAt": "2026-11-15T12:00:00+02:00",
-    "endAt": "2026-11-15T14:00:00+02:00",
-    "venue": {
-      "name": "Art of Ground Games Erottaja",
-      "streetAddress": "Erottajankatu 11 B",
-      "postalCode": "00130",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": 0,
-      "currency": "EUR",
-      "note": "Maksuton"
-    },
-    "access": {
-      "description": "Avoin muiden seurojen harrastajille. Vain no-gi; varaa paikka etukäteen.",
-      "registrationRequired": true
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2026-11-15&s=1399909",
-    "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
-      "supportingSourceUrls": [
-        "https://www.artofgroundgames.com/classes/open-mat",
-        "https://www.artofgroundgames.com/visitors"
-      ]
-    },
-    "isExample": false
-  },
-  {
-    "id": "buli-urhea-sunday-open-mat-2026-11-15",
-    "title": "Open mat",
-    "formats": ["gi", "no-gi"],
-    "startAt": "2026-11-15T12:00:00+02:00",
-    "endAt": "2026-11-15T13:30:00+02:00",
-    "venue": {
-      "name": "Buli Jiu-Jitsu Urhea",
-      "streetAddress": "Mäkelänkatu 47",
-      "postalCode": "00550",
-      "city": "Helsinki"
-    },
-    "price": {
-      "amount": 25,
-      "currency": "EUR",
-      "note": "Open mat -jäsenyys 25 € / kalenterivuosi"
-    },
-    "access": {
-      "description": "Ota Buliin yhteyttä etukäteen ennen vierailua tai open matin kokeilua. Gi tai no-gi.",
-      "registrationRequired": true
-    },
-    "status": "uncertain",
-    "sourceUrl": "https://bulijj.fi/signup?membership=11121&type=2",
-    "sourceLabel": "Bulin open mat -jäsenyys",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "buli-urhea-sunday-open-mat",
-      "validFrom": null,
-      "validThrough": "2026-12-13",
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Päiväkalenteri vahvistaa open matin 15.11. klo 12–13.30. Vuorot 22.11., 29.11., 6.12. ja 13.12. on merkitty suljetuiksi. Sovi vierailusta etukäteen seuran kanssa.",
-      "supportingSourceUrls": [
-        "https://bulijj.fi/schedule",
-        "https://bulijj.fi/pricing",
-        "https://bulijj.fi/page/haluatko-tulla-kokeilemaan-bulin-treenej-tai-vierailemaan-meill-"
-      ]
-    },
-    "isExample": false
-  },
-  {
-    "id": "mma-vantaa-sunday-open-mat-2026-11-15",
-    "title": "Open mat",
-    "formats": null,
-    "startAt": "2026-11-15T12:00:00+02:00",
-    "endAt": "2026-11-15T14:00:00+02:00",
-    "venue": {
-      "name": "MMA Vantaa",
-      "streetAddress": "Rajatorpantie 27",
-      "postalCode": "01650",
-      "city": "Vantaa"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Avoin seuran ulkopuolisille. Ole ovella ennen vuoron alkua, koska sisäänpääsy vaatii jäsenen ovikoodin.",
-      "registrationRequired": false
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
-    "sourceLabel": "MMA Vantaan harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "mma-vantaa-sunday-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
-      "supportingSourceUrls": [
-        "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
-      ]
-    },
-    "isExample": false
-  },
-  {
-    "id": "takado-tuesday-open-mat-2026-11-17",
-    "title": "Open mat",
-    "formats": null,
-    "startAt": "2026-11-17T16:30:00+02:00",
-    "endAt": "2026-11-17T18:00:00+02:00",
-    "venue": {
-      "name": "Takado",
-      "streetAddress": "Pihatörmä 1 D, 4. krs",
-      "postalCode": "02240",
-      "city": "Espoo"
-    },
-    "price": {
-      "amount": null,
-      "currency": "EUR",
-      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
-    },
-    "access": {
-      "description": "Avoin kaikille. Ilmoittaudu vuorolle myClubin kautta.",
-      "registrationRequired": true
-    },
-    "status": "scheduled",
-    "sourceUrl": "https://takado.fi/#harjoitusajat",
-    "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
-    "schedule": {
-      "seriesId": "takado-tuesday-open-mat",
-      "validFrom": null,
-      "validThrough": null,
-      "materializedThrough": "2027-01-05",
-      "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
-      "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
-      "supportingSourceUrls": ["https://takado.fi/"]
-    },
-    "isExample": false
-  },
-  {
     "id": "tk-sports-saturday-open-mat-2026-11-21",
     "title": "Open mat",
     "formats": null,
@@ -524,14 +23,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tksportsmma.net/",
     "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tk-sports-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
       "supportingSourceUrls": []
     },
@@ -561,14 +60,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
     "sourceLabel": "Loop Martial Artsin kesäkalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "loop-saturday-open-mat",
       "validFrom": "2026-06-01",
       "validThrough": "2026-12-23",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Ei tiedossa olevia poikkeuksia. Syyskausi päättyy 23.12.2026.",
       "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
     },
@@ -598,14 +97,14 @@
     "status": "uncertain",
     "sourceUrl": "https://www.kilojiujitsu.com/aikataulut/",
     "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "kilo-jiu-jitsu-saturday-open-mat",
       "validFrom": null,
       "validThrough": "2026-12-19",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen verkkokalenteri vahvistaa lauantait 3.10.–21.11. klo 11–12.30. Varmista varustus ja osallistumisen yksityiskohdat järjestäjältä.",
       "supportingSourceUrls": [
         "https://www.kilojiujitsu.com/",
@@ -640,14 +139,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -677,14 +176,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
     "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tundra-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
     },
@@ -714,14 +213,14 @@
     "status": "scheduled",
     "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2026-11-21&s=1403054",
     "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
       "validFrom": "2026-01-10",
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -754,14 +253,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
     "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "supportingSourceUrls": [
         "https://www.dojohelsinki.fi/en/classes/",
@@ -794,14 +293,14 @@
     "status": "uncertain",
     "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
     "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "hjjk-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
     },
@@ -831,14 +330,14 @@
     "status": "scheduled",
     "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2026-11-22&s=1399909",
     "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -871,14 +370,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
     "sourceLabel": "MMA Vantaan harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "mma-vantaa-sunday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
       "supportingSourceUrls": [
         "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
@@ -910,14 +409,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-tuesday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -947,14 +446,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tksportsmma.net/",
     "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tk-sports-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
       "supportingSourceUrls": []
     },
@@ -984,14 +483,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
     "sourceLabel": "Loop Martial Artsin kesäkalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "loop-saturday-open-mat",
       "validFrom": "2026-06-01",
       "validThrough": "2026-12-23",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Ei tiedossa olevia poikkeuksia. Syyskausi päättyy 23.12.2026.",
       "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
     },
@@ -1021,14 +520,14 @@
     "status": "uncertain",
     "sourceUrl": "https://www.kilojiujitsu.com/aikataulut/",
     "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "kilo-jiu-jitsu-saturday-open-mat",
       "validFrom": null,
       "validThrough": "2026-12-19",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen verkkokalenteri vahvistaa lauantait 3.10.–21.11. klo 11–12.30. Varmista varustus ja osallistumisen yksityiskohdat järjestäjältä.",
       "supportingSourceUrls": [
         "https://www.kilojiujitsu.com/",
@@ -1063,14 +562,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -1100,14 +599,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
     "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tundra-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
     },
@@ -1137,14 +636,14 @@
     "status": "scheduled",
     "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2026-11-28&s=1403054",
     "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
       "validFrom": "2026-01-10",
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -1177,14 +676,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
     "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "supportingSourceUrls": [
         "https://www.dojohelsinki.fi/en/classes/",
@@ -1217,14 +716,14 @@
     "status": "uncertain",
     "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
     "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "hjjk-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
     },
@@ -1254,18 +753,60 @@
     "status": "scheduled",
     "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2026-11-29&s=1399909",
     "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
         "https://www.artofgroundgames.com/visitors"
+      ]
+    },
+    "isExample": false
+  },
+  {
+    "id": "hipko-metsala-women-open-mat-autumn-2026-2026-11-29",
+    "title": "Naisten open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-11-29T12:00:00+02:00",
+    "endAt": "2026-11-29T14:00:00+02:00",
+    "venue": {
+      "name": "HIPKO Metsälä",
+      "streetAddress": "Tinasepäntie 36",
+      "postalCode": "00620",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Avoin eri seurojen BJJ- ja lukkopainin naisharrastajille. Gi tai no-gi. Ei ohjausta tai lajikokeilua.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.hipko.fi/yleinen/hipko-naisten-open-matit-kevaalla-2026/",
+    "sourceLabel": "HIPKOn naisten open matit syksyllä 2026",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "hipko-metsala-women-open-mat-autumn-2026",
+      "validFrom": "2026-11-29",
+      "validThrough": "2026-12-20",
+      "materializedThrough": "2026-12-20",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallinen tapahtumasivu ilmoittaa täsmälliset syksyn 2026 päivät ja kellonajat.",
+      "supportingSourceUrls": [
+        "https://www.hipko.fi/salit/",
+        "https://www.hipko.fi/harjoitusajat/",
+        "https://www.hipko.fi/wp-content/uploads/2026/05/Metsala_kesa_2026.pdf",
+        "https://www.hipko.fi/wp-content/uploads/2026/08/METSALAN_BJJ_PERUSTEETINTERMEDIATE_OHJELMA_SYKSY_2026.pdf"
       ]
     },
     "isExample": false
@@ -1294,14 +835,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
     "sourceLabel": "MMA Vantaan harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "mma-vantaa-sunday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
       "supportingSourceUrls": [
         "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
@@ -1333,14 +874,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-tuesday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -1370,14 +911,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tksportsmma.net/",
     "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tk-sports-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
       "supportingSourceUrls": []
     },
@@ -1407,14 +948,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
     "sourceLabel": "Loop Martial Artsin kesäkalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "loop-saturday-open-mat",
       "validFrom": "2026-06-01",
       "validThrough": "2026-12-23",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Ei tiedossa olevia poikkeuksia. Syyskausi päättyy 23.12.2026.",
       "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
     },
@@ -1444,14 +985,14 @@
     "status": "uncertain",
     "sourceUrl": "https://www.kilojiujitsu.com/aikataulut/",
     "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "kilo-jiu-jitsu-saturday-open-mat",
       "validFrom": null,
       "validThrough": "2026-12-19",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen verkkokalenteri vahvistaa lauantait 3.10.–21.11. klo 11–12.30. Varmista varustus ja osallistumisen yksityiskohdat järjestäjältä.",
       "supportingSourceUrls": [
         "https://www.kilojiujitsu.com/",
@@ -1486,14 +1027,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -1523,14 +1064,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
     "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tundra-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
     },
@@ -1560,14 +1101,14 @@
     "status": "scheduled",
     "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2026-12-05&s=1403054",
     "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
       "validFrom": "2026-01-10",
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -1600,14 +1141,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
     "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "supportingSourceUrls": [
         "https://www.dojohelsinki.fi/en/classes/",
@@ -1640,14 +1181,14 @@
     "status": "uncertain",
     "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
     "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "hjjk-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
     },
@@ -1677,14 +1218,14 @@
     "status": "scheduled",
     "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2026-12-06&s=1399909",
     "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -1717,14 +1258,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-tuesday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -1754,14 +1295,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tksportsmma.net/",
     "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tk-sports-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
       "supportingSourceUrls": []
     },
@@ -1791,14 +1332,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
     "sourceLabel": "Loop Martial Artsin kesäkalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "loop-saturday-open-mat",
       "validFrom": "2026-06-01",
       "validThrough": "2026-12-23",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Ei tiedossa olevia poikkeuksia. Syyskausi päättyy 23.12.2026.",
       "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
     },
@@ -1828,14 +1369,14 @@
     "status": "uncertain",
     "sourceUrl": "https://www.kilojiujitsu.com/aikataulut/",
     "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "kilo-jiu-jitsu-saturday-open-mat",
       "validFrom": null,
       "validThrough": "2026-12-19",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen verkkokalenteri vahvistaa lauantait 3.10.–21.11. klo 11–12.30. Varmista varustus ja osallistumisen yksityiskohdat järjestäjältä.",
       "supportingSourceUrls": [
         "https://www.kilojiujitsu.com/",
@@ -1870,14 +1411,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -1907,14 +1448,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
     "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tundra-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
     },
@@ -1944,14 +1485,14 @@
     "status": "scheduled",
     "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2026-12-12&s=1403054",
     "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
       "validFrom": "2026-01-10",
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -1984,14 +1525,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
     "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "supportingSourceUrls": [
         "https://www.dojohelsinki.fi/en/classes/",
@@ -2024,14 +1565,14 @@
     "status": "uncertain",
     "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
     "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "hjjk-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
     },
@@ -2061,14 +1602,14 @@
     "status": "scheduled",
     "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2026-12-13&s=1399909",
     "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -2101,14 +1642,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
     "sourceLabel": "MMA Vantaan harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "mma-vantaa-sunday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
       "supportingSourceUrls": [
         "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
@@ -2140,14 +1681,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-tuesday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -2177,14 +1718,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tksportsmma.net/",
     "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tk-sports-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
       "supportingSourceUrls": []
     },
@@ -2214,14 +1755,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.loopmartialarts.fi/kalenteri",
     "sourceLabel": "Loop Martial Artsin kesäkalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "loop-saturday-open-mat",
       "validFrom": "2026-06-01",
       "validThrough": "2026-12-23",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Ei tiedossa olevia poikkeuksia. Syyskausi päättyy 23.12.2026.",
       "supportingSourceUrls": ["https://www.loopmartialarts.fi/en/kalenteri"]
     },
@@ -2251,14 +1792,14 @@
     "status": "uncertain",
     "sourceUrl": "https://www.kilojiujitsu.com/aikataulut/",
     "sourceLabel": "Kilo Jiu-Jitsun harjoituskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "kilo-jiu-jitsu-saturday-open-mat",
       "validFrom": null,
       "validThrough": "2026-12-19",
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen verkkokalenteri vahvistaa lauantait 3.10.–21.11. klo 11–12.30. Varmista varustus ja osallistumisen yksityiskohdat järjestäjältä.",
       "supportingSourceUrls": [
         "https://www.kilojiujitsu.com/",
@@ -2293,14 +1834,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -2330,14 +1871,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
     "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tundra-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
     },
@@ -2367,14 +1908,14 @@
     "status": "scheduled",
     "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2026-12-19&s=1403054",
     "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
       "validFrom": "2026-01-10",
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -2407,14 +1948,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
     "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "supportingSourceUrls": [
         "https://www.dojohelsinki.fi/en/classes/",
@@ -2447,14 +1988,14 @@
     "status": "uncertain",
     "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
     "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "hjjk-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
     },
@@ -2484,18 +2025,60 @@
     "status": "scheduled",
     "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2026-12-20&s=1399909",
     "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
         "https://www.artofgroundgames.com/visitors"
+      ]
+    },
+    "isExample": false
+  },
+  {
+    "id": "hipko-metsala-women-open-mat-autumn-2026-2026-12-20",
+    "title": "Naisten open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2026-12-20T12:00:00+02:00",
+    "endAt": "2026-12-20T15:00:00+02:00",
+    "venue": {
+      "name": "HIPKO Metsälä",
+      "streetAddress": "Tinasepäntie 36",
+      "postalCode": "00620",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Avoin eri seurojen BJJ- ja lukkopainin naisharrastajille. Gi tai no-gi. Ei ohjausta tai lajikokeilua.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.hipko.fi/yleinen/hipko-naisten-open-matit-kevaalla-2026/",
+    "sourceLabel": "HIPKOn naisten open matit syksyllä 2026",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "hipko-metsala-women-open-mat-autumn-2026",
+      "validFrom": "2026-11-29",
+      "validThrough": "2026-12-20",
+      "materializedThrough": "2026-12-20",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallinen tapahtumasivu ilmoittaa täsmälliset syksyn 2026 päivät ja kellonajat.",
+      "supportingSourceUrls": [
+        "https://www.hipko.fi/salit/",
+        "https://www.hipko.fi/harjoitusajat/",
+        "https://www.hipko.fi/wp-content/uploads/2026/05/Metsala_kesa_2026.pdf",
+        "https://www.hipko.fi/wp-content/uploads/2026/08/METSALAN_BJJ_PERUSTEETINTERMEDIATE_OHJELMA_SYKSY_2026.pdf"
       ]
     },
     "isExample": false
@@ -2524,14 +2107,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
     "sourceLabel": "MMA Vantaan harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "mma-vantaa-sunday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
       "supportingSourceUrls": [
         "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
@@ -2563,14 +2146,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-tuesday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -2600,14 +2183,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tksportsmma.net/",
     "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tk-sports-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
       "supportingSourceUrls": []
     },
@@ -2637,14 +2220,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -2674,14 +2257,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
     "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tundra-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
     },
@@ -2711,14 +2294,14 @@
     "status": "scheduled",
     "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2026-12-26&s=1403054",
     "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
       "validFrom": "2026-01-10",
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -2751,14 +2334,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
     "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "supportingSourceUrls": [
         "https://www.dojohelsinki.fi/en/classes/",
@@ -2791,14 +2374,14 @@
     "status": "uncertain",
     "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
     "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "hjjk-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
     },
@@ -2828,14 +2411,14 @@
     "status": "scheduled",
     "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2026-12-27&s=1399909",
     "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -2868,14 +2451,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.gbgym.com/kalenteri/",
     "sourceLabel": "GB Gymin kalenteri 2026",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "gb-gym-monthly-open-mat",
       "validFrom": "2026-08-30",
       "validThrough": "2026-12-27",
       "materializedThrough": "2026-12-27",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Ei tiedossa olevia poikkeuksia.",
       "supportingSourceUrls": ["https://www.gbgym.com/kesaaikataulu/"]
     },
@@ -2905,14 +2488,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
     "sourceLabel": "MMA Vantaan harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "mma-vantaa-sunday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
       "supportingSourceUrls": [
         "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
@@ -2944,14 +2527,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-tuesday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -2981,14 +2564,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tksportsmma.net/",
     "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tk-sports-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
       "supportingSourceUrls": []
     },
@@ -3018,14 +2601,14 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
@@ -3055,14 +2638,14 @@
     "status": "uncertain",
     "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
     "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "tundra-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
       "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
     },
@@ -3092,14 +2675,14 @@
     "status": "scheduled",
     "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2027-01-02&s=1403054",
     "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
       "validFrom": "2026-01-10",
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -3132,14 +2715,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
     "sourceLabel": "Dojo Helsingin treeniajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
       "supportingSourceUrls": [
         "https://www.dojohelsinki.fi/en/classes/",
@@ -3172,14 +2755,14 @@
     "status": "uncertain",
     "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
     "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "hjjk-saturday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "confirmation_required",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
       "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
     },
@@ -3209,14 +2792,14 @@
     "status": "scheduled",
     "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2027-01-03&s=1399909",
     "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
       "supportingSourceUrls": [
         "https://www.artofgroundgames.com/classes/open-mat",
@@ -3249,14 +2832,14 @@
     "status": "scheduled",
     "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
     "sourceLabel": "MMA Vantaan harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "mma-vantaa-sunday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
       "supportingSourceUrls": [
         "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
@@ -3288,14 +2871,358 @@
     "status": "scheduled",
     "sourceUrl": "https://takado.fi/#harjoitusajat",
     "sourceLabel": "Takadon harjoitusajat",
-    "verifiedAt": "2026-11-10T13:49:43+02:00",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
     "schedule": {
       "seriesId": "takado-tuesday-open-mat",
       "validFrom": null,
       "validThrough": null,
-      "materializedThrough": "2027-01-05",
+      "materializedThrough": "2027-01-13",
       "exceptionStatus": "none_found",
-      "exceptionCheckedAt": "2026-11-10T13:49:43+02:00",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
+      "supportingSourceUrls": ["https://takado.fi/"]
+    },
+    "isExample": false
+  },
+  {
+    "id": "tk-sports-saturday-open-mat-2027-01-09",
+    "title": "Open mat",
+    "formats": null,
+    "startAt": "2027-01-09T10:00:00+02:00",
+    "endAt": "2027-01-09T12:00:00+02:00",
+    "venue": {
+      "name": "TK Sports",
+      "streetAddress": "Halmetie 5",
+      "postalCode": "00730",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": null,
+      "currency": "EUR",
+      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+    },
+    "access": {
+      "description": "Aikataulussa vuoro on merkitty kaikille tasoille. Muiden seurojen harrastajien osallistumista ei ilmoiteta erikseen, joten varmista osallistuminen TK Sportsilta.",
+      "registrationRequired": false
+    },
+    "status": "uncertain",
+    "sourceUrl": "https://tksportsmma.net/",
+    "sourceLabel": "TK Sportsin virallinen treeniaikataulu",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "tk-sports-saturday-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "confirmation_required",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Aiemmin vahvistettu viikkoaikataulu ilmoitti lauantain vuoron, mutta virallinen verkkotunnus ei ole nyt käytettävissä. Varmista vuoro, varustus, hinta ja osallistuminen TK Sportsilta.",
+      "supportingSourceUrls": []
+    },
+    "isExample": false
+  },
+  {
+    "id": "takado-saturday-open-mat-2027-01-09",
+    "title": "Open mat",
+    "formats": null,
+    "startAt": "2027-01-09T11:00:00+02:00",
+    "endAt": "2027-01-09T13:00:00+02:00",
+    "venue": {
+      "name": "Takado",
+      "streetAddress": "Pihatörmä 1 D, 4. krs",
+      "postalCode": "02240",
+      "city": "Espoo"
+    },
+    "price": {
+      "amount": null,
+      "currency": "EUR",
+      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+    },
+    "access": {
+      "description": "Avoin kaikille. Ilmoittaudu vuorolle myClubin kautta.",
+      "registrationRequired": true
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://takado.fi/#harjoitusajat",
+    "sourceLabel": "Takadon harjoitusajat",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "takado-saturday-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
+      "supportingSourceUrls": ["https://takado.fi/"]
+    },
+    "isExample": false
+  },
+  {
+    "id": "tundra-saturday-open-mat-2027-01-09",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2027-01-09T11:15:00+02:00",
+    "endAt": "2027-01-09T12:45:00+02:00",
+    "venue": {
+      "name": "Tundra Jiu-Jitsu",
+      "streetAddress": "Suomalaistentie 7",
+      "postalCode": "02270",
+      "city": "Espoo"
+    },
+    "price": {
+      "amount": null,
+      "currency": "EUR",
+      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+    },
+    "access": {
+      "description": "Avoin myös muiden seurojen jäsenille. Ota yhteyttä saliin ennen vierailua.",
+      "registrationRequired": true
+    },
+    "status": "uncertain",
+    "sourceUrl": "https://tundrajiujitsu.fi/harjoitusajat/",
+    "sourceLabel": "Tundra Jiu-Jitsun harjoitusajat",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "tundra-saturday-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "confirmation_required",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Salin hinnasto pyytää vierailijoita ottamaan yhteyttä ennen vierailua. Ohje ei rajoitu kesään.",
+      "supportingSourceUrls": ["https://tundrajiujitsu.fi/hinnasto/"]
+    },
+    "isExample": false
+  },
+  {
+    "id": "aogg-sornainen-colored-belts-nogi-open-mat-2027-01-09",
+    "title": "Open mat",
+    "formats": ["no-gi"],
+    "startAt": "2027-01-09T12:00:00+02:00",
+    "endAt": "2027-01-09T14:00:00+02:00",
+    "venue": {
+      "name": "Art of Ground Games Sörnäinen",
+      "streetAddress": "Suvilahdenkatu 10 E",
+      "postalCode": "00500",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Avoin muiden seurojen värivöille. Vain no-gi; varaa paikka etukäteen.",
+      "registrationRequired": true
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://sornainen.artofgroundgames.com/book?date=2027-01-09&s=1403054",
+    "sourceLabel": "AOGG Sörnäisten open mat -varauskalenteri",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "aogg-sornainen-colored-belts-nogi-open-mat",
+      "validFrom": "2026-01-10",
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä. Vuoro on tarkoitettu värivöille.",
+      "supportingSourceUrls": [
+        "https://www.artofgroundgames.com/classes/open-mat",
+        "https://www.artofgroundgames.com/visitors"
+      ]
+    },
+    "isExample": false
+  },
+  {
+    "id": "dojo-helsinki-saturday-nogi-open-mat-2027-01-09",
+    "title": "Open mat",
+    "formats": ["no-gi"],
+    "startAt": "2027-01-09T12:00:00+02:00",
+    "endAt": "2027-01-09T13:00:00+02:00",
+    "venue": {
+      "name": "Dojo Helsinki",
+      "streetAddress": "Pursimiehenkatu 14",
+      "postalCode": "00140",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Avoin kaikille seurasta ja tasosta riippumatta. No-gi-varustus.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.dojohelsinki.fi/treeniajat/",
+    "sourceLabel": "Dojo Helsingin treeniajat",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "dojo-helsinki-saturday-nogi-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallisissa harjoitusajoissa ei ilmoiteta poikkeuksia. Lauantain open matin viikkoaika on klo 12–13.",
+      "supportingSourceUrls": [
+        "https://www.dojohelsinki.fi/en/classes/",
+        "https://www.instagram.com/dojohelsinki/"
+      ]
+    },
+    "isExample": false
+  },
+  {
+    "id": "hjjk-saturday-open-mat-2027-01-09",
+    "title": "Open mat",
+    "formats": ["gi", "no-gi"],
+    "startAt": "2027-01-09T13:00:00+02:00",
+    "endAt": "2027-01-09T15:00:00+02:00",
+    "venue": {
+      "name": "Helsingin Ju-jutsuklubi",
+      "streetAddress": "Tallberginkatu 1 D",
+      "postalCode": "00180",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": null,
+      "currency": "EUR",
+      "note": "Vierailuhintaa ei ilmoitettu lähteessä"
+    },
+    "access": {
+      "description": "Avoin muiden seurojen harrastajille.",
+      "registrationRequired": false
+    },
+    "status": "uncertain",
+    "sourceUrl": "https://ju-jutsuklubi.fi/brasilialainen-ju-jutsu/harjoitukset/",
+    "sourceLabel": "Helsingin Ju-jutsuklubin BJJ-harjoitukset",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "hjjk-saturday-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "confirmation_required",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Vuoro järjestetään vain, jos Kaapelitehtaan salissa ei ole muuta tapahtumaa. Varmista erityisesti 10.10. vuoro: seuran tapahtumakalenteri ei yksilöi päivän Helsinki-tapahtuman salia.",
+      "supportingSourceUrls": ["https://ju-jutsuklubi.fi/tapahtumat/"]
+    },
+    "isExample": false
+  },
+  {
+    "id": "aogg-erottaja-sunday-nogi-open-mat-2027-01-10",
+    "title": "Open mat",
+    "formats": ["no-gi"],
+    "startAt": "2027-01-10T12:00:00+02:00",
+    "endAt": "2027-01-10T14:00:00+02:00",
+    "venue": {
+      "name": "Art of Ground Games Erottaja",
+      "streetAddress": "Erottajankatu 11 B",
+      "postalCode": "00130",
+      "city": "Helsinki"
+    },
+    "price": {
+      "amount": 0,
+      "currency": "EUR",
+      "note": "Maksuton"
+    },
+    "access": {
+      "description": "Avoin muiden seurojen harrastajille. Vain no-gi; varaa paikka etukäteen.",
+      "registrationRequired": true
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://erottaja.artofgroundgames.com/book?date=2027-01-10&s=1399909",
+    "sourceLabel": "AOGG Erottajan open mat -varauskalenteri",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "aogg-erottaja-sunday-nogi-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallinen kalenteri ei ilmoita peruttuja päiviä.",
+      "supportingSourceUrls": [
+        "https://www.artofgroundgames.com/classes/open-mat",
+        "https://www.artofgroundgames.com/visitors"
+      ]
+    },
+    "isExample": false
+  },
+  {
+    "id": "mma-vantaa-sunday-open-mat-2027-01-10",
+    "title": "Open mat",
+    "formats": null,
+    "startAt": "2027-01-10T12:00:00+02:00",
+    "endAt": "2027-01-10T14:00:00+02:00",
+    "venue": {
+      "name": "MMA Vantaa",
+      "streetAddress": "Rajatorpantie 27",
+      "postalCode": "01650",
+      "city": "Vantaa"
+    },
+    "price": {
+      "amount": null,
+      "currency": "EUR",
+      "note": "Vierailuhintaa ei ilmoitettu lähteessä"
+    },
+    "access": {
+      "description": "Avoin seuran ulkopuolisille. Ole ovella ennen vuoron alkua, koska sisäänpääsy vaatii jäsenen ovikoodin.",
+      "registrationRequired": false
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://www.mmavantaa.net/harjoitusajat-2/",
+    "sourceLabel": "MMA Vantaan harjoitusajat",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "mma-vantaa-sunday-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
+      "exceptionNote": "Virallinen aikataulu ilmoittaa open matin sunnuntaisin klo 12–14 pienellä tatamilla. Varustuksesta ei ole tietoa.",
+      "supportingSourceUrls": [
+        "https://www.vantaa.fi/fi/liikuntatilojen-poikkeusaukioloajat"
+      ]
+    },
+    "isExample": false
+  },
+  {
+    "id": "takado-tuesday-open-mat-2027-01-12",
+    "title": "Open mat",
+    "formats": null,
+    "startAt": "2027-01-12T16:30:00+02:00",
+    "endAt": "2027-01-12T18:00:00+02:00",
+    "venue": {
+      "name": "Takado",
+      "streetAddress": "Pihatörmä 1 D, 4. krs",
+      "postalCode": "02240",
+      "city": "Espoo"
+    },
+    "price": {
+      "amount": null,
+      "currency": "EUR",
+      "note": "Open matin vierailuhintaa ei ilmoitettu lähteessä"
+    },
+    "access": {
+      "description": "Avoin kaikille. Ilmoittaudu vuorolle myClubin kautta.",
+      "registrationRequired": true
+    },
+    "status": "scheduled",
+    "sourceUrl": "https://takado.fi/#harjoitusajat",
+    "sourceLabel": "Takadon harjoitusajat",
+    "verifiedAt": "2026-11-18T20:10:00+02:00",
+    "schedule": {
+      "seriesId": "takado-tuesday-open-mat",
+      "validFrom": null,
+      "validThrough": null,
+      "materializedThrough": "2027-01-13",
+      "exceptionStatus": "none_found",
+      "exceptionCheckedAt": "2026-11-18T20:10:00+02:00",
       "exceptionNote": "Virallinen aikataulu ei ilmoita päiväkohtaisia poikkeuksia. Varustusta ei kerrota.",
       "supportingSourceUrls": ["https://takado.fi/"]
     },
