@@ -122,6 +122,7 @@ export const ui = {
 } as const;
 
 export interface EventTranslation {
+  title: string;
   priceNote: string;
   accessDescription: string;
   exceptionNote: string;
@@ -129,12 +130,14 @@ export interface EventTranslation {
 
 export const englishSeriesTranslations: Record<string, EventTranslation> = {
   "aogg-erottaja-sunday-nogi-open-mat": {
+    title: "Open mat",
     priceNote: "Free of charge",
     accessDescription:
       "Open to practitioners from other clubs. No-gi only; reserve a spot in advance.",
     exceptionNote: "The official calendar does not list cancelled dates.",
   },
   "aogg-sornainen-colored-belts-nogi-open-mat": {
+    title: "Open mat",
     priceNote: "Free of charge",
     accessDescription:
       "Open to coloured belts from other clubs. No-gi only; reserve a spot in advance.",
@@ -142,17 +145,20 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The 15 August 2026 session is cancelled. The session is for coloured belts.",
   },
   "dojo-helsinki-saturday-nogi-open-mat": {
+    title: "Open mat",
     priceNote: "Free of charge",
     accessDescription: "Open to all clubs and experience levels. No-gi attire.",
     exceptionNote:
       "The official timetable lists no exceptions. The regular Saturday open mat is 12:00–13:00.",
   },
   "gb-gym-monthly-open-mat": {
+    title: "Open mat",
     priceNote: "Free of charge",
     accessDescription: "Open to all practitioners. Gi or no-gi.",
     exceptionNote: "No known exceptions.",
   },
   "hipko-metsala-women-open-mat-autumn-2026": {
+    title: "Women's open mat",
     priceNote: "Free of charge",
     accessDescription:
       "Open to women who practise BJJ or submission wrestling at any club. Gi or no-gi. This is not a coached class or a trial session.",
@@ -160,24 +166,28 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The official event announcement lists the exact autumn 2026 dates and times.",
   },
   "hjjk-saturday-open-mat": {
+    title: "Open mat",
     priceNote: "The source does not state a visitor price",
     accessDescription: "Open to practitioners from other clubs.",
     exceptionNote:
       "The session is held only when no other event uses the Kaapelitehdas venue. Confirm the 10 and 31 October sessions in particular: the club's event calendar does not identify the venue for the events on those dates.",
   },
   "kilo-jiu-jitsu-saturday-open-mat": {
+    title: "Open mat",
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription: "Open to practitioners from other clubs.",
     exceptionNote:
       "The official web calendar confirms most reviewed Saturdays, but 5 September is absent without a separate cancellation notice. Confirm the date and attire with the organizer.",
   },
   "loop-saturday-open-mat": {
+    title: "Open mat",
     priceNote: "Free of charge",
     accessDescription: "Open to all practitioners. Gi or no-gi.",
     exceptionNote:
       "No known exceptions. The autumn schedule ends on 23 December 2026.",
   },
   "mma-vantaa-sunday-open-mat": {
+    title: "Open mat",
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "Open to practitioners from other clubs. Arrive before the session starts because entry requires a member's door code.",
@@ -185,6 +195,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The official Vantaa exception calendar lists no venue closure in the reviewed publication window. Attire is not specified.",
   },
   "takado-tuesday-open-mat": {
+    title: "Open mat",
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "Open to everyone. Enroll for the session through myClub.",
@@ -192,6 +203,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The official timetable does not list dated exceptions. Attire is not specified.",
   },
   "takado-saturday-open-mat": {
+    title: "Open mat",
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "Open to everyone. Enroll for the session through myClub.",
@@ -199,6 +211,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The official timetable does not list dated exceptions. Attire is not specified.",
   },
   "tk-sports-saturday-open-mat": {
+    title: "Open mat",
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "The timetable marks the session for all levels, but does not state whether practitioners from other clubs may attend. Confirm participation with TK Sports.",
@@ -206,6 +219,7 @@ export const englishSeriesTranslations: Record<string, EventTranslation> = {
       "The official timetable lists the weekly session but notes that the schedule may change. Attire is not specified.",
   },
   "tundra-saturday-open-mat": {
+    title: "Open mat",
     priceNote: "The source does not state an open-mat visitor price",
     accessDescription:
       "Open to members of other clubs. Contact the gym before visiting.",

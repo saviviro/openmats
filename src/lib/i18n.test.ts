@@ -22,6 +22,7 @@ describe("localization", () => {
 
   it("keeps Finnish source text unchanged and resolves English by series", () => {
     const finnish = {
+      title: "Open mat",
       priceNote: "Maksuton",
       accessDescription: "Avoin kaikille.",
       exceptionNote: "Ei tiedossa olevia poikkeuksia.",
@@ -38,10 +39,29 @@ describe("localization", () => {
         finnish,
       ),
     ).toEqual({
+      title: "Open mat",
       priceNote: "Free of charge",
       accessDescription: "Open to all practitioners. Gi or no-gi.",
       exceptionNote: "No known exceptions.",
     });
+  });
+
+  it("localizes the women's event title while preserving the Finnish title", () => {
+    const finnish = {
+      title: "Naisten open mat",
+      priceNote: "Maksuton",
+      accessDescription: "Avoin naisharrastajille.",
+      exceptionNote: "Tarkista päivät järjestäjältä.",
+    };
+    const eventId = "hipko-metsala-women-open-mat-autumn-2026-2026-11-29";
+    const seriesId = "hipko-metsala-women-open-mat-autumn-2026";
+
+    expect(getEventTranslation("fi", eventId, seriesId, finnish).title).toBe(
+      "Naisten open mat",
+    );
+    expect(getEventTranslation("en", eventId, seriesId, finnish).title).toBe(
+      "Women's open mat",
+    );
   });
 
   it("keeps the HJJK venue-specific exception accurate in English", () => {
@@ -50,6 +70,7 @@ describe("localization", () => {
       "hjjk-saturday-open-mat-2026-08-22",
       "hjjk-saturday-open-mat",
       {
+        title: "Open mat",
         priceNote: "Vierailuhintaa ei ilmoitettu lähteessä",
         accessDescription: "Avoin muiden seurojen harrastajille.",
         exceptionNote: "Suomenkielinen poikkeusteksti.",
@@ -68,6 +89,7 @@ describe("localization", () => {
       "dojo-helsinki-saturday-nogi-open-mat-2026-10-10",
       "dojo-helsinki-saturday-nogi-open-mat",
       {
+        title: "Open mat",
         priceNote: "Vierailuhintaa ei ilmoitettu lähteessä",
         accessDescription: "Avoin muiden seurojen harrastajille.",
         exceptionNote: "Suomenkielinen poikkeusteksti.",
@@ -85,6 +107,7 @@ describe("localization", () => {
 
   it("requires event-specific English overrides when Finnish source text varies inside a series", () => {
     const fields = [
+      ["title", (event: (typeof events)[number]) => event.title],
       ["priceNote", (event: (typeof events)[number]) => event.price.note],
       [
         "accessDescription",
