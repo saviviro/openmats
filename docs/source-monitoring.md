@@ -653,6 +653,34 @@ Sports remains unreadable because of a protocol error. Those access failures
 were retained for monitoring and were not interpreted as cancellations or new
 access limits.
 
+## Weekly light check: 19 November 2026
+
+The maintained official sources for every published recurring series, the
+HIPKO and GB Gym dated entries, and the time-bounded manual-review candidates
+were checked for the rolling 19 November 2026–14 January 2027 publication
+window.
+
+- HJJK's timetable still lists the Saturday 13:00–15:00 open mat. Its event
+  calendar now lists Christmas training and an evening event in Helsinki on
+  19 December without identifying the venue. That occurrence remains
+  published with a confirmation warning; the unspecific city-level listing is
+  not treated as Kaapelitehdas cancellation evidence.
+- Kilo's live Asio calendar lists every Saturday 11:00–12:30 open mat through
+  19 December and none after that date, so its source-backed seasonal boundary
+  remains unchanged. Buli's dated calendar retains the four exact closures on
+  22 and 29 November and 6 and 13 December.
+- AOGG, Tundra, Loop, Dojo, Takado and MMA Vantaa retain their published
+  schedules and existing access, format and price qualifications. Vantaa's
+  6 December Rajatorppa closure remains excluded with venue- and date-specific
+  official evidence.
+- HIPKO's 29 November and 20 December women's open mats and GB Gym's scheduled
+  27 December open mat remain supported by their official dated sources. GB
+  Gym's 29 November cancellation also remains explicit. TK Sports remains a
+  source-read failure rather than cancellation evidence.
+
+No new exclusion, visitor restriction, format or open-mat-specific price was
+supported by the reviewed sources.
+
 ## Recording a review
 
 Update the registry's `discoveryReviewedAt` and `discoveryReviewNotes` after a

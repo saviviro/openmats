@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-11-10T13:54:14+02:00",
-    "summary": "Reviewed all maintained published and time-bounded official sources; excluded four date-specific closed Buli Urhea sessions; materialized 86 events through 2027-01-05; validation and security audit passed."
+    "lastSuccessfulAt": "2026-11-19T16:25:32+02:00",
+    "summary": "Reviewed maintained sources; retained exact closures, added HJJK 19 December confirmation warning, and refreshed 84 events through 2027-01-14."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-11-18T20:14:04+02:00",
