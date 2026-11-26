@@ -1,8 +1,8 @@
 {
   "version": 1,
   "routine": {
-    "lastSuccessfulAt": "2026-11-19T16:25:32+02:00",
-    "summary": "Reviewed maintained sources; retained exact closures, added HJJK 19 December confirmation warning, and refreshed 84 events through 2027-01-14."
+    "lastSuccessfulAt": "2026-11-26T18:15:18+02:00",
+    "summary": "Reviewed maintained sources; added AOGG Sornainen 2026-11-28 cancellation; refreshed 81 events through 2027-01-21; validation and high-severity audit passed."
   },
   "discovery": {
     "lastSuccessfulAt": "2026-11-18T20:14:04+02:00",
